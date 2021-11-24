@@ -1,0 +1,16 @@
+@mixin textStyle($fontSize: 2em, $alignment: center)  {
+    font-size: $fontSize;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+.Landing {
+    h1 {
+        @include textStyle;
+        background-color: crimson;
+        color: aquamarine;
+        transition: 3s;
+
+    }
+
+}
