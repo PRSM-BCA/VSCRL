@@ -1,0 +1,17 @@
+.MultipleChoice {
+    #choices {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    button {
+        display: block;
+
+        &:focus {
+            background-color: darkcyan;
+            color: whitesmoke;
+        }
+
+    }
+
+}
