@@ -1,8 +1,8 @@
-import './App.scss';
+import './Landing.scss';
 
-function App() {
+function Landing() {
   return (
-    <div className="App">
+    <div className="Landing">
       <h1>PRSM!</h1>
       <p>This is scss...</p>
       <p>added</p>
@@ -10,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default Landing;
