@@ -1,4 +1,34 @@
-@mixin textStyle($fontSize: 2em, $alignment: center)  {
+@mixin headerStyle($fontSize: 24px, $alignment: center)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+@mixin body1Style($fontSize: 14px, $alignment: center)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+@mixin body2Style($fontSize: 14px, $alignment: center)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+@mixin bulletsStyle($fontSize: 12px, $alignment: center)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
     text-align: $alignment;
     padding: 1em;
@@ -6,7 +36,7 @@
 
 .Landing {
     h1 {
-        @include textStyle;
+        @include headerStyle;
         background-color: crimson;
         color: aquamarine;
         transition: 3s;
