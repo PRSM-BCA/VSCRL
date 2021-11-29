@@ -1,0 +1,43 @@
+@mixin textStyle($fontSize: 2em, $alignment: center)  {
+    font-size: $fontSize;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+.Landing {
+    h1 {
+        @include textStyle;
+        background-color: crimson;
+        color: aquamarine;
+        transition: 3s;
+
+    }
+
+    nav {
+
+        display: flex;
+
+        a {
+            flex: 1;
+            margin: 1em;
+            text-decoration: none;
+            color: darkcyan;
+        }
+
+    }
+
+    form {
+
+        background-color: darkcyan;
+        padding: 2em;
+
+        input {
+            margin: 1em auto;
+            padding: .5em;
+            display: block;
+            width: 30vw;
+        }
+    }
+
+
+}
