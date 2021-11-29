@@ -7,7 +7,7 @@
 .Landing {
     h1 {
         @include textStyle;
-        background-color: crimson;
+        background-color: red;
         color: aquamarine;
         transition: 3s;
 
