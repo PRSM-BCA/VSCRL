@@ -1,21 +1,49 @@
 .MultipleChoice {
-    #choices {
-        display: grid;
-        grid-template-rows: repeat(2, 1fr);
-    }
+  #choices {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
 
-    button {
-        display: block;
+  button {
+    display: block;
 
-        &:focus {
-            background-color: darkcyan;
-            color: whitesmoke;
-        }
+    &:focus {
+      background-color: darkcyan;
+      color: whitesmoke;
     }
+  }
 }
 
+
+
+
 .ShortAnswer {
+  display: flex;
+  justify-items: center;
+  background-color: aqua;
+
+  section {
     display: flex;
-    justify-items: center;
-    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+  }
+}
+
+.longAnswer{
+    display: flex;
+    background-color: royalblue;
+    align-items: center;
+    flex-direction: column;
+
+    input{
+        width: 200px;
+        height: 250px;
+        align-items: center;
+        justify-content: start;
+
+    }
+    p{
+      
+    }
 }
