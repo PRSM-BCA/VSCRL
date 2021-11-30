@@ -2,7 +2,7 @@ import './Question.scss'
 
 function LongAnswer(props) {
     return (
-        <section className="longAnswer">
+        <section className="LongAnswer">
           <h3>What is typical morning from parking the car to seeing your first patient?</h3>
           <div className="inputWrapper">
           <input

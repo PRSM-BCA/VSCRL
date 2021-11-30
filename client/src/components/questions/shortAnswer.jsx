@@ -5,6 +5,7 @@ function ShortAnswer(props) {
     <div className="ShortAnswer">
       <form>
         <h3>List 3 frustrations about your footwear</h3>
+        <div className="questionWrapper">
         <section>
           #1
           <input
@@ -31,6 +32,7 @@ function ShortAnswer(props) {
             placeholder="pls enter your question answer"
           ></input>
         </section>
+        </div>
       </form>
     </div>
   );
