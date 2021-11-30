@@ -9,35 +9,40 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState();
+export function AuthProvider({children}) {
 
-  function signup(email, password) {
-    createUserWithEmailAndPassword(authentication, email, password).then(
-      (registeredUser) => {
-        console.log(registeredUser);
-        const dbCollection = collection(db, "users");
-        addDoc(dbCollection, {
-          uid: registeredUser.user.uid,
-          email: email,
-          password: password,
-        });
-      }
-    );
-  }
+    const [currentUser, setCurrentUser] = useState()
 
-  useEffect(() => {
-    const unsubscribe = authentication.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-    });
+    function signup(email, password) {
+        createUserWithEmailAndPassword(authentication, email, password)
+            .then(registeredUser => {
+                    console.log(registeredUser)
+                    const dbCollection = collection(db, "users")
+                    addDoc(dbCollection, {
+                        uid: registeredUser.user.uid,
+                        email: email,
+                        password: password
+                    })
+            })
+    }
 
-    return unsubscribe;
-  }, []);
+    useEffect(() => {
+        const unsubscribe = authentication.onAuthStateChanged(user => {
+            setCurrentUser(user)
+        })
 
-  const value = {
-    currentUser,
-    signup,
-  };
+        return unsubscribe
+    }, [])
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+
+    const value = {
+        currentUser, 
+        signup
+    }
+
+    return (
+      <AuthContext.Provider value={value}>
+          {children}
+      </AuthContext.Provider> 
+    )
 }
