@@ -5,7 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 function App() {
 //setting state for keyUsers to view data
-const [keyUsers, setKeyUsers] = useState([]);
+const [setUsers, setUsers] = useState([]);
 const usersCollectionRef = collection(db, "users")
 
 useEffect (() => {
