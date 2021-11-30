@@ -1,5 +1,6 @@
 import './Landing.scss';
 import { Link } from 'react-router-dom'
+import SignUp from '../SignUp/SignUp';
 
 function Landing() {
   return (
@@ -14,12 +15,7 @@ function Landing() {
         <Link to='/SelectImg'>SelectImg</Link>
         <Link to='/ShortAnswer'>ShortAnswer</Link>
       </nav>
-
-      <form method="GET" action="">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <input type="submit" placeholder="Submit" />
-      </form>
+      <SignUp/>
     </div>
   );
 }

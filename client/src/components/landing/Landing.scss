@@ -1,23 +1,45 @@
-@mixin textStyle($fontSize: 2em, $alignment: center)  {
+@mixin headerStyle($fontSize: 24px, $alignment: center)  {
+    font-family: 'Merriweather', serif;
+    font-family: 'Roboto Mono', monospace;
     font-size: $fontSize;
     text-align: $alignment;
     padding: 1em;
 }
 
+@mixin body1Style($fontSize: 14px, $alignment: center) {
+    font-family: 'Roboto Mono', monospace;
+    font-size: $fontSize;
+    text-align: $alignment;
+}
+
+@mixin body2Style($fontSize: 14px, $alignment: center) {
+    font-family: 'Merriweather', serif;
+    font-family: 'Roboto Mono', monospace;
+    font-size: $fontSize;
+    text-align: $alignment;
+}
+
+@mixin bulletsStyle($fontSize: 12px, $alignment: center) {
+    font-family: 'Merriweather', serif;
+    font-family: 'Roboto Mono', monospace;
+    font-size: $fontSize;
+    text-align: $alignment;
+}
+
 .Landing {
     h1 {
-        @include textStyle;
-        background-color: crimson;
+        @include headerStyle;
+        background-color: red;
         color: aquamarine;
         transition: 3s;
 
     }
 
     nav {
-
         display: flex;
 
         a {
+            @include bulletsStyle;
             flex: 1;
             margin: 1em;
             text-decoration: none;
@@ -27,15 +49,19 @@
     }
 
     form {
-
         background-color: darkcyan;
         padding: 2em;
 
         input {
+            @include body1Style(14px, left);
             margin: 1em auto;
             padding: .5em;
             display: block;
             width: 30vw;
+        }
+
+        input[type="submit"] {
+            @include body1Style(14px, center);
         }
     }
 
