@@ -19,15 +19,29 @@
 
 .ShortAnswer {
   display: flex;
-  justify-items: center;
+  align-items: center;
+  justify-content: center;
   background-color: aqua;
+  
+
+  .questionWrapper{
+   display: flex;
+   align-items: center;
+   border: 3px solid black;
+   flex-direction: column;
+   justify-content: space-evenly;
+   height: 500px;
+   width: 500px;
+  }
+  
 
   section {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: red;
+    background-color: red; 
   }
+
+  
 }
 
 .longAnswer{
@@ -46,4 +60,27 @@
     p{
       
     }
+}
+
+.SelectImg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  
+
+   section{
+    display: flex;
+    align-items: center;
+    border: 3px solid black;
+    flex-direction: column;
+    gap: 10px;
+    
+   }
+
+  img{
+    height: 175px;
+    width: 250px;
+    
+  }
 }
