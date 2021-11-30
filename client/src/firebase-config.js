@@ -19,7 +19,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig)
 
 //authentication
-export const authentication = getAuth()
+export const authentication = getAuth(app)
 
 //exporting the variable db so we can access it's data in other files 
 export const db = getFirestore(app) 

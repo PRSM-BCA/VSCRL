@@ -1,36 +1,44 @@
 import { useState, useEffect } from "react";
-import './App.scss';
-import { db } from './firebase-config.js';
+import "./App.scss";
+import { db } from "./firebase-config.js";
 import { collection, getDocs } from "firebase/firestore";
 
 function App() {
-//setting state for keyUsers to view data
-const [keyUsers, setKeyUsers] = useState([]);
-const usersCollectionRef = collection(db, "users")
-
-useEffect (() => {
-  const getUsers = async() => {
-    const data = await getDocs(usersCollectionRef)
-    console.log(data)
-    //setUser state equal to array in our user collection
-    //mapping through each document 
-    //doc.data only returns Name and Age, not ID
-    setKeyUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
-    console.log(data.docs)
-  }; getKeyUsers()
-}, [])
+  //setting state for keyUsers to view data
+  const [users, setUsers] = useState([]);
+  const usersCollectionRef = collection(db, "users");
 
 
 
+  //This prints all users to the page on page load
+  useEffect(() => {
+    const getUsers = async () => {
+      const data = await getDocs(usersCollectionRef);
+      console.log(data);
+      //setUser state equal to array in our user collection
+      //mapping through each document
+      //doc.data only returns Name and Age, not ID
+      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      console.log(data.docs);
+    };
+    getUsers();
+  }, []);
 
   return (
     <div className="App">
       {users.map((users) => {
-        return <div>
-          {" "}
-          <h1>Name: {users.username}</h1>
-        </div>
+        return (
+          <div>
+            {" "}
+            <h1>Name: {users.username}</h1>
+          </div>
+        );
       })}
+
+
+
+
+      
       <h1>PRSM!</h1>
       <p>This is scss...</p>
       <p>added</p>

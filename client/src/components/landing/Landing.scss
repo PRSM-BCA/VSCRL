@@ -95,3 +95,20 @@
 
 
 }
+.signUp {
+    background-color: darkcyan;
+    padding: 2em;
+  
+    input {
+      margin: 1em auto;
+      padding: 0.5em;
+      display: block;
+      width: 30vw;
+    }
+  
+    button {
+      display: flex;
+      align-self: center;
+    }
+  }
+  
