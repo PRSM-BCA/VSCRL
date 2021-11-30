@@ -24,7 +24,6 @@ ReactDOM.render(
         <Route path="/ScaleAnswer" element={<ScaleAnswer />} />
         <Route path="/SelectImg" element={<SelectImg />} />
         <Route path="/ShortAnswer" element={<ShortAnswer />} />
-        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

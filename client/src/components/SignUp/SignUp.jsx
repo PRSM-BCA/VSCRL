@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { db } from './firebase-config.js'
+import { db } from "../../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
-import './SignUp.scss'
+import "./SignUp.scss";
+
 
 function SignUp() {
   //setup state for username
@@ -21,19 +22,22 @@ function SignUp() {
 
   return (
     <div className="signUp">
+        <h3>Create an Account</h3>
       <input
-        placeholder="Username"
+        type="text"
+        placeholder="Create Username"
         onChange={(event) => {
           setNewUserName(event.target.value);
         }}
       />
       <input
-        placeholder="Password"
+        type="text"
+        placeholder="Create Password"
         onChange={(event) => {
           setNewPassword(event.target.value);
         }}
       />
-      <button onClick={createUser}>Create Account</button>
+      <button onClick={createUser}>Submit</button>
     </div>
   );
 }

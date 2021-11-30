@@ -4,22 +4,13 @@ import { db } from "./firebase-config.js";
 import { collection, getDocs } from "firebase/firestore";
 
 function App() {
-  //setup state for username
-  const [newUserName, setNewUserName] = useState("");
-  //setup state for password
-  const [newPassword, setNewPassword] = useState("");
   //setting state for keyUsers to view data
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, "users");
 
-  // create new username/password function
-  const createUser = async () => {
-    await addDoc(userCollectionRef, {
-      username: newUserName,
-      password: newPassword,
-    });
-  };
 
+
+  //This prints all users to the page on page load
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef);
