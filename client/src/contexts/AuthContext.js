@@ -3,10 +3,10 @@ import { authentication, db } from '../firebase-config'
 import {createUserWithEmailAndPassword } from "firebase/auth"
 import { collection, addDoc } from "@firebase/firestore"
 
-const AuthContext = React.createContext()
+const AuthContext = React.createContext();
 
 export function useAuth() {
-    return useContext(AuthContext)
+  return useContext(AuthContext);
 }
 
 export function AuthProvider({children}) {

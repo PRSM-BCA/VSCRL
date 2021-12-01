@@ -10,6 +10,7 @@ import SelectImg from './components/questions/SelectImg';
 import ShortAnswer from './components/questions/ShortAnswer';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import reportWebVitals from './reportWebVitals';
+import SignUp from './components/SignUp/SignUp';
 
 ReactDOM.render(
   <React.StrictMode>
