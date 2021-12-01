@@ -34,26 +34,6 @@
     padding: 1em;
 }
 
-@mixin body1Style($fontSize: 14px, $alignment: center) {
-    font-family: 'Roboto Mono', monospace;
-    font-size: $fontSize;
-    text-align: $alignment;
-}
-
-@mixin body2Style($fontSize: 14px, $alignment: center) {
-    font-family: 'Merriweather', serif;
-    font-family: 'Roboto Mono', monospace;
-    font-size: $fontSize;
-    text-align: $alignment;
-}
-
-@mixin bulletsStyle($fontSize: 12px, $alignment: center) {
-    font-family: 'Merriweather', serif;
-    font-family: 'Roboto Mono', monospace;
-    font-size: $fontSize;
-    text-align: $alignment;
-}
-
 .Landing {
     h1 {
         @include headerStyle;
