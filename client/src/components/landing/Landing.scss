@@ -1,3 +1,7 @@
+$primary-color: #f3A71C;
+$secondary-color: #4394CA;
+$font-color: #2f302F;
+
 @mixin headerStyle($fontSize: 24px, $alignment: center)  {
     font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
@@ -7,77 +11,74 @@
     padding: 1em;
 }
 
-@mixin body1Style($fontSize: 14px, $alignment: center)  {
+@mixin body1Style($fontSize: 14px, $alignment: center, $textColor: $font-color)  {
     font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
     font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
+    color: $textColor;
     text-align: $alignment;
     padding: 1em;
 }
 
-@mixin body2Style($fontSize: 14px, $alignment: center)  {
+@mixin body2Style($fontSize: 14px, $alignment: center, $textColor: $font-color)  {
     font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
     font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
+    color: $textColor;
     text-align: $alignment;
     padding: 1em;
 }
 
-@mixin bulletsStyle($fontSize: 12px, $alignment: center)  {
+@mixin bulletsStyle($fontSize: 12px, $alignment: center, $textColor: $font-color)  {
     font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
     font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
+    color: $textColor;
     text-align: $alignment;
     padding: 1em;
-}
-
-@mixin body1Style($fontSize: 14px, $alignment: center) {
-    font-family: 'Roboto Mono', monospace;
-    font-size: $fontSize;
-    text-align: $alignment;
-}
-
-@mixin body2Style($fontSize: 14px, $alignment: center) {
-    font-family: 'Merriweather', serif;
-    font-family: 'Roboto Mono', monospace;
-    font-size: $fontSize;
-    text-align: $alignment;
-}
-
-@mixin bulletsStyle($fontSize: 12px, $alignment: center) {
-    font-family: 'Merriweather', serif;
-    font-family: 'Roboto Mono', monospace;
-    font-size: $fontSize;
-    text-align: $alignment;
 }
 
 .Landing {
-    h1 {
-        @include headerStyle;
-        background-color: crimson;
-        color: aquamarine;
-        transition: 3s;
+    
+    img {
+        width: 180px;
+        height: 60px;
+        display: block;
+        margin: auto auto auto 0;
+        border-bottom: 1px solid $font-color;
+    }
 
+    h2 {
+        @include body2Style;
     }
 
     nav {
         display: flex;
+        margin: 1em;
+        border-bottom: $primary-color 2px solid;
+        padding-bottom: 1em;
 
         a {
             @include bulletsStyle;
             flex: 1;
-            margin: 1em;
+            margin: .5em;
+            padding: 3px;
             text-decoration: none;
-            color: darkcyan;
+            transition: .1s;
+            text-decoration: underline white;
+        }
+
+        a:hover {
+            text-decoration: underline $secondary-color;
         }
 
     }
 
     form {
-        background-color: darkcyan;
+        background-color: $secondary-color;
         padding: 2em;
 
         input {

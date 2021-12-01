@@ -2,12 +2,13 @@ import './Landing.scss';
 import { Link } from 'react-router-dom'
 import { AuthProvider } from '../../contexts/AuthContext';
 import SignUp from '../SignUp/SignUp';
+import Logo from './Vscrl_Logo.png';
 
 function Landing() {
   return (
     <AuthProvider>
       <div className="Landing">
-        <h1>PRSM!</h1>
+        <img alt="Site Logo" src={Logo}/>
         <nav>
           <Link to='/KeyWordAnswer'>KeyWordAnswer</Link>
           <Link to='/LongAnswer'>LongAnswer</Link>
