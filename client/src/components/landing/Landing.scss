@@ -89,7 +89,9 @@ $font-color: #2f302F;
             width: 30vw;
         }
 
-        input[type="submit"] {
+        input[type="submit"], button {
+            display: block;
+            margin: 1em auto;
             @include body1Style(14px, center);
         }
     }

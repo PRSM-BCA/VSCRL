@@ -1,5 +1,9 @@
+$primary-color: #f3A71C;
+$secondary-color: #4394CA;
+$font-color: #2f302F;
+
 // Styling for signUp class
-.signUp {
+.SignUp {
   background-color: darkcyan;
   padding: 2em;
 
@@ -15,10 +19,9 @@
   button {
     display: flex;
     align-self: center;
+    display: block;
+    margin: 1em auto;
   }
-$primary-color: #f3A71C;
-$secondary-color: #4394CA;
-$font-color: #2f302F;
 
   // Styling for "Create An Account"
   h3 {
