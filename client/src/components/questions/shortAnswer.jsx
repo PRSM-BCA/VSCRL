@@ -5,32 +5,34 @@ function ShortAnswer(props) {
     <div className="ShortAnswer">
       <form>
         <h3>List 3 frustrations about your footwear</h3>
+        <div className="questionWrapper">
         <section>
           #1
-          <input
+          <textarea
             type="text"
             name="question answer 1"
-            placeholder="pls enter your question answer"
-          ></input>
+            placeholder="I'm frustrated by..."
+          ></textarea>
         </section>
 
         <section>
           #2
-          <input
+          <textarea
             type="text"
             name="question answer 2"
-            placeholder="pls enter your question answer"
-          ></input>
+            placeholder="I'm frustrated by..."
+          ></textarea>
         </section>
 
         <section>
           #3
-          <input
+          <textarea
             type="text"
             name="question answer 3"
-            placeholder="pls enter your question answer"
-          ></input>
+            placeholder="I'm frustrated by..."
+          ></textarea>
         </section>
+        </div>
       </form>
     </div>
   );
