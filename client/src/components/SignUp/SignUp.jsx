@@ -33,7 +33,7 @@ export default function SignUp() {
     try {
       setErrorMessage("");
       await signup(newEmail, newPassword, newUserName, newFirstName, newLastName, dob);
-      // navigate("/KeyWordAnswer", {replace: true})
+      navigate("/Dashboard", {replace: true})
     } catch (error) {
       console.log(error.message);
       setErrorMessage(error.message);

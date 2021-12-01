@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Landing from './components/landing/Landing';
+import Dashboard from './components/dashboard/Dashboard'
 import KeyWordAnswer from './components/questions/KeyWordAnswer';
 import LongAnswer from './components/questions/LongAnswer';
 import MultipleChoice from './components/questions/MultipleChoice';
@@ -17,6 +18,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/KeyWordAnswer" element={<KeyWordAnswer />} />
         <Route path="/LongAnswer" element={<LongAnswer />} />
         <Route path="/MultipleChoice" element={<MultipleChoice />} />

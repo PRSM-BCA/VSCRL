@@ -14,7 +14,7 @@ export default function LogIn() {
         try {
           setErrorMessage("")
           await login(newEmail, newPassword)
-          // navigate("/KeyWordAnswer", {replace: true})
+          navigate("/Dashboard", {replace: true})
         } catch (error) {
           console.log(error.message)
           setErrorMessage(error.message)
