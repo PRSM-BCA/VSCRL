@@ -1,0 +1,23 @@
+@import '../styles/global.scss';
+
+nav {
+    display: flex;
+    margin: 1em;
+    border-bottom: $primary-color 2px solid;
+    padding-bottom: 1em;
+
+    a {
+        @include bulletsStyle;
+        flex: 1;
+        margin: .5em;
+        padding: 3px;
+        text-decoration: none;
+        transition: .1s;
+        text-decoration: underline white;
+    }
+
+    a:hover {
+        text-decoration: underline $secondary-color;
+    }
+
+}

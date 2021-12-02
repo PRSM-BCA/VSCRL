@@ -23,7 +23,6 @@ export default function LogIn() {
 
     async function handleLogOut() {
         setErrorMessage('')
-
         try {
             await logout()
             navigate("/")

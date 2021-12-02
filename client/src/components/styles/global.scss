@@ -1,0 +1,42 @@
+$primary-color: #f3A71C;
+$secondary-color: #4394CA;
+$font-color: #2f302F;
+
+@mixin headerStyle($fontSize: 24px, $alignment: center)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+@mixin body1Style($fontSize: 14px, $alignment: center, $textColor: $font-color)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    color: $textColor;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+@mixin body2Style($fontSize: 14px, $alignment: center, $textColor: $font-color)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    color: $textColor;
+    text-align: $alignment;
+    padding: 1em;
+}
+
+@mixin bulletsStyle($fontSize: 12px, $alignment: center, $textColor: $font-color)  {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    color: $textColor;
+    text-align: $alignment;
+    padding: 1em;
+}

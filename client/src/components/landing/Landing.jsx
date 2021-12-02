@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { AuthProvider } from '../../contexts/AuthContext';
 import SignUp from '../SignUp/SignUp';
 
-import Logo from './Vscrl_Logo.png'
 import LogIn from '../LogIn/LogIn';
 
 function Landing() {
@@ -11,7 +10,6 @@ function Landing() {
   return (
     <AuthProvider>
       <div className="Landing">
-        <img alt="Site Logo" src={Logo}/>
         <nav>
           <Link to='/KeyWordAnswer'>KeyWordAnswer</Link>
           <Link to='/LongAnswer'>LongAnswer</Link>
