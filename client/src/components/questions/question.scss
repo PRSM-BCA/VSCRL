@@ -1,5 +1,89 @@
-@import '../styles/global.scss';
+@import "../styles/global.scss";
 
+.KeyWordAnswer {
+  .TitleHeader {
+    text-align: center;
+    @include headerStyle;
+  }
+
+  .WordCloud {
+    display: grid;
+    grid-template-columns: repeat(3, 0.25fr);
+    grid-template-rows: repeat(3, 0.25fr);
+    height: 75vw;
+    width: 75vw;
+    align-items: center;
+    justify-items: center;
+    place-self: center;
+    margin: auto;
+    margin-top: 5vh;
+    gap: 5px;
+
+    #painOne {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 136, 0);
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
+      padding: 2em;
+    }
+
+    #painTwo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      font-size: 3em;
+      padding: 2em;
+    }
+
+    #painFour {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(17, 0, 255);
+      color: white;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      font-size: 1em;
+      padding: 2em;
+    }
+    #painSix {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 81, 0);
+      color: white;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      font-size: 2em;
+      padding: 4em;
+    }
+
+    #painEight {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(106, 14, 167);
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1em;
+      padding: 2em;
+    }
+  }
+}
 
 .MultipleChoice {
   #choices {
@@ -48,7 +132,7 @@
   flex-direction: row;
   gap: 5vw;
   min-width: auto;
-  // border: solid black;
+  
 
   // child of LongAnswer
   img {
@@ -66,6 +150,7 @@
     // child of inputWrapper
     h2 {
       text-align: left;
+      @include headerStyle (left)
     }
 
     // child of inputWrapper
@@ -160,7 +245,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
+  background-color: white;
 
   section {
     display: flex;
@@ -180,6 +265,7 @@
   .eightPainsTitle {
     text-align: center;
     color: #2f302f;
+    @include headerStyle;
   }
 
   .eightPainsSubTitle {
