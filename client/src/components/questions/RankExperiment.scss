@@ -1,0 +1,60 @@
+$primary-color: #f3a71c;
+$secondary-color: #4394ca;
+$font-color: #2f302f;
+:root {
+  --highlight: #141926;
+  --primary: #129fc0;
+  --off-white: #f6f6f6;
+  --sans: "Montserrat", sans-serif;
+  --border-radius: 5px;
+  --shadow: 0 2px 15px 0 rgb(0 0 0 / 9%);
+}
+
+body {
+  font-family: var(--sans);
+  margin: 0px;
+  background-color: var(--off-white);
+}
+
+.eightPainsTitle {
+  text-align: center;
+  color: #2f302f;
+}
+
+.eightPainsSubTitle {
+  color: $secondary-color;
+  text-align: center;
+}
+.list-container {
+  display: grid;
+  padding: 1rem;
+  width: 30%;
+  height: 30%;
+  grid-template-rows: 100%;
+  gap: 0.5rem;
+  margin: auto;
+  border-radius: 5px;
+  background-color: $primary-color;
+
+  .list-container_item {
+    background-color: #F8F7F2;
+    border-radius: 5px;
+    color: $secondary-color;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: 0.5px solid $secondary-color;
+    gap: 10px;
+ 
+  }
+  .list-container_item:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+  }
+
+  .handlebars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
