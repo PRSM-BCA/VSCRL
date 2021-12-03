@@ -1,6 +1,5 @@
 import './Landing.scss';
 import { Link } from 'react-router-dom'
-import { AuthProvider } from '../../contexts/AuthContext';
 import SignUp from '../SignUp/SignUp';
 
 import LogIn from '../LogIn/LogIn';
@@ -8,7 +7,6 @@ import LogIn from '../LogIn/LogIn';
 function Landing() {
   // const [additionalPage, setAdditionalPage] = useState(false)
   return (
-    <AuthProvider>
       <div className="Landing">
         {/* <nav>
           <Link to='/KeyWordAnswer'>KeyWordAnswer</Link>
@@ -24,7 +22,6 @@ function Landing() {
         <LogIn></LogIn>
         </div>
       </div>
-    </AuthProvider>
   );
 }
 

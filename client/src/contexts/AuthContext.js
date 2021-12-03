@@ -40,16 +40,16 @@ export function AuthProvider({children}) {
         return authentication.signOut()
     }
 
+    // Gets User based off Authentication Uid
+    async function getUser(authUid) {
+        const userDoc = await doc(db, "users", authUid)
+        const userSnap = await getDoc(userDoc)
 
-    // // Grabs specific user from Users Collection using Authentication Uid
-    // async function getUser(authUid) {
-    //     const userDoc = doc(db, "users", authUid)
-    //     console.log(userDoc)
-    //     const userSnap = await getDoc(userDoc)
+        return userSnap.data()
+    }
 
-    //     return userSnap
+    // Survey Write to database
 
-    // }
 
     // Grabs all users from Users Collection and logs them
     async function getAllUsers() {
@@ -76,7 +76,7 @@ export function AuthProvider({children}) {
         signup,
         login,
         logout,
-        //getUser,
+        getUser,
         getAllUsers
     }
 
