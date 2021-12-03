@@ -10,7 +10,7 @@ function Landing() {
   return (
     <AuthProvider>
       <div className="Landing">
-        <nav>
+        {/* <nav>
           <Link to='/KeyWordAnswer'>KeyWordAnswer</Link>
           <Link to='/LongAnswer'>LongAnswer</Link>
           <Link to='/MultipleChoice'>MultipleChoice</Link>
@@ -18,7 +18,7 @@ function Landing() {
           <Link to='/ScaleAnswer'>ScaleAnswer</Link>
           <Link to='/SelectImg'>SelectImg</Link>
           <Link to='/ShortAnswer'>ShortAnswer</Link>
-        </nav>
+        </nav> */}
          <div>
         <SignUp></SignUp>
         <LogIn></LogIn>

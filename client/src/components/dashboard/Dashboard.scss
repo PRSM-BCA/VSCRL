@@ -3,7 +3,7 @@
 nav {
     display: flex;
     margin: 1em;
-    border-bottom: $primary-color 2px solid;
+    border-bottom: $dark-jungle-green 2px solid;
     padding-bottom: 1em;
 
     a {
@@ -17,7 +17,7 @@ nav {
     }
 
     a:hover {
-        text-decoration: underline $secondary-color;
+        text-decoration: underline $spanish-blue;
     }
 
 }
