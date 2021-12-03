@@ -15,6 +15,7 @@ function LongAnswer(props) {
           name="question answer 2"
         ></textarea>
         <p>0/250 max words</p>
+    
       </div>
     </section>
   );

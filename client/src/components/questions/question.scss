@@ -177,40 +177,46 @@ $font-color: #2f302f;
   }
 }
 
-.RankingAnswer {
-  .dragAndDrop {
+.rankingAnswer {
+  .eightPainsTitle {
+    text-align: center;
+    color: #2f302f;
+  }
+
+  .eightPainsSubTitle {
+    color: $secondary-color;
+    text-align: center;
+  }
+  .list-container {
     display: grid;
-    padding: 0.5rem;
-    width: 40%;
-    height: 40%;
+    padding: 1rem;
+    width: 30%;
+    height: 30%;
     grid-template-rows: 100%;
     gap: 0.5rem;
     margin: auto;
-  }
-
-  .dragAndDropGroup {
-    background-color: $secondary-color;
     border-radius: 5px;
-    padding: 0.5rem;
-  }
-  .dragAndDropItem {
-    background-color: white;
-    border-radius: 5px;
-    color: $secondary-color;
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    padding: 0.5rem;
-    border: solid black;
-    gap: 10px;
-  }
+    background-color: $primary-color;
 
-  // As long as not last in the list, add margin to the bottom of the item
-  .dragAndDropItem:not(:last-of-type) {
-    margin-bottom: 0.5rem;
-  }
+    .list-container_item {
+      background-color: #f8f7f2;
+      border-radius: 5px;
+      color: $secondary-color;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      padding: 0.5rem;
+      border: 0.5px solid $secondary-color;
+      gap: 10px;
+    }
+    .list-container_item:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
 
-  h2 {
-    text-align: center;
+    .handlebars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

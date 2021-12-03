@@ -1,4 +1,4 @@
-import "./RankExperiment.scss";
+import "./Question.scss";
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { VscThreeBars } from "react-icons/vsc";

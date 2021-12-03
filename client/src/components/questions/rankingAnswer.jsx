@@ -1,15 +1,12 @@
 import React from "react";
-import RankingExperimentLayout from "./RankingExperimentLayout.jsx";
-import RankingExp from "./RankingExp.jsx";
+import RankingFunctionality from "./RankingFunctionality.jsx";
 
 function RankingAnswer() {
   return (
-    // <RankingExperimentLayout>
-      <RankingExp />
-    // </RankingExperimentLayout>
+    <div className="rankingAnswer">
+      <RankingFunctionality />
+    </div>
   );
 }
 
 export default RankingAnswer;
-
-
