@@ -56,7 +56,6 @@
     align-self: center;
     max-height: 20vw;
     width: auto;
-
   }
 
   // child of LongAnswer
@@ -174,5 +173,49 @@
   img {
     height: 175px;
     width: 250px;
+  }
+}
+
+.rankingAnswer {
+  .eightPainsTitle {
+    text-align: center;
+    color: #2f302f;
+  }
+
+  .eightPainsSubTitle {
+    color: $spanish-blue;
+    text-align: center;
+  }
+  .list-container {
+    display: grid;
+    padding: 1rem;
+    width: 30%;
+    height: 30%;
+    grid-template-rows: 100%;
+    gap: 0.5rem;
+    margin: auto;
+    border-radius: 5px;
+    background-color: $marigold;
+
+    .list-container_item {
+      background-color: #f8f7f2;
+      border-radius: 5px;
+      color: $spanish-blue;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      padding: 0.5rem;
+      border: 0.5px solid $spanish-blue;
+      gap: 10px;
+    }
+    .list-container_item:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+
+    .handlebars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

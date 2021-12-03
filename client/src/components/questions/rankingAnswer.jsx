@@ -1,7 +1,12 @@
-import './Question.scss'
+import React from "react";
+import RankingFunctionality from "./RankingFunctionality.jsx";
 
-function RankingAnswer(props) {
-    return <h1>RankingAnswer</h1>   
+function RankingAnswer() {
+  return (
+    <div className="rankingAnswer">
+      <RankingFunctionality />
+    </div>
+  );
 }
 
-export default RankingAnswer
+export default RankingAnswer;
