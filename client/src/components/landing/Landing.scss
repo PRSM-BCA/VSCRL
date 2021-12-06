@@ -1,37 +1,283 @@
-@import '../styles/global.scss';
+@import "../styles/global.scss";
 
 .Landing {
-    img {
-        width: 180px;
-        height: 60px;
-        display: block;
-        margin: auto auto auto 0;
-        border-bottom: 1px solid $dark-jungle-green;
-    }
+  body {
+    background-color: black;
+  }
 
-    h2 {
+  .navbar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+    gap: 2em;
+    color: white;
+    font-size: 1.3em;
+    background-color: black;
+    padding-top: 3vh;
+    padding-left: 3vw;
+
+    #logo {
+      display: flex;
+      font-size: 3em;
+      color: white;
+    }
+  }
+  .main-section {
+    height: 75vh;
+    padding-top: 30vh;
+    background-color: grey;
+  }
+
+  .curved h1 {
+    font-size: 3rem;
+    color: rgb(255, 166, 0);
+    padding-left: 3vw;
+    padding-bottom: 15vh;
+  }
+
+  .curved svg {
+    display: block;
+  }
+
+  /* underlines active nav element */
+  .navbar > .active {
+    border-bottom: 1px solid rgb(255, 166, 0);
+  }
+
+  .login-section {
+    height: 100vh;
+    background-color: white;
+    padding-top: 10vh;
+
+    .LogIn {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border: solid $marigold;
+      padding: 1.5em;
+      border-radius: 5px;
+      width: 300px;
+      margin: auto;
+      margin-top: 20vh;
+
+      // img {
+      //   width: 180px;
+      //   height: 60px;
+      //   display: block;
+      //   margin: auto auto auto 0;
+      //   border-bottom: 1px solid $dark-jungle-green;
+      // }
+
+      h2 {
         @include body2Style;
-    }
+      }
 
-    form {
+      #inputEmail {
+        border-radius: 5px;
+        max-width: 200px;
+      }
+
+      #inputPass {
+        border-radius: 5px;
+        max-width: 200px;
+      }
+
+      #inputSubmit {
+        border-radius: 5px;
+        max-width: 200px;
+      }
+
+      #inputSubmit:hover {
         background-color: $marigold;
-        padding: 2em;
+      }
+      form {
+        // background-color: $marigold;
+        // padding: 1.5em;
+        // border-radius: 5px;
+        // margin-top: 5vh;
 
         input {
-            @include body1Style(14px, left);
-            margin: 1em auto;
-            padding: .5em;
-            display: block;
-            width: 30vw;
+          @include body1Style(14px, left);
+          margin: 1em auto;
+          padding: 0.5em;
+          display: block;
+          width: 30vw;
         }
 
-        input[type="submit"], button {
-            display: block;
-            margin: 1em auto;
-            @include body1Style(14px, center);
+        input[type="submit"],
+        button {
+          display: block;
+          margin: 1em auto;
+          @include body1Style(14px, center);
         }
+      }
+    }
+  }
+
+  .about-section {
+    height: 100vh;
+    background-color: white;
+    padding-top: 10vh;
+  }
+
+  .brands-section {
+    height: 100vh;
+    background-color: white;
+  }
+
+  .header {
+    color: black;
+    text-align: center;
+    padding-top: 10vh;
+    font-size: 2em;
+  }
+
+  .subheader {
+    color: black;
+    text-align: center;
+    padding-top: 2vh;
+    font-size: 1.5em;
+  }
+
+  .aboutFlexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+
+    /* Mobile responsiveness */
+    @media (max-width: 800px) {
+      .aboutFlexContainer {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .aboutMiniFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aboutImage {
+    width: 200px;
+    text-align: center;
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+
+  .text {
+    color: rgb(255, 166, 0);
+    padding-right: 5vw;
+    padding-left: 5vw;
+    justify-self: center;
+  }
+
+  .description {
+    color: black;
+    max-width: 200px;
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+
+  .brands-section {
+    .brandsTitle {
+      color: black;
+      text-align: center;
+      padding-top: 20vh;
+      font-size: 2em;
     }
 
+    .brandsFlexContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5vh;
+    }
 
+    .brandsMiniFlex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brandsImage {
+      width: 200px;
+      text-align: center;
+      padding-right: 5vw;
+      padding-left: 5vw;
+    }
+
+    .brandsText {
+      color: black;
+      max-width: 200px;
+      padding-right: 5vw;
+      padding-left: 5vw;
+    }
+  }
+
+  .footerFlexContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: $marigold;
+    justify-content: space-around;
+    margin-top: 10vh;
+
+    .footerMiniFlex {
+      display: flex;
+      flex-direction: row;
+
+      .footer-icon {
+        width: 3vw;
+        text-align: center;
+      }
+
+      .footer-contact-type {
+        color: black;
+        max-width: 200px;
+        padding-right: 5vw;
+        
+      }
+    }
+  }
+
+  .stories-section {
+    height: 100vh;
+    /* display: fixed; */
+    background-color: rgb(255, 166, 0);
+
+    .story-placeholder {
+      display: flex;
+      flex-direction: row;
+      margin-left: 10vw;
+      margin-right: 10vw;
+      padding-top: 10vh;
+      gap: 5em;
+    }
+    .story-image {
+      background: white;
+      border-radius: 50%;
+      width: 225px;
+      height: 225px;
+    }
+
+    .story-text {
+      font-size: 2.3rem;
+    }
+    .story-text-author {
+      font-size: 1rem;
+      text-align: right;
+      padding-right: 2vw;
+    }
+  }
 }
-  

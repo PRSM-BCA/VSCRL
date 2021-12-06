@@ -41,6 +41,7 @@ export default function LogIn() {
           >
             {errorMessage && <h2>{errorMessage}</h2>}
             <input
+            id="inputEmail"
               name="emailAddress"
               type="text"
               placeholder="Email Address"
@@ -50,6 +51,7 @@ export default function LogIn() {
               }}
             />
             <input
+            id="inputPass"
               name="password"
               type="password"
               placeholder="Password"
@@ -58,14 +60,14 @@ export default function LogIn() {
                 setNewPassword(evt.target.value)
               }}
             />
-            <input type ="submit" value="Log In" />
+            <input type ="submit" id="inputSubmit" value="Log In" />
           </form>
           <form 
             onSubmit={(evt) => {
                 evt.preventDefault();
                 handleLogOut();
             }}>
-                <input type="submit" value="Log Out"/>
+                {/* <input type="submit" value="Log Out"/> */}
             </form>
         </div>
       )
