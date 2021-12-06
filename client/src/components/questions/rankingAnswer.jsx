@@ -1,4 +1,4 @@
-import React from "react";
+
 import RankingFunctionality from "./RankingFunctionality.jsx";
 
 function RankingAnswer() {

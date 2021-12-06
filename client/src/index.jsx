@@ -1,33 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from './components/landing/Landing';
-import Dashboard from './components/dashboard/Dashboard'
-import KeyWordAnswer from './components/questions/KeyWordAnswer';
-import LongAnswer from './components/questions/LongAnswer';
-import MultipleChoice from './components/questions/MultipleChoice';
-import RankingAnswer from './components/questions/RankingAnswer';
-import ScaleAnswer from './components/questions/ScaleAnswer';
-import SelectImg from './components/questions/SelectImg';
-import ShortAnswer from './components/questions/ShortAnswer';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/KeyWordAnswer" element={<KeyWordAnswer />} />
-        <Route path="/LongAnswer" element={<LongAnswer />} />
-        <Route path="/MultipleChoice" element={<MultipleChoice />} />
-        <Route path="/RankingAnswer" element={<RankingAnswer />} />
-        <Route path="/ScaleAnswer" element={<ScaleAnswer />} />
-        <Route path="/SelectImg" element={<SelectImg />} />
-        <Route path="/ShortAnswer" element={<ShortAnswer />} />
-      </Routes>
-    </BrowserRouter>
+    <App></App>
   </React.StrictMode>,
   document.getElementById('root')
 );

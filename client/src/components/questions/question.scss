@@ -105,12 +105,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
+  background-color: $marigold;
 
   .questionWrapper {
     display: flex;
     align-items: center;
-    border: 3px solid black;
+    
     flex-direction: column;
     justify-content: space-evenly;
     height: 500px;
@@ -120,7 +120,7 @@
   section {
     display: flex;
     align-items: center;
-    background-color: red;
+    background-color: $burnt-orange;
   }
 }
 
@@ -132,7 +132,12 @@
   flex-direction: row;
   gap: 5vw;
   min-width: auto;
+  background-color: $marigold;
   
+  h2{
+    @include headerStyle
+  }
+  // border: solid black;
 
   // child of LongAnswer
   img {
@@ -245,12 +250,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: $burnt-orange;
+
+  h1{
+    @include headerStyle(3em, left, $baby-powder)
+  }
 
   section {
     display: flex;
     align-items: center;
-    border: 3px solid black;
+    
     flex-direction: column;
     gap: 10px;
   }
