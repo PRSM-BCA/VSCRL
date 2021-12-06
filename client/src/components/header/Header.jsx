@@ -10,7 +10,7 @@ import { doc, getDoc } from "@firebase/firestore"
 export default function Header() {
 
     const [isLoggingIn, setLoggingIn] = useState(false)
-    const { login, logout, currentUser, getAllUsers } = useAuth();
+    const { login, logout, currentUser, getUser, getAllUsers } = useAuth();
     const [emailAddress, setEmailAddress] = useState("")
     const [password, setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
@@ -32,17 +32,10 @@ export default function Header() {
 
     useEffect(() => {
 
-        async function getUser(authUid) {
-            const userDoc = await doc(db, "users", authUid)
-            const userSnap = await getDoc(userDoc)
-    
-            return userSnap.data()
-        }
-
         if (currentUser !== null && currentUser !== undefined) {
             getUser(currentUser.uid).then(data => setUserInfo(data))
         }
-    }, [currentUser])
+    }, [currentUser, getUser])
 
     return (
         <div className="Header">
