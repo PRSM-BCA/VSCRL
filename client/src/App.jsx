@@ -13,6 +13,7 @@ import ShortAnswer from './components/questions/ShortAnswer';
 
 export default function App() {
     return (
+    
         <Router>
             <AuthProvider>
                 <Routes>

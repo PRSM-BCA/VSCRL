@@ -1,37 +1,374 @@
-@import '../styles/global.scss';
+@import "../styles/global.scss";
 
+// Remove ride-side margin for entire page
+* {
+  margin-right: 0;
+}
+
+body {
+  margin: 0;
+}
+
+// All styling within landing
 .Landing {
-    img {
-        width: 180px;
-        height: 60px;
-        display: block;
-        margin: auto auto auto 0;
-        border-bottom: 1px solid $dark-jungle-green;
+  overflow-y: hidden;
+
+  .landingContainer {
+    overflow-y: scroll;
+  }
+
+  body {
+    background-color: black;
+  }
+  // -------------------------------Styling for Navbar
+  .navbar {
+    position: fixed;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+    gap: 2em;
+    color: white;
+    font-size: 1.3em;
+    background-color: black;
+    padding-top: 3vh;
+    padding-left: 3vw;
+
+    /* Mobile responsiveness */
+    @media (max-width: 675px) {
+     
+      
+      #aboutLink {
+display: none;
+      }
+
+      #storiesLink {
+display: none;
+      }
+
+      #brandsLink {
+display: none;
+      }
     }
 
-    h2 {
+    #logo {
+      display: flex;
+      font-size: 3em;
+      color: white;
+      gap: 0;
+    }
+  }
+
+  .main-section {
+    height: 100vh;
+
+    .mainCurved {
+      background-color: grey;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      svg {
+        margin-left: 0; right: 0; top: auto; bottom:0;
+        align-self: flex-end;
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: rgb(255, 166, 0);
+        padding-top: 20vh;
+        padding-left: 3vw;
+      }
+    }
+  }
+
+  /* underlines active nav element */
+  .navbar > .active {
+    border-bottom: 1px solid rgb(255, 166, 0);
+  }
+
+  // -------------------------------Styling for Login Section
+  .login-section {
+    height: 100vh;
+    // background-color: greenyellow;
+    padding-top: 10vh;
+
+    .LogIn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      height: 50%;
+      max-width: 25%;
+      padding: 1.5em;
+      border-radius: 30px;
+      border: solid black;
+      margin: auto;
+      margin-top: 15vh;
+
+      /* Mobile responsiveness */
+      @media (max-width: 675px) {
+        border: white;
+      }
+
+      @media (min-width: 675px) {
+        max-width: 20rem;
+      }
+
+      #loginFeature {
+        font-size: 1em;
+        text-align: center;
+      }
+
+      h2 {
         @include body2Style;
-    }
+      }
 
-    form {
-        background-color: $marigold;
-        padding: 2em;
+      #inputEmail {
+        border-radius: 30px;
+        max-width: 200px;
+      }
+
+      #inputPass {
+        border-radius: 30px;
+        max-width: 200px;
+      }
+
+      #inputSubmit {
+        border-radius: 30px;
+        max-width: 200px;
+      }
+
+      #inputSubmit:hover {
+        background: rgb(63, 94, 251);
+        background: radial-gradient(
+          circle,
+          rgba(63, 94, 251, 0.3435749299719888) 0%,
+          rgba(252, 184, 70, 0.938813025210084) 83%
+        );
+      }
+
+      form {
+        // background-color: $marigold;
+        // padding: 1.5em;
+        // border-radius: 5px;
+        // margin-top: 5vh;
 
         input {
-            @include body1Style(14px, left);
-            margin: 1em auto;
-            padding: .5em;
-            display: block;
-            width: 30vw;
+          @include body1Style(14px, left);
+          margin: 1em auto;
+          padding: 0.5em;
+          display: block;
+          width: 30vw;
         }
 
-        input[type="submit"], button {
-            display: block;
-            margin: 1em auto;
-            @include body1Style(14px, center);
+        input[type="submit"],
+        button {
+          display: block;
+          margin: 1em auto;
+          @include body1Style(14px, center);
         }
+      }
+    }
+  }
+
+  // -------------------------------Styling for About Section
+
+  .about-section {
+    height: 100vh;
+
+    .aboutHeaderFlexContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 12vh;
+
+      #header {
+        color: black;
+        text-align: center;
+        font-size: 1.75em;
+      }
+
+      #subheader {
+        color: black;
+        text-align: center;
+        font-size: 1.5em;
+      }
     }
 
+    .aboutFlexContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5vh;
 
+      /* Mobile responsiveness */
+      @media (max-width: 675px) {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .aboutMiniFlex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* Mobile responsiveness */
+        @media (max-width: 675px) {
+          flex-direction: row;
+        }
+
+        .aboutImage {
+          width: 45%;
+          text-align: center;
+          padding-right: 5vw;
+          padding-left: 5vw;
+
+          @media (max-width: 675px) {
+            flex-direction: row;
+            padding-right: 0vw;
+            padding-left: 1vw;
+            width: 30%;
+          }
+        }
+
+        .description {
+          color: black;
+          max-width: 200px;
+          padding-right: 5vw;
+          padding-left: 5vw;
+
+          @media (max-width: 675px) {
+            flex-direction: row;
+            padding-right: 1vw;
+            padding-left: 1vw;
+          }
+
+          #miniHeader {
+            text-align: center;
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+  // -------------------------------Styling for Stories Section
+  .stories-section {
+    height: 100vh;
+    background-color: $marigold;
+
+    .curved {
+      background-color: $marigold;
+      svg {
+        display: block;
+        background-color: $marigold;
+      }
+    }
+
+    .story-placeholder {
+      display: flex;
+      flex-direction: row;
+      margin-left: 10vw;
+      margin-right: 10vw;
+      padding-top: 20vh;
+      gap: 5em;
+
+      .story-image {
+        background: white;
+        border-radius: 50%;
+        width: 225px;
+        height: 225px;
+      }
+
+      .story-text {
+        font-size: 2.3rem;
+        .story-text-author {
+          font-size: 1rem;
+          text-align: right;
+          padding-right: 2vw;
+        }
+      }
+    }
+  }
+
+  // -------------------------------Styling for Brands Section
+
+  .brands-section {
+    height: 100vh;
+
+
+
+    .brandsTitle {
+      color: black;
+      text-align: center;
+      font-size: 2em;
+      padding-top: 20vh;
+    }
+    .brandsFlexContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 7vh;
+
+      /* Mobile responsiveness */
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
+
+      .brandsMiniFlex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .brandsImage {
+          width: 45%;
+          height: auto;
+          text-align: center;
+          padding-right: 5vw;
+          padding-left: 5vw;
+        }
+
+        .brandsText {
+          color: black;
+          max-width: 200px;
+          padding-right: 5vw;
+          padding-left: 5vw;
+        }
+      }
+    }
+    // -------------------------------Styling for Footer Section
+    .footerFlexContainer {
+      display: flex;
+      flex-direction: row;
+      background-color: $marigold;
+      justify-content: space-around;
+      margin-top: 10vh;
+
+      .footerMiniFlex {
+        display: flex;
+        flex-direction: row;
+
+        .footer-icon {
+          width: 3vw;
+          text-align: center;
+        }
+
+        .footer-contact-type {
+          color: black;
+          max-width: 200px;
+          padding-right: 5vw;
+        }
+      }
+    }
+  }
 }
-  
