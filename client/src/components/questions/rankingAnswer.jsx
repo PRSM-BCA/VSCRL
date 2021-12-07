@@ -1,4 +1,3 @@
-
 import RankingFunctionality from "./RankingFunctionality.jsx";
 
 function RankingAnswer() {
