@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { authentication, db } from '../firebase-config'
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
-import { collection, query, doc, setDoc, getDoc, getDocs, where } from "@firebase/firestore"
+import { collection, doc, setDoc, getDoc, getDocs, collectionGroup, where } from "@firebase/firestore"
 
 const AuthContext = React.createContext();
 
@@ -48,9 +48,6 @@ export function AuthProvider({children}) {
         return userSnap.data()
     }
 
-    // Survey Write to database
-
-
     // Grabs all users from Users Collection and logs them
     async function getAllUsers() {
         const querySnapshot = await getDocs(collection(db, "users"))
@@ -58,7 +55,50 @@ export function AuthProvider({children}) {
             console.log(doc.uid, " => ", doc.data())
         })
     }
+    
+    // Get survey from database
+    async function getSurvey(authUid, surveyId) {
+        let surveyRef = await getDocs(collection(db, "surveys/" + surveyId + "/" + authUid))
+        let surveyInfo = []
+        surveyRef.forEach((doc) => {
+            surveyInfo.push(doc.data())
+        })
+        return surveyInfo
+    }
 
+    // Grabs all users from Users Collection and logs them
+    async function getAllSurveys() {
+        const surveyRef = await getDocs(collection(db, "surveys"))
+        let surveyQuestions = []
+        surveyRef.forEach((doc) => {
+            surveyQuestions.push(doc.data())
+        })
+        return surveyQuestions
+    }
+
+    // Grabs survey questions of specific user's survey
+    async function getSurveyQuestions(authUid, surveyId) {
+        let surveyRef = await getDoc(doc(db, "surveys/" + surveyId + "/" + authUid + "/Questions"))
+        return surveyRef.data()
+    }
+
+    // Gets user information from specific survey
+    async function getUserFromSurvey(authUid, surveyId) {
+        let surveyRef = await getDoc(doc(db, "surveys/" + surveyId + "/" + authUid + "/UserInfo"))
+        return surveyRef.data()
+    }
+
+    // Add user record to Survey
+    async function addUserToSurvey(user, authUid, surveyId) {
+        let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, "UserInfo"), {user: user})
+        return surveyRef
+    }
+
+    // Add question collection to specific user survey
+    async function addQuestionToUserSurvey(authUid, surveyId, questionType, questionData) {
+        let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, "Questions"), {[questionType]: questionData})
+        return surveyRef
+    }
 
     // Sets currentUser when Authentication event occurs
     useEffect(() => {
@@ -77,7 +117,13 @@ export function AuthProvider({children}) {
         login,
         logout,
         getUser,
-        getAllUsers
+        getAllUsers,
+        getSurvey,
+        getAllSurveys,
+        getSurveyQuestions,
+        getUserFromSurvey,
+        addUserToSurvey,
+        addQuestionToUserSurvey
     }
 
     return (

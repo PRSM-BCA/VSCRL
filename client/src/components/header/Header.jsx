@@ -10,11 +10,15 @@ import { doc, getDoc } from "@firebase/firestore"
 export default function Header() {
 
     const [isLoggingIn, setLoggingIn] = useState(false)
-    const { login, logout, currentUser, getUser, getAllUsers } = useAuth();
+    const { login, logout, currentUser, getUser, getAllUsers, getSurvey, getSurveyQuestions, getAllSurveys, getUserFromSurvey, addUserToSurvey, addQuestionToUserSurvey } = useAuth();
     const [emailAddress, setEmailAddress] = useState("")
     const [password, setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
     const [userInfo, setUserInfo] = useState("")
+    const [currentSurvey, setCurrentSurvey] = useState("")
+    const [allSurveys, setAllSurveys] = useState("")
+    const [surveyWrite, setSurveyWrite] = useState("")
+    const [addedQuestion, setAddedQuestion] = useState("")
 
     const navigate = useNavigate()
 
@@ -31,16 +35,19 @@ export default function Header() {
 
 
     useEffect(() => {
-
         if (currentUser !== null && currentUser !== undefined) {
-            getUser(currentUser.uid).then(data => setUserInfo(data))
+            getUser(currentUser.uid).then(data => setUserInfo(data))            
+            if (userInfo) {
+                
+            }
         }
-    }, [currentUser, getUser])
+    }, [currentUser, getUser, addUserToSurvey, addQuestionToUserSurvey, getAllSurveys]) 
 
     return (
         <div className="Header">
             <img alt="Site Logo" src={Logo}/>
 
+            
             {console.log(userInfo)}
             {userInfo ? <h1>{userInfo.firstname + " " + userInfo.lastname}</h1> : null}
             {
