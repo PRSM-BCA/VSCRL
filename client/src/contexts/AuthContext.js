@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { authentication, db } from '../firebase-config'
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
-import { collection, doc, setDoc, getDoc, getDocs, collectionGroup, where } from "@firebase/firestore"
+import { collection, doc, setDoc, updateDoc, getDoc, getDocs, arrayUnion } from "@firebase/firestore"
 
 const AuthContext = React.createContext();
 
@@ -13,6 +13,9 @@ export function AuthProvider({children}) {
 
     // CurrentUser from Authentication Collection
     const [currentUser, setCurrentUser] = useState()
+
+    // CurrentBrand from Brand Collection
+    const [currentBrand, setCurrentBrand] = useState()
 
     // Creates user with specific Uid from Authentication Collection
     async function signup(email, password, username, firstname, lastname, dob) {
@@ -89,8 +92,13 @@ export function AuthProvider({children}) {
     }
 
     // Add user record to Survey
-    async function addUserToSurvey(user, authUid, surveyId) {
+    async function addSurvey(user, authUid, surveyId) {
         let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, "UserInfo"), {user: user})
+        console.log("Reached")
+        await updateDoc(doc(db, "users", authUid), {surveyList: arrayUnion({
+            surveyId: surveyId,
+            inProgress: true
+        })}, {capital: true}, {merge: true})
         return surveyRef
     }
 
@@ -99,6 +107,13 @@ export function AuthProvider({children}) {
         let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, "Questions"), {[questionType]: questionData})
         return surveyRef
     }
+
+
+    async function addBrand(brandId, brandName, missionStatement) {
+        let brandRef = await setDoc(doc(db, "brands", brandId), {brandName: brandName, missionStatemnt: missionStatement})
+        return brandRef
+    }
+
 
     // Sets currentUser when Authentication event occurs
     useEffect(() => {
@@ -122,7 +137,7 @@ export function AuthProvider({children}) {
         getAllSurveys,
         getSurveyQuestions,
         getUserFromSurvey,
-        addUserToSurvey,
+        addSurvey,
         addQuestionToUserSurvey
     }
 

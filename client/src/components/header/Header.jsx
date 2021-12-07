@@ -10,7 +10,7 @@ import { doc, getDoc } from "@firebase/firestore"
 export default function Header() {
 
     const [isLoggingIn, setLoggingIn] = useState(false)
-    const { login, logout, currentUser, getUser, getAllUsers, getSurvey, getSurveyQuestions, getAllSurveys, getUserFromSurvey, addUserToSurvey, addQuestionToUserSurvey } = useAuth();
+    const { login, logout, currentUser, getUser, addSurvey } = useAuth();
     const [emailAddress, setEmailAddress] = useState("")
     const [password, setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
@@ -36,19 +36,20 @@ export default function Header() {
 
     useEffect(() => {
         if (currentUser !== null && currentUser !== undefined) {
-            getUser(currentUser.uid).then(data => setUserInfo(data))            
+            console.log("Hello")
+            getUser(currentUser.uid).then(data => setUserInfo(data))  
             if (userInfo) {
-                
+                addSurvey(userInfo, currentUser.uid, "GX7nZYcm4q5qq3drETLm").then(data => setCurrentSurvey(data))          
             }
         }
-    }, [currentUser, getUser, addUserToSurvey, addQuestionToUserSurvey, getAllSurveys]) 
+    }, [currentUser, getUser]) 
 
     return (
         <div className="Header">
             <img alt="Site Logo" src={Logo}/>
 
-            
-            {console.log(userInfo)}
+
+            {console.log(currentSurvey)}            
             {userInfo ? <h1>{userInfo.firstname + " " + userInfo.lastname}</h1> : null}
             {
                 currentUser ? (
