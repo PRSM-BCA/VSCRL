@@ -61,7 +61,7 @@ export default function Profile() {
               type="text"
               placeholder="Email Address"
               required
-              onChange={(evt) => {newEmail=(setNewEmail(evt.target.value))
+              onChange={(evt) => {newEmail = setNewEmail(evt.target.value)
               }}
             />
         </div>
