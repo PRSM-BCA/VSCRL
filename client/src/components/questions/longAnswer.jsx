@@ -8,7 +8,7 @@ function LongAnswer(props) {
       <div className="inputWrapper">
         <h2>
           Describe a typical morning from parking the car to seeing your first
-          patient...
+          patient
         </h2>
         <textarea
           type="text"
