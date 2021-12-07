@@ -1,103 +1,116 @@
-import './Header.scss';
-import React, { useEffect } from 'react'
-import { useAuth } from '../../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
-import Logo from '../landing/Vscrl_Logo.png'
-import { useState } from 'react'
-import { authentication, db } from '../../firebase-config'
-import { doc, getDoc } from "@firebase/firestore"
+import "./Header.scss";
+import React, { useEffect } from "react";
+import { useAuth } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import Logo from "../landing/Vscrl_Logo.png";
+import { useState } from "react";
+import { authentication, db } from "../../firebase-config";
+import { doc, getDoc } from "@firebase/firestore";
+import profileIcon from "./image/PImg.jpg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
+  const [isLoggingIn, setLoggingIn] = useState(false);
+  const { login, logout, currentUser, getUser, addSurvey } = useAuth();
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [userInfo, setUserInfo] = useState("");
+  const [currentSurvey, setCurrentSurvey] = useState("");
+  const [allSurveys, setAllSurveys] = useState("");
+  const [surveyWrite, setSurveyWrite] = useState("");
+  const [addedQuestion, setAddedQuestion] = useState("");
+  const navigate = useNavigate();
 
-    const [isLoggingIn, setLoggingIn] = useState(false)
-    const { login, logout, currentUser, getUser, addSurvey } = useAuth();
-    const [emailAddress, setEmailAddress] = useState("")
-    const [password, setPassword] = useState("")
-    const [errorMessage, setErrorMessage] = useState("")
-    const [userInfo, setUserInfo] = useState("")
-    const [currentSurvey, setCurrentSurvey] = useState("")
-    const [allSurveys, setAllSurveys] = useState("")
-    const [surveyWrite, setSurveyWrite] = useState("")
-    const [addedQuestion, setAddedQuestion] = useState("")
+  async function handleSubmit() {
+    try {
+      setErrorMessage("");
+      await login(emailAddress, password);
+      navigate("/Dashboard", { replace: true });
+    } catch (error) {
+      console.log(error.message);
+      setErrorMessage(error.message);
+    }
+  }
 
-    const navigate = useNavigate()
+  useEffect(() => {
+    if (currentUser !== null && currentUser !== undefined) {
+      getUser(currentUser.uid).then((data) => setUserInfo(data));
+    }
+  }, [currentUser, getUser]);
 
-    async function handleSubmit() {
-        try {
-          setErrorMessage("")
-          await login(emailAddress, password)
-          navigate("/Dashboard", {replace: true})
-        } catch (error) {
-          console.log(error.message)
-          setErrorMessage(error.message)
-        }
-      }
+  return (
+    <div className="Header">
+      <img alt="Site Logo" src={Logo} />
+      <h1>DashBoard</h1>
 
-
-    useEffect(() => {
-        if (currentUser !== null && currentUser !== undefined) {
-            console.log("Hello")
-            getUser(currentUser.uid).then(data => setUserInfo(data))  
-            if (userInfo) {
-                addSurvey(userInfo, currentUser.uid, "GX7nZYcm4q5qq3drETLm").then(data => setCurrentSurvey(data))          
-            }
-        }
-    }, [currentUser, getUser]) 
-
-    return (
-        <div className="Header">
-            <img alt="Site Logo" src={Logo}/>
-
-
-            {console.log(currentSurvey)}            
-            {userInfo ? <h1>{userInfo.firstname + " " + userInfo.lastname}</h1> : null}
-            {
-                currentUser ? (
-                    <div id="signInContainer">
-                        {/*currentUser ? console.log(userInfo) : <h2>No current user</h2>*/}
-                        <button onClick={() => {
-                            logout()
-                            setUserInfo("")
-                        }}>Logout</button>
-                    </div>
-                ) 
-                :
-                (
-                    <div id="signInContainer">
-
-                        {
-                            isLoggingIn ? (
-                                <form name="logInForm" onSubmit={(evt) => {
-                                    evt.preventDefault()
-                                    handleSubmit()
-                                    setLoggingIn(false)
-                                }}>
-                                    <input type="text" placeholder="Email Address" onChange={ (evt) => {
-                                        setEmailAddress(evt.target.value)
-                                    }}/>
-                                    <input type="password" placeholder="Password" onChange={ (evt) => {
-                                        setPassword(evt.target.value)
-                                    }}/>
-                                    <input type="submit" value="Log In" />
-                                </form>
-                            )
-                             : (
-                                null
-                             )
-                        }
-
-
-                        <button disabled={isLoggingIn} onClick={() => {
-                            setLoggingIn(true)
-                            //navigate("/")
-                        }}>Log In</button>
-
-                        <button onClick={() => {
-                            navigate("/")
-                        }}>Sign Up</button>
-                    </div>
-                )
-            }
+      {console.log(userInfo)}
+      {/* {userInfo ? (
+        // <h1>{userInfo.firstname + " " + userInfo.lastname}</h1>
+      ) : null} */}
+      {currentUser ? (
+        <div id="signInContainer">
+          {/* currentUser ? console.log(userInfo) : <h2>No current user</h2> */}
+          <button
+            onClick={() => {
+              logout();
+              setUserInfo("");
+            }}
+          >
+            Logout
+          </button>
+          <Link to="/Profile">
+            <img className="profileImg" src={profileIcon} alt="proflieIMG" />
+          </Link>
         </div>
-    )
+      ) : (
+        <div id="signInContainer">
+          {isLoggingIn ? (
+            <form
+              name="logInForm"
+              onSubmit={(evt) => {
+                evt.preventDefault();
+                handleSubmit();
+                setLoggingIn(false);
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Email Address"
+                onChange={(evt) => {
+                  setEmailAddress(evt.target.value);
+                }}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={(evt) => {
+                  setPassword(evt.target.value);
+                }}
+              />
+              <input type="submit" value="Log In" />
+            </form>
+          ) : null}
+
+          <button
+            disabled={isLoggingIn}
+            onClick={() => {
+              setLoggingIn(true);
+              //navigate("/")
+            }}
+          >
+            Log In
+          </button>
+
+          <button
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Sign Up
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }

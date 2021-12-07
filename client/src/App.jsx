@@ -10,7 +10,8 @@ import RankingAnswer from './components/questions/RankingAnswer';
 import ScaleAnswer from './components/questions/ScaleAnswer';
 import SelectImg from './components/questions/SelectImg';
 import ShortAnswer from './components/questions/ShortAnswer';
-
+import Profile from './components/profilePage/Profile';
+import Mockbrand from './components/brandPage/Mockbrand';
 export default function App() {
     return (
     
@@ -26,6 +27,8 @@ export default function App() {
                     <Route path="/ScaleAnswer" element={<ScaleAnswer />} />
                     <Route path="/SelectImg" element={<SelectImg />} />
                     <Route path="/ShortAnswer" element={<ShortAnswer />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/mockBrand" element={<Mockbrand />} />
                 </Routes>
             </AuthProvider>
         </Router>

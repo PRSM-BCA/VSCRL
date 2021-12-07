@@ -1,0 +1,46 @@
+@import "../styles/global.scss";
+
+
+
+.ProfileWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include body1Style;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.header {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  background-color: black;
+  @include headerStyle($fontSize: 15px, $alignment: center, $textColor: white);
+
+h1{
+    margin: 10px;
+}
+
+  img{
+      height: 10vh;
+  }
+}
+
+.profileBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+  margin-top: 10vh;
+  width: 60vw;
+
+
+  img{
+      height: 20vh;
+  }
+}
