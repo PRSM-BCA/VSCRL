@@ -2,7 +2,7 @@ import React from "react";
 import hiker from "../media/hiker.jpeg";
 import sneakers from "../media/sneakers.jpeg";
 import tent from "../media/tent.jpeg";
-import Footer from "../Footer";
+// import Footer from "../Footer";
 
 function Brands() {
   return (
@@ -32,7 +32,7 @@ function Brands() {
             </p>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

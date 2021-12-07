@@ -18,6 +18,7 @@ function Navbar() {
 
       <Link
         activeClass="active"
+        id="loginLink"
         to="login"
         spy={true}
         smooth={true}
@@ -30,6 +31,7 @@ function Navbar() {
 
       <Link
         activeClass="active"
+        id="aboutLink"
         to="about"
         spy={true}
         smooth={true}
@@ -41,6 +43,7 @@ function Navbar() {
 
       <Link
         activeClass="active"
+        id="storiesLink"
         to="stories"
         spy={true}
         smooth={true}
@@ -52,6 +55,7 @@ function Navbar() {
 
       <Link
         activeClass="active"
+        id="brandsLink"
         to="brands"
         spy={true}
         smooth={true}
