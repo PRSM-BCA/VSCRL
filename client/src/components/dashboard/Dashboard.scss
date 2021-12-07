@@ -1,5 +1,10 @@
 @import '../styles/global.scss';
 
+* {
+    margin-right: 0;
+  }
+  
+
 nav {
     display: flex;
     margin: 1em;
@@ -20,4 +25,116 @@ nav {
         text-decoration: underline $spanish-blue;
     }
 
+}
+
+.featuredBrandsWrapper{
+   background-color: white;
+
+   h1{
+       @include headerStyle
+   }
+
+}
+
+
+
+
+
+.featureSection{
+    display: flex;
+    
+    align-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    
+
+
+    div{
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5rem;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90vw;
+        height: 12.5rem;
+        margin: 6.25rem;
+        
+
+        
+    }
+    h1{
+            
+        @include headerStyle($baby-powder)
+    }
+
+    p{
+        @include body1Style($baby-powder)
+    }
+}
+
+.YourSection{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 18.75rem;
+    
+    h1{
+            
+        @include headerStyle
+    }
+
+    p{
+        @include body1Style
+    }
+}
+.featureBox{
+    display: flex;
+    flex-direction: column;
+    border: black solid 1px;
+    border-radius: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    width: 18.76rem;
+    height: 40vh;
+   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2N7TVqOniivrkh_Jbi-ZsGX_f3EKiz-Efsw&usqp=CAU);
+   background-position: center;
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: cover;
+
+}
+.textDiv{
+    
+    background-color: transparentize($color: white, $amount: .5);
+    border-radius: 1rem;
+    width: 101%;
+    height: 15vh;
+}
+
+.textBox{
+    background-color:white;
+
+}
+
+.featureBox1{
+background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSopP1Juj5fq_eYBDnveT95Y94YhVMu1VR6yAIB5LboHNzpTvezb-5lShbnq3asvCiKYw&usqp=CAU);
+background-position: center;
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover;
+}
+.featureBox2{
+    background-image: url(https://cdn1.360cities.net/pano/richard-chesher/01432616_mato-reef-pass2-jpg/equirect_crop_3_1/6.jpg);
+background-position: center;
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover;
+    
+}
+.featureBox3{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFFMQz5i093IDOlol8Y3S5PrBiO7PLGQKgUg&usqp=CAU);
+background-position: center;
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover;
 }
