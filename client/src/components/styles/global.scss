@@ -6,9 +6,7 @@ $indigo-dye: #043962;
 $dark-jungle-green: #1C211C;
 
 @mixin headerStyle($fontSize: 24px, $alignment: center, $textColor: $dark-jungle-green)  {
-    font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
-    font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
     color: $textColor;
     text-align: $alignment;
@@ -16,9 +14,7 @@ $dark-jungle-green: #1C211C;
 }
 
 @mixin body1Style($fontSize: 14px, $alignment: center, $textColor: $dark-jungle-green)  {
-    font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
-    font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
     color: $textColor;
     text-align: $alignment;
@@ -26,9 +22,7 @@ $dark-jungle-green: #1C211C;
 }
 
 @mixin body2Style($fontSize: 14px, $alignment: center, $textColor: $dark-jungle-green)  {
-    font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
-    font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
     color: $dark-jungle-green;
     text-align: $alignment;
@@ -36,9 +30,7 @@ $dark-jungle-green: #1C211C;
 }
 
 @mixin bulletsStyle($fontSize: 12px, $alignment: center, $textColor: $indigo-dye)  {
-    font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
-    font-family: 'Montserrat', sans-serif;
     font-size: $fontSize;
     color: $indigo-dye;
     text-align: $alignment;

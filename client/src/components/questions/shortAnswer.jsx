@@ -1,41 +1,165 @@
 import "./Question.scss";
+import { useEffect, useState } from "react";
+import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 
 function ShortAnswer(props) {
-  return (
-    <div className="ShortAnswer">
-      <form>
-        <h3>List 3 frustrations about your footwear</h3>
-        <div className="questionWrapper">
-        <section>
-          #1
-          <textarea
-            type="text"
-            name="question answer 1"
-            placeholder="I'm frustrated by..."
-          ></textarea>
-        </section>
+  const { currentUser, getUser } = useAuth();
+  const [userInfo, setUserInfo] = useState("");
+  const [question1, setQuestion1] = useState("");
+  const [question2, setQuestion2] = useState("");
+  const [question3, setQuestion3] = useState("");
+  const [questionPrompt, setQuestionPrompt] = useState("");
 
-        <section>
-          #2
-          <textarea
-            type="text"
-            name="question answer 2"
-            placeholder="I'm frustrated by..."
-          ></textarea>
-        </section>
+  useEffect(() => {
+    if (currentUser && !userInfo) {
+      getUser(currentUser.uid).then((data) => setUserInfo(data));
+    }
+  }, [getUser, userInfo, currentUser]);
 
-        <section>
-          #3
-          <textarea
-            type="text"
-            name="question answer 3"
-            placeholder="I'm frustrated by..."
-          ></textarea>
-        </section>
+  if (userInfo.usertype === "admin") {
+    return (
+      <AuthProvider>
+        <div className="ShortAnswer">
+          <div className="mainContainer">
+            <h1>
+              Short Answer <i>(Admin)</i>
+            </h1>
+            <div className="questionWrapper">
+              <input
+                id="questionPrompt"
+                type="text"
+                placeholder="Enter question prompt here..."
+                onChange={(evt) => {
+                  setQuestionPrompt(evt.target.value)
+                }}
+              />
+              <section>
+                <p>
+                  <i>#1</i>
+                </p>
+                <input
+                  disabled
+                  className="questionInput"
+                  type="text"
+                  name="question answer 1"
+                  placeholder="User answer goes here..."
+                />
+              </section>
+
+              <section>
+                <p>
+                  <i>#2</i>
+                </p>
+                <input
+                  disabled
+                  className="questionInput"
+                  type="text"
+                  name="question answer 2"
+                  placeholder="User answer goes here..."
+                />
+              </section>
+
+              <section>
+                <p>
+                  <i>#3</i>
+                </p>
+                <input
+                  disabled
+                  className="questionInput"
+                  type="text"
+                  name="question answer 3"
+                  placeholder="User answer goes here..."
+                />
+              </section>
+            </div>
+          </div>
+          { !questionPrompt ?
+            (
+              <button disabled type="submit" onClick={() => {}}>
+                Enter Question Info
+              </button>
+            )
+            : (
+              <button className="active" type="submit" onClick={() => {}}>
+                Enter Question Info
+              </button>
+            )
+          }
         </div>
-      </form>
-    </div>
-  );
+      </AuthProvider>
+    );
+  } else {
+    return (
+      <AuthProvider>
+        <div className="ShortAnswer">
+          <div className="mainContainer">
+            <h1>
+              Short Answer <i>(Key User)</i>
+            </h1>
+            <div className="questionWrapper">
+              <h2 id="questionPrompt">Question Prompt</h2>
+              <section>
+                <p>
+                  <i>#1</i>
+                </p>
+                <input
+                  className="questionInput"
+                  type="text"
+                  name="question answer 1"
+                  placeholder="Type answer here..."
+                  onChange={(evt) => {
+                    setQuestion1(evt.target.value);
+                  }}
+                />
+              </section>
+
+              <section>
+                <p>
+                  <i>#2</i>
+                </p>
+                <input
+                  className="questionInput"
+                  type="text"
+                  name="question answer 2"
+                  placeholder="Type answer here..."
+                  onChange={(evt) => {
+                    setQuestion2(evt.target.value);
+                  }}
+                />
+              </section>
+
+              <section>
+                <p>
+                  <i>#3</i>
+                </p>
+                <input
+                  className="questionInput"
+                  type="text"
+                  name="question answer 3"
+                  placeholder="Type answer here..."
+                  onChange={(evt) => {
+                    setQuestion3(evt.target.value);
+                  }}
+                />
+              </section>
+            </div>
+          </div>
+          { question1 && question2 && question3 ?
+            (
+              <button className="active" type="submit" onClick={() => {}}>
+                Enter Question Info
+              </button>
+            )
+            : (
+              <button disabled type="submit" onClick={() => {}}>
+              Enter Question Info
+            </button>
+            )
+          }
+        </div>
+      </AuthProvider>
+    );
+  }
 }
 
 export default ShortAnswer;
