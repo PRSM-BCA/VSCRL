@@ -65,15 +65,24 @@ display: none;
   .main-section {
     height: 100vh;
 
-    .mainCurved {
-      background-color: grey;
+
+    .videoBackground {
+      position: absolute;
       height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .curvedContainer {
       display: flex;
+      height: 100vh;
+      width: 100vw;
       flex-direction: column;
       justify-content: space-between;
+    }
 
       svg {
-        margin-left: 0; right: 0; top: auto; bottom:0;
         align-self: flex-end;
       }
 
@@ -83,7 +92,7 @@ display: none;
         padding-top: 20vh;
         padding-left: 3vw;
       }
-    }
+    
   }
 
   /* underlines active nav element */
