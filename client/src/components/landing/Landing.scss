@@ -1,6 +1,6 @@
 @import "../styles/global.scss";
 
-// Remove ride-side margin for entire page
+// Remove right side margin for entire page
 * {
   margin-right: 0;
 }
@@ -33,24 +33,24 @@ body {
     gap: 2em;
     color: white;
     font-size: 1.3em;
-    background-color: black;
+    background-color: #1e2227;
     padding-top: 3vh;
     padding-left: 3vw;
+    font-family: 'Merriweather', serif;
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
-     
-      
       #aboutLink {
-display: none;
+        display: none;
+      
       }
 
       #storiesLink {
-display: none;
+        display: none;
       }
 
       #brandsLink {
-display: none;
+        display: none;
       }
     }
 
@@ -64,6 +64,7 @@ display: none;
 
   .main-section {
     height: 100vh;
+   
 
     .mainCurved {
       background-color: grey;
@@ -73,16 +74,30 @@ display: none;
       justify-content: space-between;
 
       svg {
-        margin-left: 0; right: 0; top: auto; bottom:0;
+        margin-left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
         align-self: flex-end;
       }
 
       h1 {
         font-size: 3rem;
-        color: rgb(255, 166, 0);
+        color: $marigold;
         padding-top: 20vh;
         padding-left: 3vw;
+      
       }
+//------------------styling for importing video
+      // iframe {
+      //   object-fit: cover;
+      //   width: 100vw;
+      //   height: 100vh;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   z-index: -1;
+      // }
     }
   }
 
@@ -187,18 +202,19 @@ display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 12vh;
+      padding-top: 15vh;
 
       #header {
         color: black;
         text-align: center;
-        font-size: 1.75em;
+        font-size: 1.85em;
       }
 
       #subheader {
         color: black;
         text-align: center;
         font-size: 1.5em;
+        font-family: 'Merriweather', serif;
       }
     }
 
@@ -220,6 +236,7 @@ display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-family: 'Merriweather', serif;
 
         /* Mobile responsiveness */
         @media (max-width: 675px) {
@@ -245,6 +262,7 @@ display: none;
           max-width: 200px;
           padding-right: 5vw;
           padding-left: 5vw;
+          font-family: 'Merriweather', serif;
 
           @media (max-width: 675px) {
             flex-direction: row;
@@ -254,7 +272,9 @@ display: none;
 
           #miniHeader {
             text-align: center;
-            font-size: 1.5em;
+            font-size: 1.2em;
+            color: $marigold;
+          
           }
         }
       }
@@ -304,8 +324,6 @@ display: none;
   .brands-section {
     height: 100vh;
 
-
-
     .brandsTitle {
       color: black;
       text-align: center;
@@ -347,28 +365,36 @@ display: none;
       }
     }
     // -------------------------------Styling for Footer Section
-    .footerFlexContainer {
-      display: flex;
-      flex-direction: row;
-      background-color: $marigold;
-      justify-content: space-around;
-      margin-top: 10vh;
+    
+    
+    // .footerFlexContainer {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-between;
+    //   margin-bottom: 0;
+   
+     
 
-      .footerMiniFlex {
-        display: flex;
-        flex-direction: row;
+    //   svg {
+    //     position: absolute;
+    //     margin-left: 0;
+    //     right: 0;
+    //   }
 
-        .footer-icon {
-          width: 3vw;
-          text-align: center;
-        }
+    //   .footerMiniFlex {
+    //     display: flex;
+    //     flex-direction: row;
+    
 
-        .footer-contact-type {
-          color: black;
-          max-width: 200px;
-          padding-right: 5vw;
-        }
-      }
-    }
+
+    //     .footer-contact-type {
+    //       color: black;
+    //       max-width: 200px;
+    //       padding-right: 5vw;
+    //     }
+    //   }
+    // }
   }
 }
+
+

@@ -21,6 +21,7 @@ function About() {
             <img className="aboutImage" src={adventure} />
             <p className="description">
               <i id="miniHeader">Live Your Passion</i> 
+              &nbsp;
               <br />Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Iaculis nunc sed augue lacus.
