@@ -66,18 +66,24 @@ body {
     height: 100vh;
    
 
-    .mainCurved {
-      background-color: grey;
+
+    .videoBackground {
+      position: absolute;
       height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .curvedContainer {
       display: flex;
+      height: 100vh;
+      width: 100vw;
       flex-direction: column;
       justify-content: space-between;
+    }
 
       svg {
-        margin-left: 0;
-        right: 0;
-        top: auto;
-        bottom: 0;
         align-self: flex-end;
       }
 
@@ -88,17 +94,7 @@ body {
         padding-left: 3vw;
       
       }
-//------------------styling for importing video
-      // iframe {
-      //   object-fit: cover;
-      //   width: 100vw;
-      //   height: 100vh;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   z-index: -1;
-      // }
-    }
+    
   }
 
   /* underlines active nav element */

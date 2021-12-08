@@ -1,11 +1,14 @@
 import React from "react";
-import distantHikers from "../media/distantHikers.png";
+import VideoBackground from '../media/pexels-tima-miroshnichenko-5916543.mp4'
 
 function Login() {
   return (
     <>
       <div className="main-section" id="main">
-        <div className="mainCurved">
+        <video autoPlay muted loop className="videoBackground" >
+          <source src={VideoBackground} type="video/mp4" />
+        </video>
+        <div className="curvedContainer">
           <h1>
             Connect with your favorite brands,
             <br /> get <i>rewarded</i> for living your passion.
