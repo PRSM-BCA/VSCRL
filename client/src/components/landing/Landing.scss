@@ -69,7 +69,7 @@ body {
 
   .main-section {
     height: 175vh;
-
+    
 
     .videoBackground {
       position: absolute;
@@ -130,8 +130,6 @@ body {
       /* Mobile responsiveness */
       @media (max-width: 675px) {
         flex-direction: column;
-       
-
       }
 
       .aboutMiniFlex {
@@ -199,18 +197,17 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
+
       height: 50%;
       max-width: 25%;
       padding: 1.5em;
       border-radius: 30px;
-     
+
       margin: auto;
       margin-top: 15vh;
 
       /* Mobile responsiveness */
       @media (max-width: 675px) {
-        
       }
 
       @media (min-width: 675px) {
@@ -242,12 +239,7 @@ body {
       }
 
       #inputSubmit:hover {
-        background: rgb(63, 94, 251);
-        background: radial-gradient(
-          circle,
-          rgba(63, 94, 251, 0.3435749299719888) 0%,
-          rgba(252, 184, 70, 0.938813025210084) 83%
-        );
+        background-color: #b85000;
       }
 
       form {
@@ -272,45 +264,48 @@ body {
   // -------------------------------Styling for How-It-Works Section
 
   .how-it-works-section {
-    height: 150vh;
-    background-color: $burnt-orange;
+    height: 170vh;
+    background-color: #f8f7f2;
 
     #howTitle {
       font-size: 4em;
       margin: 0;
-      padding-left: 10vw;
+     
+      padding-left: 8vw;
+      color: #1c211c;
     }
 
     //--------------styling for HowToSteps component
     .howToSteps {
       display: grid;
-      grid-template-columns: repeat(6, 0.5fr);
+      grid-template-columns: repeat(2, 0.5fr);
       grid-template-rows: repeat(4, 0.1fr);
-      max-width: 80vw;
-      max-height: 60vh;
-      margin: auto;
-      gap: 3vh;
+      width: 80vw;
+      height: 60vh;
+     margin-left: 13vw;
+      padding-top: 7vh;
+     
 
       .step {
-        border-right: 12px solid black;
-        border-top: solid $marigold;
-
+        justify-self: start;
+        border-left: solid $marigold;
 
         p {
-          font-size: 1.2em;
+          font-size: 2em;
+          color: #1c211c;
         }
       }
 
       .stepOne {
-        grid-column: 1/ 3;
+        grid-column: 1/ 2;
         grid-row: 2 / 2;
         text-align: left;
-        font-size: 1em;
-
         padding: 0.5em;
+
         @media (max-width: 675px) {
-          grid-column: 1/ 4;
+          grid-column: 1/ 1;
           grid-row: 1 / 1;
+          border-bottom: solid $marigold;
         }
       }
 
@@ -318,47 +313,47 @@ body {
         grid-column: 2/ 4;
         grid-row: 3/ 3;
         text-align: left;
-
         padding: 0.5em;
+
         @media (max-width: 675px) {
-          grid-column: 1/ 4;
+          grid-column: 1/ 2;
           grid-row: 2 / 2;
+          border-bottom: solid $marigold;
         }
       }
       .stepThree {
-        grid-column: 3/5;
+        grid-column: 1/2;
         grid-row: 4/4;
         text-align: left;
-
         padding: 0.5em;
+
         @media (max-width: 675px) {
-          grid-column: 1/ 4;
+          grid-column: 1/ 2;
           grid-row: 3/ 3;
+          border-bottom: solid $marigold;
         }
       }
 
       .stepFour {
-        grid-column: 4/7;
+        grid-column: 2/3;
         grid-row: 5/5;
         text-align: left;
-
         padding: 0.5em;
+
         @media (max-width: 675px) {
-          grid-column: 1/ 4;
+          grid-column: 1/ 2;
           grid-row: 4 / 4;
+          border-bottom: solid $marigold;
         }
       }
     }
   }
-
-
 
   // -------------------------------Styling for Stories Section
   .stories-section {
     height: 100vh;
     background-color: $marigold;
 
-    
     .story-placeholder {
       display: flex;
       flex-direction: row;
@@ -367,7 +362,6 @@ body {
       padding-top: 10vh;
       gap: 5em;
       max-width: 100vw;
-   
 
       @media (max-width: 675px) {
         flex-direction: column;
@@ -382,7 +376,7 @@ body {
 
       .story-text {
         font-size: 2.3rem;
-        
+
         .story-text-author {
           font-size: 1rem;
           text-align: right;
@@ -408,10 +402,9 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      
+
       margin-top: 7vh;
       width: 98.7vw;
-     
 
       /* Mobile responsiveness */
       @media (max-width: 675px) {
@@ -450,7 +443,6 @@ body {
     position: relative;
     padding-top: 25vh;
 
-
     .footerFlexContainer {
       display: flex;
       flex-direction: row;
@@ -466,8 +458,6 @@ body {
         .footer-contact-type {
           color: white;
           max-width: 200px;
-         
-          
         }
       }
     }
@@ -478,8 +468,6 @@ body {
       bottom: 0;
       width: 100vw;
       z-index: -1;
-    
-     
     }
   }
 }
