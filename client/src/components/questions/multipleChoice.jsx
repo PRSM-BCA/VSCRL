@@ -2,6 +2,9 @@ import './Question.scss'
 import { Link } from 'react-router-dom'
 
 function MultipleChoice(props) {
+
+    
+
     return (
     
     <div className="MultipleChoice">

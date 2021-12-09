@@ -13,7 +13,6 @@ import Brands from "./Sections/Brands";
 import Stories from "./Sections/Stories";
 
 function Landing() {
-  // const [additionalPage, setAdditionalPage] = useState(false)
   return (
     
       <div className="Landing">
