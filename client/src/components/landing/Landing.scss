@@ -13,14 +13,12 @@ body {
 // All styling within landing
 .Landing {
   overflow-y: hidden;
+  overflow-x: hidden;
 
   .landingContainer {
     overflow-y: scroll;
   }
 
-  body {
-    background-color: black;
-  }
   // -------------------------------Styling for Navbar
   .navbar {
     position: fixed;
@@ -68,9 +66,12 @@ body {
   // -------------------------------Styling for MAIN SECTION
 
   .main-section {
-    height: 175vh;
-    
+    height: 100vh;
 
+    /* Mobile responsiveness */
+    @media (max-width: 675px) {
+      height: auto;
+    }
     .videoBackground {
       position: absolute;
       height: 100vh;
@@ -98,13 +99,22 @@ body {
       padding-top: 20vh;
       padding-left: 3vw;
     }
+  }
+
+  // ------------------------------Info section page
+
+  .icon-section {
+    height: 100vh;
+    @media (max-width: 675px) {
+      height: 150vh;
+    }
 
     .aboutHeaderFlexContainer {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 3vh;
+      padding-top: 5vh;
 
       #header {
         color: black;
@@ -119,12 +129,12 @@ body {
         font-family: "Merriweather", serif;
       }
     }
-
     .aboutFlexContainer {
       display: flex;
       flex-direction: row;
       margin-top: 5vh;
-      width: 75%;
+      max-width: 900px;
+      max-height: 300px;
       margin: auto;
 
       /* Mobile responsiveness */
@@ -140,7 +150,6 @@ body {
         font-family: "Merriweather", serif;
         padding-left: 3vw;
         padding-right: 3vw;
-        padding-top: 2vh;
         padding-bottom: 2vh;
 
         /* Mobile responsiveness */
@@ -149,14 +158,14 @@ body {
         }
 
         .aboutImage {
-          width: 45%;
+          max-width: 125px;
           text-align: center;
+          min-height: 0;
 
           @media (max-width: 675px) {
             flex-direction: row;
             padding-right: 0vw;
             padding-left: 1vw;
-            width: 30%;
           }
         }
 
@@ -164,6 +173,7 @@ body {
           color: black;
           max-width: 200px;
           font-family: "Merriweather", serif;
+          min-height: 0;
 
           @media (max-width: 675px) {
             flex-direction: row;
@@ -175,6 +185,7 @@ body {
             text-align: center;
             font-size: 1.2em;
             color: $marigold;
+            min-height: 0;
           }
         }
       }
@@ -267,10 +278,15 @@ body {
     height: 170vh;
     background-color: #f8f7f2;
 
+    /* Mobile responsiveness */
+    @media (max-width: 675px) {
+      height: 260vh;
+    }
+
     #howTitle {
       font-size: 4em;
       margin: 0;
-     
+
       padding-left: 8vw;
       color: #1c211c;
     }
@@ -282,9 +298,8 @@ body {
       grid-template-rows: repeat(4, 0.1fr);
       width: 80vw;
       height: 60vh;
-     margin-left: 13vw;
+      margin-left: 13vw;
       padding-top: 7vh;
-     
 
       .step {
         justify-self: start;
@@ -404,11 +419,13 @@ body {
       justify-content: space-around;
 
       margin-top: 7vh;
-      width: 98.7vw;
+      width: 100vw;
 
       /* Mobile responsiveness */
       @media (max-width: 675px) {
         flex-direction: column;
+        gap: 1vh;
+        justify-self: center;
       }
 
       .brandsMiniFlex {
@@ -417,8 +434,12 @@ body {
         justify-content: space-around;
         align-items: center;
 
+        @media (max-width: 675px) {
+          flex-direction: row;
+        }
+
         .brandsImage {
-          width: 45%;
+          width: 20vw;
           height: auto;
           text-align: center;
           padding-right: 5vw;
@@ -436,6 +457,13 @@ body {
   }
   // -------------------------------Styling for Footer Section
 
+  .bottom-tag {
+    h1 {
+      padding-top: 15vh;
+      margin-left: 5vw;
+      padding-bottom: 10vh;
+    }
+  }
   .footerWrapper {
     display: flex;
     flex-direction: column;
@@ -457,7 +485,10 @@ body {
 
         .footer-contact-type {
           color: white;
-          max-width: 200px;
+          margin-bottom: 2vh;
+          @media (max-width: 675px) {
+            font-size: 20%;
+          }
         }
       }
     }

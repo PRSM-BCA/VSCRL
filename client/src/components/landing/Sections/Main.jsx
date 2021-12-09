@@ -1,5 +1,5 @@
 import React from "react";
-import VideoBackground from '../media/pexels-tima-miroshnichenko-5916543.mp4'
+import VideoBackground from "../media/pexels-tima-miroshnichenko-5916543.mp4";
 import adventure from "../media/adventure.png";
 import brainstorm from "../media/brainstorm.png";
 import discount from "../media/discount.png";
@@ -8,7 +8,7 @@ function Login() {
   return (
     <>
       <div className="main-section" id="main">
-        <video autoPlay muted loop className="videoBackground" >
+        <video autoPlay muted loop className="videoBackground">
           <source src={VideoBackground} type="video/mp4" />
         </video>
         <div className="curvedContainer">
@@ -24,6 +24,9 @@ function Login() {
             ></path>
           </svg>
         </div>
+      </div>
+
+      <div className="icon-section">
         <div className="aboutHeaderFlexContainer">
           <p id="header">
             {" "}
@@ -37,11 +40,12 @@ function Login() {
           <div className="aboutMiniFlex">
             <img className="aboutImage" src={adventure} />
             <p className="description">
-              <i id="miniHeader">Live Your Passion</i> 
+              <i id="miniHeader">Live Your Passion</i>
               &nbsp;
-              <br />Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Iaculis nunc sed augue lacus.
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Iaculis nunc sed augue lacus.
             </p>
           </div>
           <div className="aboutMiniFlex">
@@ -49,9 +53,10 @@ function Login() {
             {/* <p className="text">Empathic insights</p> */}
             <p className="description">
               <i id="miniHeader">Empathic Insights</i>
-              <br />Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Iaculis nunc sed augue lacus.
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Iaculis nunc sed augue lacus.
             </p>
           </div>
           <div className="aboutMiniFlex">
@@ -59,14 +64,13 @@ function Login() {
             {/* <p className="text">Brand rewards</p> */}
             <p className="description">
               <i id="miniHeader">Brand Rewards</i>
-              <br />Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Iaculis nunc sed augue lacus.
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Iaculis nunc sed augue lacus.
             </p>
           </div>
         </div>
-
-
       </div>
     </>
   );

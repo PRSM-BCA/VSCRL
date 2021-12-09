@@ -26,7 +26,8 @@ function HowToSteps() {
         </div>
         <div className="stepThree step">
           <h1>Step 3.</h1>
-          <p>Join customer discovery.</p>
+          <p>Share your insights and
+            <br />join customer discovery.</p>
         </div>
         <div className="stepFour step">
           <h1>Step 4.</h1>
