@@ -8,84 +8,85 @@ import { useNavigate } from "react-router-dom";
 export default function Dashboard() {
   return (
     <AuthProvider>
-      <div>
+      <div className="dashBoard">
         <Header></Header>
-
+        <section className="headerVideo"></section>
         <div className="featuredBrandsWrapper">
-          <section>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-              <path
-                fill="black"
-                fill-opacity="1"
-                d="M0,64L360,32L720,96L1080,128L1440,224L1440,0L1080,0L720,0L360,0L0,0Z"
-              ></path>
-            </svg>
-          </section>
-
-
-          <h1>Your surveys</h1>
+          <h1 className="sectionTitle">Brand Love</h1>
           <section className="YourSection">
-            <div className="featureBox">
-            <div className="textDiv">
-              <h2>Lorem ipsum dolor</h2>
-
-              <Link to="/mockBrand">View more</Link>
+            <div className="BrandLoveBox1">
+              <h2>Spare two cents?</h2>
+              <div className="textDiv">
+                <p>Discover how your insights earn rewards.</p>
               </div>
             </div>
-            <div className="featureBox">
-            <div className="textDiv">
-              <h2>Lorem ipsum dolor</h2>
 
-              <Link to="/mockBrand">View more</Link>
+            <div className="BrandLoveBox">
+              <h2>Medical Footwear</h2>
+              <div className="couponDiv">
+                <p>30% off</p>
               </div>
             </div>
-            <div className="featureBox">
-            <div className="textDiv">
-              <h2>Lorem ipsum dolor</h2>
 
-              <Link to="/mockBrand">View more</Link>
+            <div className="BrandLoveBox">
+              <h2>Lorem ipsum dolor</h2>
+              <div className="couponDiv">
+                <p>20% off</p>
+              </div>
+            </div>
+
+            <div className="BrandLoveBox">
+              <h2>TBT</h2>
+              <div className="couponDiv">
+                <p>Coming soon</p>
               </div>
             </div>
           </section>
 
-
-          <h1>Featured brands</h1>
+          <h1 className="real1">Real people.</h1>
+          <h1 className="real2">Real Stories.</h1>
           <section className="featureSection">
+
             <div className="featureBox1">
-              <h2>Lorem ipsum dolor</h2>
               <div className="textBox">
+              <h2>Skida:</h2>
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Repellat numquam libero maxime unde molestiae repellendus aut
-                  exercitationem eveniet, rem beatae provident earum, ipsa
-                  explicabo, repudiandae nihil quam eos aspernatur vel.
+                  exercitationem eveniet,
                 </p>
-                <Link to="/mockBrand">View more</Link>
+          
               </div>
             </div>
+
             <div className="featureBox2">
-              <h2>Lorem ipsum dolor</h2>
               <div className="textBox">
+              <h2>Yeti:</h2>
+
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Repellat numquam libero maxime unde molestiae repellendus aut
-                  exercitationem eveniet, rem beatae provident earum, ipsa
-                  explicabo, repudiandae nihil quam eos aspernatur vel.
+                  exercitationem eveniet,
                 </p>
-                <Link to="/mockBrand">View more</Link>
+          
               </div>
             </div>
+            
             <div className="featureBox3">
-              <h2>Lorem ipsum dolor</h2>
               <div className="textBox">
+              <h2>Salomon:</h2>
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Repellat numquam libero maxime unde molestiae repellendus aut
-                  exercitationem eveniet, rem beatae provident earum, ipsa
-                  explicabo, repudiandae nihil quam eos aspernatur vel.
+                  exercitationem eveniet,
                 </p>
-                <Link to="/mockBrand">View more</Link>
+          
               </div>
+            </div>
+
+            <div className="featureBox4">
+              <h1>Making data human again.</h1>
+              <p>learn more here.</p>
             </div>
           </section>
         </div>

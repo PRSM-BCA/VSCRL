@@ -8,6 +8,7 @@ import { authentication, db } from "../../firebase-config";
 import { doc, getDoc } from "@firebase/firestore";
 import profileIcon from "./image/PImg.jpg";
 import { Link } from "react-router-dom";
+import imgIcon from "./image/imgIcon.jpg";
 
 export default function Header() {
   const [isLoggingIn, setLoggingIn] = useState(false);
@@ -40,77 +41,29 @@ export default function Header() {
   }, [currentUser, getUser]);
 
   return (
-    <div className="Header">
-      <img alt="Site Logo" src={Logo} />
-      <h1>DashBoard</h1>
+    <div className="wrapper">
+      <div class="dropdown">
+        {/* <button class="dropbtn"> */}
+        <img src={imgIcon} alt="img" className="imgIcon" />
+        {/* </button> */}
 
-      {console.log(userInfo)}
-      {/* {userInfo ? (
-        // <h1>{userInfo.firstname + " " + userInfo.lastname}</h1>
-      ) : null} */}
-      {currentUser ? (
-        <div id="signInContainer">
-          {/* currentUser ? console.log(userInfo) : <h2>No current user</h2> */}
-          <button
+        <div class="dropdown-content">
+          {/* links to each component  */}
+          <Link to="/Profile">My profile</Link>
+          <Link
+            to="/"
             onClick={() => {
               logout();
               setUserInfo("");
             }}
           >
             Logout
-          </button>
-          <Link to="/Profile">
-            <img className="profileImg" src={profileIcon} alt="proflieIMG" />
           </Link>
+          <Link to="Dashboard">Home</Link>
         </div>
-      ) : (
-        <div id="signInContainer">
-          {isLoggingIn ? (
-            <form
-              name="logInForm"
-              onSubmit={(evt) => {
-                evt.preventDefault();
-                handleSubmit();
-                setLoggingIn(false);
-              }}
-            >
-              <input
-                type="text"
-                placeholder="Email Address"
-                onChange={(evt) => {
-                  setEmailAddress(evt.target.value);
-                }}
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(evt) => {
-                  setPassword(evt.target.value);
-                }}
-              />
-              <input type="submit" value="Log In" />
-            </form>
-          ) : null}
-
-          <button
-            disabled={isLoggingIn}
-            onClick={() => {
-              setLoggingIn(true);
-              //navigate("/")
-            }}
-          >
-            Log In
-          </button>
-
-          <button
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Sign Up
-          </button>
-        </div>
-      )}
+        
+      </div>
+      <img alt="Site Logo" src={Logo} className="logoImg" />
     </div>
   );
 }
