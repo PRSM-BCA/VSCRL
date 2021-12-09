@@ -19,7 +19,7 @@ function LongAnswer(props) {
   if (userInfo.usertype === "admin") {
     return (
       <AuthProvider>
-        <section className="LongAnswer">
+        <div className="LongAnswer">
           <h1>Long-form Answer</h1>
           <img className="medicalTools" src={tools1} alt="Medical tools" />
           <div className="inputWrapper">
@@ -62,13 +62,13 @@ function LongAnswer(props) {
               </button>
             )}
           </div>
-        </section>
+        </div>
       </AuthProvider>
     );
   } else {
     return (
       <AuthProvider>
-        <section className="LongAnswer">
+        <div className="LongAnswer">
           <h1>Long-form Answer</h1>
           <img className="medicalTools" src={tools1} alt="Medical tools" />
           <div className="inputWrapper">
@@ -95,7 +95,7 @@ function LongAnswer(props) {
               </button>
             )}
           </div>
-        </section>
+        </div>
       </AuthProvider>
     );
   }
