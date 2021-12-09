@@ -13,6 +13,7 @@ import Main from "./Sections/Main";
 import Brands from "./Sections/Brands";
 import Stories from "./Sections/Stories";
 
+
 function Landing() {
   // const [additionalPage, setAdditionalPage] = useState(false)
   return (
@@ -36,6 +37,7 @@ function Landing() {
       <About />
       <Stories />
       <Brands />
+      
     </div>
   );
 }

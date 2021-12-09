@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from 'react-router-dom'
-import LogIn from "../LogIn/LogIn";
+// import LogIn from "../LogIn/LogIn";
+import Modal from '../modal/Modal'
 
 import Additional from "./Additional";
 import Primary from "./Primary";
@@ -19,6 +20,7 @@ export default function SignUp() {
   const [submit, setSubmit] = useState(true);
   const [additionalPage, setAdditionalPage] = useState(false);
   const navigate = useNavigate()
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     if ((newEmail && newPassword && newPassword === confirmPassword && submit) || (newUserName &&newFirstName && newLastName && dob)) {
@@ -42,14 +44,16 @@ export default function SignUp() {
 
   return (
     <div className="SignUp">
-      <form
+      <button onClick={() =>setShow(true)}>Sign Up</button>
+      <Modal title="Join us!" onClose={() => setShow(false)} show={show}>
+      <form 
         onSubmit={(evt) => {
           evt.preventDefault();
           handleSubmit();
           setSubmit(true);
         }}
       >
-        {currentUser ? <h2>{currentUser.email}</h2> : <h2>No current user</h2>}
+        {currentUser ? <h2>{currentUser.email}</h2> : <h2>Create an account with us</h2>}
         {errorMessage && <h2>{errorMessage}</h2>}
         {!additionalPage ? (
           <Primary newEmail={newEmail} setNewEmail={setNewEmail} setNewPassword={setNewPassword} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} newUserName={newUserName} setNewUserName={setNewUserName} submit={submit} setSubmit={setSubmit} additionalPage={additionalPage} setAdditionalPage={setAdditionalPage} newFirstName={newFirstName} setNewFirstName={setNewFirstName} newLastName={newLastName} setNewLastName={setNewLastName} dob={dob} setDob={setDob}></Primary>
@@ -57,6 +61,7 @@ export default function SignUp() {
           <Additional newEmail={newEmail} setNewEmail={setNewEmail} setNewPassword={setNewPassword} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} newUserName={newUserName} setNewUserName={setNewUserName} submit={submit} setSubmit={setSubmit} additionalPage={additionalPage} setAdditionalPage={setAdditionalPage} newFirstName={newFirstName} setNewFirstName={setNewFirstName} newLastName={newLastName} setNewLastName={setNewLastName} dob={dob} setDob={setDob}></Additional>
         )}
       </form>
+      </Modal>
     </div>
   );
 }

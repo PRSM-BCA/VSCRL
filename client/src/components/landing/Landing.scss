@@ -9,6 +9,7 @@ body {
   margin: 0;
 }
 
+
 // All styling within landing
 .Landing {
   overflow-y: hidden;
@@ -71,10 +72,11 @@ display: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
+      width: 100vw;
       svg {
         margin-left: 0; right: 0; top: auto; bottom:0;
         align-self: flex-end;
+        width: 100%;
       }
 
       h1 {
@@ -83,13 +85,21 @@ display: none;
         padding-top: 20vh;
         padding-left: 3vw;
       }
+      .SignUp {
+        z-index: 5;
+        margin: auto;
+      }
     }
+  
+
   }
 
   /* underlines active nav element */
   .navbar > .active {
     border-bottom: 1px solid rgb(255, 166, 0);
   }
+
+
 
   // -------------------------------Styling for Login Section
   .login-section {

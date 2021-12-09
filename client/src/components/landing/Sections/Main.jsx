@@ -1,14 +1,17 @@
 import React from "react";
+import SignupModal from "./SignupModal";
 
 function Login() {
   return (
     <>
       <div className="main-section" id="main">
         <div className="mainCurved">
+        
           <h1>
             Connect with your favorite brands,
             <br /> get <i>rewarded</i> for living your passion.
           </h1>
+          <SignupModal />
            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
           <path
             fill="#000000"
