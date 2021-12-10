@@ -369,45 +369,72 @@ body {
   .stories-section {
     height: 100vh;
     background-color: $marigold;
-
-    .story{
-      display: flex;
-      flex-direction: row;
-      margin-left: 10vw;
-      margin-right: 10vw;
-      padding-top: 10vh;
-      gap: 5em;
-      position: relative;
-
-      @media (max-width: 675px) {
-        flex-direction: column;
-      }
-
-      .story-image {
-        background: white;
-        border-radius: 50%;
-        min-width: 225px;
-        max-width: 225px;
-        min-height: 225px;
-        max-height: 225px;
-
-        @media (max-width: 675px) {
-          max-width: 150px;
-          min-width: 150px;
-          max-height: 150px;
-          min-height: 150px;
-        }
   
+
+    .curved {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+      height: 100%;
+
+      #top-svg {
+        align-self: flex-start;
+        width: 100vw;
+        top: 0;
+        position: absolute;
+      }
+      #bottom-svg {
+        align-self: flex-end;
+        width: 100%;
+        bottom: 0;
+        display: block;
+        position: absolute;
+        
       }
 
-      .story-text {
-        font-size: 2.3rem;
-        text-align: left;
+      .carousel-wrapper {
+        .story {
+          display: flex;
+          flex-direction: row;
+          align-self: center;
+          margin-left: 10vw;
+          margin-right: 10vw;
+          padding-top: 10vh;
+          gap: 5em;
+          position: relative;
 
-        .story-text-author {
-          font-size: 1rem;
-          text-align: right;
-          padding-right: 10px;
+          @media (max-width: 675px) {
+            flex-direction: column;
+          }
+
+          .story-image {
+            background: white;
+            border-radius: 50%;
+            min-width: 225px;
+            max-width: 225px;
+            min-height: 225px;
+            max-height: 225px;
+
+            @media (max-width: 675px) {
+              max-width: 150px;
+              min-width: 150px;
+              max-height: 150px;
+              min-height: 150px;
+            }
+          }
+        }
+
+        .story-text {
+          font-size: 2.3rem;
+          text-align: left;
+
+          .story-text-author {
+            font-size: 1rem;
+            text-align: right;
+            padding-right: 10px;
+          }
         }
       }
     }

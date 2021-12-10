@@ -429,47 +429,183 @@
   }
 }
 
-.rankingAnswer {
-  .eightPainsTitle {
+.rankingAnswer-admin {
+  h2 {
     text-align: center;
-    color: #2f302f;
-    @include headerStyle;
+    @include headerStyle($textColor: $burnt-orange);
   }
 
-  .eightPainsSubTitle {
-    color: $spanish-blue;
-    text-align: center;
-  }
-  .list-container {
-    display: grid;
-    padding: 1rem;
-    width: 30%;
-    height: 30%;
-    grid-template-rows: 100%;
-    gap: 0.5rem;
+  .mainContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin: auto;
-    border-radius: 5px;
-    background-color: $marigold;
 
-    .list-container_item {
-      background-color: #f8f7f2;
-      border-radius: 5px;
-      color: $spanish-blue;
-      display: flex;
-      justify-self: center;
-      align-items: center;
-      padding: 0.5rem;
-      border: 0.5px solid $spanish-blue;
-      gap: 10px;
-    }
-    .list-container_item:not(:last-of-type) {
-      margin-bottom: 0.5rem;
+    @media (max-width: 675px) {
+      flex-direction: column;
     }
 
-    .handlebars {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .rankTitle-rankInstruction {
+      width: 30vw;
+      border-right: 2px solid $marigold;
+      padding-right: 5em;
+      @include bulletsStyle($alignment: left, $fontSize: 14);
+
+      @media (max-width: 675px) {
+        border-bottom: 2px solid $marigold;
+        border-right: none;
+      }
+    }
+
+    .draggable-wrapper {
+      padding-left: 5rem;
+
+      @media (max-width: 675px) {
+        padding: 0;
+      }
+
+      .list-container {
+        display: grid;
+        padding: 1.5rem;
+        width: 50%;
+        height: 15%;
+        grid-template-rows: 100%;
+        gap: 0.5rem;
+        margin: auto;
+        border-radius: 30px;
+        border: 2px solid $indigo-dye;
+
+        .list-container_item {
+          background-color: white;
+          border-radius: 5px;
+          color: $spanish-blue;
+          display: flex;
+          justify-self: center;
+          align-items: center;
+          padding: 0.5rem;
+          border: 2px solid $marigold;
+          gap: 10px;
+          font-family: "Merriweather", serif;
+          @include bulletsStyle;
+        }
+        .list-container_item:not(:last-of-type) {
+          margin-bottom: 0.5rem;
+        }
+
+        .list-container_item:hover {
+          background-color: $marigold;
+        }
+
+        .handlebars {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .adminRankWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+
+    input#questionPrompt {
+      @include body2Style(1.2em, left);
+      width: 45%;
+      margin: 2em auto;
+    }
+
+    button {
+      @include headerStyle(1em, center, $dark-jungle-green);
+      flex: 1;
+      width: 30%;
+      height: 15%;
+      margin: 2em auto;
+      background-color: white;
+      padding: 1em;
+      border-radius: 6px;
+      border: 1px solid $dark-jungle-green;
+      transition: 0.3s ease-in;
+    }
+
+    .active:hover {
+      @include headerStyle(1em, center, white);
+      border: 1px solid white;
+      padding: 0.8em;
+      background-color: $marigold;
+      cursor: pointer;
+    }
+  }
+}
+
+.rankingAnswer-keyUser {
+  h2 {
+    text-align: center;
+    @include headerStyle($textColor: $burnt-orange);
+  }
+
+  .draggable-wrapper-keyUser {
+    .list-container {
+      display: grid;
+      padding: 1.5rem;
+      width: 300px;
+      height: 400px;
+      grid-template-rows: 100%;
+      gap: 0.5rem;
+      margin: auto;
+      border-radius: 30px;
+      border: 2px solid $indigo-dye;
+
+      .list-container_item {
+        background-color: white;
+        border-radius: 5px;
+        color: $spanish-blue;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        padding: 0.5rem;
+        border: 2px solid $marigold;
+        gap: 10px;
+        font-family: "Merriweather", serif;
+        @include bulletsStyle;
+      }
+      .list-container_item:not(:last-of-type) {
+        margin-bottom: 0.5rem;
+      }
+
+      .list-container_item:hover {
+        background-color: $marigold;
+      }
+
+      .handlebars {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    button {
+      @include headerStyle(1em, center, $dark-jungle-green);
+      flex: 1;
+      width: 30%;
+      height: 15%;
+      margin: 2em auto;
+      background-color: white;
+      padding: 1em;
+      border-radius: 6px;
+      border: 1px solid $dark-jungle-green;
+      transition: 0.3s ease-in;
+    }
+
+    .active:hover {
+      @include headerStyle(1em, center, white);
+      border: 1px solid white;
+      padding: 0.8em;
+      background-color: $marigold;
+      cursor: pointer;
     }
   }
 }
