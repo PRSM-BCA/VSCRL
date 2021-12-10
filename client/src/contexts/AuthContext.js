@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { authentication, db } from '../firebase-config'
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updatePassword, updateEmail } from "firebase/auth"
 import { collection, doc, setDoc, updateDoc, getDoc, getDocs, arrayUnion } from "@firebase/firestore"
 
 const AuthContext = React.createContext();
@@ -31,6 +31,10 @@ export function AuthProvider({children}) {
                             dob: dob
                         })
             })
+    }
+
+    async function updateAuthPassword(password) {
+        await updatePassword(currentUser, password)
     }
 
     // Grabs correct user from Authentication Collection
@@ -131,6 +135,7 @@ export function AuthProvider({children}) {
         signup,
         login,
         logout,
+        updateAuthPassword,
         getUser,
         getAllUsers,
         getSurvey,
