@@ -1,0 +1,188 @@
+//modal styles
+.modal {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: #1C211C;
+    text-align: center; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+
+
+.modal.enter-done {
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.modal.exit {
+    opacity: 0;
+}
+
+.modal-content {
+    position: relative;
+    @media (min-width: 40em) {
+   
+    margin: 5% auto;
+    max-height: 57em;
+    max-width: 66em;
+    width: 85%;
+    }
+    font-family: 'Merriweather', serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(148deg, rgba(2,0,36,1) 0%, rgba(241,166,30,1) 0%, rgba(184,80,0,1) 100%);
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-200px);
+}
+
+    
+
+.modal.enter-done .modal-content {
+    transform: translateY(0);
+}
+
+.modal.exit .modal-content {
+    transform: translateY(-200px);
+}
+
+.modal-header, .modal-footer {
+    padding: 10px;
+}
+
+.modal-title {
+    margin: 0;
+}
+
+.modal-body {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-footer {
+    height: auto;
+}
+
+.modal input {
+    font-family: 'Inter', sans-serif;
+    margin: 1em auto;
+    padding: 0.5em;
+    display: flex;
+    width: 30vw;
+}
+
+.modal-content button {
+    display: inline-block;
+    place-items: center;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .modal-content button {
+    
+    background-color:transparent;
+    color: white;
+  }
+
+  .modal-content button:hover {
+    
+    color: #000000;
+    background-color: #f1a61e;
+  }
+
+  @media all and (max-width: 30em) {
+    .modal-content button{
+      display: block;;
+      margin: 0.4em auto;
+    }
+  }
+
+  .modal-footer button {
+    display: inline-block;
+    place-items: center;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .modal-footer button {
+    
+    background-color:transparent;
+    color: white;
+  }
+
+  .modal-footer button:hover {
+    
+    color: #000000;
+    background-color: #f1a61e;
+  }
+  @media all and (max-width: 30em) {
+    .modal-footer button{
+      display: block;;
+      margin: 0.4em auto;
+    }
+  }
+
+  .additional-button input{
+    display: inline-block;
+    place-items: center;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .additional-button input {
+    
+    background-color:transparent;
+    color: white;
+  }
+
+  .additional-button input:hover{
+    
+    color: #000000;
+    background-color: #f1a61e;
+  }
+
+  @media all and (max-width: 30em) {
+    .additional-button input{
+      display: block;;
+      margin: 0.4em auto;
+    }
+  }
+    
+  

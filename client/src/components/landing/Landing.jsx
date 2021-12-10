@@ -12,6 +12,7 @@ import Main from "./Sections/Main";
 import Brands from "./Sections/Brands";
 import Stories from "./Sections/Stories";
 
+
 function Landing() {
   return (
     
