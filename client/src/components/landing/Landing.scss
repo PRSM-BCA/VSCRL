@@ -1,8 +1,9 @@
 @import "../styles/global.scss";
 
-// Remove ride-side margin for entire page
+// Remove right side margin for entire page
 * {
   margin-right: 0;
+  padding: 0;
 }
 
 body {
@@ -33,24 +34,27 @@ body {
     gap: 2em;
     color: white;
     font-size: 1.3em;
-    background-color: black;
+    background-color: #1e2227;
     padding-top: 3vh;
     padding-left: 3vw;
+    font-family: "Merriweather", serif;
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
-     
-      
       #aboutLink {
-display: none;
+        display: none;
       }
 
       #storiesLink {
-display: none;
+        display: none;
       }
 
       #brandsLink {
-display: none;
+        display: none;
+      }
+
+      #howItWorksLink {
+        display: none;
       }
     }
 
@@ -61,15 +65,15 @@ display: none;
       gap: 0;
     }
   }
+  // -------------------------------Styling for MAIN SECTION
 
   .main-section {
-    height: 100vh;
-
+    height: 175vh;
 
     .videoBackground {
       position: absolute;
       height: 100vh;
-      width: 100vw;
+      width: 100%;
       object-fit: cover;
       z-index: -1;
     }
@@ -80,19 +84,138 @@ display: none;
       width: 100vw;
       flex-direction: column;
       justify-content: space-between;
+      overflow-x: hidden;
     }
 
-      svg {
-        align-self: flex-end;
+    svg {
+      align-self: flex-end;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: $marigold;
+      padding-top: 20vh;
+      padding-left: 3vw;
+    }
+
+    .aboutHeaderFlexContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 3vh;
+
+      #header {
+        color: black;
+        text-align: center;
+        font-size: 1.85em;
       }
 
-      h1 {
-        font-size: 3rem;
-        color: rgb(255, 166, 0);
-        padding-top: 20vh;
-        padding-left: 3vw;
+      #subheader {
+        color: black;
+        text-align: center;
+        font-size: 1.5em;
+        font-family: "Merriweather", serif;
       }
-    
+    }
+
+    .SignUp {
+      text-align: center;
+    }
+
+    .SignUp button {
+      display: inline-block;
+      place-items: center;
+      padding: 0.35em 1.2em;
+      border: 0.1em solid #ffffff;
+      margin-left: auto;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      color: #ffffff;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .SignUp button {
+      
+      background-color:transparent;
+      color: white;
+    }
+
+    .SignUp button:hover {
+      
+      color: #000000;
+      background-color: #f1a61e;
+    }
+    @media all and (max-width: 30em) {
+      .SignUp button{
+        display: block;;
+        margin: 0.4em auto;
+      }
+    }
+
+    .aboutFlexContainer {
+      display: flex;
+      flex-direction: row;
+      margin-top: 5vh;
+      width: 75%;
+      margin: auto;
+
+      /* Mobile responsiveness */
+      @media (max-width: 675px) {
+        flex-direction: column;
+      }
+
+      .aboutMiniFlex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Merriweather", serif;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+
+        /* Mobile responsiveness */
+        @media (max-width: 675px) {
+          flex-direction: row;
+        }
+
+        .aboutImage {
+          width: 45%;
+          text-align: center;
+
+          @media (max-width: 675px) {
+            flex-direction: row;
+            padding-right: 0vw;
+            padding-left: 1vw;
+            width: 30%;
+          }
+        }
+
+        .description {
+          color: black;
+          max-width: 200px;
+          font-family: "Merriweather", serif;
+
+          @media (max-width: 675px) {
+            flex-direction: row;
+            padding-right: 1vw;
+            padding-left: 1vw;
+          }
+
+          #miniHeader {
+            text-align: center;
+            font-size: 1.2em;
+            color: $marigold;
+          }
+        }
+      }
+    }
   }
 
   /* underlines active nav element */
@@ -103,26 +226,25 @@ display: none;
   // -------------------------------Styling for Login Section
   .login-section {
     height: 100vh;
-    // background-color: greenyellow;
     padding-top: 10vh;
+    background-color: $marigold;
 
     .LogIn {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: white;
+
       height: 50%;
       max-width: 25%;
       padding: 1.5em;
       border-radius: 30px;
-      border: solid black;
+
       margin: auto;
       margin-top: 15vh;
 
       /* Mobile responsiveness */
       @media (max-width: 675px) {
-        border: white;
       }
 
       @media (min-width: 675px) {
@@ -154,20 +276,10 @@ display: none;
       }
 
       #inputSubmit:hover {
-        background: rgb(63, 94, 251);
-        background: radial-gradient(
-          circle,
-          rgba(63, 94, 251, 0.3435749299719888) 0%,
-          rgba(252, 184, 70, 0.938813025210084) 83%
-        );
+        background-color: #b85000;
       }
 
       form {
-        // background-color: $marigold;
-        // padding: 1.5em;
-        // border-radius: 5px;
-        // margin-top: 5vh;
-
         input {
           @include body1Style(14px, left);
           margin: 1em auto;
@@ -186,109 +298,110 @@ display: none;
     }
   }
 
-  // -------------------------------Styling for About Section
+  // -------------------------------Styling for How-It-Works Section
 
-  .about-section {
-    height: 100vh;
+  .how-it-works-section {
+    height: 170vh;
+    background-color: #f8f7f2;
 
-    .aboutHeaderFlexContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 12vh;
+    #howTitle {
+      font-size: 4em;
+      margin: 0;
 
-      #header {
-        color: black;
-        text-align: center;
-        font-size: 1.75em;
-      }
-
-      #subheader {
-        color: black;
-        text-align: center;
-        font-size: 1.5em;
-      }
+      padding-left: 8vw;
+      color: #1c211c;
     }
 
-    .aboutFlexContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-top: 5vh;
+    //--------------styling for HowToSteps component
+    .howToSteps {
+      display: grid;
+      grid-template-columns: repeat(2, 0.5fr);
+      grid-template-rows: repeat(4, 0.1fr);
+      width: 80vw;
+      height: 60vh;
+      margin-left: 13vw;
+      padding-top: 7vh;
 
-      /* Mobile responsiveness */
-      @media (max-width: 675px) {
-        flex-direction: column;
-        width: 100%;
+      .step {
+        justify-self: start;
+        border-left: solid $marigold;
+
+        p {
+          font-size: 2em;
+          color: #1c211c;
+        }
       }
 
-      .aboutMiniFlex {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      .stepOne {
+        grid-column: 1/ 2;
+        grid-row: 2 / 2;
+        text-align: left;
+        padding: 0.5em;
 
-        /* Mobile responsiveness */
         @media (max-width: 675px) {
-          flex-direction: row;
+          grid-column: 1/ 1;
+          grid-row: 1 / 1;
+          border-bottom: solid $marigold;
         }
+      }
 
-        .aboutImage {
-          width: 45%;
-          text-align: center;
-          padding-right: 5vw;
-          padding-left: 5vw;
+      .stepTwo {
+        grid-column: 2/ 4;
+        grid-row: 3/ 3;
+        text-align: left;
+        padding: 0.5em;
 
-          @media (max-width: 675px) {
-            flex-direction: row;
-            padding-right: 0vw;
-            padding-left: 1vw;
-            width: 30%;
-          }
+        @media (max-width: 675px) {
+          grid-column: 1/ 2;
+          grid-row: 2 / 2;
+          border-bottom: solid $marigold;
         }
+      }
+      .stepThree {
+        grid-column: 1/2;
+        grid-row: 4/4;
+        text-align: left;
+        padding: 0.5em;
 
-        .description {
-          color: black;
-          max-width: 200px;
-          padding-right: 5vw;
-          padding-left: 5vw;
+        @media (max-width: 675px) {
+          grid-column: 1/ 2;
+          grid-row: 3/ 3;
+          border-bottom: solid $marigold;
+        }
+      }
 
-          @media (max-width: 675px) {
-            flex-direction: row;
-            padding-right: 1vw;
-            padding-left: 1vw;
-          }
+      .stepFour {
+        grid-column: 2/3;
+        grid-row: 5/5;
+        text-align: left;
+        padding: 0.5em;
 
-          #miniHeader {
-            text-align: center;
-            font-size: 1.5em;
-          }
+        @media (max-width: 675px) {
+          grid-column: 1/ 2;
+          grid-row: 4 / 4;
+          border-bottom: solid $marigold;
         }
       }
     }
   }
+
   // -------------------------------Styling for Stories Section
   .stories-section {
     height: 100vh;
     background-color: $marigold;
-
-    .curved {
-      background-color: $marigold;
-      svg {
-        display: block;
-        background-color: $marigold;
-      }
-    }
 
     .story-placeholder {
       display: flex;
       flex-direction: row;
       margin-left: 10vw;
       margin-right: 10vw;
-      padding-top: 20vh;
+      padding-top: 10vh;
       gap: 5em;
+      max-width: 100vw;
+
+      @media (max-width: 675px) {
+        flex-direction: column;
+      }
 
       .story-image {
         background: white;
@@ -299,10 +412,11 @@ display: none;
 
       .story-text {
         font-size: 2.3rem;
+
         .story-text-author {
           font-size: 1rem;
           text-align: right;
-          padding-right: 2vw;
+          padding-right: 10vw;
         }
       }
     }
@@ -312,8 +426,7 @@ display: none;
 
   .brands-section {
     height: 100vh;
-
-
+    width: 100vw;
 
     .brandsTitle {
       color: black;
@@ -324,19 +437,20 @@ display: none;
     .brandsFlexContainer {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-around;
+
       margin-top: 7vh;
+      width: 98.7vw;
 
       /* Mobile responsiveness */
-      @media (max-width: 640px) {
+      @media (max-width: 675px) {
         flex-direction: column;
       }
 
       .brandsMiniFlex {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
 
         .brandsImage {
@@ -355,29 +469,41 @@ display: none;
         }
       }
     }
-    // -------------------------------Styling for Footer Section
+  }
+  // -------------------------------Styling for Footer Section
+
+  .footerWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-top: 25vh;
+
     .footerFlexContainer {
       display: flex;
       flex-direction: row;
-      background-color: $marigold;
       justify-content: space-around;
-      margin-top: 10vh;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
 
       .footerMiniFlex {
         display: flex;
         flex-direction: row;
 
-        .footer-icon {
-          width: 3vw;
-          text-align: center;
-        }
-
         .footer-contact-type {
-          color: black;
+          color: white;
           max-width: 200px;
-          padding-right: 5vw;
         }
       }
+    }
+
+    svg {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      z-index: -1;
     }
   }
 }

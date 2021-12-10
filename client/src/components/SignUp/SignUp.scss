@@ -1,28 +1,3 @@
-@import '../styles/global.scss';
 
-// Styling for signUp class
-.SignUp {
-  background-color: darkcyan;
-  padding: 2em;
 
-  // Styling for inputs
-  input {
-    margin: 1em auto;
-    padding: 0.5em;
-    display: block;
-    width: 30vw;
-  }
 
-  // Styling for button
-  button {
-    display: flex;
-    align-self: center;
-    display: block;
-    margin: 1em auto;
-  }
-
-  // Styling for "Create An Account"
-  h3 {
-    text-align: center;
-  }
-}

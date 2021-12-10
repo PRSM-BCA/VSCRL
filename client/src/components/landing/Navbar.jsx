@@ -31,14 +31,14 @@ function Navbar() {
 
       <Link
         activeClass="active"
-        id="aboutLink"
-        to="about"
+        id="howItWorksLink"
+        to="howItWorks"
         spy={true}
         smooth={true}
         offset={0}
         duration={500}
       >
-        About
+        How it works
       </Link>
 
       <Link

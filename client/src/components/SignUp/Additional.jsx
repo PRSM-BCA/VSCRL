@@ -16,7 +16,9 @@ export default function Additional(props) {
         <input name="dob" type="date" placeholder="What is your date of birth?" required onChange={(evt) => {
           props.setDob(evt.target.value)
         }}/>
+        <div className="additional-button">
         <input type ="submit" disabled={props.submit} value="Submit" />
+        </div>
       </div>
     );
   
