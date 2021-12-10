@@ -10,6 +10,7 @@ import profileIcon from "./image/PImg.jpg";
 import { Link } from "react-router-dom";
 import imgIcon from "./image/imgIcon.jpg";
 
+
 export default function Header() {
   const [isLoggingIn, setLoggingIn] = useState(false);
   const { login, logout, currentUser, getUser, addSurvey } = useAuth();
@@ -55,11 +56,12 @@ export default function Header() {
             onClick={() => {
               logout();
               setUserInfo("");
+              navigate("/")
             }}
           >
             Logout
           </Link>
-          <Link to="Dashboard">Home</Link>
+          <Link to="/Dashboard">Home</Link>
         </div>
         
       </div>
