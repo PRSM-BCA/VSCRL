@@ -103,41 +103,154 @@
 
 .ShortAnswer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $marigold;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 
-  .questionWrapper {
+  .mainContainer {
     display: flex;
     align-items: center;
-    
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 500px;
-    width: 500px;
+    justify-content: center;
+    margin: auto;
+    flex: 8;
+
+    h1 {
+      @include headerStyle(2.5em, center, $dark-jungle-green);
+      width: 100%;
+      flex: 1;
+      border-left: 2px solid $marigold;
+      border-right: 2px solid $marigold;
+      margin: 1em;
+    }
+
+    .questionWrapper {
+      display: flex;
+      align-items: center;
+      flex: 2;
+      flex-direction: column;
+      justify-content: space-evenly;
+      border-left: 2px solid $dark-jungle-green;
+      height: 70vh;
+
+      #questionPrompt {
+        @include body2Style(1.8em, left);
+        border-radius: 6px;
+        padding: 0.3em;
+        border: none;
+        border-bottom: 2px solid $marigold;
+      }
+
+      input#questionPrompt {
+        @include body2Style(1.2em, left);
+        width: 80%;
+      }
+
+      section {
+        align-items: center;
+        width: 90%;
+
+        p {
+          text-decoration: underline;
+          margin: 0;
+
+          i {
+            background-color: $dark-jungle-green;
+            color: white;
+            padding: 0.35em;
+            border-radius: 12px;
+          }
+        }
+
+        .questionInput {
+          @include bulletsStyle(1.5em, left, $dark-jungle-green);
+          width: 80%;
+          float: right;
+        }
+      }
+    }
   }
 
-  section {
-    display: flex;
-    align-items: center;
-    background-color: $burnt-orange;
+  button {
+    @include headerStyle(1em, center, $dark-jungle-green);
+    flex: 1;
+    width: 30%;
+    height: 15%;
+    margin: 2em auto;
+    background-color: white;
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid $dark-jungle-green;
+    transition: 0.3s ease-in;
+  }
+
+  .active:hover {
+    @include headerStyle(1em, center, white);
+    border: 1px solid white;
+    padding: 0.8em;
+    background-color: $marigold;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 750px) {
+    .mainContainer {
+      display: flex;
+      flex-direction: column;
+      width: 70vw;
+
+      h1 {
+        font-size: 1.5em;
+        line-height: 1.5em;
+        vertical-align: middle;
+        margin-top: 2em;
+        padding: 0 1em;
+        text-align: center;
+        flex: 1;
+        width: auto;
+      }
+
+      .questionWrapper {
+        border: none;
+        width: 100%;
+        flex: 9;
+        border-bottom: 1px solid gray;
+
+        h2 {
+          margin: 0 auto;
+        }
+      }
+    }
+    button {
+      padding: 0;
+    }
+
+    .active:hover {
+      padding: 0;
+    }
   }
 }
 
 // parent container
 .LongAnswer {
-  display: flex;
   justify-content: center;
-  margin: 10vw;
   flex-direction: row;
   gap: 5vw;
-  min-width: auto;
-  background-color: $marigold;
-  
-  h2{
-    @include headerStyle
+  height: 100vh;
+  width: 60vw;
+  margin: 0 auto;
+
+  * {
+    color: $dark-jungle-green;
   }
-  // border: solid black;
+
+  .medicalTools {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  h1,
+  h2 {
+    @include headerStyle();
+  }
 
   // child of LongAnswer
   img {
@@ -145,6 +258,11 @@
     align-self: center;
     max-height: 20vw;
     width: auto;
+  }
+
+  h1 {
+    @include headerStyle(2em, center);
+    margin: 0;
   }
 
   // child of LongAnswer
@@ -155,20 +273,61 @@
     // child of inputWrapper
     h2 {
       text-align: left;
-      @include headerStyle (left)
+      @include headerStyle(left);
     }
 
     // child of inputWrapper
-    p {
-      text-align: left;
+    #wordLimit {
+      @include bulletsStyle(0.75em, center, gray);
     }
 
     // child of inputWrapper
     textarea {
-      max-width: 440px;
-      max-height: 166px;
+      max-width: 100%;
+      min-width: 100%;
+      min-height: 166px;
       align-items: center;
       justify-content: start;
+    }
+
+    textarea.disabled {
+      min-height: 200px;
+      max-height: 200px;
+    }
+
+    input {
+      @include body2Style;
+      border-radius: 12px;
+      border: 1px solid gray;
+    }
+
+    #promptInput {
+      margin: 2em auto;
+      width: 70%;
+    }
+
+    #maxWordInput {
+      margin: 2em auto;
+      width: 30%;
+    }
+
+    button {
+      @include headerStyle(1em, center, $dark-jungle-green);
+      padding: 2em;
+      width: 50%;
+      margin: auto;
+      border-radius: 6px;
+      border: 1px solid $dark-jungle-green;
+      background-color: white;
+      transition: 0.3s ease-in;
+    }
+
+    .active:hover {
+      @include headerStyle(1em, center, white);
+      border: 1px solid white;
+      padding: 1.8em;
+      background-color: $burnt-orange;
+      cursor: pointer;
     }
   }
 }
@@ -252,14 +411,14 @@
   justify-content: center;
   background-color: $burnt-orange;
 
-  h1{
-    @include headerStyle(3em, left, $baby-powder)
+  h1 {
+    @include headerStyle(3em, left, $baby-powder);
   }
 
   section {
     display: flex;
     align-items: center;
-    
+
     flex-direction: column;
     gap: 10px;
   }
