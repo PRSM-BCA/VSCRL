@@ -1,4 +1,3 @@
-import "./Landing.scss";
 import Footer from "./Footer.jsx"
 
 
