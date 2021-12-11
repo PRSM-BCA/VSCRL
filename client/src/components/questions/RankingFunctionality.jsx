@@ -153,7 +153,7 @@ function RankingExp(props) {
             <input
               id="questionPrompt"
               type="text"
-              placeholder="Enter 8 pains prompt here..."
+              placeholder="Enter your 8 pains prompt here..."
               onChange={(evt) => {
                 console.log(rankPrompt);
                 setRankPrompt(evt.target.value);
