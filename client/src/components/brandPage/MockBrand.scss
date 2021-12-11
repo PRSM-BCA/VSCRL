@@ -1,0 +1,43 @@
+@import "../styles/global.scss";
+
+body {
+    overflow-x: hidden;
+}
+
+.Brand {
+    @include headerStyle(2em, center, $baby-powder);
+    height: 100vh;
+    width: 100vw;
+    background-color: $indigo-dye;
+
+    h1{
+        margin: 0;
+    }
+
+    button {
+        @include bulletsStyle(1em, center);
+        padding: 1.5em;
+        transition: .3s ease-in;
+        border: 4px solid $baby-powder;
+        cursor: pointer;
+
+        &:hover {
+            background-color: transparent;
+            color: $baby-powder;
+
+        }
+
+    }
+}
+
+.UserInfo {
+    height: 100vh;
+    width: 100vw;
+    background-color: $burnt-orange;
+
+    h1{
+        @include headerStyle(2em, center, $baby-powder);
+        margin: 0 auto;
+        text-align: center;
+    }
+}

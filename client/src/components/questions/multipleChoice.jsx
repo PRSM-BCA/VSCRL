@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 
 function MultipleChoice(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [selectedYes1, setSelectedYes1] = useState(false);
   const [selectedNo1, setSelectedNo1] = useState(false);
@@ -150,7 +150,10 @@ function MultipleChoice(props) {
               <button
                 className={adminEnter ? "active" : ""}
                 type="submit"
-                disabled={adminEnter}
+                disabled={!adminEnter}
+                onClick={() => {
+                    addQuestionToAdminSurvey("MultipleChoice", {prompt1: question1Text, prompt2: question2Text, prompt3: question3Text})
+                }}
               >
                 Enter Question Info
               </button>
@@ -331,21 +334,13 @@ function MultipleChoice(props) {
               </div>
             </div>
             <div id="submitContent">
-              {/* {console.log("selectedYes1", selectedYes1)}
-                {console.log("selectedNo1", selectedNo1)}
-                {console.log("selectedYes2", selectedYes2)}
-                {console.log("selectedNo2", selectedNo2)}
-                {console.log("selectedYes3", selectedYes3)}
-                {console.log("selectedNo3", selectedNo3)}
-                {console.log("selectedYes1 || selectedNo1", (selectedYes1 || selectedNo1))}
-                {console.log("selectedYes2 || selectedNo2", (selectedYes2 || selectedNo2))}
-                {console.log("selectedYes3 || selectedNo3", (selectedYes3 || selectedNo3))}
-                {console.log(enter)} */}
-
               <button
                 className={enter ? "active" : ""}
                 type="submit"
                 disabled={enter}
+                onClick={() => {
+
+                }}
               >
                 Enter Responses
               </button>

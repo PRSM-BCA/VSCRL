@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 
 function LongAnswer(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [promptEntry, setPromptEntry] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -53,11 +53,13 @@ function LongAnswer(props) {
             {console.log(wordCount)}
             {console.log(promptEntry)}
             {wordCount <= 0 && !promptEntry ? (
-              <button disabled type="submit" onClick={() => {}}>
+              <button disabled type="submit">
                 Enter Question Info
               </button>
             ) : (
-              <button className="active" type="submit" onClick={() => {}}>
+              <button className="active" type="submit" onClick={() => {
+                addQuestionToAdminSurvey("LongAnswer", {prompt: promptEntry, wordCount: wordCount})
+              }}>
                 Enter Question Info
               </button>
             )}

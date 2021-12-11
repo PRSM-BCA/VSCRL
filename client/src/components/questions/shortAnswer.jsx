@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 
 function ShortAnswer(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [question1, setQuestion1] = useState("");
   const [question2, setQuestion2] = useState("");
@@ -75,12 +75,14 @@ function ShortAnswer(props) {
           </div>
           { !questionPrompt ?
             (
-              <button disabled type="submit" onClick={() => {}}>
+              <button disabled type="submit">
                 Enter Question Info
               </button>
             )
             : (
-              <button className="active" type="submit" onClick={() => {}}>
+              <button className="active" type="submit" onClick={() => {
+                addQuestionToAdminSurvey("ShortAnswer", {prompt: questionPrompt})
+              }}>
                 Enter Question Info
               </button>
             )
