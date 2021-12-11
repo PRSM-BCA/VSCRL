@@ -64,7 +64,6 @@ body {
       gap: 0;
     }
   }
-  // -------------------------------Styling for MAIN SECTION
 
   .main-section {
     height: 100vh;
@@ -318,7 +317,7 @@ body {
 
   .how-it-works-section {
     height: 170vh;
-    background-color: #f8f7f2;
+    background-color: white;
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
@@ -491,7 +490,7 @@ body {
       color: black;
       text-align: center;
       font-size: 2em;
-      padding-top: 20vh;
+      padding-top: 5vh;
     }
     .brandsFlexContainer {
       display: flex;
