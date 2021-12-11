@@ -14,16 +14,28 @@
     width: 75vw;
     align-items: center;
     justify-items: center;
-    place-self: center;
+    // place-self: center;
     margin: auto;
-    margin-top: 5vh;
+    // margin-top: 5vh;
     gap: 5px;
 
+    .transformStyle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: greenyellow;
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 5em;
+      padding: 2em;
+    }
     #painOne {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgb(255, 136, 0);
+      
       color: white;
       border-radius: 50%;
       width: 40px;
@@ -36,12 +48,25 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: red;
+      // background-color: red;
       color: white;
       border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      font-size: 3em;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
+      padding: 2em;
+    }
+
+    #painThree {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-color: rgb(255, 0, 255);
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
       padding: 2em;
     }
 
@@ -49,14 +74,27 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgb(17, 0, 255);
+      // background-color: rgb(17, 0, 255);
       color: white;
       border-radius: 50%;
-      width: 15px;
-      height: 15px;
-      font-size: 1em;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
       padding: 2em;
     }
+    #painFive {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-color: rgb(0, 217, 255);
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
+      padding: 2em;
+    }
+
     #painSix {
       display: flex;
       justify-content: center;
@@ -64,12 +102,24 @@
       background-color: rgb(255, 81, 0);
       color: white;
       border-radius: 50%;
-      width: 25px;
-      height: 25px;
+      width: 40px;
+      height: 40px;
       font-size: 2em;
-      padding: 4em;
+      padding: 2em;
     }
 
+    #painSeven {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(207, 192, 105);
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
+      padding: 2em;
+    }
     #painEight {
       display: flex;
       justify-content: center;
@@ -77,9 +127,21 @@
       background-color: rgb(106, 14, 167);
       color: white;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1em;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
+      padding: 2em;
+    }
+    #painNine {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(160, 70, 119);
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 2em;
       padding: 2em;
     }
   }
@@ -450,7 +512,7 @@
       width: 30vw;
       border-right: 2px solid $marigold;
       width: 400px;
-      font-family: 'Merriweather', serif;
+      font-family: "Merriweather", serif;
 
       h1 {
         text-align: left;
