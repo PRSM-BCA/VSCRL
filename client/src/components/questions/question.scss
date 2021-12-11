@@ -430,9 +430,9 @@
 }
 
 .rankingAnswer-admin {
-  h2 {
+  h4 {
     text-align: center;
-    @include headerStyle($textColor: $burnt-orange);
+    @include headerStyle($textColor: $burnt-orange, $fontSize: 22px);
   }
 
   .mainContainer {
@@ -449,8 +449,19 @@
     .rankTitle-rankInstruction {
       width: 30vw;
       border-right: 2px solid $marigold;
-      padding-right: 5em;
-      @include bulletsStyle($alignment: left, $fontSize: 14);
+      width: 400px;
+      font-family: 'Merriweather', serif;
+
+      h1 {
+        text-align: left;
+      }
+
+      p {
+        color: $indigo-dye;
+        font-size: 15px;
+      }
+
+      @include bulletsStyle($alignment: left, $textColor: $indigo-dye);
 
       @media (max-width: 675px) {
         border-bottom: 2px solid $marigold;
@@ -460,6 +471,7 @@
 
     .draggable-wrapper {
       padding-left: 5rem;
+      min-width: 475px;
 
       @media (max-width: 675px) {
         padding: 0;
@@ -511,6 +523,14 @@
     flex-direction: column;
     margin: auto;
     justify-content: center;
+
+    #questionPrompt {
+      @include body2Style(1.8em, left);
+      border-radius: 6px;
+      padding: 0.3em;
+      border: none;
+      border-bottom: 2px solid $marigold;
+    }
 
     input#questionPrompt {
       @include body2Style(1.2em, left);
