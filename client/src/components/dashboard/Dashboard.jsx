@@ -95,7 +95,7 @@ export default function Dashboard() {
           <Link to="/MultipleChoice">MultipleChoice</Link>
           <Link to="/RankingAnswer">RankingAnswer</Link>
           <Link to="/ScaleAnswer">ScaleAnswer</Link>
-          <Link to="/SelectImg">SelectImg</Link>
+          {/* <Link to="/SelectImg">SelectImg</Link> */}
           <Link to="/ShortAnswer">ShortAnswer</Link>
         </nav>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

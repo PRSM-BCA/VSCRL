@@ -86,17 +86,227 @@
 }
 
 .MultipleChoice {
-  #choices {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
+  height: 100vh;
+  width: 100vw;
+
+  h1 {
+    @include headerStyle(2em);
+    padding-top: 1em;
+    flex: 1;
+    margin: auto;
   }
 
-  button {
-    display: block;
+  .mainContent {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
 
-    &:focus {
-      background-color: darkcyan;
-      color: whitesmoke;
+    .q {
+      flex: 1;
+
+      .prompt {
+        h2 {
+          @include body1Style(1.5em, center, $dark-jungle-green);
+          border-bottom: 2px solid #dddddd;
+          width: 50vw;
+          margin: 0.5em auto;
+          padding: 0.5em;
+        }
+
+        input {
+          @include body2Style;
+          border-radius: 12px;
+          border: 1px solid $dark-jungle-green;
+          color: $dark-jungle-green;
+          margin: 1em auto;
+          display: block;
+          width: 50%;
+        }
+      }
+
+      .questionDiv {
+        flex: 2;
+        display: flex;
+        width: 60%;
+        margin: auto;
+        text-align: center;
+
+        .choice {
+          display: flex;
+          flex: 1;
+          flex-direction: row;
+
+          .choiceLine {
+            display: flex;
+            flex: 1;
+            margin: 0 8px;
+            padding: 1em;
+            height: 40px;
+            border-radius: 6px;
+            cursor: pointer;
+
+            #outer-circle {
+              background-color: $dark-jungle-green;
+              width: 40px;
+              aspect-ratio: 1;
+              display: flex;
+              transition: 0.3s ease-in;
+              border-radius: 6em;
+
+              #mid-circle {
+                display: flex;
+                width: 30px;
+                aspect-ratio: 1;
+                z-index: 2;
+                margin: 5px;
+                border-radius: 6em;
+
+                #inner-circle {
+                  width: 20px;
+                  aspect-ratio: 1;
+                  background-color: white;
+                  z-index: 3;
+                  margin: 5px;
+                  border-radius: 6em;
+                }
+              }
+            }
+          }
+
+          .choice1 {
+            #mid-circle {
+              background-color: $marigold;
+            }
+
+            &:hover {
+              background-color: $marigold;
+
+              #outer-circle {
+                background-color: $marigold;
+
+                #mid-circle {
+                  background-color: white;
+
+                  #inner-circle {
+                    background-color: $marigold;
+                  }
+                }
+              }
+            }
+          }
+
+          .choice2 {
+            #mid-circle {
+              background-color: $burnt-orange;
+            }
+
+            &:hover {
+              background-color: $burnt-orange;
+
+              #outer-circle {
+                background-color: $burnt-orange;
+
+                #mid-circle {
+                  background-color: white;
+
+                  #inner-circle {
+                    background-color: $burnt-orange;
+                  }
+                }
+              }
+            }
+          }
+
+          .choice3 {
+            #mid-circle {
+              background-color: $indigo-dye;
+            }
+
+            &:hover {
+              background-color: $indigo-dye;
+
+              #outer-circle {
+                background-color: $indigo-dye;
+
+                #mid-circle {
+                  background-color: white;
+
+                  #inner-circle {
+                    background-color: $indigo-dye;
+                  }
+                }
+              }
+            }
+          }
+
+          .activeLine1 {
+            background-color: $marigold;
+
+            p {
+              color: white;
+            }
+          }
+
+          .activeLine2 {
+            background-color: $burnt-orange;
+
+            p {
+              color: white;
+            }
+          }
+
+          .activeLine3 {
+            background-color: $indigo-dye;
+            transition: 0.3s ease-in;
+
+            p {
+              color: white;
+            }
+          }
+
+          input {
+            display: none;
+          }
+
+          p {
+            @include body1Style(1.5em, center, $dark-jungle-green);
+            transition: 0.3s ease-in;
+            flex: 1;
+            padding: 0;
+            line-height: 50px;
+            margin: 0 12px;
+          }
+        }
+      }
+      .disabledChoice {
+        opacity: 0.6;
+
+        .choice {
+          .choiceLine {
+            cursor: default;
+          }
+        }
+      }
+    }
+
+    #submitContent {
+      text-align: center;
+
+      button {
+        @include headerStyle(1em, center, $dark-jungle-green);
+        cursor: pointer;
+        background-color: white;
+        padding: 2em;
+        border-radius: 6px;
+        border: 1px solid $dark-jungle-green;
+        transition: 0.3s ease-in;
+      }
+
+      .active:hover {
+        background-color: $spanish-blue;
+        color: $baby-powder;
+        border: 2px solid white;
+      }
     }
   }
 }
@@ -285,14 +495,13 @@
     textarea {
       max-width: 100%;
       min-width: 100%;
-      min-height: 166px;
+      height: 20%;
       align-items: center;
       justify-content: start;
     }
 
     textarea.disabled {
-      min-height: 200px;
-      max-height: 200px;
+      height: 20%;
     }
 
     input {
@@ -406,26 +615,28 @@
 }
 
 .SelectImg {
-  display: flex;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   background-color: $burnt-orange;
 
   h1 {
-    @include headerStyle(3em, left, $baby-powder);
+    @include headerStyle(3em, center, $baby-powder);
+    margin: 0 auto;
   }
 
   section {
-    display: flex;
-    align-items: center;
+    display: grid;
+    width: 60vw;
+    height: 60vh;
+    margin: 0 auto;
+    gap: 0.5em;
+    grid-template-columns: repeat(3, 1fr);
 
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  img {
-    height: 175px;
-    width: 250px;
+    .gridImg {
+      background-color: $spanish-blue;
+    }
   }
 }
 

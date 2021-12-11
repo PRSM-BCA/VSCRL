@@ -44,7 +44,7 @@ function LongAnswer(props) {
             <input
               id="maxWordInput"
               type="number"
-              placeholder="Enter your word limit"
+              placeholder="Word Count"
               onChange={(evt) => {
                 setWordCount(evt.target.value);
                 console.log(wordCount);
@@ -52,7 +52,7 @@ function LongAnswer(props) {
             />
             {console.log(wordCount)}
             {console.log(promptEntry)}
-            {wordCount === 0 && !promptEntry ? (
+            {wordCount <= 0 && !promptEntry ? (
               <button disabled type="submit" onClick={() => {}}>
                 Enter Question Info
               </button>
@@ -64,7 +64,7 @@ function LongAnswer(props) {
           </div>
         </div>
       </AuthProvider>
-    );
+    )
   } else {
     return (
       <AuthProvider>
@@ -97,7 +97,7 @@ function LongAnswer(props) {
           </div>
         </div>
       </AuthProvider>
-    );
+    )
   }
 }
 

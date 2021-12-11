@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Home from "./home.jpg";
 
 export default function Profile() {
-  const { login, logout, currentUser, getUser, getAllUsers } = useAuth();
+  const { login, logout, updateAuthPassword, currentUser, getUser, getAllUsers } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
