@@ -64,7 +64,7 @@ function MultipleChoice(props) {
               <div class="questionDiv disabledChoice">
                 <div className="choice">
                   <div className={"choiceLine"}>
-                    <div id="outer-circle">
+                    <div className="outer-circle admin-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -74,7 +74,7 @@ function MultipleChoice(props) {
                 </div>
                 <div className="choice">
                   <div className={"choiceLine"}>
-                    <div id="outer-circle">
+                    <div className="outer-circle admin-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -95,7 +95,7 @@ function MultipleChoice(props) {
               <div className="questionDiv disabledChoice">
                 <div className="choice">
                   <div className={"choiceLine"}>
-                    <div id="outer-circle">
+                    <div className="outer-circle admin-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -105,7 +105,7 @@ function MultipleChoice(props) {
                 </div>
                 <div className="choice">
                   <div className={"choiceLine"}>
-                    <div id="outer-circle">
+                    <div className="outer-circle admin-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -126,7 +126,7 @@ function MultipleChoice(props) {
               <div className="questionDiv disabledChoice">
                 <div className="choice">
                   <div className={"choiceLine"}>
-                    <div id="outer-circle">
+                    <div className="outer-circle admin-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -136,7 +136,7 @@ function MultipleChoice(props) {
                 </div>
                 <div className="choice">
                   <div className={"choiceLine"}>
-                    <div id="outer-circle">
+                    <div className="outer-circle admin-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -169,7 +169,7 @@ function MultipleChoice(props) {
               <div className="prompt">
                 <h2>Is this the case?</h2>
               </div>
-              <div id="questionDiv">
+              <div className="questionDiv">
                 <div className="choice">
                   <div
                     className={`choiceLine choice1 ${
@@ -186,7 +186,7 @@ function MultipleChoice(props) {
                     }}
                   >
                     <input type="radio" checked={selectedYes1} />
-                    <div id="outer-circle">
+                    <div className="outer-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -210,7 +210,7 @@ function MultipleChoice(props) {
                     }}
                   >
                     <input type="radio" checked={selectedNo1} />
-                    <div id="outer-circle">
+                    <div className="outer-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -224,7 +224,7 @@ function MultipleChoice(props) {
               <div className="prompt">
                 <h2>Is this the case?</h2>
               </div>
-              <div id="questionDiv">
+              <div className="questionDiv">
                 <div className="choice">
                   <div
                     className={`choiceLine choice2 ${
@@ -241,7 +241,7 @@ function MultipleChoice(props) {
                     }}
                   >
                     <input type="radio" checked={selectedYes2} />
-                    <div id="outer-circle">
+                    <div className="outer-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -265,7 +265,7 @@ function MultipleChoice(props) {
                     }}
                   >
                     <input type="radio" checked={selectedNo2} />
-                    <div id="outer-circle">
+                    <div className="outer-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -279,7 +279,7 @@ function MultipleChoice(props) {
               <div className="prompt">
                 <h2>Is this the case?</h2>
               </div>
-              <div id="questionDiv">
+              <div className="questionDiv">
                 <div className="choice">
                   <div
                     className={`choiceLine choice3 ${
@@ -296,7 +296,7 @@ function MultipleChoice(props) {
                     }}
                   >
                     <input type="radio" checked={selectedYes3} />
-                    <div id="outer-circle">
+                    <div className="outer-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>
@@ -320,7 +320,7 @@ function MultipleChoice(props) {
                     }}
                   >
                     <input type="radio" checked={selectedNo3} />
-                    <div id="outer-circle">
+                    <div className="outer-circle">
                       <div id="mid-circle">
                         <div id="inner-circle"></div>
                       </div>

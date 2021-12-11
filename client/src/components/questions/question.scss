@@ -145,8 +145,8 @@
             border-radius: 6px;
             cursor: pointer;
 
-            #outer-circle {
-              background-color: $dark-jungle-green;
+            .outer-circle {
+              background-color: white;
               width: 40px;
               aspect-ratio: 1;
               display: flex;
@@ -170,6 +170,14 @@
                   border-radius: 6em;
                 }
               }
+            }
+            .admin-circle {
+              background-color: $dark-jungle-green;
+              width: 40px;
+              aspect-ratio: 1;
+              display: flex;
+              transition: 0.3s ease-in;
+              border-radius: 6em;
             }
           }
 
