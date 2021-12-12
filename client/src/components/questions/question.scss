@@ -1,148 +1,159 @@
 @import "../styles/global.scss";
 
 .KeyWordAnswer {
-  .TitleHeader {
+
+  h1 {
     text-align: center;
-    @include headerStyle;
+  @include headerStyle;
   }
 
-  .WordCloud {
+  .gridWrapper {
     display: grid;
-    grid-template-columns: repeat(3, 0.25fr);
-    grid-template-rows: repeat(3, 0.25fr);
-    height: 75vw;
-    width: 75vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 600px;
+    width: 600px;
     align-items: center;
     justify-items: center;
-    // place-self: center;
     margin: auto;
-    // margin-top: 5vh;
-    gap: 5px;
+    gap: 10px;
+    
+
+
+   
+    @media (max-width: 675px) {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
 
     .transformStyle {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgb(212, 1, 1);
+      background-color: red;
       color: white;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 5em;
-      padding: 2em;
+      width: 50px;
+      height: 50px;
+      padding: 3em;
     }
-    #painOne {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
-    }
-
-    #painTwo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // background-color: red;
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+    .painOne {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+  
     }
 
-    #painThree {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // background-color: rgb(255, 0, 255);
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+    .painTwo {
+     
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    
     }
 
-    #painFour {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // background-color: rgb(17, 0, 255);
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
-    }
-    #painFive {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // background-color: rgb(0, 217, 255);
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+    .painThree {
+ 
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
     }
 
-    #painSix {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(12, 129, 28);
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+    .painFour {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+    .painFive {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
     }
 
-    #painSeven {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: $marigold;
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+    .painSix {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
     }
-    #painEight {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(106, 14, 167);
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+
+    .painSeven {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
     }
-    #painNine {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(160, 70, 119);
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+    .painEight {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+    .painNine {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border: solid $spanish-blue;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
     }
   }
 }
