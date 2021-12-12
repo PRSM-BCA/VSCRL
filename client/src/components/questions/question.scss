@@ -1,86 +1,198 @@
 @import "../styles/global.scss";
 
 .KeyWordAnswer {
-  .TitleHeader {
+
+  h1 {
     text-align: center;
-    @include headerStyle;
+  @include headerStyle;
   }
 
-  .WordCloud {
+  button {
+    @include headerStyle(1em, center, $dark-jungle-green);
+    flex: 1;
+    width: 30%;
+    height: 15%;
+    margin: 2em auto;
+    background-color: white;
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid $dark-jungle-green;
+    transition: 0.3s ease-in;
+  }
+
+  .active:hover {
+    @include headerStyle(1em, center, white);
+    border: 1px solid white;
+    padding: 0.8em;
+    background-color: $marigold;
+    cursor: pointer;
+  }
+
+  .gridWrapper {
     display: grid;
-    grid-template-columns: repeat(3, 0.25fr);
-    grid-template-rows: repeat(3, 0.25fr);
-    height: 75vw;
-    width: 75vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 600px;
+    width: 600px;
     align-items: center;
     justify-items: center;
-    place-self: center;
     margin: auto;
-    margin-top: 5vh;
-    gap: 5px;
+    gap: 10px;
+    
 
-    #painOne {
+
+   
+    @media (max-width: 675px) {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(255, 136, 0);
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2em;
-      padding: 2em;
+      flex-direction: column;
+      gap: 25px;
     }
 
-    #painTwo {
-      display: flex;
+    .transformStyle {
       justify-content: center;
       align-items: center;
       background-color: red;
       color: white;
       border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      font-size: 3em;
-      padding: 2em;
+      border: solid $spanish-blue;
+      width: 50px;
+      height: 50px;
+      padding: 3em;
     }
 
-    #painFour {
+    .pain {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgb(17, 0, 255);
-      color: white;
-      border-radius: 50%;
-      width: 15px;
-      height: 15px;
-      font-size: 1em;
-      padding: 2em;
-    }
-    #painSix {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(255, 81, 0);
-      color: white;
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-      font-size: 2em;
-      padding: 4em;
-    }
-
-    #painEight {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(106, 14, 167);
-      color: white;
+      border: solid $spanish-blue;
       border-radius: 50%;
       width: 50px;
       height: 50px;
-      font-size: 1em;
-      padding: 2em;
+      padding: 3em;
+    
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+       
+      }
+    }
+    .painOne {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+   
+      }
+  
+    }
+
+    .painTwo {
+     
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    
+    }
+
+    .painThree {
+ 
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+     
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+
+    .painFour {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+ 
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+    .painFive {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+
+    .painSix {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+
+    .painSeven {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+    .painEight {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+ 
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
+    }
+    .painNine {
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 3em;
+      }
     }
   }
 }
@@ -665,9 +777,9 @@
 }
 
 .rankingAnswer-admin {
-  h2 {
+  h4 {
     text-align: center;
-    @include headerStyle($textColor: $burnt-orange);
+    @include headerStyle($textColor: $burnt-orange, $fontSize: 22px);
   }
 
   .mainContainer {
@@ -684,8 +796,19 @@
     .rankTitle-rankInstruction {
       width: 30vw;
       border-right: 2px solid $marigold;
-      padding-right: 5em;
-      @include bulletsStyle($alignment: left, $fontSize: 14);
+      width: 400px;
+      font-family: "Merriweather", serif;
+
+      h1 {
+        text-align: left;
+      }
+
+      p {
+        color: $indigo-dye;
+        font-size: 15px;
+      }
+
+      @include bulletsStyle($alignment: left, $textColor: $indigo-dye);
 
       @media (max-width: 675px) {
         border-bottom: 2px solid $marigold;
@@ -695,6 +818,7 @@
 
     .draggable-wrapper {
       padding-left: 5rem;
+      min-width: 475px;
 
       @media (max-width: 675px) {
         padding: 0;
@@ -746,6 +870,14 @@
     flex-direction: column;
     margin: auto;
     justify-content: center;
+
+    #questionPrompt {
+      @include body2Style(1.8em, left);
+      border-radius: 6px;
+      padding: 0.3em;
+      border: none;
+      border-bottom: 2px solid $marigold;
+    }
 
     input#questionPrompt {
       @include body2Style(1.2em, left);
