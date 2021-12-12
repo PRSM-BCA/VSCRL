@@ -9,6 +9,7 @@ import ShortAnswer from "../questions/ShortAnswer";
 import LongAnswer from "../questions/LongAnswer";
 import MultipleChoice from "../questions/MultipleChoice";
 import RankingAnswer from "../questions/RankingAnswer";
+import KeyWordAnswer from "../questions/KeyWordAnswer";
 
 export default function Mockbrand() {
 
@@ -45,6 +46,7 @@ export default function Mockbrand() {
             <LongAnswer></LongAnswer>
             <MultipleChoice></MultipleChoice>
             <RankingAnswer></RankingAnswer>
+            <KeyWordAnswer></KeyWordAnswer>
         </AuthProvider>
     )
 }

@@ -1,9 +1,10 @@
 import "./Question.scss";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function KeyWordAnswer(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addQuestionToAdminSurvey } = useAuth();
   const [userInfo, setUserInfo] = useState("");
 
   //  set state variable for each pain (painBackground1 etc. setting initial state to color)
@@ -160,9 +161,19 @@ function KeyWordAnswer(props) {
           input7 &&
           input8 &&
           input9 ? (
-            <button className="active" type="submit" onClick={() => {}}>
-              Enter Question Info
-            </button>
+            <Link
+                    className="active"
+                    to="MultipleChoice"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    onClick={() => {
+                      addQuestionToAdminSurvey("KeyWordQuestions", {[input1]: 0, [input2]: 0, [input3]: 0, [input4]: 0, [input5]: 0, [input6]: 0, [input7]: 0, [input8]: 0, [input9]: 0})
+                    }}
+                    >
+                      Enter Key Word Prompts
+                </Link>
           ) : (
             <button disabled type="submit" onClick={() => {}}>
               Enter Question Info

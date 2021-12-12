@@ -165,7 +165,7 @@ function RankingExp(props) {
             {!rankPrompt ? (
 
               <Link
-              to="UserInfo"
+              to="KeyWordAnswer"
               spy={true}
               smooth={true}
               offset={0}
@@ -177,7 +177,7 @@ function RankingExp(props) {
             ) : (
               <Link
               className="active"
-              to="UserInfo"
+              to="KeyWordAnswer"
               spy={true}
               smooth={true}
               offset={0}
