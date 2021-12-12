@@ -6,9 +6,10 @@ import RankingData from "../../RankingData";
 
 import { useState, useEffect } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function RankingExp(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addQuestionToAdminSurvey } = useAuth();
   const [rankAnswer, setRankAnswer] = useState(RankingData);
   const [userInfo, setUserInfo] = useState("");
 
@@ -162,13 +163,31 @@ function RankingExp(props) {
             <section></section>
 
             {!rankPrompt ? (
-              <button disabled type="submit" onClick={() => {}}>
+
+              <Link
+              to="KeyWordAnswer"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              >
                 Enter Question Info
-              </button>
+              </Link>
+
             ) : (
-              <button className="active" type="submit" onClick={() => {}}>
+              <Link
+              className="active"
+              to="KeyWordAnswer"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              onClick={() => {
+                addQuestionToAdminSurvey("RankingAnswer", {prompt: rankPrompt})
+              }}
+              >
                 Enter Question Info
-              </button>
+              </Link>
             )}
           </div>
         </div>
