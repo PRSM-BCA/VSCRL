@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import UserInfo from "./UserInfo";
 import { Link, animateScroll as scroll } from "react-scroll";
+import ShortAnswer from "../questions/ShortAnswer";
+import LongAnswer from "../questions/LongAnswer";
+import MultipleChoice from "../questions/MultipleChoice";
+import RankingAnswer from "../questions/RankingAnswer";
 
 export default function Mockbrand() {
 
@@ -37,6 +41,10 @@ export default function Mockbrand() {
                 </Link>
             </div>
             <UserInfo></UserInfo>
+            <ShortAnswer></ShortAnswer>
+            <LongAnswer></LongAnswer>
+            <MultipleChoice></MultipleChoice>
+            <RankingAnswer></RankingAnswer>
         </AuthProvider>
     )
 }

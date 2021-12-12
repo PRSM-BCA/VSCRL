@@ -300,7 +300,7 @@
     #submitContent {
       text-align: center;
 
-      button {
+      a {
         @include headerStyle(1em, center, $dark-jungle-green);
         cursor: pointer;
         background-color: white;
@@ -388,18 +388,34 @@
     }
   }
 
-  button {
-    @include headerStyle(1em, center, $dark-jungle-green);
+  .linkDiv {
+
+    text-align: center;
     flex: 1;
-    width: 30%;
-    height: 15%;
-    margin: 2em auto;
-    background-color: white;
-    padding: 1em;
-    border-radius: 6px;
-    border: 1px solid $dark-jungle-green;
-    transition: 0.3s ease-in;
+
+    a {
+      @include headerStyle(1em, center, $dark-jungle-green);
+      width: 30%;
+      height: 50%;
+      background-color: white;
+      border-radius: 6px;
+      padding: 1em;
+      margin: 1em auto 0 auto;
+      border: 1px solid $dark-jungle-green;
+      transition: 0.3s ease-in;
+    
   }
+
+  .active:hover {
+    @include headerStyle(1em, center, white);
+    border: 1px solid white;
+    padding: 0.8em;
+    background-color: $marigold;
+    cursor: pointer;
+  }
+
+  }
+
 
   .active:hover {
     @include headerStyle(1em, center, white);
@@ -437,7 +453,7 @@
         }
       }
     }
-    button {
+    a {
       padding: 0;
     }
 
@@ -528,7 +544,7 @@
       width: 30%;
     }
 
-    button {
+    a {
       @include headerStyle(1em, center, $dark-jungle-green);
       padding: 2em;
       width: 50%;
@@ -737,7 +753,7 @@
       margin: 2em auto;
     }
 
-    button {
+    a {
       @include headerStyle(1em, center, $dark-jungle-green);
       flex: 1;
       width: 30%;
@@ -806,7 +822,7 @@
       }
     }
 
-    button {
+    a {
       @include headerStyle(1em, center, $dark-jungle-green);
       flex: 1;
       width: 30%;

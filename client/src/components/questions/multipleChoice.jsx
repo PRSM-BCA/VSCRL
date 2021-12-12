@@ -1,9 +1,17 @@
 import "./Question.scss";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function MultipleChoice(props) {
-  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey } = useAuth();
+  const {
+    currentUser,
+    getUser,
+    addSurvey,
+    addAdminSurvey,
+    addQuestionToSurvey,
+    addQuestionToAdminSurvey,
+  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [selectedYes1, setSelectedYes1] = useState(false);
   const [selectedNo1, setSelectedNo1] = useState(false);
@@ -11,15 +19,17 @@ function MultipleChoice(props) {
   const [selectedNo2, setSelectedNo2] = useState(false);
   const [selectedYes3, setSelectedYes3] = useState(false);
   const [selectedNo3, setSelectedNo3] = useState(false);
-  const [question1Text, setQuestion1Text] = useState("")
-  const [question2Text, setQuestion2Text] = useState("")
-  const [question3Text, setQuestion3Text] = useState("")
+  const [question1Text, setQuestion1Text] = useState("");
+  const [question2Text, setQuestion2Text] = useState("");
+  const [question3Text, setQuestion3Text] = useState("");
   const [enter, setEnter] = useState(
     (selectedYes1 || selectedNo1) &&
       (selectedYes2 || selectedNo2) &&
       (selectedYes3 || selectedNo3)
   );
-  const [adminEnter, setAdminEnter] = useState(question1Text && question2Text & question3Text)
+  const [adminEnter, setAdminEnter] = useState(
+    question1Text && question2Text & question3Text
+  );
 
   useEffect(() => {
     if (currentUser && !userInfo) {
@@ -29,8 +39,8 @@ function MultipleChoice(props) {
       (selectedYes1 || selectedNo1) &&
         (selectedYes2 || selectedNo2) &&
         (selectedYes3 || selectedNo3)
-    )
-    setAdminEnter(question1Text && question2Text && question3Text)
+    );
+    setAdminEnter(question1Text && question2Text && question3Text);
   }, [
     getUser,
     userInfo,
@@ -43,23 +53,26 @@ function MultipleChoice(props) {
     selectedNo3,
     question1Text,
     question2Text,
-    question3Text
+    question3Text,
   ]);
 
   if (userInfo.usertype === "admin") {
     return (
       <AuthProvider>
-          {console.log(adminEnter)}
+        {console.log(adminEnter)}
         <div className="MultipleChoice">
           <h1>Multiple Choice (Admin)</h1>
           <div className="mainContent">
             <div className="q q1">
               <div className="prompt">
-                <input type="text" placeholder="Enter question text here..." onChange={ (evt) => {
-                    setQuestion1Text(evt.target.value)
-                    console.log(question1Text)
-                }
-                }/>
+                <input
+                  type="text"
+                  placeholder="Enter question text here..."
+                  onChange={(evt) => {
+                    setQuestion1Text(evt.target.value);
+                    console.log(question1Text);
+                  }}
+                />
               </div>
               <div class="questionDiv disabledChoice">
                 <div className="choice">
@@ -86,11 +99,14 @@ function MultipleChoice(props) {
             </div>
             <div className="q q2">
               <div className="prompt">
-              <input type="text" placeholder="Enter question text here..." onChange={ (evt) => {
-                    setQuestion2Text(evt.target.value)
-                    console.log(question2Text)
-                }
-                }/>
+                <input
+                  type="text"
+                  placeholder="Enter question text here..."
+                  onChange={(evt) => {
+                    setQuestion2Text(evt.target.value);
+                    console.log(question2Text);
+                  }}
+                />
               </div>
               <div className="questionDiv disabledChoice">
                 <div className="choice">
@@ -117,11 +133,14 @@ function MultipleChoice(props) {
             </div>
             <div className="q q3">
               <div className="prompt">
-              <input type="text" placeholder="Enter question text here..." onChange={ (evt) => {
-                    setQuestion3Text(evt.target.value)
-                    console.log(question3Text)
-                }
-                }/>
+                <input
+                  type="text"
+                  placeholder="Enter question text here..."
+                  onChange={(evt) => {
+                    setQuestion3Text(evt.target.value);
+                    console.log(question3Text);
+                  }}
+                />
               </div>
               <div className="questionDiv disabledChoice">
                 <div className="choice">
@@ -147,16 +166,35 @@ function MultipleChoice(props) {
               </div>
             </div>
             <div id="submitContent">
-              <button
-                className={adminEnter ? "active" : ""}
-                type="submit"
-                disabled={!adminEnter}
-                onClick={() => {
-                    addQuestionToAdminSurvey("MultipleChoice", {prompt1: question1Text, prompt2: question2Text, prompt3: question3Text})
-                }}
-              >
-                Enter Question Info
-              </button>
+              {adminEnter ? (
+                <Link
+                  className="active"
+                  to="RankingAnswer"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  onClick={() => {
+                    addQuestionToAdminSurvey("MultipleChoice", {
+                      prompt1: question1Text,
+                      prompt2: question2Text,
+                      prompt3: question3Text,
+                    });
+                  }}
+                >
+                  Enter Multiple Choice Questions
+                </Link>
+              ) : (
+                <Link
+                to="RankingAnswer"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  Enter Multiple Choice Questions
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -338,9 +376,7 @@ function MultipleChoice(props) {
                 className={enter ? "active" : ""}
                 type="submit"
                 disabled={enter}
-                onClick={() => {
-
-                }}
+                onClick={() => {}}
               >
                 Enter Responses
               </button>

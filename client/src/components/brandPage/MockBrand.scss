@@ -1,43 +1,88 @@
 @import "../styles/global.scss";
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .Brand {
-    @include headerStyle(2em, center, $baby-powder);
-    height: 100vh;
-    width: 100vw;
-    background-color: $indigo-dye;
+  @include headerStyle(2em, center, $baby-powder);
+  height: 100vh;
+  width: 100vw;
+  background-color: $indigo-dye;
 
-    h1{
-        margin: 0;
+  h1 {
+    margin: 0;
+  }
+
+  button {
+    @include bulletsStyle(1em, center);
+    padding: 1.5em;
+    transition: 0.3s ease-in;
+    border: 4px solid $baby-powder;
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparent;
+      color: $baby-powder;
     }
-
-    button {
-        @include bulletsStyle(1em, center);
-        padding: 1.5em;
-        transition: .3s ease-in;
-        border: 4px solid $baby-powder;
-        cursor: pointer;
-
-        &:hover {
-            background-color: transparent;
-            color: $baby-powder;
-
-        }
-
-    }
+  }
 }
 
 .UserInfo {
-    height: 100vh;
-    width: 100vw;
-    background-color: $burnt-orange;
+  height: 100vh;
+  width: 100vw;
+  background-color: $burnt-orange;
+  text-align: center;
 
-    h1{
-        @include headerStyle(2em, center, $baby-powder);
-        margin: 0 auto;
+  h1 {
+    @include headerStyle(3em, center, $baby-powder);
+    margin: 0;
+    padding: 1em 0 0 0;
+  }
+
+  #selectContainer {
+    display: flex;
+    margin: auto;
+    height: 70vh;
+    width: 80vw;
+
+    div {
+      flex: 1;
+      margin: 0.5em;
+
+      h2 {
+        @include body1Style(1em, center, $baby-powder);
+        margin: 1em auto 0 auto;
+      }
+
+      select,
+      textarea {
+        @include body1Style;
+        width: 100%;
         text-align: center;
+      }
+      
+      textarea {
+        @include bulletsStyle;
+      }
     }
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+  }
+
+  a {
+    @include bulletsStyle(1em, center);
+    padding: 1.5em;
+    transition: 0.3s ease-in;
+    border: 4px solid $baby-powder;
+    cursor: pointer;
+    color: $baby-powder;
+
+    &:hover {
+      background-color: $baby-powder;
+      color: $burnt-orange;
+    }
+  }
 }
