@@ -59,7 +59,10 @@ function KeyWordAnswer(props) {
     return (
       <AuthProvider>
         <div className="KeyWordAnswer">
-          <h1>Click 5 frustrations about your footwear (ADMIN)</h1>
+          <h1>Question Type:
+            <br />
+            KeyWord Answer <i>(Admin)</i>
+          </h1>
 
           <div className="gridWrapper">
             <input
