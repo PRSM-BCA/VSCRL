@@ -7,6 +7,27 @@
   @include headerStyle;
   }
 
+  button {
+    @include headerStyle(1em, center, $dark-jungle-green);
+    flex: 1;
+    width: 30%;
+    height: 15%;
+    margin: 2em auto;
+    background-color: white;
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid $dark-jungle-green;
+    transition: 0.3s ease-in;
+  }
+
+  .active:hover {
+    @include headerStyle(1em, center, white);
+    border: 1px solid white;
+    padding: 0.8em;
+    background-color: $marigold;
+    cursor: pointer;
+  }
+
   .gridWrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -28,26 +49,46 @@
     }
 
     .transformStyle {
-      display: flex;
       justify-content: center;
       align-items: center;
       background-color: red;
       color: white;
       border-radius: 50%;
+      border: solid $spanish-blue;
       width: 50px;
       height: 50px;
       padding: 3em;
+    }
+
+    .pain {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: solid $spanish-blue;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      padding: 3em;
+    
+      p {
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+       
+      }
     }
     .painOne {
       p {
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
         border-radius: 50%;
         width: 50px;
         height: 50px;
-        padding: 3em;
+   
       }
   
     }
@@ -58,11 +99,9 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
         border-radius: 50%;
         width: 50px;
         height: 50px;
-        padding: 3em;
       }
     
     }
@@ -73,7 +112,7 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
+     
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -86,7 +125,7 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
+ 
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -98,7 +137,7 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
+
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -111,7 +150,7 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
+
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -124,7 +163,7 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
+
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -136,7 +175,7 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
+ 
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -148,7 +187,7 @@
         font-size: 16px;
         justify-content: center;
         align-items: center;
-        border: solid $spanish-blue;
+
         border-radius: 50%;
         width: 50px;
         height: 50px;
