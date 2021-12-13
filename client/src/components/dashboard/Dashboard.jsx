@@ -5,17 +5,30 @@ import Header from "../header/Header";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../landing/Footer";
+import backgroundVideo from "../landing/media/video.mp4"
+import medPhoto from "../landing/media/medical.jpg"
+import surfPhoto from "../landing/media/surfing.jpg"
+import treePhoto from "../landing/media/trees.jpg"
+import skiPhoto from "../landing/media/ski.jpg"
+import sailPhoto from "../landing/media/sailing.jpg"
+import hikePhoto from "../landing/media/hike.jpg"
 
 export default function Dashboard() {
   return (
     <AuthProvider>
       <div className="dashBoard">
         <Header></Header>
-        <section className="headerVideo"></section>
+        <section className="headerVideo">
+          <video autoPlay loop muted className="backgroundVideo">
+          <source src={backgroundVideo} type="video/mp4" />
+          </video>
+        </section>
+
         <div className="featuredBrandsWrapper">
           <h1 className="sectionTitle">Brand Love.</h1>
           <section className="YourSection">
             <div className="BrandLoveBox1">
+        
               <h2>Spare two cents?</h2>
               <div className="textDiv">
                 <p>Discover how your insights earn rewards.</p>
@@ -23,6 +36,7 @@ export default function Dashboard() {
             </div>
 
             <div className="BrandLoveBox">
+            <img src={medPhoto} alt="medphoto" />
               <h2>Medical Footwear</h2>
               <div className="couponDiv">
                 <p>30% off</p>
@@ -30,6 +44,7 @@ export default function Dashboard() {
             </div>
 
             <div className="BrandLoveBox">
+            <img src={surfPhoto} alt="surfing photo" />
               <h2>Lorem ipsum dolor</h2>
               <div className="couponDiv">
                 <p>20% off</p>
@@ -37,6 +52,7 @@ export default function Dashboard() {
             </div>
 
             <div className="BrandLoveBox">
+            <img src={treePhoto} alt="treephoto" />
               <h2>TBT</h2>
               <div className="couponDiv">
                 <p>Coming soon</p>
@@ -50,6 +66,7 @@ export default function Dashboard() {
           <div className="FDiv">
             <section className="featureSection">
               <div className="featureBox1">
+              <img src={skiPhoto} alt="skiphoto" />
                 <div className="textBox">
                   <h2>Skida:</h2>
                   <p>
@@ -61,6 +78,7 @@ export default function Dashboard() {
               </div>
 
               <div className="featureBox2">
+              <img src={sailPhoto} alt="sailing photo" />
                 <div className="textBox">
                   <h2>Yeti:</h2>
 
@@ -73,6 +91,7 @@ export default function Dashboard() {
               </div>
 
               <div className="featureBox3">
+              <img src={hikePhoto} alt="hiking photo" />
                 <div className="textBox">
                   <h2>Salomon:</h2>
                   <p>
