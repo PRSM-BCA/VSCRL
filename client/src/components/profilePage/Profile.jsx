@@ -4,7 +4,7 @@ import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import Home from "./home.jpg";
 import Header from "../header/Header";
-import profilePic from "../landing/media/PImg.jpg"
+import profileImg from "../landing/media/profileImg.png"
 
 export default function Profile() {
   const { login, logout, updateAuthPassword, currentUser, getUser, getAllUsers } = useAuth();
@@ -44,8 +44,8 @@ export default function Profile() {
       
 
       <div className="profileBox">
-        <img src={profilePic} alt="profilePic" />
-        <h3 className="textBox">Welcome, {userInfo.firstname + " " + userInfo.lastname} </h3>
+        <img src={profileImg} alt="profilePic" />
+        <h2 className="textBox">Welcome, {userInfo.firstname + " " + userInfo.lastname} </h2>
         <h4 className="textBoxx">
           Manage your info, privacy, and security to make VSRL work better for
           you.
