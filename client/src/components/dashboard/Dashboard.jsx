@@ -12,7 +12,7 @@ import treePhoto from "../landing/media/trees.jpg"
 import skiPhoto from "../landing/media/ski.jpg"
 import sailPhoto from "../landing/media/sailing.jpg"
 import hikePhoto from "../landing/media/hike.jpg"
-import logo from '../landing/media/logo.png'
+import logo from '../landing/media/icon.png'
 
 export default function Dashboard() {
   return (
