@@ -6,7 +6,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 
 function LongAnswer(props) {
-  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey  } = useAuth();
+  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToUserSurvey, addQuestionToAdminSurvey  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [promptEntry, setPromptEntry] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -92,27 +92,46 @@ function LongAnswer(props) {
           <h1>Long-form Answer</h1>
           <img className="medicalTools" src={tools1} alt="Medical tools" />
           <div className="inputWrapper">
+            {console.log(promptEntry)}
             <h2>
-              Describe a typical morning from parking the car to seeing your
-              first patient
+              {props.longAnswer.prompt}
             </h2>
             <textarea
               type="text"
               name="question answer 2"
               onChange={(evt) => {
+                setPromptEntry(evt.target.value)
                 setWordArray(evt.target.value.split(" ").length);
               }}
             ></textarea>
             <p className="disabled" id="wordLimit">
-              {wordArray}/250 max words
+              {wordArray}/{props.longAnswer.wordCount} max words
             </p>
-            {console.log(wordArray)}
-            {wordArray > 250 || wordArray <= 1 ? (
-              <button disabled>Enter Response</button>
+            {wordArray > props.longAnswer.wordCount || wordArray <= 1 ? (
+              <Link
+              disabled="true"
+              to="MultipleChoice"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              >
+                Enter Long-form Answer
+              </Link>
             ) : (
-              <button className="active" onClick={(evt) => {}}>
-                Enter Response
-              </button>
+              <Link
+                    className="active"
+                    to="MultipleChoice"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    onClick={() => {
+                      addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "LongAnswer", {prompt: promptEntry});
+                    }}
+                    >
+                      Enter Long-form Answer
+                </Link>
             )}
           </div>
         </div>

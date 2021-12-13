@@ -9,7 +9,7 @@ function MultipleChoice(props) {
     getUser,
     addSurvey,
     addAdminSurvey,
-    addQuestionToSurvey,
+    addQuestionToUserSurvey,
     addQuestionToAdminSurvey,
   } = useAuth();
   const [userInfo, setUserInfo] = useState("");
@@ -22,6 +22,10 @@ function MultipleChoice(props) {
   const [question1Text, setQuestion1Text] = useState("");
   const [question2Text, setQuestion2Text] = useState("");
   const [question3Text, setQuestion3Text] = useState("");
+  const [question1Answer, setQuestion1Answer] = useState("");
+  const [question2Answer, setQuestion2Answer] = useState("");
+  const [question3Answer, setQuestion3Answer] = useState("");
+
   const [enter, setEnter] = useState(
     (selectedYes1 || selectedNo1) &&
       (selectedYes2 || selectedNo2) &&
@@ -186,7 +190,7 @@ function MultipleChoice(props) {
                 </Link>
               ) : (
                 <Link
-                to="RankingAnswer"
+                  to="RankingAnswer"
                   spy={true}
                   smooth={true}
                   offset={0}
@@ -208,7 +212,7 @@ function MultipleChoice(props) {
           <div className="mainContent">
             <div className="q q1">
               <div className="prompt">
-                <h2>Is this the case?</h2>
+                <h2>{props.multipleChoice.prompt1}</h2>
               </div>
               <div className="questionDiv">
                 <div className="choice">
@@ -220,9 +224,11 @@ function MultipleChoice(props) {
                       if (selectedYes1) {
                         setSelectedNo1(false);
                         setSelectedYes1(false);
+                        setQuestion1Answer(false);
                       } else {
                         setSelectedNo1(false);
                         setSelectedYes1(true);
+                        setQuestion1Answer(true);
                       }
                     }}
                   >
@@ -248,6 +254,7 @@ function MultipleChoice(props) {
                         setSelectedNo1(true);
                         setSelectedYes1(false);
                       }
+                      setQuestion1Answer(false);
                     }}
                   >
                     <input type="radio" checked={selectedNo1} />
@@ -263,7 +270,7 @@ function MultipleChoice(props) {
             </div>
             <div className="q q2">
               <div className="prompt">
-                <h2>Is this the case?</h2>
+                <h2>{props.multipleChoice.prompt2}</h2>
               </div>
               <div className="questionDiv">
                 <div className="choice">
@@ -275,9 +282,11 @@ function MultipleChoice(props) {
                       if (selectedYes2) {
                         setSelectedNo2(false);
                         setSelectedYes2(false);
+                        setQuestion2Answer(false);
                       } else {
                         setSelectedNo2(false);
                         setSelectedYes2(true);
+                        setQuestion2Answer(true);
                       }
                     }}
                   >
@@ -303,6 +312,7 @@ function MultipleChoice(props) {
                         setSelectedNo2(true);
                         setSelectedYes2(false);
                       }
+                      setQuestion2Answer(false);
                     }}
                   >
                     <input type="radio" checked={selectedNo2} />
@@ -318,7 +328,7 @@ function MultipleChoice(props) {
             </div>
             <div className="q q3">
               <div className="prompt">
-                <h2>Is this the case?</h2>
+                <h2>{props.multipleChoice.prompt3}</h2>
               </div>
               <div className="questionDiv">
                 <div className="choice">
@@ -330,9 +340,11 @@ function MultipleChoice(props) {
                       if (selectedYes3) {
                         setSelectedNo3(false);
                         setSelectedYes3(false);
+                        setQuestion3Answer(false);
                       } else {
                         setSelectedNo3(false);
                         setSelectedYes3(true);
+                        setQuestion3Answer(true);
                       }
                     }}
                   >
@@ -358,6 +370,7 @@ function MultipleChoice(props) {
                         setSelectedNo3(true);
                         setSelectedYes3(false);
                       }
+                      setQuestion3Answer(false);
                     }}
                   >
                     <input type="radio" checked={selectedNo3} />
@@ -372,14 +385,30 @@ function MultipleChoice(props) {
               </div>
             </div>
             <div id="submitContent">
-              <button
+              <Link
                 className={enter ? "active" : ""}
-                type="submit"
-                disabled={enter}
-                onClick={() => {}}
+                to="RankingAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                disabled={!enter}
+                onClick={() => {
+                  addQuestionToUserSurvey(
+                    currentUser.uid,
+                    "GX7nZYcm4q5qq3drETLm",
+                    "SurgeonShoeSurvey",
+                    "ShortAnswer",
+                    {
+                      question1Answer: question1Answer,
+                      question2Answer: question2Answer,
+                      question3Answer: question3Answer,
+                    }
+                  );
+                }}
               >
                 Enter Responses
-              </button>
+              </Link>
             </div>
           </div>
         </div>

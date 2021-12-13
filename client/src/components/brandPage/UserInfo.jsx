@@ -10,6 +10,7 @@ export default function UserInfo() {
     addSurvey,
     addAdminSurvey,
     addQuestionToSurvey,
+    addQuestionToUserSurvey,
     addQuestionToAdminSurvey,
   } = useAuth();
   const [userInfo, setUserInfo] = useState("");
@@ -57,28 +58,11 @@ export default function UserInfo() {
             </div>
             <div>
               <h2>Experience</h2>
-
-
                 <textarea className="practice" placeholder="Enter what categories of experience you'd like this survey to contain seperated by a ',' i.e '0-5 Years, 5-10 Years, etc.'" onChange={ (evt) => {
                     setExperience(evt.target.value.replace(" ", "").split(","))
                 }}>
 
                 </textarea>
-
-              {/* <select
-                onChange={(evt) => {
-                  console.log(practice);
-                  setPractice(evt.target.value);
-                }}
-              >
-                <option selected disabled>
-                  Years of Practice
-                </option>
-                <option value="0-5 years">0-5 years</option>
-                <option value="5-10 years">5-10 years</option>
-                <option value="10-20 years">10-20 years</option>
-                <option value="+20 years">+20 years</option>
-              </select> */}
             </div>
             <div>
               <h2>Specialty</h2>
@@ -192,7 +176,7 @@ export default function UserInfo() {
             offset={0}
             duration={500}
             onClick={() => {
-              //addQuestionToAdminSurvey("UserInfo", {gender: gender, practice: practice, specialty:specialty})
+              addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "UserCategories", {genderAnswer: gender, experienceAnswer: experience, specialtyAnswer: specialty})
             }}
           >
             Enter User Info

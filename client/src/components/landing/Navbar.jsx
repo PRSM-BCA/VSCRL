@@ -1,19 +1,21 @@
 import React from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
+import vscrlLogo from "./media/vscrlLogo.png"
+
 
 function Navbar() {
   return (
     <div className="navbar">
       <Link
         activeClass="active"
-        id="logo"
+        id="vscrlLogo"
         to="main"
         spy={true}
         smooth={true}
         offset={0}
         duration={500}
       >
-        VSCRL
+        <img id="vscrlLogo" src={vscrlLogo} />
       </Link>
 
       <Link

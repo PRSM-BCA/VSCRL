@@ -4,7 +4,14 @@ import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 function ShortAnswer(props) {
-  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey  } = useAuth();
+  const {
+    currentUser,
+    getUser,
+    addSurvey,
+    addAdminSurvey,
+    addQuestionToUserSurvey,
+    addQuestionToAdminSurvey,
+  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [question1, setQuestion1] = useState("");
   const [question2, setQuestion2] = useState("");
@@ -31,7 +38,7 @@ function ShortAnswer(props) {
                 type="text"
                 placeholder="Enter question prompt here..."
                 onChange={(evt) => {
-                  setQuestionPrompt(evt.target.value)
+                  setQuestionPrompt(evt.target.value);
                 }}
               />
               <section>
@@ -74,43 +81,43 @@ function ShortAnswer(props) {
               </section>
             </div>
           </div>
-          { !questionPrompt ?
-            (
-              <div className="linkDiv">
-                <Link
-                      to="UserInfo"
-                      spy={true}
-                      smooth={true}
-                      offset={0}
-                      duration={500}
-                      onClick={() => {
-                        addQuestionToAdminSurvey("ShortAnswer", {prompt: questionPrompt})
-                      }}
-                      >
-                  Enter Short Answer
-                </Link>
-              </div>
-            )
-            : (
-
-              <div className="linkDiv">
-                <Link
-                      disabled="true"
-                      className="active"
-                      to="LongAnswer"
-                      spy={true}
-                      smooth={true}
-                      offset={0}
-                      duration={500}
-                      onClick={() => {
-                        addQuestionToAdminSurvey("ShortAnswer", {prompt: questionPrompt})
-                      }}
-                      >
-                  Enter Short Answer
-                </Link>
-              </div>
-            )
-          }
+          {!questionPrompt ? (
+            <div className="linkDiv">
+              <Link
+                to="UserInfo"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => {
+                  addQuestionToAdminSurvey("ShortAnswer", {
+                    prompt: questionPrompt,
+                  });
+                }}
+              >
+                Enter Short Answer
+              </Link>
+            </div>
+          ) : (
+            <div className="linkDiv">
+              <Link
+                disabled="true"
+                className="active"
+                to="LongAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => {
+                  addQuestionToAdminSurvey("ShortAnswer", {
+                    prompt: questionPrompt,
+                  });
+                }}
+              >
+                Enter Short Answer
+              </Link>
+            </div>
+          )}
         </div>
       </AuthProvider>
     );
@@ -123,7 +130,7 @@ function ShortAnswer(props) {
               Short Answer <i>(Key User)</i>
             </h1>
             <div className="questionWrapper">
-              <h2 id="questionPrompt">Question Prompt</h2>
+              <h2 id="questionPrompt">{props.shortAnswer.prompt}</h2>
               <section>
                 <p>
                   <i>#1</i>
@@ -170,18 +177,40 @@ function ShortAnswer(props) {
               </section>
             </div>
           </div>
-          { question1 && question2 && question3 ?
-            (
-              <button className="active" type="submit" onClick={() => {}}>
-                Enter Question Info
-              </button>
-            )
-            : (
-              <button disabled type="submit" onClick={() => {}}>
-              Enter Question Info
-            </button>
-            )
-          }
+          {question1 && question2 && question3 ? (
+            <div className="linkDiv">
+              <Link
+                to="LongAnswer"
+                className="active"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => {
+                  addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "ShortAnswer", {
+                    question1: question1,
+                    question2: question2,
+                    question3: question3
+                  });
+                }}
+              >
+                Enter Short Answer
+              </Link>
+            </div>
+          ) : (
+            <div className="linkDiv">
+              <Link
+                disabled="true"
+                to="LongAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                Enter Short Answer
+              </Link>
+            </div>
+          )}
         </div>
       </AuthProvider>
     );

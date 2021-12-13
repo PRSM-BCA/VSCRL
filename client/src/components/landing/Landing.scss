@@ -22,7 +22,7 @@ body {
   // -------------------------------Styling for Navbar
   .navbar {
     position: fixed;
-    height: 10vh;
+    height: 5vh;
     display: flex;
     flex-direction: row;
     top: 0;
@@ -30,13 +30,17 @@ body {
     justify-content: left;
     align-items: center;
     gap: 2em;
-    color: white;
     font-size: 1.3em;
-    background-color: #1e2227;
+    background-color: black;
     padding-top: 3vh;
     padding-left: 3vw;
-    font-family: "Merriweather", serif;
+    @include headerStyle ($textColor: white, $fontSize: 20px);
     z-index: 1;
+
+   #vscrlLogo {
+    
+     width: 250px;
+   }
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
@@ -57,12 +61,6 @@ body {
       }
     }
 
-    #logo {
-      display: flex;
-      font-size: 3em;
-      color: white;
-      gap: 0;
-    }
   }
 
   .main-section {
@@ -89,19 +87,17 @@ body {
     }
 
     .SignUp button {
-      
-      background-color:transparent;
+      background-color: transparent;
       color: white;
     }
 
     .SignUp button:hover {
-      
       color: #000000;
       background-color: #f1a61e;
     }
     @media all and (max-width: 30em) {
-      .SignUp button{
-        display: block;;
+      .SignUp button {
+        display: block;
         margin: 0.4em auto;
       }
     }
@@ -167,8 +163,6 @@ body {
         font-family: "Merriweather", serif;
       }
     }
-
-  
 
     .aboutFlexContainer {
       display: flex;
@@ -409,7 +403,6 @@ body {
   .stories-section {
     height: 100vh;
     background-color: $marigold;
-  
 
     .curved {
       display: flex;
@@ -431,7 +424,6 @@ body {
         bottom: 0;
         display: block;
         position: absolute;
-        
       }
 
       .carousel-wrapper {
@@ -534,50 +526,5 @@ body {
       }
     }
   }
-  // -------------------------------Styling for Footer Section
 
-  .bottom-tag {
-    h1 {
-      padding-top: 15vh;
-      margin-left: 5vw;
-      padding-bottom: 10vh;
-    }
-  }
-  .footerWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    padding-top: 25vh;
-
-    .footerFlexContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-
-      .footerMiniFlex {
-        display: flex;
-        flex-direction: row;
-
-        .footer-contact-type {
-          color: white;
-          margin-bottom: 2vh;
-          @media (max-width: 675px) {
-            font-size: 20%;
-          }
-        }
-      }
-    }
-
-    svg {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 100vw;
-      z-index: -1;
-    }
-  }
 }
