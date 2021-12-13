@@ -2,6 +2,9 @@
 
 //---------------------KeywordAnswer ADMIN
 .KeyWordAnswer-admin {
+
+  text-align: center;
+
   button {
     @include headerStyle(1em, center, $dark-jungle-green);
     flex: 1;
@@ -14,13 +17,9 @@
     border: 1px solid $dark-jungle-green;
     transition: 0.3s ease-in;
 
-
-    
-    @media(max-width: 675px){
+    @media (max-width: 675px) {
       margin-top: 15vh;
-      
     }
-   
   }
 
   .active:hover {
@@ -30,8 +29,6 @@
     background-color: $marigold;
     cursor: pointer;
   }
-
-
 
   .KeyWordMainWrapper {
     display: flex;
@@ -53,7 +50,6 @@
     @media (max-width: 675px) {
       border-bottom: solid $marigold;
       border-right: none;
-      
     }
 
     h1 {
@@ -62,7 +58,6 @@
       text-align: left;
       color: $indigo-dye;
       width: 350px;
-      
 
     }
 
@@ -72,7 +67,6 @@
       color: $indigo-dye;
       width: 350px;
       font-size: 20px;
-      
     }
   }
 
@@ -125,10 +119,8 @@
         border: none;
         border-bottom: 2px solid $marigold;
         min-width: 300px;
-        
       }
 
-    
       p {
         font-size: 16px;
         justify-content: center;
@@ -248,16 +240,21 @@
       }
     }
   }
-
-  
 }
 
 //---------------------KeywordAnswer KeyUser
 .keyWordAnswer-keyUser {
-  h1 {
-    text-align: center;
-    @include headerStyle;
-  }
+
+  text-align: center;
+
+    h1 {
+      @include headerStyle(2em);
+      padding-top: 1em;
+      margin: auto;
+      text-align: center;
+    }
+
+  
 
   button {
     @include headerStyle(1em, center, $dark-jungle-green);
@@ -270,7 +267,6 @@
     border-radius: 6px;
     border: 1px solid $dark-jungle-green;
     transition: 0.3s ease-in;
-
   }
 
   .active:hover {
@@ -1132,6 +1128,7 @@
       padding-left: 5rem;
       min-width: 475px;
 
+
       @media (max-width: 675px) {
         padding: 0;
       }
@@ -1221,25 +1218,55 @@
 }
 
 .rankingAnswer-keyUser {
+
+  text-align: center;
+
   h2 {
-    text-align: center;
-    @include headerStyle($textColor: $burnt-orange);
+  
+      @include headerStyle(2em);
+      padding-top: 1em;
+      margin: auto;
+      text-align: center;
+
+    @media (max-width: 675px) {
+      max-width: 300px;
+      text-align: center;
+      margin: auto;
+      font-size: 16px;
+    }
   }
 
   .draggable-wrapper-keyUser {
+    min-width: 475px;
+    margin: auto;
+
+  
+    
+
     .list-container {
       display: grid;
-      padding: 1.5rem;
-      width: 300px;
-      height: 400px;
       grid-template-rows: 100%;
+      flex-direction: row;
+      padding: 1.5rem;
+      width: 400px;;
+      height: 500px;
       gap: 0.5rem;
       margin: auto;
       border-radius: 30px;
       border: 2px solid $indigo-dye;
 
+    
+      @media (max-width: 675px) {
+        max-width: 45%;
+        margin: auto;
+   
+    
+      }
+     
+
       .list-container_item {
-        background-color: white;
+        flex: 1;
+        height: 5%;
         border-radius: 5px;
         color: $spanish-blue;
         display: flex;
@@ -1250,6 +1277,23 @@
         gap: 10px;
         font-family: "Merriweather", serif;
         @include bulletsStyle;
+
+
+      
+        .handlebars {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+          align-items: center;
+          max-width: 1vw;
+          border: none;
+          min-width: 5vw;
+        }
+
+        div {
+          flex: 2;
+          text-align: left;
+        }
       }
       .list-container_item:not(:last-of-type) {
         margin-bottom: 0.5rem;
@@ -1258,15 +1302,10 @@
       .list-container_item:hover {
         background-color: $marigold;
       }
-
-      .handlebars {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    
     }
 
-    a {
+    .active {
       @include headerStyle(1em, center, $dark-jungle-green);
       flex: 1;
       width: 30%;

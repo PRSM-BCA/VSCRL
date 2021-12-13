@@ -64,13 +64,10 @@ export function AuthProvider({children}) {
     }
     
     // Get survey from database
-    async function getSurvey(authUid, surveyId) {
-        let surveyRef = await getDocs(collection(db, "surveys/" + surveyId + "/" + authUid))
-        let surveyInfo = []
-        surveyRef.forEach((doc) => {
-            surveyInfo.push(doc.data())
-        })
-        return surveyInfo
+    async function getSurvey(authUid, surveyId, surveyName) {
+        let surveyRef = await getDoc(doc(db, "surveys", surveyId, authUid, surveyName))
+        console.log(surveyRef.data())
+        return surveyRef.data()
     }
 
     // Grabs all users from Users Collection and logs them
@@ -96,8 +93,10 @@ export function AuthProvider({children}) {
     }
 
     // Add user record to Survey
-    async function addSurvey(user, authUid, surveyId) {
-        let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, "UserInfo"), {user: user})
+    async function addSurvey(authUid, surveyId, brandName, surveyName) {
+        let brandRef = await getDoc(doc(db, "brands", brandName))
+        brandRef = brandRef.data()
+        let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, surveyName), brandRef)
         console.log("Reached")
         await updateDoc(doc(db, "users", authUid), {surveyList: arrayUnion({
             surveyId: surveyId,
@@ -107,8 +106,8 @@ export function AuthProvider({children}) {
     }
 
     // Add question collection to specific user survey
-    async function addQuestionToUserSurvey(authUid, surveyId, questionType, questionData) {
-        let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, "Questions"), {[questionType]: questionData})
+    async function addQuestionToUserSurvey(authUid, surveyId, surveyName, questionType, questionData) {
+        let surveyRef = await updateDoc(doc(db, "surveys", surveyId, authUid, surveyName), {[`surveyList.SurgeonShoeSurvey.${questionType}`]: {questionData}}, {merge: true})
         return surveyRef
     }
 
@@ -119,7 +118,7 @@ export function AuthProvider({children}) {
     }
 
     async function addQuestionToAdminSurvey(questionType, questionData) {
-        let surveyRef = await updateDoc(doc(db, "brands", "SurgeonShoes"), {[`surveyList.SurgeonShoeSurvey.${questionType}`]: { questionData}}, {merge: true})
+        let surveyRef = await updateDoc(doc(db, "brands", "SurgeonShoes"), {[`surveyList.SurgeonShoeSurvey.${questionType}`]: {questionData}}, {merge: true})
         return surveyRef
     }
 

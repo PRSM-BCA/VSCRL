@@ -14,16 +14,18 @@ body {
     margin: 0;
   }
 
-  button {
+  a {
     @include bulletsStyle(1em, center);
+    display: block;
     padding: 1.5em;
     transition: 0.3s ease-in;
     border: 4px solid $baby-powder;
+    color: $baby-powder;
     cursor: pointer;
 
     &:hover {
-      background-color: transparent;
-      color: $baby-powder;
+      background-color: $baby-powder;
+      color: $indigo-dye;
     }
   }
 }

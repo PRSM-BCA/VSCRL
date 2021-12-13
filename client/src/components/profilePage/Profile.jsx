@@ -1,10 +1,10 @@
 import "./Profile.scss";
 import React, { useState, useEffect } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
-import profilePic from "../header/image/PImg.jpg";
 import { Link } from "react-router-dom";
 import Home from "./home.jpg";
 import Header from "../header/Header";
+import profilePic from "../landing/media/PImg.jpg"
 
 export default function Profile() {
   const { login, logout, updateAuthPassword, currentUser, getUser, getAllUsers } = useAuth();
@@ -51,7 +51,7 @@ export default function Profile() {
           you.
         </h4>
         <div>
-          <h1>Change password</h1>
+          <h1 className="CPh1">Change password</h1>
           <div className="changePDiv">
           <form action=""
             onSubmit={(evt) => {

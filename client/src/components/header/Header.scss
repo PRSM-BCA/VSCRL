@@ -44,11 +44,15 @@
   display: flex;
   align-items: center;
   background-color: black;
-  width: 20vw;
+  width: 250px;
   border-radius: 0 0 2rem 0;
   z-index: 3;
   position: fixed;
   top:0;
+
+  @media (max-width: 675px) {
+    width: 280px;
+  }
   
 }
 
@@ -90,6 +94,9 @@
   z-index: 1;
   margin-top: 1vh;
   margin-left: -10px;
+  @media (max-width:675px) {
+    height: 16vh;
+  }
 }
 
 /* Links inside the dropdown */
