@@ -21,24 +21,29 @@ function ScaleAnswer(props) {
         <label className="question">How often do your shoes get gross?</label>
         <ul className="likert">
           <li>
-            <input type="radio" name="likert" value="never" />
-            <label>Never</label>
+            <label className="form-control">
+            <input type="radio" name="radio" value="never" />
+            Never</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="weekly" />
-            <label>Weekly</label>
+            <label className="form-control">
+            <input type="radio" name="radio" value="weekly" />
+            Weekly</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="daily" />
-            <label>Daily</label>
+            <label className="form-control">
+            <input type="radio" name="radio" value="daily" />
+            Daily</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="postop" />
-            <label>Post-OP</label>
+            <label className="form-control">
+            <input type="radio" name="radio" value="postop" />
+            Post-OP</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="postop" />
-            <label>Post-OP</label>
+            <label className="form-control">
+            <input type="radio" name="radio" value="postop" />
+            Post-OP</label>
           </li>
         </ul>
         </form>
@@ -46,24 +51,29 @@ function ScaleAnswer(props) {
         <label className="question">How often do you clean your shoes?</label>
         <ul className="likert">
           <li>
-            <input type="radio" name="likert" value="never" />
-            <label>Never</label>
+            <label className="form-control">
+            <input type="radio" name="radio" value="never" />
+            Never</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="weekly" />
-            <label>Weekly</label>
+          <label className="form-control">
+            <input type="radio" name="radio" value="weekly" />
+            Weekly</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="daily" />
-            <label>Daily</label>
+          <label className="form-control">
+            <input type="radio" name="radio" value="daily" />
+            Daily</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="postop" />
-            <label>Post-OP</label>
+          <label className="form-control">
+            <input type="radio" name="radio" value="postop" />
+            Post-OP</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="postop" />
-            <label>Post-OP</label>
+            <label className="form-control">
+            <input type="radio" name="radio" value="postop" />
+            Post-OP</label>
           </li>
         </ul>
         </form>
@@ -71,24 +81,29 @@ function ScaleAnswer(props) {
         <label className="question">How often do you buy work shoes?</label>
         <ul className="likert">
         <li>
-            <input type="radio" name="likert" value="never" />
-            <label>Never</label>
+        <label className="form-control">
+            <input type="radio" name="radio" value="never" />
+            Never</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="fewYears" />
-            <label>Every few years</label>
+          <label className="form-control">
+            <input type="radio" name="radio" value="fewYears" />
+            Every few years</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="coupleYears" />
-            <label>1-2 years</label>
+          <label className="form-control">
+            <input type="radio" name="radio" value="coupleYears" />
+            1-2 years</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="Yearly" />
-            <label>Yearly</label>
+          <label className="form-control">
+            <input type="radio" name="radio" value="Yearly" />
+            Yearly</label>
           </li>
           <li>
-            <input type="radio" name="likert" value="sixMonths" />
-            <label>Every Six Months</label>
+          <label className="form-control">
+            <input type="radio" name="radio" value="sixMonths" />
+            Every Six Months</label>
           </li>
         </ul>
         <div className="buttons">
@@ -108,24 +123,29 @@ function ScaleAnswer(props) {
           <label className="question">How often do your shoes get gross?</label>
           <ul className="likert">
             <li>
-              <input type="radio" name="likert" value="never" />
-              <label>Never</label>
+            <label className="form-control">
+              <input type="radio" name="radio" value="never" />
+              Never</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="weekly" />
-              <label>Weekly</label>
+            <label className="form-control">
+              <input type="radio" name="radio" value="weekly" />
+              Weekly</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="daily" />
-              <label>Daily</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="daily" />
+              Daily</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="postop" />
-              <label>Post-OP</label>
+            <label className="form-control">
+              <input type="radio" name="radio" value="postop" />
+              Post-OP</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="postop" />
-              <label>Post-OP</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="postop" />
+              Post-OP</label>
             </li>
           </ul>
           </form>
@@ -133,24 +153,29 @@ function ScaleAnswer(props) {
           <label className="question">How often do you clean your shoes?</label>
           <ul className="likert">
             <li>
-              <input type="radio" name="likert" value="never" />
-              <label>Never</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="never" />
+              Never</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="weekly" />
-              <label>Weekly</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="weekly" />
+              Weekly</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="daily" />
-              <label>Daily</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="daily" />
+              Daily</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="postop" />
-              <label>Post-OP</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="postop" />
+              Post-OP</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="postop" />
-              <label>Post-OP</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="postop" />
+              Post-OP</label>
             </li>
           </ul>
           </form>
@@ -158,24 +183,29 @@ function ScaleAnswer(props) {
           <label className="question">How often do you buy work shoes?</label>
           <ul className="likert">
           <li>
-              <input type="radio" name="likert" value="never" />
-              <label>Never</label>
+            <label className="form-control">
+              <input type="radio" name="radio" value="never" />
+              Never</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="fewYears" />
-              <label>Every few years</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="fewYears" />
+              Every few years</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="coupleYears" />
-              <label>1-2 years</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="coupleYears" />
+              1-2 years</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="Yearly" />
-              <label>Yearly</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="Yearly" />
+              Yearly</label>
             </li>
             <li>
-              <input type="radio" name="likert" value="sixMonths" />
-              <label>Every Six Months</label>
+              <label className="form-control">
+              <input type="radio" name="radio" value="sixMonths" />
+              Every Six Months</label>
             </li>
           </ul>
           <div className="buttons">
