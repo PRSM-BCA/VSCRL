@@ -121,21 +121,22 @@ function RankingExp(props) {
                 Ranking Answer <i>(Admin)</i>
               </h1>
               <p>
-                <u>User Engagement</u>: Users' responses to previous short answer
-                and word cloud questions will auto-fill into "Ranking Answer"
-                type.
+                <u>User Engagement</u>: In "Ranking Answer", Users are asked to
+                rank the priority of their responses (#1 being most important
+                and #8 being least important).
                 <br />
                 <br />
-                In "Ranking Answer", Users are asked to rank the priority of their
-                responses (#1 being most important and #8 being least
-                important).
+                Users' responses to previous short answer and word cloud
+                questions will auto-fill into "Ranking Answer" type.
                 <br />
                 <br />
                 Go ahead and give the draggable feature a try!
               </p>
             </div>
             <div className="draggable-wrapper">
-              <h4><u>Example</u>: Rank the 8 pains with your footwear </h4>
+              <h4>
+                <u>Example</u>: Rank the 8 pains with your footwear{" "}
+              </h4>
               <div className="list-container">
                 <DragDropContext onDragEnd={onDragEnd}>
                   <Droppable droppableId="Answers">
@@ -163,28 +164,28 @@ function RankingExp(props) {
             <section></section>
 
             {!rankPrompt ? (
-
               <Link
-              to="KeyWordAnswer"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
+                to="KeyWordAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
               >
                 Enter Question Info
               </Link>
-
             ) : (
               <Link
-              className="active"
-              to="KeyWordAnswer"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-              onClick={() => {
-                addQuestionToAdminSurvey("RankingAnswer", {prompt: rankPrompt})
-              }}
+                className="active"
+                to="KeyWordAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => {
+                  addQuestionToAdminSurvey("RankingAnswer", {
+                    prompt: rankPrompt,
+                  });
+                }}
               >
                 Enter Question Info
               </Link>

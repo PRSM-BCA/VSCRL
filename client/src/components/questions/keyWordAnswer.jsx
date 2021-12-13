@@ -30,7 +30,10 @@ function KeyWordAnswer(props) {
   const [input8, setInput8] = useState(null);
   const [input9, setInput9] = useState(null);
 
-  // Change style function and keep track of count
+  // Admin function: change color onChange for ADMIN
+
+
+  // keyUser function: Change style  and keep track of count
   function changeStyle(
     classType,
     selectPain,
@@ -59,101 +62,117 @@ function KeyWordAnswer(props) {
   if (userInfo.usertype === "admin") {
     return (
       <AuthProvider>
-        <div className="KeyWordAnswer">
-          <h1>Question Type:
-            <br />
-            KeyWord Answer <i>(Admin)</i>
-          </h1>
+        <div className="KeyWordAnswer-admin">
+          <div className="KeyWordMainWrapper">
+            <div className="KeyWord-Instructions">
+              <h1>
+                Question Type:
+                <br />
+                KeyWord Answer <i>(Admin)</i>
+              </h1>
+              <p>
+                <u>User Engagement</u>: Users will select 5 keywords from the
+                nine that will appear (one in each bubble).
+              </p>
+              <p>
+                <u>Instructions</u>:
+                <br />
+                1. Enter 9 key words (one in each bubble)
+                <br />
+                2. Enter question info
+              </p>
+            </div>
+            <div className="gridWrapper">
+              <input
+                className="pain painOne"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput1(evt.target.value);
+                  
+                }}
+              ></input>
+              <input
+                className="pain painTwo"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput2(evt.target.value);
+                }}
+              ></input>
 
-          <div className="gridWrapper">
-            <input
-              className="pain painOne "
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput1(evt.target.value);
-              }}
-            ></input>
-            <input
-              className="pain painTwo"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput2(evt.target.value);
-              }}
-            ></input>
+              <input
+                className="pain painThree"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput3(evt.target.value);
+                }}
+              ></input>
 
-            <input
-              className="pain painThree"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput3(evt.target.value);
-              }}
-            ></input>
+              <input
+                className="pain painFour"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput4(evt.target.value);
+                }}
+              ></input>
 
-            <input
-              className="pain painFour"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput4(evt.target.value);
-              }}
-            ></input>
+              <input
+                className="pain painFive"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput5(evt.target.value);
+                }}
+              ></input>
 
-            <input
-              className="pain painFive"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput5(evt.target.value);
-              }}
-            ></input>
+              <input
+                className="pain painSix"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput6(evt.target.value);
+                }}
+              ></input>
 
-            <input
-              className="pain painSix"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput6(evt.target.value);
-              }}
-            ></input>
+              <input
+                className="pain painSeven"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput7(evt.target.value);
+                }}
+              ></input>
 
-            <input
-              className="pain painSeven"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput7(evt.target.value);
-              }}
-            ></input>
+              <input
+                className="pain painEight"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput8(evt.target.value);
+                }}
+              ></input>
 
-            <input
-              className="pain painEight"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput8(evt.target.value);
-              }}
-            ></input>
-
-            <input
-              className="pain painNine"
-              type="text"
-              name="keyword"
-              placeholder="Enter"
-              onChange={(evt) => {
-                setInput9(evt.target.value);
-              }}
-            ></input>
+              <input
+                className="pain painNine"
+                type="text"
+                name="keyword"
+                placeholder="Enter..."
+                onChange={(evt) => {
+                  setInput9(evt.target.value);
+                }}
+              ></input>
+            </div>
           </div>
           {input1 &&
           input2 &&
@@ -165,18 +184,28 @@ function KeyWordAnswer(props) {
           input8 &&
           input9 ? (
             <Link
-                    className="active"
-                    to="MultipleChoice"
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                    onClick={() => {
-                      addQuestionToAdminSurvey("KeyWordQuestions", {[input1]: 0, [input2]: 0, [input3]: 0, [input4]: 0, [input5]: 0, [input6]: 0, [input7]: 0, [input8]: 0, [input9]: 0})
-                    }}
-                    >
-                      Enter Key Word Prompts
-                </Link>
+              className="active"
+              to="MultipleChoice"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              onClick={() => {
+                addQuestionToAdminSurvey("KeyWordQuestions", {
+                  [input1]: 0,
+                  [input2]: 0,
+                  [input3]: 0,
+                  [input4]: 0,
+                  [input5]: 0,
+                  [input6]: 0,
+                  [input7]: 0,
+                  [input8]: 0,
+                  [input9]: 0,
+                });
+              }}
+            >
+              Enter Key Word Prompts
+            </Link>
           ) : (
             <button disabled type="submit" onClick={() => {}}>
               Enter Question Info
@@ -190,7 +219,7 @@ function KeyWordAnswer(props) {
   } else {
     return (
       <AuthProvider>
-        <div className="KeyWordAnswer">
+        <div className="keyWordAnswer-keyUser">
           {console.log(count)}
           <h1>Click 5 frustrations about your footwear</h1>
 
