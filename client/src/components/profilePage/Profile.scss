@@ -17,8 +17,12 @@
       $textColor: $dark-jungle-green
     );
   }
-
-  svg {
+  h3{
+    height: fit-content;
+    @include headerStyle($fontSize: 24px, $alignment: center, $textColor: $dark-jungle-green)
+  }
+  
+  svg{
     margin: 0%;
   }
 }
@@ -37,13 +41,25 @@
   height: 20vh;
   width: 50vw;
   align-content: space-between;
-  background-color: #1b75bc;
+  background-color: #1B75BC;
+  
 
-  input {
-    margin: 10px;
+  input{
+   margin: 10px;
+  }
+  @media (max-width:675px) {
+    width: 80vw;
   }
 }
-.changeEDiv {
+
+.CPh1{
+    
+  @media (max-width:675px) {
+    margin-top: 6rem;
+  }
+}
+
+.changeEDiv{
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -54,6 +70,9 @@
   background-color: #f1a61e;
   input {
     margin: 10px;
+   }
+   @media (max-width:675px) {
+    width: 80vw;
   }
 }
 
@@ -76,6 +95,9 @@
   height: max-content;
   margin-top: 20vh;
   width: 60vw;
+  @media (max-width:675px) {
+    width: 80vw;
+  }
 
   h2{
     color: $indigo-dye;
@@ -87,3 +109,4 @@
     background-color: $burnt-orange;
   }
 }
+

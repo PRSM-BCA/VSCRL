@@ -270,7 +270,7 @@
 
   h1 {
     @include headerStyle(
-      $fontSize: 60px,
+      $fontSize: 56px,
       $alignment: left,
       $textColor: $baby-powder
     );
