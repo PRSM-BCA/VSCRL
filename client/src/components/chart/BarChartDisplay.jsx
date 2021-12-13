@@ -7,7 +7,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
@@ -53,7 +52,7 @@ export default function BarChartDisplay() {
         Object.keys(brand).map((keyName, keyIndex) => {
             console.log(keyName, brand[keyName])
             setKeyWordValue(keyWordValue => [...keyWordValue, {[keyName]: brand[keyName]}])
-            setDataPoints(dataPoints => [...dataPoints, {word: brand[keyName].word, value: brand[keyName].value, fill: colors[keyIndex]}])
+            setDataPoints(dataPoints => [...dataPoints, {word: brand[keyName].word, value: brand[keyName].value, fill: colors[keyIndex], stroke: colors[keyIndex]}])
         })
     }
 
@@ -62,13 +61,14 @@ export default function BarChartDisplay() {
   return (
     <div className="BarChartDisplay">
       <ResponsiveContainer>
-        <BarChart width={500} height={300} data={dataPoints} barSize={20}>
-          <XAxis dataKey="word" scale="point" />
-          <YAxis />
+        <BarChart width={500} height={300} data={dataPoints} barSize={20} layout="vertical">
+          <YAxis dataKey="word" type="category" />
+          <XAxis />
           <Tooltip />
-          <Legend />
           <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="value" background={{ fill: "#eee" }} />
+          <Bar dataKey="value" background={{ fill: "#eee" }} onClick={(evt) => {
+              console.log(evt)
+          }}/>
         </BarChart>
       </ResponsiveContainer>
     </div>

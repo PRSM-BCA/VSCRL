@@ -26,6 +26,7 @@ export default function Mockbrand() {
         window.scrollTo(0, 0)
       }, [getUser, userInfo, currentUser, getBrand]);
 
+    if (userInfo.usertype === "admin") {
     return (
         <AuthProvider>
             <div className="Brand">
@@ -49,4 +50,30 @@ export default function Mockbrand() {
             <KeyWordAnswer></KeyWordAnswer>
         </AuthProvider>
     )
+    }
+    else {
+        return (
+            <AuthProvider>
+            <div className="Brand">
+                <h1>{currentBrand.brandName}</h1>
+                <h2><i>"{currentBrand.missionStatement}"</i></h2>
+                <Link
+                    to="UserInfo"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    >
+                    <button type="submit">Start Survey</button>
+                </Link>
+            </div>
+            <UserInfo></UserInfo>
+            <ShortAnswer></ShortAnswer>
+            <LongAnswer></LongAnswer>
+            <MultipleChoice></MultipleChoice>
+            <RankingAnswer></RankingAnswer>
+            <KeyWordAnswer></KeyWordAnswer>
+        </AuthProvider>
+        )
+    }
 }
