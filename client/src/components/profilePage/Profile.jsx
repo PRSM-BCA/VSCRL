@@ -51,7 +51,7 @@ export default function Profile() {
           you.
         </h4>
         <div>
-          <h1>Change password</h1>
+          <h1 className="CPh1">Change password</h1>
           <div className="changePDiv">
           <form action=""
             onSubmit={(evt) => {

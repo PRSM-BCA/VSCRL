@@ -39,8 +39,11 @@ export default function Dashboard() {
             <div className="BrandLoveBox">
             <img src={medPhoto} alt="medphoto" />
               <h2>Medical Footwear</h2>
-              <div className="couponDiv">
+              
+              <div className="couponDiv" /*onClick={useNavigate("/mockBrand")}*/ >
+              <Link to="/mockBrand">
                 <p>30% off</p>
+                </Link> 
               </div>
             </div>
 
