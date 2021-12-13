@@ -169,7 +169,7 @@ function KeyWordAnswer(props) {
                     offset={0}
                     duration={500}
                     onClick={() => {
-                      addQuestionToAdminSurvey("KeyWordQuestions", {[input1]: 0, [input2]: 0, [input3]: 0, [input4]: 0, [input5]: 0, [input6]: 0, [input7]: 0, [input8]: 0, [input9]: 0})
+                      addQuestionToAdminSurvey("KeyWordQuestions", [{word: input1, value: 0}, {word: input2, value: 0}, {word: input3, value: 0}, {word: input4, value: 0}, {word: input5, value: 0}, {word: input6, value: 0}, {word: input7, value: 0}, {word: input8, value: 0}, {word: input9, value: 0}])
                     }}
                     >
                       Enter Key Word Prompts
