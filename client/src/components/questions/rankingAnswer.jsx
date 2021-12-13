@@ -2,7 +2,7 @@ import RankingFunctionality from "./RankingFunctionality.jsx";
 
 function RankingAnswer() {
   return (
-    <div className="rankingAnswer">
+    <div className="RankingAnswer">
       <RankingFunctionality />
     </div>
   );

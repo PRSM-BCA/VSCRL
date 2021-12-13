@@ -6,9 +6,10 @@ import RankingData from "../../RankingData";
 
 import { useState, useEffect } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function RankingExp(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addQuestionToAdminSurvey } = useAuth();
   const [rankAnswer, setRankAnswer] = useState(RankingData);
   const [userInfo, setUserInfo] = useState("");
 
@@ -52,7 +53,6 @@ function RankingExp(props) {
   //  creating function for onDragEnd
   const onDragEnd = (data) => {
     const { destination, source } = data;
-    console.log("this is our destination and source", destination, source);
     // if no destination and no source, don't do anything
     if (!destination || !source) {
       return;
@@ -69,17 +69,14 @@ function RankingExp(props) {
     const directionOfDrag =
       // if destination is greater than source, then GREATER, if not then LESS
       destination.index > source.index ? "GREATER" : "LESS";
-    console.log("direction of drag", directionOfDrag);
+
     // find the affected range of other answers
     let affectedRange;
     if (directionOfDrag === "GREATER") {
       affectedRange = range(source.index, destination.index + 1);
     } else if (directionOfDrag === "LESS") {
       affectedRange = range(destination.index, source.index);
-
-      console.log("Are we getting to this part?");
     }
-    console.log("affected range", affectedRange);
 
     // if answers are affected increment or decrement base on greater than or less than value
     // update positions
@@ -124,26 +121,22 @@ function RankingExp(props) {
                 Ranking Answer <i>(Admin)</i>
               </h1>
               <p>
-                <u>INSTRUCTIONS:</u> Users' responses to previous short answer
-                and word cloud questions will auto-fill into "Ranking question"
-                type.
+                <u>User Engagement</u>: In "Ranking Answer", Users are asked to
+                rank the priority of their responses (#1 being most important
+                and #8 being least important).
                 <br />
                 <br />
-                In this question, Users are asked to rank the priority of their
-                responses (#1 being most important and #8 being least
-                important).
-                <br />
-                <br />
-                <b>
-                  Here (pictured right) is an example of what a User would see.
-                </b>
+                Users' responses to previous short answer and word cloud
+                questions will auto-fill into "Ranking Answer" type.
                 <br />
                 <br />
                 Go ahead and give the draggable feature a try!
               </p>
             </div>
             <div className="draggable-wrapper">
-              <h2>Rank the 8 pains with your footwear</h2>
+              <h4>
+                <u>Example</u>: Rank the 8 pains with your footwear{" "}
+              </h4>
               <div className="list-container">
                 <DragDropContext onDragEnd={onDragEnd}>
                   <Droppable droppableId="Answers">
@@ -162,7 +155,7 @@ function RankingExp(props) {
             <input
               id="questionPrompt"
               type="text"
-              placeholder="Rank the 8..."
+              placeholder="Enter your 8 pains prompt here..."
               onChange={(evt) => {
                 console.log(rankPrompt);
                 setRankPrompt(evt.target.value);
@@ -171,13 +164,31 @@ function RankingExp(props) {
             <section></section>
 
             {!rankPrompt ? (
-              <button disabled type="submit" onClick={() => {}}>
+              <Link
+                to="KeyWordAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
                 Enter Question Info
-              </button>
+              </Link>
             ) : (
-              <button className="active" type="submit" onClick={() => {}}>
+              <Link
+                className="active"
+                to="KeyWordAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => {
+                  addQuestionToAdminSurvey("RankingAnswer", {
+                    prompt: rankPrompt,
+                  });
+                }}
+              >
                 Enter Question Info
-              </button>
+              </Link>
             )}
           </div>
         </div>
