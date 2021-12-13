@@ -221,7 +221,9 @@ function KeyWordAnswer(props) {
     return (
       <AuthProvider>
         <div className="keyWordAnswer-keyUser">
-          <h1>Click 5 frustrations about your footwear</h1>
+          {console.log(count)}
+          <h1>Click 5 frustrations about your footwear (Key User)</h1>
+
           <div className="gridWrapper">
             <div
               className={`pain painOne ${selectPOne}`}

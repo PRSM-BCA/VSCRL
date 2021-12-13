@@ -1,3 +1,4 @@
+import "./Question.scss";
 import RankingFunctionality from "./RankingFunctionality.jsx";
 
 function RankingAnswer(props) {

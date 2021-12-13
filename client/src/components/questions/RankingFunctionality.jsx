@@ -213,6 +213,9 @@ function RankingExp(props) {
                 </Droppable>
               </DragDropContext>
             </div>
+            <button className="active" type="submit" onClick={() => {}}>
+              Submit 
+            </button>
           </div>
         </div>
       </AuthProvider>
