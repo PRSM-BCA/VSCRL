@@ -12,6 +12,7 @@ import treePhoto from "../landing/media/trees.jpg"
 import skiPhoto from "../landing/media/ski.jpg"
 import sailPhoto from "../landing/media/sailing.jpg"
 import hikePhoto from "../landing/media/hike.jpg"
+import logo from '../landing/media/logo.png'
 
 export default function Dashboard() {
   return (
@@ -107,6 +108,7 @@ export default function Dashboard() {
                 <p>learn more here.</p>
               </div>
             </section>
+            <img src={logo} alt="vsrl logo" className="VLogo" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1440 320"
@@ -121,16 +123,6 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <nav>
-          <Link to="/KeyWordAnswer">KeyWordAnswer</Link>
-          <Link to="/LongAnswer">LongAnswer</Link>
-          <Link to="/MultipleChoice">MultipleChoice</Link>
-          <Link to="/RankingAnswer">RankingAnswer</Link>
-          <Link to="/ScaleAnswer">ScaleAnswer</Link>
-          {/* <Link to="/SelectImg">SelectImg</Link> */}
-          <Link to="/ShortAnswer">ShortAnswer</Link>
-          <Link to="/MockBrand">MockBrand</Link>
-        </nav>
         <Footer></Footer>
       </div>
     </AuthProvider>
