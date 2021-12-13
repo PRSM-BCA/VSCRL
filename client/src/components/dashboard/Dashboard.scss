@@ -1,140 +1,355 @@
-@import '../styles/global.scss';
+@import "../styles/global.scss";
 
 * {
-    margin-right: 0;
-  }
-  
+  margin-right: 0;
+}
+
+.dashBoard {
+  overflow-x: hidden;
+}
+
+//nav styling -----------------------------------------------
 
 nav {
-    display: flex;
-    margin: 1em;
-    border-bottom: $dark-jungle-green 2px solid;
-    padding-bottom: 1em;
+  display: flex;
+  margin: 1em;
+  border-bottom: $dark-jungle-green 2px solid;
+  padding-bottom: 1em;
 
-    a {
-        @include bulletsStyle;
-        flex: 1;
-        margin: .5em;
-        padding: 3px;
-        text-decoration: none;
-        transition: .1s;
-        text-decoration: underline white;
-    }
+  a {
+    @include bulletsStyle;
+    flex: 1;
+    margin: 0.5em;
+    padding: 3px;
+    text-decoration: none;
+    transition: 0.1s;
+    text-decoration: underline white;
+  }
 
-    a:hover {
-        text-decoration: underline $spanish-blue;
-    }
-
+  a:hover {
+    text-decoration: underline $spanish-blue;
+  }
 }
 
-.featuredBrandsWrapper{
-   background-color: white;
+// brand love styling --------------------------------
 
-   h1{
-       @include headerStyle
-   }
+.featuredBrandsWrapper {
+  background-color: white;
 
+  h1 {
+    @include headerStyle(
+      $fontSize: 50px,
+      $alignment: left,
+      $textColor: $dark-jungle-green
+    );
+    padding: 0;
+  }
 }
 
+.headerVideo {
+  background-color: cadetblue;
+  position: relative;
+  width: 100vw;
+  height: 30vh;
+  margin-top: 0;
+}
 
+.backgroundVideo{
+  position: absolute;
+  object-fit: cover;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
 
+.YourSection {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  margin-bottom: 18.75rem;
+}
+.BrandLoveBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 18.76rem;
+  height: 50vh;
+  position: relative;
+  
+  img{
+    height:100%;
+    width:100%;
+    position: absolute;
+    z-index: 1;
+  }
 
-
-.featureSection{
-    display: flex;
+  h2 {
+    @include headerStyle(
+      $fontSize: 2rem,
+      $alignment: center,
+      $textColor: $baby-powder
+    );
     
-    align-content: space-between;
-    flex-direction: column;
+    z-index: 2;
+  }
+
+  p {
+    @include body1Style(
+      $fontSize: 20px,
+      $alignment: center,
+      $textColor: $baby-powder
+    );
+    
+    z-index: 2;
+  }
+  .couponDiv {
+    display: flex;
     align-items: center;
-    width: 100vw;
-    height: auto;
-    
-
-
-    div{
-        display: flex;
-        flex-direction: column;
-        border-radius: 1.5rem;
-        justify-content: flex-start;
-        align-items: center;
-        width: 90vw;
-        height: 12.5rem;
-        margin: 6.25rem;
-        
-
-        
-    }
-    h1{
-            
-        @include headerStyle($baby-powder)
-    }
-
-    p{
-        @include body1Style($baby-powder)
-    }
+    border: $baby-powder 5px solid;
+    height: 5vh;
+    border-radius: 0.5rem;
+    bottom: 0;
+    z-index: 2;
+  }
 }
 
-.YourSection{
+.BrandLoveBox1 {
+  background-color: $marigold;
+  width: 18.76rem;
+  height: 50vh;
+
+  h2 {
+    @include headerStyle(
+      $fontSize: 60px,
+      $alignment: left,
+      $textColor: $baby-powder
+    );
+    margin: 0.4rem;
+
+    padding: 0.5rem;
+  }
+  p {
+    @include body1Style(
+      $fontSize: 20px,
+      $alignment: center,
+      $textColor: $baby-powder
+    );
+    padding-top: 0;
+  }
+}
+
+.textDiv {
+  justify-content: flex-end;
+  border-radius: 1rem;
+  width: 101%;
+  height: 15vh;
+}
+
+
+
+.sectionTitle {
+  margin-left: 2.5rem;
+}
+
+// real people stories styling ---------------------------
+
+.featureSection {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  z-index: 2;
+  position: relative;
+
+  h1 {
+    @include headerStyle(
+      $fontSize: 30px,
+      $alignment: center,
+      $textColor: $dark-jungle-green
+    );
+  }
+
+  p {
+    @include body1Style($baby-powder);
+  }
+}
+
+.real1 {
+  margin-bottom: 0;
+  margin-left: 2.5rem;
+  padding-bottom: 0;
+  z-index: 2;
+  position: relative;
+  @include headerStyle($textColor: $baby-powder);
+}
+.real2 {
+  margin-top: 0;
+  margin-left: 2.5rem;
+  padding-top: 0;
+  z-index: 2;
+  position: relative;
+  @include headerStyle($textColor: $baby-powder);
+}
+
+.blueSVG {
+  width: 160vw;
+  z-index: 0;
+  transform: translate(0, -140%);
+  position: relative;
+}
+
+.FDiv{
+  height:70vh;
+}
+
+.textBox {
+  height: 20vh;
+  background: transparentize($color: white, $amount: 0.5);
+  z-index: 2;
+
+  h2 {
+    @include headerStyle(
+      $fontSize: 24px,
+      $alignment: left,
+      $textColor: $dark-jungle-green
+    );
+    margin: 0.4rem;
+    padding: 0;
+  }
+  p {
+    @include body1Style;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.featureBox4 {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: center;
+  width: 18.76rem;
+  height: 50vh;
+  background-color: $dark-jungle-green;
+
+  h1 {
+    @include headerStyle(
+      $fontSize: 60px,
+      $alignment: left,
+      $textColor: $baby-powder
+    );
+    margin: 0.4rem;
+    padding: 0.5rem;
+  }
+  p {
+    @include body1Style(
+      $fontSize: 20px,
+      $alignment: right,
+      $textColor: $baby-powder
+    );
+    margin-top: 0;
+  }
+}
+
+
+.featureBox1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 18.76rem;
+  height: 50vh;
+
+  img{
+    height:100%;
+    width:18.76rem;
+    position: absolute;
+    z-index: 0;
+  }
+  
+}
+.featureBox2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 18.76rem;
+  height: 50vh;
+
+  img{
+    height:100%;
+    width:18.76rem;
+    position: absolute;
+    z-index: 1;
+  }
+  
+}
+.featureBox3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 18.76rem;
+  height: 50vh;
+
+  img{
+    height:100%;
+    width:18.76rem;
+    position: absolute;
+    z-index: 1;
+  }
+  
+}
+
+
+// -------------------------------Styling for Footer Section
+.bottom-tag {
+  h1 {
+    padding-top: 15vh;
+    margin-left: 5vw;
+    padding-bottom: 10vh;
+  }
+}
+.footerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: 25vh;
+
+  .footerFlexContainer {
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    .footerMiniFlex {
+      display: flex;
+      flex-direction: row;
+
+      .footer-contact-type {
+        color: white;
+        margin-bottom: 2vh;
+        @media (max-width: 675px) {
+          font-size: 20%;
+        }
+      }
+    }
+  }
+
+  svg {
+    display: block;
+    position: absolute;
+    bottom: 0;
     width: 100vw;
-    margin-bottom: 18.75rem;
-    
-    h1{
-            
-        @include headerStyle
-    }
-
-    p{
-        @include body1Style
-    }
-}
-.featureBox{
-    display: flex;
-    flex-direction: column;
-    border: black solid 1px;
-    border-radius: 1rem;
-    justify-content: flex-end;
-    align-items: center;
-    width: 18.76rem;
-    height: 40vh;
-   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2N7TVqOniivrkh_Jbi-ZsGX_f3EKiz-Efsw&usqp=CAU);
-   background-position: center;
-   background-repeat: no-repeat; /* Do not repeat the image */
-   background-size: cover;
-
-}
-.textDiv{
-    
-    background-color: transparentize($color: white, $amount: .5);
-    border-radius: 1rem;
-    width: 101%;
-    height: 15vh;
+    z-index: -1;
+  }
 }
 
-.textBox{
-    background-color:white;
-
-}
-
-.featureBox1{
-background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSopP1Juj5fq_eYBDnveT95Y94YhVMu1VR6yAIB5LboHNzpTvezb-5lShbnq3asvCiKYw&usqp=CAU);
-background-position: center;
-background-repeat: no-repeat; /* Do not repeat the image */
-background-size: cover;
-}
-.featureBox2{
-    background-image: url(https://cdn1.360cities.net/pano/richard-chesher/01432616_mato-reef-pass2-jpg/equirect_crop_3_1/6.jpg);
-background-position: center;
-background-repeat: no-repeat; /* Do not repeat the image */
-background-size: cover;
-    
-}
-.featureBox3{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFFMQz5i093IDOlol8Y3S5PrBiO7PLGQKgUg&usqp=CAU);
-background-position: center;
-background-repeat: no-repeat; /* Do not repeat the image */
-background-size: cover;
-}

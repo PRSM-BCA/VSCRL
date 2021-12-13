@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { authentication, db } from '../firebase-config'
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
-import { collection, doc, setDoc, updateDoc, getDoc, getDocs, arrayUnion } from "@firebase/firestore"
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updatePassword } from "firebase/auth"
+import { collection, doc, setDoc, updateDoc, push, getDoc, getDocs, arrayUnion } from "@firebase/firestore"
 
 const AuthContext = React.createContext();
 
@@ -31,6 +31,10 @@ export function AuthProvider({children}) {
                             dob: dob
                         })
             })
+    }
+
+    async function updateAuthPassword(password) {
+        await updatePassword(currentUser, password)
     }
 
     // Grabs correct user from Authentication Collection
@@ -108,10 +112,21 @@ export function AuthProvider({children}) {
         return surveyRef
     }
 
+    async function addAdminSurvey(surveyId) {
+        await updateDoc(doc(db, "brands", "SurgeonShoes"), {
+            surveyId: surveyId
+        }, {capital: true}, {merge: true})
+    }
 
-    async function addBrand(brandId, brandName, missionStatement) {
-        let brandRef = await setDoc(doc(db, "brands", brandId), {brandName: brandName, missionStatemnt: missionStatement})
-        return brandRef
+    async function addQuestionToAdminSurvey(questionType, questionData) {
+        let surveyRef = await updateDoc(doc(db, "brands", "SurgeonShoes"), {[`surveyList.SurgeonShoeSurvey.${questionType}`]: { questionData}}, {merge: true})
+        return surveyRef
+    }
+
+
+    async function getBrand(brandName) {
+        let brandRef = await getDoc(doc(db, "brands", brandName))
+        return brandRef.data()
     }
 
 
@@ -131,6 +146,7 @@ export function AuthProvider({children}) {
         signup,
         login,
         logout,
+        updateAuthPassword,
         getUser,
         getAllUsers,
         getSurvey,
@@ -138,7 +154,10 @@ export function AuthProvider({children}) {
         getSurveyQuestions,
         getUserFromSurvey,
         addSurvey,
-        addQuestionToUserSurvey
+        addAdminSurvey,
+        addQuestionToUserSurvey,
+        addQuestionToAdminSurvey,
+        getBrand
     }
 
     return (

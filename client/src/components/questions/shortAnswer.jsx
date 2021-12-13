@@ -1,9 +1,10 @@
 import "./Question.scss";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function ShortAnswer(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [question1, setQuestion1] = useState("");
   const [question2, setQuestion2] = useState("");
@@ -75,14 +76,39 @@ function ShortAnswer(props) {
           </div>
           { !questionPrompt ?
             (
-              <button disabled type="submit" onClick={() => {}}>
-                Enter Question Info
-              </button>
+              <div className="linkDiv">
+                <Link
+                      to="UserInfo"
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      duration={500}
+                      onClick={() => {
+                        addQuestionToAdminSurvey("ShortAnswer", {prompt: questionPrompt})
+                      }}
+                      >
+                  Enter Short Answer
+                </Link>
+              </div>
             )
             : (
-              <button className="active" type="submit" onClick={() => {}}>
-                Enter Question Info
-              </button>
+
+              <div className="linkDiv">
+                <Link
+                      disabled="true"
+                      className="active"
+                      to="LongAnswer"
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      duration={500}
+                      onClick={() => {
+                        addQuestionToAdminSurvey("ShortAnswer", {prompt: questionPrompt})
+                      }}
+                      >
+                  Enter Short Answer
+                </Link>
+              </div>
             )
           }
         </div>

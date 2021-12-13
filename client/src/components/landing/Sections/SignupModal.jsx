@@ -3,6 +3,7 @@ import "../Landing.scss";
 import SignUp from "../../SignUp/SignUp"
 
 
+
 function SignupModal() {
     return (
         <div className="signup-section" id="signup">

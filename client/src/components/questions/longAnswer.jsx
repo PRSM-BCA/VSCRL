@@ -2,9 +2,11 @@ import "./Question.scss";
 import tools1 from "./images/tools1.jpeg";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 function LongAnswer(props) {
-  const { currentUser, getUser } = useAuth();
+  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToSurvey, addQuestionToAdminSurvey  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [promptEntry, setPromptEntry] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -19,7 +21,7 @@ function LongAnswer(props) {
   if (userInfo.usertype === "admin") {
     return (
       <AuthProvider>
-        <section className="LongAnswer">
+        <div className="LongAnswer">
           <h1>Long-form Answer</h1>
           <img className="medicalTools" src={tools1} alt="Medical tools" />
           <div className="inputWrapper">
@@ -44,7 +46,7 @@ function LongAnswer(props) {
             <input
               id="maxWordInput"
               type="number"
-              placeholder="Enter your word limit"
+              placeholder="Word Count"
               onChange={(evt) => {
                 setWordCount(evt.target.value);
                 console.log(wordCount);
@@ -52,23 +54,41 @@ function LongAnswer(props) {
             />
             {console.log(wordCount)}
             {console.log(promptEntry)}
-            {wordCount === 0 && !promptEntry ? (
-              <button disabled type="submit" onClick={() => {}}>
-                Enter Question Info
-              </button>
+            {wordCount <= 0 && !promptEntry ? (
+              <Link
+              disabled="true"
+              to="MultipleChoice"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              >
+                Enter Long-form Answer
+              </Link>
             ) : (
-              <button className="active" type="submit" onClick={() => {}}>
-                Enter Question Info
-              </button>
+              <Link
+                    className="active"
+                    to="MultipleChoice"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    onClick={() => {
+                      addQuestionToAdminSurvey("LongAnswer", {prompt: promptEntry, wordCount: wordCount})
+                    }}
+                    >
+                      Enter Long-form Answer
+                </Link>
+
             )}
           </div>
-        </section>
+        </div>
       </AuthProvider>
-    );
+    )
   } else {
     return (
       <AuthProvider>
-        <section className="LongAnswer">
+        <div className="LongAnswer">
           <h1>Long-form Answer</h1>
           <img className="medicalTools" src={tools1} alt="Medical tools" />
           <div className="inputWrapper">
@@ -95,9 +115,9 @@ function LongAnswer(props) {
               </button>
             )}
           </div>
-        </section>
+        </div>
       </AuthProvider>
-    );
+    )
   }
 }
 
