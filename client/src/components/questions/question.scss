@@ -918,11 +918,16 @@
 }
 
 .scaleAnswer {
-  font: 12px Futura;
+  font: 1vw 'Merriweather';
+
+  form {
+    margin: 5%;
+    border-bottom: 2px solid #1B75BC;
+  }
 
   form .question {
     display: block;
-    font-size: 14px;
+    font-size: 5vw;
     font-weight: bold;
     padding: 30px 0 0 4.25%;
     margin-bottom: 10px;
@@ -931,10 +936,9 @@
   form .likert {
     list-style: none;
     width: 100%;
-    margin: 0;
+    margin: 10px;
     padding: 0 0 35px;
     display: block;
-    border-bottom: 2px solid #efefef;
   }
 
   form .likert:last-of-type {
@@ -943,11 +947,11 @@
   form .likert:before {
     content: "";
     position: relative;
-    top: 11px;
+    top: 15px;
     left: 9.5%;
     display: block;
     background-color: black;
-    height: 2px;
+    height: 4px;
     width: 76%;
   }
 
@@ -956,19 +960,12 @@
     width: 19%;
     text-align: center;
     vertical-align: top;
-  }
-
-  form .likert li input[type="radio"] {
-    display: block;
-    position: relative;
-    top: 0;
-    left: 50%;
-    margin-left: -6px;
+    
   }
 
   form .likert li label {
     width: 100%;
-  }
+    }
 
  :root{
    --form-control-color: #895000;
@@ -982,10 +979,11 @@
 
   .form-control {
     font-family: 'Merriweather' serif;
-    font-size: 2rem;
+    font-size: 3vw;
     font-weight: bold;
     line-height:1.1;
     display: grid;
+    //commendted out because it ruins styling
     // grid-template-columns: 1em auto;
     gap: 0.5em
   }
@@ -1004,6 +1002,10 @@
     transform: translateY(-0.075em);
     display: grid;
     place-content: center;
+    position: relative;
+    top: 0;
+    left: 50%;
+    margin-left: -6px;
   }
 
   input[type="radio"]::before{
@@ -1013,7 +1015,7 @@
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
+    box-shadow: inset 1em 1em var(--form-control-color #F1A61E);
     background-color: CanvasText;
   }
 
@@ -1025,10 +1027,6 @@
     outline: max(2px, 0.15em) solid currentColor;
     outline-offset: max(2px, 0.15em);
   }
-
-
-
-
 
   form .buttons button {
     padding: 5px 10px;
@@ -1048,6 +1046,19 @@
   }
   form .buttons .submit:hover {
     background-color: #B85000;
+  }
+
+  .admin-question1 .question {
+    display: inline-grid;
+    font-size: 2vw;
+    font-weight: bold;
+    padding: 30px 0 0 4.25%;
+    margin-bottom: 10px;
+  }
+
+  .admin-question1 .form-control {
+    display:inline-table;
+    font-size: 1vw;
   }
 }
 
