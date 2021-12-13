@@ -30,19 +30,17 @@ body {
     justify-content: left;
     align-items: center;
     gap: 2em;
-    color: black;
     font-size: 1.3em;
-    background-color: $baby-powder;
+    background-color: black;
     padding-top: 3vh;
     padding-left: 3vw;
-    @include headerStyle;
+    @include headerStyle ($textColor: white, $fontSize: 20px);
     z-index: 1;
 
-    #icon {
-      width: 100px;
-      height: 100px;
-      margin-top: 3vh;
-    }
+   #vscrlLogo {
+    
+     width: 250px;
+   }
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
@@ -63,12 +61,6 @@ body {
       }
     }
 
-    #icon {
-      display: flex;
-      font-size: 3em;
-      color: white;
-      gap: 0;
-    }
   }
 
   .main-section {
