@@ -199,8 +199,8 @@ function RankingExp(props) {
     return (
       <AuthProvider>
         <div className="rankingAnswer-keyUser">
-          <div className="draggable-wrapper-keyUser">
-            <h2>Rank the 8 pains with your footwear</h2>
+          <div className="draggable-wrapper">
+            <h2>Rank the 8 pains with your footwear (key User)</h2>
             <div className="list-container">
               <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="Answers">
@@ -213,6 +213,9 @@ function RankingExp(props) {
                 </Droppable>
               </DragDropContext>
             </div>
+            <button className="active" type="submit" onClick={() => {}}>
+              Submit 
+            </button>
           </div>
         </div>
       </AuthProvider>

@@ -221,7 +221,7 @@ function KeyWordAnswer(props) {
       <AuthProvider>
         <div className="keyWordAnswer-keyUser">
           {console.log(count)}
-          <h1>Click 5 frustrations about your footwear</h1>
+          <h1>Click 5 frustrations about your footwear (Key User)</h1>
 
           <div className="gridWrapper">
             <div
@@ -378,11 +378,11 @@ function KeyWordAnswer(props) {
           </div>
           {count === 5 ? (
             <button className="active" type="submit" onClick={() => {}}>
-              Enter Question Info
+              Submit
             </button>
           ) : (
             <button disabled type="submit" onClick={() => {}}>
-              Enter Question Info
+              Submit
             </button>
           )}
         </div>
