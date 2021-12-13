@@ -1,9 +1,9 @@
 import RankingFunctionality from "./RankingFunctionality.jsx";
 
-function RankingAnswer() {
+function RankingAnswer(props) {
   return (
     <div className="RankingAnswer">
-      <RankingFunctionality />
+      <RankingFunctionality rankingAnswer={props.rankingAnswer}/>
     </div>
   );
 }

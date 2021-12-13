@@ -18,7 +18,7 @@ function RankingExp(props) {
 
   //  orderBy function to create order by position
   const listRenderer = orderBy(rankAnswer, "position").map((item) => {
-    console.log(item);
+    //console.log(item);
     return (
       <Draggable
         axis="y"
@@ -200,7 +200,7 @@ function RankingExp(props) {
       <AuthProvider>
         <div className="rankingAnswer-keyUser">
           <div className="draggable-wrapper-keyUser">
-            <h2>Rank the 8 pains with your footwear</h2>
+            <h2>{props.rankingAnswer.prompt}</h2>
             <div className="list-container">
               <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="Answers">

@@ -4,7 +4,7 @@ import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 function KeyWordAnswer(props) {
-  const { currentUser, getUser, addQuestionToAdminSurvey } = useAuth();
+  const { currentUser, getUser, addQuestionToAdminSurvey, addQuestionToUserSurvey } = useAuth();
   const [userInfo, setUserInfo] = useState("");
 
   //  set state variable for each pain (painBackground1 etc. setting initial state to color)
@@ -18,6 +18,7 @@ function KeyWordAnswer(props) {
   const [selectPEight, setSelectPEight] = useState("painEight");
   const [selectPNine, setSelectPNine] = useState("painNine");
   const [count, setCount] = useState(0);
+  
 
   //Admin states: create a set of nine state variables (one for each frustration input). Set onChange
   const [input1, setInput1] = useState(null);
@@ -55,7 +56,7 @@ function KeyWordAnswer(props) {
     if (currentUser && !userInfo) {
       getUser(currentUser.uid).then((data) => setUserInfo(data));
     }
-  }, [getUser, userInfo, currentUser]);
+  }, [getUser, userInfo, currentUser, props.keyWordAnswer]);
 
   // --------------------------------If Admin
 
@@ -220,9 +221,7 @@ function KeyWordAnswer(props) {
     return (
       <AuthProvider>
         <div className="keyWordAnswer-keyUser">
-          {console.log(count)}
           <h1>Click 5 frustrations about your footwear</h1>
-
           <div className="gridWrapper">
             <div
               className={`pain painOne ${selectPOne}`}
@@ -237,7 +236,7 @@ function KeyWordAnswer(props) {
                 console.log("this is count", count);
               }}
             >
-              <p>Lack of Cushion</p>
+              <p>{props.keyWordAnswer ? props.keyWordAnswer[0].word : null}</p>
             </div>
             <div className="pain painTwo">
               <div
@@ -253,7 +252,7 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Sweaty Feet</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[1].word : null}</p>
               </div>
             </div>
             <div className="pain painThree">
@@ -270,7 +269,7 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Test</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[2].word : null}</p>
               </div>
             </div>
             <div className="pain painFour">
@@ -287,7 +286,7 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Body fluids on footwear</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[3].word : null}</p>
               </div>
             </div>
             <div className=" pain painFive">
@@ -304,7 +303,7 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Too expensive</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[4].word : null}</p>
               </div>
             </div>
             <div className="pain painSix">
@@ -321,7 +320,7 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Lack of support</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[5].word : null}</p>
               </div>
             </div>
             <div className="pain painSeven">
@@ -338,7 +337,7 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Never have my half-size</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[6].word : null}</p>
               </div>
             </div>
             <div className="pain painEight">
@@ -355,7 +354,7 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Hot feet</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[7].word : null}</p>
               </div>
             </div>
             <div className="pain painNine">
@@ -372,18 +371,54 @@ function KeyWordAnswer(props) {
                   console.log("this is count", count);
                 }}
               >
-                <p>Lack of arch support</p>
+                <p>{props.keyWordAnswer ? props.keyWordAnswer[8].word : null}</p>
               </div>
             </div>
           </div>
           {count === 5 ? (
-            <button className="active" type="submit" onClick={() => {}}>
-              Enter Question Info
-            </button>
+            <Link
+            className="active"
+            to="MultipleChoice"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            onClick={() => {
+              addQuestionToUserSurvey("KeyWordQuestions", {
+                [input1]: 0,
+                [input2]: 0,
+                [input3]: 0,
+                [input4]: 0,
+                [input5]: 0,
+                [input6]: 0,
+                [input7]: 0,
+                [input8]: 0,
+                [input9]: 0,
+              });
+            }}
+          >Enter Question Info</Link>
           ) : (
-            <button disabled type="submit" onClick={() => {}}>
-              Enter Question Info
-            </button>
+            <Link
+            disabled="true"
+            to="MultipleChoice"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            onClick={() => {
+              addQuestionToUserSurvey("KeyWordQuestions", {
+                [input1]: 0,
+                [input2]: 0,
+                [input3]: 0,
+                [input4]: 0,
+                [input5]: 0,
+                [input6]: 0,
+                [input7]: 0,
+                [input8]: 0,
+                [input9]: 0,
+              });
+            }}
+          >Enter Question Info</Link>
           )}
         </div>
       </AuthProvider>
