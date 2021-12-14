@@ -44,7 +44,7 @@
   display: flex;
   align-items: center;
   background-color: black;
-  width: 250px;
+  width: 20vw;
   border-radius: 0 0 2rem 0;
   z-index: 3;
   position: fixed;
@@ -109,7 +109,9 @@
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: black;
+  text-decoration: underline;
+  text-decoration-color: $marigold;
+  border-radius: 30%;
 }
 
 /* Show the dropdown menu on hover */

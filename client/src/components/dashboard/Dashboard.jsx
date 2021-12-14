@@ -5,14 +5,14 @@ import Header from "../header/Header";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../landing/Footer";
-import backgroundVideo from "../landing/media/video.mp4"
-import medPhoto from "../landing/media/medical.jpg"
-import surfPhoto from "../landing/media/surfing.jpg"
-import treePhoto from "../landing/media/trees.jpg"
-import skiPhoto from "../landing/media/ski.jpg"
-import sailPhoto from "../landing/media/sailing.jpg"
-import hikePhoto from "../landing/media/hike.jpg"
-import logo from '../landing/media/icon.png'
+import backgroundVideo from "../landing/media/video.mp4";
+import medPhoto from "../landing/media/med.png";
+import surfPhoto from "../landing/media/surf.jpg";
+import treePhoto from "../landing/media/tree.jpg";
+import skiPhoto from "../landing/media/ski.png";
+import sailPhoto from "../landing/media/sailing1.jpg";
+import hikePhoto from "../landing/media/hiking.jpg";
+import logo from "../landing/media/icon.png";
 
 export default function Dashboard() {
   return (
@@ -21,7 +21,7 @@ export default function Dashboard() {
         <Header></Header>
         <section className="headerVideo">
           <video autoPlay loop muted className="backgroundVideo">
-          <source src={backgroundVideo} type="video/mp4" />
+            <source src={backgroundVideo} type="video/mp4" />
           </video>
         </section>
 
@@ -29,7 +29,6 @@ export default function Dashboard() {
           <h1 className="sectionTitle">Brand Love.</h1>
           <section className="YourSection">
             <div className="BrandLoveBox1">
-        
               <h2>Spare two cents?</h2>
               <div className="textDiv">
                 <p>Discover how your insights earn rewards.</p>
@@ -37,29 +36,31 @@ export default function Dashboard() {
             </div>
 
             <div className="BrandLoveBox">
-            <img src={medPhoto} alt="medphoto" />
+              <img src={medPhoto} alt="medphoto" />
               <h2>Medical Footwear</h2>
-              
-              <div className="couponDiv" /*onClick={useNavigate("/mockBrand")}*/ >
-              <Link to="/mockBrand">
-                <p>30% off</p>
-                </Link> 
+
+              <div
+                className="couponDiv" /*onClick={useNavigate("/mockBrand")}*/
+              >
+                <Link to="/mockBrand">
+                  <p>30% off</p>
+                </Link>
               </div>
             </div>
 
             <div className="BrandLoveBox">
-            <img src={surfPhoto} alt="surfing photo" />
-              <h2>Lorem ipsum dolor</h2>
+              <img src={surfPhoto} alt="surfing photo" />
+              <h2>Skida</h2>
               <div className="couponDiv">
                 <p>20% off</p>
               </div>
             </div>
 
             <div className="BrandLoveBox">
-            <img src={treePhoto} alt="treephoto" />
-              <h2>TBT</h2>
+              <img src={treePhoto} alt="treephoto" />
+              <h2>Yeti</h2>
               <div className="couponDiv">
-                <p>Coming soon</p>
+                <p>25% off</p>
               </div>
             </div>
           </section>
@@ -70,38 +71,38 @@ export default function Dashboard() {
           <div className="FDiv">
             <section className="featureSection">
               <div className="featureBox1">
-              <img src={skiPhoto} alt="skiphoto" />
+                <img src={skiPhoto} alt="skiphoto" />
                 <div className="textBox">
                   <h2>Skida:</h2>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Repellat numquam libero maxime unde molestiae repellendus
-                    aut exercitationem eveniet,
+                    Our mission is to bring people together, encourage play,
+                    generate smiles, and make a better place. 
                   </p>
                 </div>
               </div>
 
               <div className="featureBox2">
-              <img src={sailPhoto} alt="sailing photo" />
+                <img src={sailPhoto} alt="sailing photo" />
                 <div className="textBox">
                   <h2>Yeti:</h2>
-
+                  
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Repellat numquam libero maxime unde molestiae repellendus
-                    aut exercitationem eveniet,
+                    
+                    Growing up, my brother and I always had a passion for the
+                    outdoors. Hunting. Fishing...
+                    
                   </p>
                 </div>
               </div>
 
               <div className="featureBox3">
-              <img src={hikePhoto} alt="hiking photo" />
+                <img src={hikePhoto} alt="hiking photo" />
                 <div className="textBox">
                   <h2>Salomon:</h2>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Repellat numquam libero maxime unde molestiae repellendus
-                    aut exercitationem eveniet,
+                    In a society where speed and stress have taken over, people
+                    take less and less time to play and connect with nature.
+                    
                   </p>
                 </div>
               </div>
@@ -126,17 +127,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <nav>
-          <Link to="/KeyWordAnswer">KeyWordAnswer</Link>
-          <Link to="/LongAnswer">LongAnswer</Link>
-          <Link to="/MultipleChoice">MultipleChoice</Link>
-          <Link to="/RankingAnswer">RankingAnswer</Link>
-          <Link to="/ScaleAnswer">ScaleAnswer</Link>
-          {/* <Link to="/SelectImg">SelectImg</Link> */}
-          <Link to="/ShortAnswer">ShortAnswer</Link>
-          <Link to="/MockBrand">MockBrand</Link>
-          <Link to="/BarChartDisplay">BarChartDisplay</Link>
-        </nav>
+        
         <Footer></Footer>
       </div>
     </AuthProvider>

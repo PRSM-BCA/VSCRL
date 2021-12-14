@@ -15,6 +15,7 @@
 
 // brand love styling --------------------------------
 
+
 .featuredBrandsWrapper {
   background-color: white;
 
@@ -22,14 +23,19 @@
     height: auto;
   }
 
-  h1 {
+  
+}
+
+.sectionTitle{
+  
     @include headerStyle(
       $fontSize: 50px,
       $alignment: left,
       $textColor: $dark-jungle-green
     );
     padding: 0;
-  }
+    margin-left: 2.5rem;
+  
 }
 
 .headerVideo {
@@ -69,7 +75,7 @@
   justify-content: center;
   align-items: center;
   width: 18.76rem;
-  height: 50vh;
+  height: 60vh;
   position: relative;
 
   @media (max-width: 1100px) {
@@ -77,6 +83,7 @@
   }
 
   img {
+    // object-fit: cover;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -89,9 +96,15 @@
       $alignment: center,
       $textColor: $baby-powder
     );
-
+    width: 10vw;
     z-index: 2;
+    background: transparentize($color: black, $amount: 0.7);
+    border-radius: 30px;
+    @media (max-width:675px) {
+      width: 60vw;
+    }
   }
+
 
   p {
     @include body1Style(
@@ -110,19 +123,27 @@
     border-radius: 0.5rem;
     bottom: 0;
     z-index: 2;
+    background: transparentize($color: black, $amount: 0.7);
+
+  }
+  .couponDiv:hover{
+    background-color: $marigold ;
+  }
+  a{
+    text-decoration: none;
   }
 }
 
 .BrandLoveBox1 {
   background-color: $marigold;
   width: 18.76rem;
-  height: 50vh;
+  height: 60vh;
   @media (max-width: 1100px) {
   }
 
   h2 {
     @include headerStyle(
-      $fontSize: 60px,
+      $fontSize: 75px,
       $alignment: left,
       $textColor: $baby-powder
     );
@@ -161,9 +182,7 @@
   height: 15vh;
 }
 
-.sectionTitle {
-  margin-left: 2.5rem;
-}
+
 
 // real people stories styling ---------------------------
 
@@ -191,42 +210,77 @@
   @media (max-width: 1100px) {
     flex-direction: column;
     gap: 1rem;
+    height: 210vh;
   }
 }
 
 .real1 {
+  @include headerStyle(
+    $fontSize: 50px,
+    $alignment: left,
+    $textColor: $baby-powder
+  );
   margin-bottom: 0;
-  margin-left: 2.5rem;
+  margin-left: 0;
+  padding-left: 2.5rem;
   padding-bottom: 0;
   z-index: 2;
   position: relative;
-  @include headerStyle($textColor: $baby-powder);
+
+  @media (max-width: 1000px) {
+    @include headerStyle(
+      $fontSize: 50px,
+      $alignment: left,
+      $textColor: $dark-jungle-green
+    );
+    padding-bottom: 0;
+    
+  }
+  
 }
 .real2 {
+  @include headerStyle(
+      $fontSize: 50px,
+      $alignment: left,
+      $textColor: $baby-powder
+    );
   margin-top: 0;
-  margin-left: 2.5rem;
+  margin-left: 0rem;
+  padding-left: 2.5rem;
+  margin-bottom: .5rem;
   padding-top: 0;
   z-index: 2;
   position: relative;
-  @include headerStyle($textColor: $baby-powder);
+  
+    
+   
+  @media (max-width: 1000px) {
+    @include headerStyle(
+      $fontSize: 50px,
+      $alignment: left,
+      $textColor: $dark-jungle-green
+    );
+    padding-top: 0;
+    
+  }
+  
 }
 
-.VLogo{
+.VLogo {
   height: 30vh;
   width: auto;
   z-index: 5;
-  transform: translate(365%, -310%);
+  transform: translate(370%, -350%);
   position: relative;
 }
 
 .blueSVG {
   width: 160vw;
   z-index: 0;
-  transform: translate(0, -185%);
+  transform: translate(0, -200%);
   position: relative;
-  @media (max-width:800px) {
+  @media (max-width: 800px) {
     display: none;
-    
   }
 }
 
@@ -239,7 +293,7 @@
 
 .textBox {
   height: 20vh;
-  background: transparentize($color: white, $amount: 0.5);
+  background: transparentize($color: white, $amount: 0.3);
   z-index: 2;
 
   h2 {
@@ -265,12 +319,12 @@
   justify-content: flex-start;
   align-items: center;
   width: 18.76rem;
-  height: 50vh;
+  height: 60vh;
   background-color: $dark-jungle-green;
 
   h1 {
     @include headerStyle(
-      $fontSize: 56px,
+      $fontSize: 60px,
       $alignment: left,
       $textColor: $baby-powder
     );
@@ -296,10 +350,10 @@
     padding-top: 0;
     @media (max-width: 675px) {
       margin-top: 10px;
-      
     }
   }
 }
+
 
 .featureBox1 {
   display: flex;
@@ -307,9 +361,10 @@
   justify-content: flex-end;
   align-items: center;
   width: 18.76rem;
-  height: 50vh;
+  height: 60vh;
 
   img {
+    object-fit: cover;
     height: 100%;
     width: 18.76rem;
     position: absolute;
@@ -319,6 +374,11 @@
       height: 50vh;
     }
   }
+  p{
+    @include body1Style($fontSize: 18px, $alignment: center, $textColor: black);
+    padding-top: 0;
+   
+  }
 }
 .featureBox2 {
   display: flex;
@@ -326,7 +386,7 @@
   justify-content: flex-end;
   align-items: center;
   width: 18.76rem;
-  height: 50vh;
+  height: 60vh;
 
   img {
     height: 100%;
@@ -337,6 +397,10 @@
     @media (max-width: 1100px) {
       height: 50vh;
     }
+  }
+  p{
+    @include body1Style($fontSize: 18px, $alignment: center, $textColor: black); ;
+    padding-top: 0;
   }
 }
 .featureBox3 {
@@ -345,7 +409,8 @@
   justify-content: flex-end;
   align-items: center;
   width: 18.76rem;
-  height: 50vh;
+  height: 60vh;
+  position: bottom;
 
   img {
     height: 100%;
@@ -357,6 +422,27 @@
       height: 50vh;
     }
   }
+  p{
+    @include body1Style($fontSize: 18px, $alignment: center, $textColor: black); ;
+    padding-top: 0;
+  }
+
+}
+.featureBox1:hover{
+ 
+  height: 59vh;
+}
+.featureBox2:hover{
+  
+  height: 59vh;
+}
+.featureBox3:hover{
+  
+  height: 59vh;
+}
+.featureBox4:hover{
+  
+  height: 59vh;
 }
 
 // -------------------------------Styling for Footer Section
@@ -364,17 +450,14 @@
   h1 {
     padding-top: 15vh;
     margin-left: 5vw;
-    
   }
 }
-
 
 .footerWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-
 
   .icon-flex {
     display: flex;
@@ -384,9 +467,9 @@
     #icon-footer {
       width: 150px;
       margin: auto;
-      margin-bottom: 18vh
+      margin-bottom: 18vh;
     }
-    
+
     .footerFlexContainer {
       display: flex;
       flex-direction: row;
@@ -394,11 +477,11 @@
       position: absolute;
       width: 100%;
       bottom: 0;
-  
+
       .footerMiniFlex {
         display: flex;
         flex-direction: row;
-  
+
         .footer-contact-type {
           color: white;
           margin-bottom: 2vh;
@@ -408,7 +491,7 @@
         }
       }
     }
-  
+
     svg {
       display: block;
       position: absolute;
@@ -416,8 +499,5 @@
       width: 100vw;
       z-index: -1;
     }
-  
   }
-
-  
 }
