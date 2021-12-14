@@ -1,20 +1,30 @@
 import "./Dashboard.scss";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../landing/Footer";
 import backgroundVideo from "../landing/media/video.mp4";
-import medPhoto from "../landing/media/med.png";
-import surfPhoto from "../landing/media/surf.jpg";
-import treePhoto from "../landing/media/tree.jpg";
-import skiPhoto from "../landing/media/ski.png";
-import sailPhoto from "../landing/media/sailing1.jpg";
-import hikePhoto from "../landing/media/hiking.jpg";
+import medPhoto from "../landing/media/medical.jpg";
+import surfPhoto from "../landing/media/surfing.jpg";
+import treePhoto from "../landing/media/trees.jpg";
+import skiPhoto from "../landing/media/ski.jpg";
+import sailPhoto from "../landing/media/sailing.jpg";
+import hikePhoto from "../landing/media/hike.jpg";
 import logo from "../landing/media/icon.png";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+  const { currentUser, getUser, getBrand } = useAuth();
+  const [userInfo, setUserInfo] = useState("");
+
+  useEffect(() => {
+    if (currentUser && !userInfo) {
+      window.scrollTo(0, 0);
+      getUser(currentUser.uid).then((data) => setUserInfo(data));
+    }
+  }, [getUser, userInfo, currentUser]);
+
   return (
     <AuthProvider>
       <div className="dashBoard">
@@ -24,6 +34,26 @@ export default function Dashboard() {
             <source src={backgroundVideo} type="video/mp4" />
           </video>
         </section>
+
+        {userInfo.usertype === "admin" ? (
+          props.surveySubmitted ? (
+            <div id="alertBanner">
+              <p>
+                Survey Added!
+                <br />
+                Users will now have access to the survey and coupons
+              </p>
+            </div>
+          ) : null
+        ) : props.surveySubmitted ? (
+          <div id="alertBanner">
+            <p>
+              Survey Submitted!
+              <br />
+              Here is your coupon code: VSCRLSHOES
+            </p>
+          </div>
+        ) : null}
 
         <div className="featuredBrandsWrapper">
           <h1 className="sectionTitle">Brand Love.</h1>

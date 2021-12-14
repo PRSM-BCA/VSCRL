@@ -4,7 +4,7 @@ import RankingFunctionality from "./RankingFunctionality.jsx";
 function RankingAnswer(props) {
   return (
     <div className="RankingAnswer">
-      <RankingFunctionality rankingAnswer={props.rankingAnswer}/>
+      <RankingFunctionality rankingAnswer={props.rankingAnswer} surveySubmitted={props.surveySubmitted} setSurveySubmitted={props.setSurveySubmitted}/>
     </div>
   );
 }

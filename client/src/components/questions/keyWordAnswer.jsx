@@ -204,15 +204,15 @@ function KeyWordAnswer(props) {
               duration={500}
               onClick={() => {
                 addQuestionToAdminSurvey("KeyWordQuestions", [
-                  { word: input1, value: 0},
-                  { word: input2, value: 0},
-                  { word: input3, value: 0},
-                  { word: input4, value: 0},
-                  { word: input5, value: 0},
-                  { word: input6, value: 0},
-                  { word: input7, value: 0},
-                  { word: input8, value: 0},
-                  { word: input9, value: 0},
+                  { word: input1, value: 3},
+                  { word: input2, value: 1},
+                  { word: input3, value: 7},
+                  { word: input4, value: 4},
+                  { word: input5, value: 5},
+                  { word: input6, value: 9},
+                  { word: input7, value: 2},
+                  { word: input8, value: 8},
+                  { word: input9, value: 6},
               ]);
               }}
             >
@@ -221,7 +221,7 @@ function KeyWordAnswer(props) {
           ) : (
             <Link
               disabled="true"
-              to="MultipleChoice"
+              to="RankingAnswer"
               spy={true}
               smooth={true}
               offset={0}
@@ -408,7 +408,7 @@ function KeyWordAnswer(props) {
           {count === 5 ? (
             <Link
             className="active"
-            to="MultipleChoice"
+            to="RankingAnswer"
             spy={true}
             smooth={true}
             offset={0}
@@ -420,7 +420,7 @@ function KeyWordAnswer(props) {
           ) : (
             <Link
             disabled="true"
-            to="MultipleChoice"
+            to="RankingAnswer"
             spy={true}
             smooth={true}
             offset={0}

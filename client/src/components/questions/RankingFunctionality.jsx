@@ -7,11 +7,13 @@ import RankingData from "../../RankingData";
 import { useState, useEffect } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 function RankingExp(props) {
-  const { currentUser, getUser, addQuestionToAdminSurvey } = useAuth();
+  const { currentUser, getUser, addQuestionToAdminSurvey, addQuestionToUserSurvey } = useAuth();
   const [rankAnswer, setRankAnswer] = useState(RankingData);
   const [userInfo, setUserInfo] = useState("");
+  const navigate = useNavigate();
 
   // For tracking Admin input
   const [rankPrompt, setRankPrompt] = useState("");
@@ -165,7 +167,6 @@ function RankingExp(props) {
 
             {!rankPrompt ? (
               <Link
-                to="KeyWordAnswer"
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -176,7 +177,6 @@ function RankingExp(props) {
             ) : (
               <Link
                 className="active"
-                to="KeyWordAnswer"
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -185,6 +185,8 @@ function RankingExp(props) {
                   addQuestionToAdminSurvey("RankingAnswer", {
                     prompt: rankPrompt,
                   });
+                  props.setSurveySubmitted(true)
+                  navigate("/Dashboard", { replace: true });
                 }}
               >
                 Enter Question Info
@@ -213,9 +215,19 @@ function RankingExp(props) {
                 </Droppable>
               </DragDropContext>
             </div>
-            <button className="active" type="submit" onClick={() => {}}>
-              Submit 
-            </button>
+              <Link
+                className="active"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => {
+                  props.setSurveySubmitted(true)
+                  navigate("/Dashboard", { replace: true })
+                }}
+              >
+                Enter Question Info
+              </Link>
           </div>
         </div>
       </AuthProvider>

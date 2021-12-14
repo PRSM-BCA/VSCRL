@@ -6,6 +6,7 @@ body {
 
 .Brand {
   @include headerStyle(2em, center, $baby-powder);
+  padding: 0;
   height: 100vh;
   width: 100vw;
   background-color: $indigo-dye;
@@ -14,10 +15,16 @@ body {
     margin: 0;
   }
 
+  h2 {
+    margin: .5em;
+  }
+
   a {
     @include bulletsStyle(1em, center);
     display: block;
-    padding: 1.5em;
+    padding: .5em;
+    margin: auto;
+    width: 30%;
     transition: 0.3s ease-in;
     border: 4px solid $baby-powder;
     color: $baby-powder;
@@ -31,13 +38,12 @@ body {
 }
 
 .UserInfo {
-  height: 100vh;
-  width: 100vw;
-  background-color: $burnt-orange;
   text-align: center;
+  height: 50%;
+  width: 100%;
 
   h1 {
-    @include headerStyle(3em, center, $baby-powder);
+    @include headerStyle(1em, center, $baby-powder);
     margin: 0;
     padding: 1em 0 0 0;
   }
@@ -45,16 +51,15 @@ body {
   #selectContainer {
     display: flex;
     margin: auto;
-    height: 70vh;
-    width: 80vw;
 
     div {
       flex: 1;
-      margin: 0.5em;
+      margin: 0 1em;
 
       h2 {
         @include body1Style(1em, center, $baby-powder);
         margin: 1em auto 0 auto;
+        padding: 0;
       }
 
       select,
@@ -66,25 +71,12 @@ body {
       
       textarea {
         @include bulletsStyle;
+        height: 100px;
       }
     }
 
     @media (max-width: 800px) {
       flex-direction: column;
-    }
-  }
-
-  a {
-    @include bulletsStyle(1em, center);
-    padding: 1.5em;
-    transition: 0.3s ease-in;
-    border: 4px solid $baby-powder;
-    cursor: pointer;
-    color: $baby-powder;
-
-    &:hover {
-      background-color: $baby-powder;
-      color: $burnt-orange;
     }
   }
 }
