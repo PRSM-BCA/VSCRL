@@ -5,7 +5,7 @@
 
   text-align: center;
 
-  button {
+  a {
     @include headerStyle(1em, center, $dark-jungle-green);
     flex: 1;
     width: 30%;
@@ -256,7 +256,7 @@
 
   
 
-  button {
+  a {
     @include headerStyle(1em, center, $dark-jungle-green);
     flex: 1;
     width: 30%;
