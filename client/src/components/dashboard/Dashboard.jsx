@@ -130,6 +130,7 @@ export default function Dashboard() {
           {/* <Link to="/SelectImg">SelectImg</Link> */}
           <Link to="/ShortAnswer">ShortAnswer</Link>
           <Link to="/MockBrand">MockBrand</Link>
+          <Link to="/BarChartDisplay">BarChartDisplay</Link>
         </nav>
         <Footer></Footer>
       </div>

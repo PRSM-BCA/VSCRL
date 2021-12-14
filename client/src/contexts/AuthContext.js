@@ -114,7 +114,6 @@ export function AuthProvider({children}) {
         return surveyRef
     }
 
-
     async function getBrand(brandName) {
         let brandRef = await getDoc(doc(db, "brands", brandName))
         return brandRef.data()
