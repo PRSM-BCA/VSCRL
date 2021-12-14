@@ -92,9 +92,6 @@ export default function UserInfo() {
   } else {
     return (
       <AuthProvider>
-        {console.log(gender)}
-        {console.log(experience)}
-        {console.log(specialty)}
         <div className="UserInfo">
           <h1>
             <b>UserInfo</b>
@@ -104,7 +101,6 @@ export default function UserInfo() {
               <h2>Gender</h2>
               <select
                 onChange={(evt) => {
-                  console.log(gender);
                   setGender(evt.target.value);
                 }}
               >
@@ -123,7 +119,6 @@ export default function UserInfo() {
               <h2>Years of Practice</h2>
               <select
                 onChange={(evt) => {
-                  console.log(experience);
                   setExperience(evt.target.value);
                 }}
               >
@@ -140,7 +135,6 @@ export default function UserInfo() {
               <h2>Specialty</h2>
               <select
                 onChange={(evt) => {
-                  console.log(specialty);
                   setSpecialty(evt.target.value);
                 }}
               >

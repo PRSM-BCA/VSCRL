@@ -92,7 +92,7 @@ function LongAnswer(props) {
           <h1>Long-form Answer</h1>
           <img className="medicalTools" src={tools1} alt="Medical tools" />
           <div className="inputWrapper">
-            {console.log(promptEntry)}
+            {/* {console.log(promptEntry)} */}
             <h2>
               {props.longAnswer.prompt}
             </h2>

@@ -62,13 +62,6 @@ export function AuthProvider({children}) {
             console.log(doc.uid, " => ", doc.data())
         })
     }
-    
-    // Get survey from database
-    async function getSurvey(authUid, surveyId, surveyName) {
-        let surveyRef = await getDoc(doc(db, "surveys", surveyId, authUid, surveyName))
-        console.log(surveyRef.data())
-        return surveyRef.data()
-    }
 
     // Grabs all users from Users Collection and logs them
     async function getAllSurveys() {
@@ -97,7 +90,6 @@ export function AuthProvider({children}) {
         let brandRef = await getDoc(doc(db, "brands", brandName))
         brandRef = brandRef.data()
         let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, surveyName), brandRef)
-        console.log("Reached")
         await updateDoc(doc(db, "users", authUid), {surveyList: arrayUnion({
             surveyId: surveyId,
             inProgress: true
@@ -126,6 +118,12 @@ export function AuthProvider({children}) {
     async function getBrand(brandName) {
         let brandRef = await getDoc(doc(db, "brands", brandName))
         return brandRef.data()
+    }
+
+    // Get survey from database
+    async function getSurvey(surveyId, surveyName) {
+        let surveyRef = await getDoc(doc(db, "surveys", surveyId, currentUser.uid, surveyName))
+        return surveyRef.data()
     }
 
 
