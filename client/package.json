@@ -23,7 +23,7 @@
     "react-scripts": "^4.0.3",
     "react-scroll": "^1.8.4",
     "react-transition-group": "^4.4.2",
-    "recharts": "^2.1.6",
+    "recharts": "^2.1.8",
     "sass": "^1.43.4",
     "web-vitals": "^1.0.1"
   },

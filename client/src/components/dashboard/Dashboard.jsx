@@ -80,7 +80,7 @@ export default function Dashboard(props) {
 
             <div className="BrandLoveBox">
               <img src={surfPhoto} alt="surfing photo" />
-              <h2>Lorem ipsum dolor</h2>
+              <h2>Skida</h2>
               <div className="couponDiv">
                 <p>20% off</p>
               </div>
@@ -88,9 +88,9 @@ export default function Dashboard(props) {
 
             <div className="BrandLoveBox">
               <img src={treePhoto} alt="treephoto" />
-              <h2>TBT</h2>
+              <h2>Yeti</h2>
               <div className="couponDiv">
-                <p>Coming soon</p>
+                <p>25% off</p>
               </div>
             </div>
           </section>
@@ -105,9 +105,8 @@ export default function Dashboard(props) {
                 <div className="textBox">
                   <h2>Skida:</h2>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Repellat numquam libero maxime unde molestiae repellendus
-                    aut exercitationem eveniet,
+                    Our mission is to bring people together, encourage play,
+                    generate smiles, and make a better place. 
                   </p>
                 </div>
               </div>
@@ -116,11 +115,12 @@ export default function Dashboard(props) {
                 <img src={sailPhoto} alt="sailing photo" />
                 <div className="textBox">
                   <h2>Yeti:</h2>
-
+                  
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Repellat numquam libero maxime unde molestiae repellendus
-                    aut exercitationem eveniet,
+                    
+                    Growing up, my brother and I always had a passion for the
+                    outdoors. Hunting. Fishing...
+                    
                   </p>
                 </div>
               </div>
@@ -130,9 +130,9 @@ export default function Dashboard(props) {
                 <div className="textBox">
                   <h2>Salomon:</h2>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Repellat numquam libero maxime unde molestiae repellendus
-                    aut exercitationem eveniet,
+                    In a society where speed and stress have taken over, people
+                    take less and less time to play and connect with nature.
+                    
                   </p>
                 </div>
               </div>
@@ -157,17 +157,7 @@ export default function Dashboard(props) {
           </div>
         </div>
 
-        {/* <nav>
-          <Link to="/KeyWordAnswer">KeyWordAnswer</Link>
-          <Link to="/LongAnswer">LongAnswer</Link>
-          <Link to="/MultipleChoice">MultipleChoice</Link>
-          <Link to="/RankingAnswer">RankingAnswer</Link>
-          <Link to="/ScaleAnswer">ScaleAnswer</Link>
-          { <Link to="/SelectImg">SelectImg</Link> }
-          <Link to="/ShortAnswer">ShortAnswer</Link>
-          <Link to="/MockBrand">MockBrand</Link>
-          <Link to="/BarChartDisplay">BarChartDisplay</Link>
-        </nav> */}
+        
         <Footer></Footer>
       </div>
     </AuthProvider>
