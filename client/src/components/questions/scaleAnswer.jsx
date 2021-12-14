@@ -18,23 +18,23 @@ function ScaleAnswer(props) {
   const [question1Text, setQuestion1Text] = useState("");
   const [question2Text, setQuestion2Text] = useState("");
   const [question3Text, setQuestion3Text] = useState("");
-  const [question1Value1, setQuestion1Value1] = useState("false");
-  const [question1Value2, setQuestion1Value2] = useState("false");
-  const [question1Value3, setQuestion1Value3] = useState("false");
-  const [question1Value4, setQuestion1Value4] = useState("false");
-  const [question1Value5, setQuestion1Value5] = useState("false");
-  const [question2Value1, setQuestion2Value1] = useState("false");
-  const [question2Value2, setQuestion2Value2] = useState("false");
-  const [question2Value3, setQuestion2Value3] = useState("false");
-  const [question2Value4, setQuestion2Value4] = useState("false");
-  const [question2Value5, setQuestion2Value5] = useState("false");
-  const [question3Value1, setQuestion3Value1] = useState("false");
-  const [question3Value2, setQuestion3Value2] = useState("false");
-  const [question3Value3, setQuestion3Value3] = useState("false");
-  const [question3Value4, setQuestion3Value4] = useState("false");
-  const [question3Value5, setQuestion3Value5] = useState("false");
+  const [question1Value1, setQuestion1Value1] = useState("");
+  const [question1Value2, setQuestion1Value2] = useState("");
+  const [question1Value3, setQuestion1Value3] = useState("");
+  const [question1Value4, setQuestion1Value4] = useState("");
+  const [question1Value5, setQuestion1Value5] = useState("");
+  const [question2Value1, setQuestion2Value1] = useState("");
+  const [question2Value2, setQuestion2Value2] = useState("");
+  const [question2Value3, setQuestion2Value3] = useState("");
+  const [question2Value4, setQuestion2Value4] = useState("");
+  const [question2Value5, setQuestion2Value5] = useState("");
+  const [question3Value1, setQuestion3Value1] = useState("");
+  const [question3Value2, setQuestion3Value2] = useState("");
+  const [question3Value3, setQuestion3Value3] = useState("");
+  const [question3Value4, setQuestion3Value4] = useState("");
+  const [question3Value5, setQuestion3Value5] = useState("");
   const [enter, setEnter] = useState(
-      question1Value1 ||
+    question1Value1 ||
       question1Value2 ||
       question1Value3 ||
       question1Value4 ||
@@ -48,15 +48,13 @@ function ScaleAnswer(props) {
       getUser(currentUser.uid).then((data) => setUserInfo(data));
     }
     setEnter(
-      (
-        question1Value1 ||
+      question1Value1 ||
         question1Value2 ||
         question1Value3 ||
         question1Value4 ||
         question1Value5
-        )
-    )
-    setAdminEnter(question1Text)
+    );
+    setAdminEnter(question1Text);
   }, [
     getUser,
     userInfo,
@@ -76,12 +74,11 @@ function ScaleAnswer(props) {
         <div className="scaleAnswer">
           <h1>Admin</h1>
           <div className="admin-question1">
-            <h2>Question One</h2>
             <label className="question">
               <input
                 id="question1Input"
                 type="text"
-                placeholder="Enter your survey question"
+                placeholder="Survey Question 1"
                 onChange={(evt) => {
                   console.log(question1Text);
                   setQuestion1Text(evt.target.value);
@@ -93,11 +90,10 @@ function ScaleAnswer(props) {
             {/* Editable Scale Values */}
             <ul className="likert">
               <div className="valueEdit">
-                Question 1 Value 1
                 <input
                   id="q1v1"
                   type="text"
-                  placeholder="Enter Question 1 Selection Value 1."
+                  placeholder="Question 1 Value 1"
                   onChange={(evt) => {
                     console.log(question1Value1);
                     setQuestion1Value1(evt.target.value);
@@ -111,11 +107,10 @@ function ScaleAnswer(props) {
                 </li>
               </div>
               <div className="valueEdit">
-                Question1 Value 2
                 <input
                   id="q1v2"
                   type="text"
-                  placeholder="Enter Question 1 Selection Value 2."
+                  placeholder="Question 1 Value 2"
                   onChange={(evt) => {
                     console.log(question1Value2);
                     setQuestion1Value2(evt.target.value);
@@ -129,11 +124,10 @@ function ScaleAnswer(props) {
                 </li>
               </div>
               <div className="valueEdit">
-                Question 1 Value 3
                 <input
                   id="q1v3"
                   type="text"
-                  placeholder="Enter Question 1 Selection Value 3."
+                  placeholder="Question 1 Value 3"
                   onChange={(evt) => {
                     console.log(question1Value3);
                     setQuestion1Value3(evt.target.value);
@@ -147,11 +141,10 @@ function ScaleAnswer(props) {
                 </li>
               </div>
               <div className="valueEdit">
-                Question 1 Value 4
                 <input
                   id="q1v4"
                   type="text"
-                  placeholder="Enter Question 1 Selection Value 4."
+                  placeholder="Question 1 Value 4"
                   onChange={(evt) => {
                     console.log(question1Value4);
                     setQuestion1Value4(evt.target.value);
@@ -165,11 +158,10 @@ function ScaleAnswer(props) {
                 </li>
               </div>
               <div className="valueEdit">
-                Question 1 Value 5
                 <input
                   id="q1v5"
                   type="text"
-                  placeholder="Enter Question 1 Selection Value 5."
+                  placeholder="Question 1 Value 5"
                   onChange={(evt) => {
                     console.log(question1Value5);
                     setQuestion1Value5(evt.target.value);
@@ -183,6 +175,40 @@ function ScaleAnswer(props) {
                 </li>
               </div>
             </ul>
+          </div>
+          <div id="submitContent">
+            {adminEnter ? (
+              <Link
+                className="active"
+                to="ScaleAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => {
+                  addQuestionToAdminSurvey("ScaleAnswer", {
+                    question1Text: question1Text, 
+                    question1Value1: question1Value1,
+                    question1Value2: question1Value2,
+                    question1Value3: question1Value3,
+                    question1Value4: question1Value4,
+                    question1Value5: question1Value5  
+                  });
+                }}
+              >
+                Enter Scale Questions
+              </Link>
+            ) : (
+              <Link
+                to="ScaleAnswer"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                Enter Multiple Choice Questions
+              </Link>
+            )}
           </div>
           <div className="question2">
             <input

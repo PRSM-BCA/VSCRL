@@ -1045,16 +1045,39 @@
   }
 
   .admin-question1 .question {
-    display: inline-grid;
+    display: flex;
+    justify-content: flex-start;
     font-size: 2vw;
     font-weight: bold;
-    padding: 30px 0 0 4.25%;
-    margin-bottom: 10px;
+    padding: 2px;
+    border-bottom: 2px solid #B85000;
   }
 
-  .admin-question1 .form-control {
-    display:inline-table;
-    font-size: 1vw;
+  .admin-question1 input {
+    display: flex;
+    justify-content: flex-start;
+    @include body2Style;
+    border-radius: 20px;
+    border: 1px solid gray;
+    
+  }
+
+   .valueEdit input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    border: none;
+  }
+
+  label .form-control {
+    display:none;
+  }
+
+  a {
+    height: 200px;
+    width: 200px;
+    color: red;
   }
 }
 
