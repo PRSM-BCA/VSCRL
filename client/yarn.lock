@@ -11296,10 +11296,17 @@
   dependencies:
     "decimal.js-light" "^2.4.1"
 
+<<<<<<< HEAD
 "recharts@^2.1.6":
   "integrity" "sha512-KnRNnCum1hL27DYhUfcdcKUEQkYnda6G+KDN4n/nCiTKp7UzJSgHfFHQvCkBujPi/U98dGd430DA2/8RJpkPlg=="
   "resolved" "https://registry.npmjs.org/recharts/-/recharts-2.1.6.tgz"
   "version" "2.1.6"
+=======
+"recharts@^2.1.8":
+  "integrity" "sha512-Wi7ufdDGyvy/BPf1za1Ok7VeWB2KtEejaewO9ulmlUhvn5l5RPS4AOkrUfhtMRTTjgJ4K6AbWMDpwtDjczUHJA=="
+  "resolved" "https://registry.npmjs.org/recharts/-/recharts-2.1.8.tgz"
+  "version" "2.1.8"
+>>>>>>> fa31d813e1d4067cbada107f63f3c5c936f68437
   dependencies:
     "@types/d3-interpolate" "^2.0.0"
     "@types/d3-scale" "^3.0.0"

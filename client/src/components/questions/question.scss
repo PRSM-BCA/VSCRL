@@ -2,10 +2,11 @@
 
 //---------------------KeywordAnswer ADMIN
 .KeyWordAnswer-admin {
-
+  width: 100vw;
+  height: 100vh;
   text-align: center;
 
-  a {
+  button {
     @include headerStyle(1em, center, $dark-jungle-green);
     flex: 1;
     width: 30%;
@@ -36,6 +37,8 @@
     margin: auto;
     justify-content: center;
     padding-top: 5vh;
+    width: 100%;
+    height: 80%;
 
     @media (max-width: 675px) {
       display: flex;
@@ -58,7 +61,6 @@
       text-align: left;
       color: $indigo-dye;
       width: 350px;
-
     }
 
     p {
@@ -244,19 +246,23 @@
 
 //---------------------KeywordAnswer KeyUser
 .keyWordAnswer-keyUser {
-
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 
-    h1 {
-      @include headerStyle(2em);
-      padding-top: 1em;
-      margin: auto;
-      text-align: center;
-    }
+  .KeyWordMainWrapper {
+    width: 100%;
+    height: 100%;
+  }
 
-  
+  h1 {
+    @include headerStyle(2em);
+    padding-top: 1em;
+    margin: auto;
+    text-align: center;
+  }
 
-  a {
+  button {
     @include headerStyle(1em, center, $dark-jungle-green);
     flex: 1;
     width: 30%;
@@ -914,11 +920,16 @@
 }
 
 .scaleAnswer {
-  font: 12px Futura;
+  font: 1vw "Merriweather";
+
+  form {
+    margin: 5%;
+    border-bottom: 2px solid #1b75bc;
+  }
 
   form .question {
     display: block;
-    font-size: 14px;
+    font-size: 5vw;
     font-weight: bold;
     padding: 30px 0 0 4.25%;
     margin-bottom: 10px;
@@ -927,10 +938,9 @@
   form .likert {
     list-style: none;
     width: 100%;
-    margin: 0;
+    margin: 10px;
     padding: 0 0 35px;
     display: block;
-    border-bottom: 2px solid #efefef;
   }
 
   form .likert:last-of-type {
@@ -939,11 +949,11 @@
   form .likert:before {
     content: "";
     position: relative;
-    top: 11px;
+    top: 15px;
     left: 9.5%;
     display: block;
     background-color: black;
-    height: 2px;
+    height: 4px;
     width: 76%;
   }
 
@@ -954,20 +964,74 @@
     vertical-align: top;
   }
 
-  form .likert li input[type="radio"] {
-    display: block;
+  form .likert li label {
+    width: 100%;
+  }
+
+  :root {
+    --form-control-color: #895000;
+  }
+
+  // *,
+  // *:before,
+  // *:after{
+  //   box-sizing: border-box;
+  // }
+
+  .form-control {
+    font-family: "Merriweather" serif;
+    font-size: 3vw;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    //commendted out because it ruins styling
+    // grid-template-columns: 1em auto;
+    gap: 0.5em;
+  }
+
+  input[type="radio"] {
+    // -webkit-appearance: none;
+    appearance: none;
+    background-color: #f1a61e;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
     position: relative;
     top: 0;
     left: 50%;
     margin-left: -6px;
   }
 
-  form .likert li label {
-    width: 100%;
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color #f1a61e);
+    background-color: CanvasText;
   }
+
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+
   form .buttons button {
     padding: 5px 10px;
-    background-color: #67ab49;
+    background-color: #1b75bc;
     border: 0;
     border-radius: 3px;
   }
@@ -976,13 +1040,59 @@
     background-color: #e9e9e9;
   }
   form .buttons .submit {
-    background-color: #67ab49;
+    background-color: #1b75bc;
   }
   form .buttons .clear:hover {
     background-color: #ccc;
   }
   form .buttons .submit:hover {
-    background-color: #14892c;
+    background-color: #b85000;
+  }
+
+  .admin-question {
+    width: 100vw;
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  .admin-question input {
+    @include body2Style;
+    border-radius: 20px;
+    border: 1px solid gray;
+    border-bottom: 2px solid #b85000;
+    font-size: 2vw;
+    font-weight: bold;
+    padding: 2px;
+  }
+
+  .admin-question label.question-Edit {
+    display: grid;
+    grid-template-rows: 33fr 33fr 33fr;
+  }
+
+  .valueEdit {
+    border-radius: 20px;
+    border: 1px solid gray;
+    border-top: 2px solid #f1a61e;
+    border-bottom: 2px solid #b85000;
+    padding: 1px;
+    width: 100%;
+  }
+
+  .admin-question ul.likert {
+    display: grid;
+    grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+    width: 100%;
+  }
+
+  input.admin-radio {
+    display: none;
+  }
+
+  a {
+    height: 200px;
+    width: 200px;
+    color: #1b75bc;
   }
 }
 
@@ -1055,7 +1165,6 @@
     .draggable-wrapper {
       padding-left: 5rem;
       min-width: 475px;
-
 
       @media (max-width: 675px) {
         padding: 0;
@@ -1146,15 +1255,13 @@
 }
 
 .rankingAnswer-keyUser {
-
   text-align: center;
 
   h2 {
-  
-      @include headerStyle(2em);
-      padding-top: 1em;
-      margin: auto;
-      text-align: center;
+    @include headerStyle(2em);
+    padding-top: 1em;
+    margin: auto;
+    text-align: center;
 
     @media (max-width: 675px) {
       max-width: 300px;
@@ -1168,29 +1275,22 @@
     min-width: 475px;
     margin: auto;
 
-  
-    
-
     .list-container {
       display: grid;
       grid-template-rows: 100%;
       flex-direction: row;
       padding: 1.5rem;
-      width: 400px;;
+      width: 400px;
       height: 500px;
       gap: 0.5rem;
       margin: auto;
       border-radius: 30px;
       border: 2px solid $indigo-dye;
 
-    
       @media (max-width: 675px) {
         max-width: 45%;
         margin: auto;
-   
-    
       }
-     
 
       .list-container_item {
         flex: 1;
@@ -1206,8 +1306,6 @@
         font-family: "Merriweather", serif;
         @include bulletsStyle;
 
-
-      
         .handlebars {
           display: flex;
           flex: 1;
@@ -1230,7 +1328,6 @@
       .list-container_item:hover {
         background-color: $marigold;
       }
-    
     }
 
     .active {

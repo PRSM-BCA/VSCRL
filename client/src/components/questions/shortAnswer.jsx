@@ -84,7 +84,6 @@ function ShortAnswer(props) {
           {!questionPrompt ? (
             <div className="linkDiv">
               <Link
-                to="UserInfo"
                 spy={true}
                 smooth={true}
                 offset={0}

@@ -7,7 +7,7 @@ import Header from "../header/Header";
 import BarChartDisplay from "../chart/BarChartDisplay";
 import profileImg from "../landing/media/profileImg.png"
 
-export default function Profile() {
+export default function Profile(props) {
   const {
     login,
     logout,
@@ -35,6 +35,7 @@ export default function Profile() {
     if (currentUser && !userInfo && !brand) {
       getUser(currentUser.uid).then((data) => setUserInfo(data));
       getBrand("SurgeonShoes").then((data) => setBrand(data));
+      props.setSurveySubmitted(false)
     }
   }, [getUser, userInfo, currentUser]);
 

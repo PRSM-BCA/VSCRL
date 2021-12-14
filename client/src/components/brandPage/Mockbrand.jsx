@@ -11,8 +11,16 @@ import MultipleChoice from "../questions/MultipleChoice";
 import RankingAnswer from "../questions/RankingAnswer";
 import KeyWordAnswer from "../questions/KeyWordAnswer";
 
-export default function Mockbrand() {
-  const { currentUser, getUser, getSurvey, getBrand, addSurvey } = useAuth();
+export default function Mockbrand(props) {
+  const {
+    currentUser,
+    getUser,
+    getSurvey,
+    getBrand,
+    addSurvey,
+    addQuestionToAdminSurvey,
+    addQuestionToUserSurvey
+  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [currentBrand, setCurrentBrand] = useState("");
   const [currentSurvey, setCurrentSurvey] = useState("");
@@ -22,33 +30,43 @@ export default function Mockbrand() {
   const [rankingAnswer, setRankingAnswer] = useState("");
   const [keyWordAnswer, setKeyWordAnswer] = useState("");
   const [scaleAnswer, setScaleAnswer] = useState("");
-  const [surveyStart, setSurveyStart] = useState(false)
+  const [surveyStart, setSurveyStart] = useState(false);
 
-  useEffect( () => {
-      console.log("currentUser", currentUser)
-      console.log("userInfo", userInfo)
-      console.log("currentBrand", currentBrand)
-      //console.log("currentSurvey", currentSurvey);
+  const [gender, setGender] = useState([
+    "Male",
+    "Female",
+    "Non-Binary",
+    "Don't care to disclose",
+  ]);
+  const [experience, setExperience] = useState("");
+  const [specialty, setSpecialty] = useState("");
+
+  useEffect(() => {
+    // console.log("currentUser", currentUser);
+    // console.log("userInfo", userInfo);
+    // console.log("currentBrand", currentBrand);
+    // console.log("currentSurvey", currentSurvey);
+    // console.log(props.surveySubmitted);
 
     if (currentUser && !userInfo) {
-        getUser(currentUser.uid).then((data) => setUserInfo(data))
-        console.log("inside currentUser")
+      window.scrollTo(0, 0);
+      getUser(currentUser.uid).then((data) => setUserInfo(data));
+      console.log("inside currentUser");
+      props.setSurveySubmitted(false);
     }
 
-    if(!currentBrand) {
-        getBrand("SurgeonShoes").then((data) => setCurrentBrand(data))
-        console.log("inside currentBrand")
+    if (!currentBrand) {
+      getBrand("SurgeonShoes").then((data) => setCurrentBrand(data));
+      console.log("inside currentBrand");
     }
 
-    if(!currentSurvey) {
-        getSurvey("GX7nZYcm4q5qq3drETLm","SurgeonShoeSurvey").then((data) => {
-            console.log("inside currentSurvey")
-            setCurrentSurvey(data)
-            populateFields(data)
-        })
+    if (!currentSurvey) {
+      getSurvey("GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey").then((data) => {
+        console.log("inside currentSurvey");
+        setCurrentSurvey(data);
+        populateFields(data);
+      });
     }
-
-    window.scrollTo(0, 0);
   }, [userInfo, addSurvey, surveyStart]);
 
   function populateFields(currentSurvey) {
@@ -72,48 +90,75 @@ export default function Mockbrand() {
     }
   }
 
-  console.log("currentSurvey", currentSurvey)
-  console.log("surveyStart", surveyStart)
-//   console.log("ShortAnswer", shortAnswer);
-//   console.log("LongAnswer", longAnswer);
-//   console.log("MultipleChoice", multipleChoice);
-//   console.log("RankingAnswer", rankingAnswer);
-//   console.log("KeyWordAnswer", keyWordAnswer);
-//   console.log("ScaleAnswer", scaleAnswer);
+  // console.log("currentSurvey", currentSurvey);
+  // console.log("surveyStart", surveyStart);
+  //   console.log("ShortAnswer", shortAnswer);
+  //   console.log("LongAnswer", longAnswer);
+  //   console.log("MultipleChoice", multipleChoice);
+  //   console.log("RankingAnswer", rankingAnswer);
+  //   console.log("KeyWordAnswer", keyWordAnswer);
+  //   console.log("ScaleAnswer", scaleAnswer);
 
   return (
     <AuthProvider>
       <div className="Brand">
-      {console.log("currentSurvey", currentSurvey)}
+        {console.log("admin", (experience.length > 0 && specialty.length > 0))}
+        {console.log("key user", (gender && experience && specialty))}
         <h1>{currentBrand.brandName}</h1>
         <h2>
           <i>"{currentBrand.missionStatement}"</i>
         </h2>
-        <Link
-          to="UserInfo"
-          spy={true}
-          smooth={true}
-          offset={0}
-          duration={500}
-          onClick={() => {
-            addSurvey(
-              currentUser.uid,
-              "GX7nZYcm4q5qq3drETLm",
-              "SurgeonShoes",
-              "SurgeonShoeSurvey"
-            ).then(() => {setSurveyStart(true)})
-            populateFields(currentSurvey)
-          }}
-        >
-          Start Survey
-        </Link>
+        <UserInfo gender={gender} setGender={setGender} experience={experience} setExperience={setExperience} setSpecialty={setSpecialty}></UserInfo>
+        {userInfo.usertype === "admin" ? (
+          <Link
+            disabled={experience !== "" && specialty !== "" ? false : true}
+            to="ShortAnswer"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            onClick={() => {
+              addSurvey(
+                currentUser.uid,
+                "GX7nZYcm4q5qq3drETLm",
+                "SurgeonShoes",
+                "SurgeonShoeSurvey"
+              ).then(() => {
+                setSurveyStart(true);
+              })
+              populateFields(currentSurvey);
+              addQuestionToAdminSurvey("UserCategories", {
+                gender: gender,
+                experience: experience,
+                specialty: specialty,
+              });
+            }}
+          >
+            Start Editing Survey
+          </Link>
+        ) : (
+          <Link
+            disabled={gender && experience && specialty ? false : true}
+            to="ShortAnswer"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            onClick={() => {
+              addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "UserCategories", {genderAnswer: gender, experienceAnswer: experience, specialtyAnswer: specialty})
+            }}
+          >Start Survey</Link>
+        )}
       </div>
-      <UserInfo></UserInfo>
       <ShortAnswer shortAnswer={shortAnswer}></ShortAnswer>
       <LongAnswer longAnswer={longAnswer}></LongAnswer>
       <MultipleChoice multipleChoice={multipleChoice}></MultipleChoice>
-      <RankingAnswer rankingAnswer={rankingAnswer}></RankingAnswer>
       <KeyWordAnswer keyWordAnswer={keyWordAnswer}></KeyWordAnswer>
+      <RankingAnswer
+        rankingAnswer={rankingAnswer}
+        surveySubmitted={props.surveySubmitted}
+        setSurveySubmitted={props.setSurveySubmitted}
+      ></RankingAnswer>
     </AuthProvider>
   );
 }
