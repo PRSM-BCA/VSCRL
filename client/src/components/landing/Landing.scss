@@ -34,13 +34,12 @@ body {
     background-color: black;
     padding-top: 3vh;
     padding-left: 3vw;
-    @include headerStyle ($textColor: white, $fontSize: 20px);
+    @include headerStyle($textColor: white, $fontSize: 20px);
     z-index: 1;
 
-   #vscrlLogo {
-    
-     width: 250px;
-   }
+    #vscrlLogo {
+      width: 250px;
+    }
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
@@ -60,7 +59,6 @@ body {
         display: none;
       }
     }
-
   }
 
   .main-section {
@@ -153,15 +151,13 @@ body {
       #header {
         @include headerStyle($fontSize: 30px);
         padding: 0;
-      
       }
 
       #subheader {
-        @include body1Style ($fontSize: 20);
-       padding: 0;
-    
+        @include body1Style($fontSize: 20);
+        padding: 0;
+
         font-size: 1.5em;
-      
       }
     }
 
@@ -317,6 +313,7 @@ body {
   .how-it-works-section {
     height: 170vh;
     background-color: white;
+    font-family: 'Merriweather', serif;
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
@@ -408,6 +405,7 @@ body {
   .stories-section {
     height: 100vh;
     background-color: $marigold;
+    font-family: 'Merriweather', serif;
 
     .curved {
       display: flex;
@@ -438,7 +436,7 @@ body {
           align-self: center;
           margin-left: 10vw;
           margin-right: 10vw;
-          padding-top: 10vh;
+          padding-top: 8vh;
           gap: 5em;
           position: relative;
 
@@ -447,19 +445,17 @@ body {
           }
 
           .story-image {
-            background: white;
+            object-fit: cover;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            min-width: 225px;
-            max-width: 225px;
-            min-height: 225px;
-            max-height: 225px;
+          }
 
-            @media (max-width: 675px) {
-              max-width: 150px;
-              min-width: 150px;
-              max-height: 150px;
-              min-height: 150px;
-            }
+          @media (max-width: 675px) {
+            max-width: 150px;
+            min-width: 150px;
+            max-height: 150px;
+            min-height: 150px;
           }
         }
 
@@ -488,6 +484,7 @@ body {
       text-align: center;
       font-size: 2em;
       padding-top: 17vh;
+      font-family: 'Merriweather', serif;
     }
     .brandsFlexContainer {
       display: flex;
@@ -525,11 +522,18 @@ body {
         .brandsText {
           color: black;
           max-width: 200px;
-          padding-right: 5vw;
-          padding-left: 5vw;
+          align-items: center;
+          font-size: 20px;
+          font-family: 'Merriweather', serif;
+         
+        }
+
+        .brandName {
+          margin-top: -1vh;
+          align-items: left;
+          font-family: 'Merriweather', serif;
         }
       }
     }
   }
-
 }
