@@ -261,14 +261,14 @@
   height: 30vh;
   width: auto;
   z-index: 5;
-  transform: translate(400%, -350%);
+  transform: translate(370%, -350%);
   position: relative;
 }
 
 .blueSVG {
   width: 160vw;
   z-index: 0;
-  transform: translate(0, -190%);
+  transform: translate(0, -200%);
   position: relative;
   @media (max-width: 800px) {
     display: none;

@@ -128,17 +128,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <nav>
-          <Link to="/KeyWordAnswer">KeyWordAnswer</Link>
-          <Link to="/LongAnswer">LongAnswer</Link>
-          <Link to="/MultipleChoice">MultipleChoice</Link>
-          <Link to="/RankingAnswer">RankingAnswer</Link>
-          <Link to="/ScaleAnswer">ScaleAnswer</Link>
-          {/* <Link to="/SelectImg">SelectImg</Link> */}
-          <Link to="/ShortAnswer">ShortAnswer</Link>
-          <Link to="/MockBrand">MockBrand</Link>
-          <Link to="/BarChartDisplay">BarChartDisplay</Link>
-        </nav>
+        
         <Footer></Footer>
       </div>
     </AuthProvider>
