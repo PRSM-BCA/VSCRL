@@ -2,13 +2,12 @@ import "./Header.scss";
 import React, { useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import Logo from "../landing/Vscrl_Logo.png";
+import Logo from "../landing/media/vsrlLogo.jpg";
 import { useState } from "react";
 import { authentication, db } from "../../firebase-config";
 import { doc, getDoc } from "@firebase/firestore";
-import profileIcon from "./image/PImg.jpg";
 import { Link } from "react-router-dom";
-import imgIcon from "./image/imgIcon.jpg";
+import imgIcon from "../landing/media/NavBar.jpg";
 
 
 export default function Header() {

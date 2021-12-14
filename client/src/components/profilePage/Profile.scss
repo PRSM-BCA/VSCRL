@@ -70,6 +70,10 @@
   h1{
     @include headerStyle($fontSize: 24px, $alignment: center, $textColor: $dark-jungle-green)
   }
+  h3{
+    height: fit-content;
+    @include headerStyle($fontSize: 24px, $alignment: center, $textColor: $dark-jungle-green)
+  }
   
   svg{
     margin: 0%;
@@ -92,10 +96,22 @@ border-radius: 30px;
   align-content: space-between;
   background-color: #1B75BC;
   
+
   input{
    margin: 10px;
   }
+  @media (max-width:675px) {
+    width: 80vw;
+  }
 }
+
+.CPh1{
+    
+  @media (max-width:675px) {
+    margin-top: 6rem;
+  }
+}
+
 .changeEDiv{
   border-radius: 30px;
   display: flex;
@@ -108,6 +124,9 @@ border-radius: 30px;
   input{
     margin: 10px;
    }
+   @media (max-width:675px) {
+    width: 80vw;
+  }
 }
 
 
@@ -130,10 +149,14 @@ border-radius: 30px;
   height: max-content;
   margin-top: 20vh;
   width: 60vw;
+  @media (max-width:675px) {
+    width: 80vw;
+  }
 
 
   img{
-      height: 20vh;
+      height: 30vh;
 border-radius: 50%;
   }
 }
+

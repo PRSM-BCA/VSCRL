@@ -1,11 +1,11 @@
 import "./Profile.scss";
 import React, { useState, useEffect } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
-import profilePic from "../header/image/PImg.jpg";
 import { Link } from "react-router-dom";
 import Home from "./home.jpg";
 import Header from "../header/Header";
 import BarChartDisplay from "../chart/BarChartDisplay";
+import profilePic from "../landing/media/PImg.jpg"
 
 export default function Profile() {
   const {
