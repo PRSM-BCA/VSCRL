@@ -1,62 +1,64 @@
 // -------------------------------Styling for Footer Section
-.bottom-tag {
-    h1 {
-      padding-top: 15vh;
-      margin-left: 5vw;
-      
-    }
-  }
 
-  
-  .footerWrapper {
+.bottom-tag {
+  h1 {
+    padding-top: 15vh;
+    margin-left: 5vw;
+  }
+}
+
+.footerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  .icon-flex {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-  
-  
-    .icon-flex {
+    flex-direction: row;
+    justify-content: space-between;
+
+    #icon-footer {
+      width: 150px;
+      margin: auto;
+      margin-bottom: 18vh;
+    }
+
+    .footerFlexContainer {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-  
-      #icon-footer {
-        width: 150px;
-        margin: auto;
-        margin-bottom: 18vh
-      }
-      
-      .footerFlexContainer {
+      justify-content: space-around;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+
+      .footerMiniFlex {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-    
-        .footerMiniFlex {
-          display: flex;
-          flex-direction: row;
-    
-          .footer-contact-type {
-            color: white;
-            margin-bottom: 2vh;
-            @media (max-width: 675px) {
-              font-size: 20%;
-            }
+
+        #contact-icon {
+          width: 150px;
+          margin: auto;
+          margin-bottom: 18vh;
+        }
+
+        .footer-contact-type {
+          color: white;
+          margin-bottom: 2vh;
+          @media (max-width: 675px) {
+            font-size: 20%;
           }
         }
+       
       }
-    
-      svg {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        width: 100vw;
-        z-index: -1;
-      }
-    
     }
-  
-    
+
+    svg {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      z-index: -1;
+    }
   }
+}
