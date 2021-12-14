@@ -1,5 +1,62 @@
 @import "../styles/global.scss";
 
+
+.AdminProfile {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+
+  .adminPanel {
+    flex: 2;
+    background-color: $dark-jungle-green;
+
+    ul {
+      li {
+        @include bulletsStyle
+      }
+    }
+  }
+
+
+  .displayDiv {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 8;
+
+    h1 {
+      @include headerStyle;
+      margin: 0;
+      flex: 1;
+    }
+
+    .BarChartDisplay {
+      flex: 8;
+      height: 80%;
+      width: 80%;
+      border: 2px solid $dark-jungle-green;
+      padding: .5em;
+      margin: auto;
+    }
+
+  }
+
+  .infoDiv {
+    flex: 4;
+    display: flex;
+    flex-direction: row;
+
+    div {
+      flex: 1;
+      padding: 1em;
+    }
+  }
+  
+
+}
+
+
 .ProfileWrapper {
   display: flex;
   justify-content: center;
