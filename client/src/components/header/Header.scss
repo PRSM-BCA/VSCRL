@@ -109,7 +109,8 @@
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: $marigold;
   border-radius: 30%;
 }
 

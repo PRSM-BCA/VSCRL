@@ -76,9 +76,7 @@ export default function Dashboard() {
                   <h2>Skida:</h2>
                   <p>
                     Our mission is to bring people together, encourage play,
-                    generate smiles, and make a better place. As a company, we
-                    are creating and revising our diversity pledge to hold us
-                    accountable.
+                    generate smiles, and make a better place. 
                   </p>
                 </div>
               </div>
@@ -87,11 +85,12 @@ export default function Dashboard() {
                 <img src={sailPhoto} alt="sailing photo" />
                 <div className="textBox">
                   <h2>Yeti:</h2>
-
+                  
                   <p>
+                    
                     Growing up, my brother and I always had a passion for the
-                    outdoors. Hunting. Fishing. Traveling to outdoor industry
-                    trade shows with our teacher-turned-entrepreneur father.
+                    outdoors. Hunting. Fishing...
+                    
                   </p>
                 </div>
               </div>
@@ -103,7 +102,7 @@ export default function Dashboard() {
                   <p>
                     In a society where speed and stress have taken over, people
                     take less and less time to play and connect with nature.
-                    Play is our essence.
+                    
                   </p>
                 </div>
               </div>
