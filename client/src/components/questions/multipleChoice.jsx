@@ -170,10 +170,11 @@ function MultipleChoice(props) {
               </div>
             </div>
             <div id="submitContent">
+              {console.log(adminEnter)}
               {adminEnter ? (
                 <Link
                   className="active"
-                  to="RankingAnswer"
+                  to="KeyWordAnswer"
                   spy={true}
                   smooth={true}
                   offset={0}
@@ -190,7 +191,7 @@ function MultipleChoice(props) {
                 </Link>
               ) : (
                 <Link
-                  to="RankingAnswer"
+                  to="KeyWordAnswer"
                   spy={true}
                   smooth={true}
                   offset={0}
@@ -387,7 +388,7 @@ function MultipleChoice(props) {
             <div id="submitContent">
               <Link
                 className={enter ? "active" : ""}
-                to="RankingAnswer"
+                to="KeyWordAnswer"
                 spy={true}
                 smooth={true}
                 offset={0}

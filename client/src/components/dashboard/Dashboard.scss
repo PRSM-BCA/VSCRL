@@ -13,6 +13,11 @@
   }
 }
 
+#alertBanner {
+  @include body1Style(1em, center, $baby-powder);
+  background-color: mediumseagreen;
+}
+
 // brand love styling --------------------------------
 
 .featuredBrandsWrapper {

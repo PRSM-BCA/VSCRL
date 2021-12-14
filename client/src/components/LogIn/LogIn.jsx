@@ -32,7 +32,7 @@ export default function LogIn() {
 
   return (
     <div className="LogIn">
-      <p id="loginFeature">Log in to VSCRL</p>
+      <h2 id="loginFeature">Log in to VSCRL</h2>
       <form
         onSubmit={(evt) => {
           evt.preventDefault();

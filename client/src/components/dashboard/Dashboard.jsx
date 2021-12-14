@@ -1,35 +1,64 @@
 import "./Dashboard.scss";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../landing/Footer";
-import backgroundVideo from "../landing/media/video.mp4"
-import medPhoto from "../landing/media/medical.jpg"
-import surfPhoto from "../landing/media/surfing.jpg"
-import treePhoto from "../landing/media/trees.jpg"
-import skiPhoto from "../landing/media/ski.jpg"
-import sailPhoto from "../landing/media/sailing.jpg"
-import hikePhoto from "../landing/media/hike.jpg"
-import logo from '../landing/media/icon.png'
+import backgroundVideo from "../landing/media/video.mp4";
+import medPhoto from "../landing/media/medical.jpg";
+import surfPhoto from "../landing/media/surfing.jpg";
+import treePhoto from "../landing/media/trees.jpg";
+import skiPhoto from "../landing/media/ski.jpg";
+import sailPhoto from "../landing/media/sailing.jpg";
+import hikePhoto from "../landing/media/hike.jpg";
+import logo from "../landing/media/icon.png";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+  const { currentUser, getUser, getBrand } = useAuth();
+  const [userInfo, setUserInfo] = useState("");
+
+  useEffect(() => {
+    if (currentUser && !userInfo) {
+      window.scrollTo(0, 0);
+      getUser(currentUser.uid).then((data) => setUserInfo(data));
+    }
+  }, [getUser, userInfo, currentUser]);
+
   return (
     <AuthProvider>
       <div className="dashBoard">
         <Header></Header>
         <section className="headerVideo">
           <video autoPlay loop muted className="backgroundVideo">
-          <source src={backgroundVideo} type="video/mp4" />
+            <source src={backgroundVideo} type="video/mp4" />
           </video>
         </section>
+
+        {userInfo.usertype === "admin" ? (
+          props.surveySubmitted ? (
+            <div id="alertBanner">
+              <p>
+                Survey Added!
+                <br />
+                Users will now have access to the survey and coupons
+              </p>
+            </div>
+          ) : null
+        ) : props.surveySubmitted ? (
+          <div id="alertBanner">
+            <p>
+              Survey Submitted!
+              <br />
+              Here is your coupon code: VSCRLSHOES
+            </p>
+          </div>
+        ) : null}
 
         <div className="featuredBrandsWrapper">
           <h1 className="sectionTitle">Brand Love.</h1>
           <section className="YourSection">
             <div className="BrandLoveBox1">
-        
               <h2>Spare two cents?</h2>
               <div className="textDiv">
                 <p>Discover how your insights earn rewards.</p>
@@ -37,18 +66,20 @@ export default function Dashboard() {
             </div>
 
             <div className="BrandLoveBox">
-            <img src={medPhoto} alt="medphoto" />
+              <img src={medPhoto} alt="medphoto" />
               <h2>Medical Footwear</h2>
-              
-              <div className="couponDiv" /*onClick={useNavigate("/mockBrand")}*/ >
-              <Link to="/mockBrand">
-                <p>30% off</p>
-                </Link> 
+
+              <div
+                className="couponDiv" /*onClick={useNavigate("/mockBrand")}*/
+              >
+                <Link to="/mockBrand">
+                  <p>30% off</p>
+                </Link>
               </div>
             </div>
 
             <div className="BrandLoveBox">
-            <img src={surfPhoto} alt="surfing photo" />
+              <img src={surfPhoto} alt="surfing photo" />
               <h2>Lorem ipsum dolor</h2>
               <div className="couponDiv">
                 <p>20% off</p>
@@ -56,7 +87,7 @@ export default function Dashboard() {
             </div>
 
             <div className="BrandLoveBox">
-            <img src={treePhoto} alt="treephoto" />
+              <img src={treePhoto} alt="treephoto" />
               <h2>TBT</h2>
               <div className="couponDiv">
                 <p>Coming soon</p>
@@ -70,7 +101,7 @@ export default function Dashboard() {
           <div className="FDiv">
             <section className="featureSection">
               <div className="featureBox1">
-              <img src={skiPhoto} alt="skiphoto" />
+                <img src={skiPhoto} alt="skiphoto" />
                 <div className="textBox">
                   <h2>Skida:</h2>
                   <p>
@@ -82,7 +113,7 @@ export default function Dashboard() {
               </div>
 
               <div className="featureBox2">
-              <img src={sailPhoto} alt="sailing photo" />
+                <img src={sailPhoto} alt="sailing photo" />
                 <div className="textBox">
                   <h2>Yeti:</h2>
 
@@ -95,7 +126,7 @@ export default function Dashboard() {
               </div>
 
               <div className="featureBox3">
-              <img src={hikePhoto} alt="hiking photo" />
+                <img src={hikePhoto} alt="hiking photo" />
                 <div className="textBox">
                   <h2>Salomon:</h2>
                   <p>
@@ -126,17 +157,17 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <nav>
+        {/* <nav>
           <Link to="/KeyWordAnswer">KeyWordAnswer</Link>
           <Link to="/LongAnswer">LongAnswer</Link>
           <Link to="/MultipleChoice">MultipleChoice</Link>
           <Link to="/RankingAnswer">RankingAnswer</Link>
           <Link to="/ScaleAnswer">ScaleAnswer</Link>
-          {/* <Link to="/SelectImg">SelectImg</Link> */}
+          { <Link to="/SelectImg">SelectImg</Link> }
           <Link to="/ShortAnswer">ShortAnswer</Link>
           <Link to="/MockBrand">MockBrand</Link>
           <Link to="/BarChartDisplay">BarChartDisplay</Link>
-        </nav>
+        </nav> */}
         <Footer></Footer>
       </div>
     </AuthProvider>

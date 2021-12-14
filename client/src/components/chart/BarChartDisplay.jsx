@@ -63,7 +63,7 @@ export default function BarChartDisplay() {
       <ResponsiveContainer>
         <BarChart width={500} height={300} data={dataPoints} barSize={20} layout="vertical">
           <YAxis dataKey="word" type="category" />
-          <XAxis />
+          <XAxis type="number"/>
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
           <Bar dataKey="value" background={{ fill: "#eee" }} onClick={(evt) => {

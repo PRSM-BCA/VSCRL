@@ -2,7 +2,8 @@
 
 //---------------------KeywordAnswer ADMIN
 .KeyWordAnswer-admin {
-
+  width: 100vw;
+  height: 100vh;
   text-align: center;
 
   a {
@@ -36,6 +37,8 @@
     margin: auto;
     justify-content: center;
     padding-top: 5vh;
+    width: 100%;
+    height: 80%;
 
     @media (max-width: 675px) {
       display: flex;
@@ -58,7 +61,6 @@
       text-align: left;
       color: $indigo-dye;
       width: 350px;
-
     }
 
     p {
@@ -244,17 +246,21 @@
 
 //---------------------KeywordAnswer KeyUser
 .keyWordAnswer-keyUser {
-
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 
-    h1 {
-      @include headerStyle(2em);
-      padding-top: 1em;
-      margin: auto;
-      text-align: center;
-    }
+  .KeyWordMainWrapper {
+    width: 100%;
+    height: 100%;
+  }
 
-  
+  h1 {
+    @include headerStyle(2em);
+    padding-top: 1em;
+    margin: auto;
+    text-align: center;
+  }
 
   a {
     @include headerStyle(1em, center, $dark-jungle-green);
@@ -1056,7 +1062,6 @@
       padding-left: 5rem;
       min-width: 475px;
 
-
       @media (max-width: 675px) {
         padding: 0;
       }
@@ -1146,15 +1151,13 @@
 }
 
 .rankingAnswer-keyUser {
-
   text-align: center;
 
   h2 {
-  
-      @include headerStyle(2em);
-      padding-top: 1em;
-      margin: auto;
-      text-align: center;
+    @include headerStyle(2em);
+    padding-top: 1em;
+    margin: auto;
+    text-align: center;
 
     @media (max-width: 675px) {
       max-width: 300px;
@@ -1168,29 +1171,22 @@
     min-width: 475px;
     margin: auto;
 
-  
-    
-
     .list-container {
       display: grid;
       grid-template-rows: 100%;
       flex-direction: row;
       padding: 1.5rem;
-      width: 400px;;
+      width: 400px;
       height: 500px;
       gap: 0.5rem;
       margin: auto;
       border-radius: 30px;
       border: 2px solid $indigo-dye;
 
-    
       @media (max-width: 675px) {
         max-width: 45%;
         margin: auto;
-   
-    
       }
-     
 
       .list-container_item {
         flex: 1;
@@ -1206,8 +1202,6 @@
         font-family: "Merriweather", serif;
         @include bulletsStyle;
 
-
-      
         .handlebars {
           display: flex;
           flex: 1;
@@ -1230,7 +1224,6 @@
       .list-container_item:hover {
         background-color: $marigold;
       }
-    
     }
 
     .active {

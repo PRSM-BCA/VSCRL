@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-export default function UserInfo() {
+export default function UserInfo(props) {
   const {
     currentUser,
     getUser,
@@ -28,21 +28,18 @@ export default function UserInfo() {
   if (userInfo.usertype === "admin") {
     return (
       <AuthProvider>
-        {console.log(gender)}
-        {console.log(experience)}
-        {console.log(specialty)}
+        {console.log(props.gender)}
+        {console.log(props.experience)}
+        {console.log(props.specialty)}
         <div className="UserInfo">
-          <h1>
-            <b>UserInfo</b>
-          </h1>
           <div id="selectContainer">
             <div>
               <h2>Gender</h2>
               <select
                 disabled="true"
                 onChange={(evt) => {
-                  console.log(gender);
-                  setGender(evt.target.value);
+                  console.log(props.gender);
+                  props.setGender(evt.target.value);
                 }}
               >
                 <option selected disabled>
@@ -59,7 +56,7 @@ export default function UserInfo() {
             <div>
               <h2>Experience</h2>
                 <textarea className="practice" placeholder="Enter what categories of experience you'd like this survey to contain seperated by a ',' i.e '0-5 Years, 5-10 Years, etc.'" onChange={ (evt) => {
-                    setExperience(evt.target.value.replace(" ", "").split(","))
+                    props.setExperience(evt.target.value.replace(" ", "").split(","))
                 }}>
 
                 </textarea>
@@ -67,25 +64,25 @@ export default function UserInfo() {
             <div>
               <h2>Specialty</h2>
               <textarea className="practice" placeholder="Enter what categories of practice you'd like this survey to contain seperated by a ',' i.e 'Cardiology, Colorectomy, etc.'" onChange={ (evt) => {
-                    setSpecialty(evt.target.value.split(","))
+                    props.setSpecialty(evt.target.value.split(","))
                 }}>
 
                 </textarea>
             </div>
           </div>
-          <Link
-            disabled={experience && specialty ? "true" : "false"}
+          {/* <Link
+            disabled={props.experience && props.specialty ? "true" : "false"}
             to="ShortAnswer"
             spy={true}
             smooth={true}
             offset={0}
             duration={500}
             onClick={() => {
-              addQuestionToAdminSurvey("UserCategories", {gender: gender, experience: experience, specialty: specialty})
+              addQuestionToAdminSurvey("UserCategories", {gender: props.gender, experience: props.experience, specialty: props.pecialty})
             }}
           >
             Enter User Info
-          </Link>
+          </Link> */}
         </div>
       </AuthProvider>
     );
@@ -93,9 +90,6 @@ export default function UserInfo() {
     return (
       <AuthProvider>
         <div className="UserInfo">
-          <h1>
-            <b>UserInfo</b>
-          </h1>
           <div id="selectContainer">
             <div>
               <h2>Gender</h2>
@@ -163,7 +157,7 @@ export default function UserInfo() {
               </select>
             </div>
           </div>
-          <Link
+          {/* <Link
             to="ShortAnswer"
             spy={true}
             smooth={true}
@@ -174,7 +168,7 @@ export default function UserInfo() {
             }}
           >
             Enter User Info
-          </Link>
+          </Link> */}
         </div>
       </AuthProvider>
     );
