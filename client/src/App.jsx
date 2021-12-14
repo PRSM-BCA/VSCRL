@@ -12,6 +12,7 @@ import SelectImg from './components/questions/SelectImg';
 import ShortAnswer from './components/questions/ShortAnswer';
 import Profile from './components/profilePage/Profile';
 import Mockbrand from './components/brandPage/Mockbrand';
+import BarChartDisplay from './components/chart/BarChartDisplay';
 export default function App() {
     return (
     
@@ -29,6 +30,7 @@ export default function App() {
                     <Route path="/ShortAnswer" element={<ShortAnswer />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/mockBrand" element={<Mockbrand />} />
+                    <Route path="/BarChartDisplay" element={<BarChartDisplay/>} />
                 </Routes>
             </AuthProvider>
         </Router>

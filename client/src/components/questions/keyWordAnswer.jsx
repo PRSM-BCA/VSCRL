@@ -31,6 +31,8 @@ function KeyWordAnswer(props) {
   const [input8, setInput8] = useState(null);
   const [input9, setInput9] = useState(null);
 
+  const [keyWordBank, setKeyWordBank] = useState([])
+
   // Admin function: change color onChange for ADMIN
 
 
@@ -50,6 +52,15 @@ function KeyWordAnswer(props) {
       setCounter(counter - 1);
     }
     console.log("counter", counter);
+  }
+
+  function keyWordArrayHandle(word) {
+    if (keyWordBank.includes(word)) {
+      keyWordBank.shift(keyWordBank.indexOf(word))
+    }
+    else {
+    setKeyWordBank(keyWordBank => [...keyWordBank, word])
+    }
   }
 
   useEffect(() => {
@@ -192,25 +203,32 @@ function KeyWordAnswer(props) {
               offset={0}
               duration={500}
               onClick={() => {
-                addQuestionToAdminSurvey("KeyWordQuestions", {
-                  [input1]: 0,
-                  [input2]: 0,
-                  [input3]: 0,
-                  [input4]: 0,
-                  [input5]: 0,
-                  [input6]: 0,
-                  [input7]: 0,
-                  [input8]: 0,
-                  [input9]: 0,
-                });
+                addQuestionToAdminSurvey("KeyWordQuestions", [
+                  { word: input1, value: 0},
+                  { word: input2, value: 0},
+                  { word: input3, value: 0},
+                  { word: input4, value: 0},
+                  { word: input5, value: 0},
+                  { word: input6, value: 0},
+                  { word: input7, value: 0},
+                  { word: input8, value: 0},
+                  { word: input9, value: 0},
+              ]);
               }}
             >
               Enter Key Word Prompts
             </Link>
           ) : (
-            <button disabled type="submit" onClick={() => {}}>
-              Enter Question Info
-            </button>
+            <Link
+              disabled="true"
+              to="MultipleChoice"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              Enter Key Word Prompts
+            </Link>
           )}
         </div>
       </AuthProvider>
@@ -220,8 +238,9 @@ function KeyWordAnswer(props) {
   } else {
     return (
       <AuthProvider>
+        {/* {console.log("keyWordBank", keyWordBank)} */}
         <div className="keyWordAnswer-keyUser">
-          {console.log(count)}
+          {/* {console.log(count)} */}
           <h1>Click 5 frustrations about your footwear (Key User)</h1>
 
           <div className="gridWrapper">
@@ -236,6 +255,7 @@ function KeyWordAnswer(props) {
                   setCount
                 );
                 console.log("this is count", count);
+                keyWordArrayHandle(props.keyWordAnswer[0].word)
               }}
             >
               <p>{props.keyWordAnswer ? props.keyWordAnswer[0].word : null}</p>
@@ -252,6 +272,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[1].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[1].word : null}</p>
@@ -269,6 +290,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[2].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[2].word : null}</p>
@@ -286,6 +308,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[3].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[3].word : null}</p>
@@ -303,6 +326,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[4].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[4].word : null}</p>
@@ -320,6 +344,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[5].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[5].word : null}</p>
@@ -337,6 +362,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[6].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[6].word : null}</p>
@@ -354,6 +380,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[7].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[7].word : null}</p>
@@ -371,6 +398,7 @@ function KeyWordAnswer(props) {
                     setCount
                   );
                   console.log("this is count", count);
+                  keyWordArrayHandle(props.keyWordAnswer[8].word)
                 }}
               >
                 <p>{props.keyWordAnswer ? props.keyWordAnswer[8].word : null}</p>
@@ -386,17 +414,7 @@ function KeyWordAnswer(props) {
             offset={0}
             duration={500}
             onClick={() => {
-              addQuestionToUserSurvey("KeyWordQuestions", {
-                [input1]: 0,
-                [input2]: 0,
-                [input3]: 0,
-                [input4]: 0,
-                [input5]: 0,
-                [input6]: 0,
-                [input7]: 0,
-                [input8]: 0,
-                [input9]: 0,
-              });
+              addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "KeyWordBank", {keyWords: keyWordBank}, {merge: true})
             }}
           >Enter Question Info</Link>
           ) : (
@@ -407,19 +425,6 @@ function KeyWordAnswer(props) {
             smooth={true}
             offset={0}
             duration={500}
-            onClick={() => {
-              addQuestionToUserSurvey("KeyWordQuestions", {
-                [input1]: 0,
-                [input2]: 0,
-                [input3]: 0,
-                [input4]: 0,
-                [input5]: 0,
-                [input6]: 0,
-                [input7]: 0,
-                [input8]: 0,
-                [input9]: 0,
-              });
-            }}
           >Enter Question Info</Link>
           )}
         </div>
