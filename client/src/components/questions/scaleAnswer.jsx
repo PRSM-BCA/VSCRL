@@ -71,9 +71,9 @@ function ScaleAnswer(props) {
     return (
       <AuthProvider>
         {console.log(adminEnter)}
-        <div className="scaleAnswer-Edit">
+        <div className="scaleAnswer">
           <h1>Admin</h1>
-          <div className="admin-question1">
+          <div className="admin-question">
             <label className="question-Edit">
               <input
                 id="question1Input"
@@ -101,7 +101,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question1Value1} />
+                    <input className="admin-radio" type="radio" name="radio" value={question1Value1} />
                     <p>{question1Value1 ? question1Value1 : ""}</p>
                   </label>
                 </li>
@@ -118,7 +118,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question1Value2} />
+                    <input className="admin-radio" type="radio" name="radio" value={question1Value2} />
                     <p>{question1Value2 ? question1Value2 : ""}</p>
                   </label>
                 </li>
@@ -135,7 +135,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question1Value3} />
+                    <input className="admin-radio" type="radio" name="radio" value={question1Value3} />
                     <p>{question1Value3 ? question1Value3 : ""}</p>
                   </label>
                 </li>
@@ -152,7 +152,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question1Value4} />
+                    <input className="admin-radio" type="radio" name="radio" value={question1Value4} />
                     <p>{question1Value4 ? question1Value4 : ""}</p>
                   </label>
                 </li>
@@ -169,14 +169,14 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question1Value5} />
+                    <input className="admin-radio" type="radio" name="radio" value={question1Value5} />
                     <p>{question1Value5 ? question1Value5 : ""}</p>
                   </label>
                 </li>
               </div>
             </ul>
           </div>
-          <div className="admin-question2">
+          <div className="admin-question">
             <label className="question-Edit">
               <input
                 id="question2Input"
@@ -204,7 +204,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question2Value1} />
+                    <input className="admin-radio" type="radio" name="radio" value={question2Value1} />
                     <p>{question2Value1 ? question2Value1 : ""}</p>
                   </label>
                 </li>
@@ -221,7 +221,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question2Value2} />
+                    <input className="admin-radio" type="radio" name="radio" value={question2Value2} />
                     <p>{question2Value2 ? question2Value2 : ""}</p>
                   </label>
                 </li>
@@ -238,7 +238,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question2Value3} />
+                    <input className="admin-radio" type="radio" name="radio" value={question2Value3} />
                     <p>{question2Value3 ? question2Value3 : ""}</p>
                   </label>
                 </li>
@@ -255,7 +255,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question2Value4} />
+                    <input className="admin-radio" type="radio" name="radio" value={question2Value4} />
                     <p>{question2Value4 ? question2Value4 : ""}</p>
                   </label>
                 </li>
@@ -272,14 +272,14 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question2Value5} />
+                    <input className="admin-radio" type="radio" name="radio" value={question2Value5} />
                     <p>{question2Value5 ? question2Value5 : ""}</p>
                   </label>
                 </li>
               </div>
             </ul>
           </div>
-          <div className="admin-question3">
+          <div className="admin-question">
             <label className="question-Edit">
               <input
                 id="question3Input"
@@ -302,12 +302,12 @@ function ScaleAnswer(props) {
                   placeholder="Question 3 Value 1"
                   onChange={(evt) => {
                     console.log(question3Value1);
-                    setQuestion1Value1(evt.target.value);
+                    setQuestion3Value1(evt.target.value);
                   }}
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question3Value1} />
+                    <input className="admin-radio" type="radio" name="radio" value={question3Value1} />
                     <p>{question3Value1 ? question3Value1 : ""}</p>
                   </label>
                 </li>
@@ -324,7 +324,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question3Value2} />
+                    <input className="admin-radio" type="radio" name="radio" value={question3Value2} />
                     <p>{question3Value2 ? question3Value2 : ""}</p>
                   </label>
                 </li>
@@ -341,7 +341,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question3Value3} />
+                    <input className="admin-radio" type="radio" name="radio" value={question3Value3} />
                     <p>{question3Value3 ? question3Value3 : ""}</p>
                   </label>
                 </li>
@@ -358,7 +358,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question3Value4} />
+                    <input className="admin-radio" type="radio" name="radio" value={question3Value4} />
                     <p>{question3Value4 ? question3Value4 : ""}</p>
                   </label>
                 </li>
@@ -375,7 +375,7 @@ function ScaleAnswer(props) {
                 />
                 <li>
                   <label className="form-control">
-                    <input type="radio" name="radio" value={question3Value5} />
+                    <input className="admin-radio" type="radio" name="radio" value={question3Value5} />
                     <p>{question3Value5 ? question3Value5 : ""}</p>
                   </label>
                 </li>
