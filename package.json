@@ -25,6 +25,7 @@
     "lodash": "^4.17.21",
     "react-responsive-carousel": "^3.2.22",
     "react-scroll": "^1.8.4",
-    "react-transition-group": "^4.4.2"
+    "react-transition-group": "^4.4.2",
+    "recharts": "^2.1.6"
   }
 }

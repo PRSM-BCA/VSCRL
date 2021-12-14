@@ -1044,7 +1044,24 @@
     background-color: #B85000;
   }
 
-  .admin-question1 .question {
+  .scaleAnswer-Edit input {
+    @include body2Style;
+    border-radius: 20px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2vw;
+    font-weight: bold;
+    padding: 2px;
+    border-bottom: 2px solid #B85000
+  }
+
+
+
+  .valueEdit {
+    @include body2Style;
+    border-radius: 20px;
+    border: 1px solid gray;
     display: flex;
     justify-content: flex-start;
     font-size: 2vw;
@@ -1053,7 +1070,7 @@
     border-bottom: 2px solid #B85000;
   }
 
-  .admin-question1 input {
+  .question-Edit input {
     display: flex;
     justify-content: flex-start;
     @include body2Style;
@@ -1079,6 +1096,7 @@
     width: 200px;
     color: red;
   }
+
 }
 
 .SelectImg {
