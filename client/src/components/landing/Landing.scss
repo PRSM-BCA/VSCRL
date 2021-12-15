@@ -4,6 +4,7 @@
 * {
   margin-right: 0;
   padding: 0;
+  transition: .3s;
 }
 
 body {
@@ -507,25 +508,45 @@ body {
       }
 
       .brandsMiniFlex {
+        // display: flex;
+        // flex-direction: column;
+        justify-content: space-around;
+        // align-items: center;
+
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        z-index: 0;
+        // justify-content: flex-start;
         align-items: center;
+        width: 18.76rem;
+        height: 70vh;
+        background-color: black;
+        opacity: 80%;
+
+
+
 
         @media (max-width: 675px) {
           flex-direction: row;
         }
 
         .brandsImage {
-          width: 20vw;
+          width: 17rem;
+        
           height: auto;
           text-align: center;
           padding-right: 5vw;
           padding-left: 5vw;
+
+        
+        }
+        .brandsImage:hover {
+          width: 19vw;
         }
 
         .brandsText {
-          color: black;
+          // color: black;
+          color: white;
           max-width: 200px;
           align-items: center;
           font-size: 20px;
@@ -533,6 +554,7 @@ body {
         }
 
         .brandName {
+          color: white;
           margin-top: -1vh;
           align-items: left;
           font-family: "Merriweather", serif;
