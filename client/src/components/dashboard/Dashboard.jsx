@@ -9,8 +9,8 @@ import backgroundVideo from "../landing/media/video.mp4";
 import medPhoto from "../landing/media/medical.jpg";
 import surfPhoto from "../landing/media/surfing.jpg";
 import treePhoto from "../landing/media/trees.jpg";
-import skiPhoto from "../landing/media/ski.jpg";
-import sailPhoto from "../landing/media/sailing.jpg";
+import skiPhoto from "../landing/media/ski.png";
+import sailPhoto from "../landing/media/sailing1.jpg";
 import hikePhoto from "../landing/media/hike.jpg";
 import logo from "../landing/media/icon.png";
 
