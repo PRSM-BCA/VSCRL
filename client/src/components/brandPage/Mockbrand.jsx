@@ -150,7 +150,7 @@ export default function Mockbrand(props) {
           >Start Survey</Link>
         )}
       </div>
-      <UserInfo></UserInfo>
+      <UserInfo gender={gender} setGender={setGender} experience={experience} setExperience={setExperience} specialty={specialty} setSpecialty={setSpecialty}></UserInfo>
       <ShortAnswer shortAnswer={shortAnswer}></ShortAnswer>
       <LongAnswer longAnswer={longAnswer}></LongAnswer>
       <MultipleChoice multipleChoice={multipleChoice}></MultipleChoice>

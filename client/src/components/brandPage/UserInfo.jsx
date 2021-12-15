@@ -78,7 +78,7 @@ export default function UserInfo(props) {
             offset={0}
             duration={500}
             onClick={() => {
-              addQuestionToAdminSurvey("UserCategories", {gender: props.gender, experience: props.experience, specialty: props.pecialty})
+              addQuestionToAdminSurvey("UserCategories", {gender: props.gender, experience: props.experience, specialty: props.specialty})
             }}
           >
             Enter User Info
@@ -90,6 +90,7 @@ export default function UserInfo(props) {
     return (
       <AuthProvider>
         <div className="UserInfo">
+          <h1>UserInfo</h1>
           <div id="selectContainer">
             <div>
               <h2>Gender</h2>

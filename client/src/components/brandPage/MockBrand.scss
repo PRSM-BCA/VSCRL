@@ -16,13 +16,13 @@ body {
   }
 
   h2 {
-    margin: .5em;
+    margin: 0.5em;
   }
 
   a {
     @include bulletsStyle(1em, center);
     display: block;
-    padding: .5em;
+    padding: 0.5em;
     margin: auto;
     width: 30%;
     transition: 0.3s ease-in;
@@ -69,13 +69,29 @@ body {
         width: 100%;
         text-align: center;
       }
-      
+
       textarea {
         @include bulletsStyle;
         height: 100px;
       }
     }
 
+    a {
+      @include bulletsStyle(1em, center);
+      display: block;
+      padding: 0.5em;
+      margin: auto;
+      width: 30%;
+      transition: 0.3s ease-in;
+      border: 4px solid $baby-powder;
+      color: $baby-powder;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $baby-powder;
+        color: $indigo-dye;
+      }
+    }
     @media (max-width: 800px) {
       flex-direction: column;
     }
