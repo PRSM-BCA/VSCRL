@@ -35,18 +35,21 @@
       .footerMiniFlex {
         display: flex;
         flex-direction: row;
-
-        #contact-icon {
-          width: 150px;
-          margin: auto;
-          margin-bottom: 18vh;
-        }
-
-        .footer-contact-type {
-          color: white;
-          margin-bottom: 2vh;
-          @media (max-width: 675px) {
-            font-size: 20%;
+        justify-content: space-around;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    
+        .footerMiniFlex {
+          display: flex;
+          flex-direction: row;
+    
+          .footer-contact-type {
+            @include body1Style($fontSize: 20px, $alignment: center, $textColor: $baby-powder);
+            margin-bottom: 2vh;
+            @media (max-width: 675px) {
+              font-size: 20%;
+            }
           }
         }
        

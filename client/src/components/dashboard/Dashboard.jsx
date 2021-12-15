@@ -6,12 +6,12 @@ import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../landing/Footer";
 import backgroundVideo from "../landing/media/video.mp4";
-import medPhoto from "../landing/media/medical.jpg";
-import surfPhoto from "../landing/media/surfing.jpg";
-import treePhoto from "../landing/media/trees.jpg";
+import medPhoto from "../landing/media/med.png";
+import surfPhoto from "../landing/media/surf.jpg";
+import treePhoto from "../landing/media/tree.jpg";
 import skiPhoto from "../landing/media/ski.png";
-import sailPhoto from "../landing/media/sail2.png";
-import hikePhoto from "../landing/media/hike.jpg";
+import sailPhoto from "../landing/media/sailing1.jpg";
+import hikePhoto from "../landing/media/hiking.jpg";
 import logo from "../landing/media/icon.png";
 
 export default function Dashboard(props) {
@@ -94,12 +94,24 @@ export default function Dashboard(props) {
               </div>
             </div>
           </section>
-          <div>
+          <div className="realDiv">
             <h1 className="real1">Real People.</h1>
             <h1 className="real2">Real Stories.</h1>
           </div>
           <div className="FDiv">
+  
             <section className="featureSection">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320"
+              className="blueSVG"
+            >
+              <path
+                fill="#000b76"
+                fill-opacity="1"
+                d="M0,128L48,133.3C96,139,192,149,288,154.7C384,160,480,160,576,144C672,128,768,96,864,117.3C960,139,1056,213,1152,234.7C1248,256,1344,224,1392,208L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+            </svg>
               <div className="featureBox1">
                 <img src={skiPhoto} alt="skiphoto" />
                 <div className="textBox">
@@ -143,7 +155,7 @@ export default function Dashboard(props) {
               </div>
             </section>
             <img src={logo} alt="vsrl logo" className="VLogo" />
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1440 320"
               className="blueSVG"
@@ -153,7 +165,7 @@ export default function Dashboard(props) {
                 fill-opacity="1"
                 d="M0,128L48,133.3C96,139,192,149,288,154.7C384,160,480,160,576,144C672,128,768,96,864,117.3C960,139,1056,213,1152,234.7C1248,256,1344,224,1392,208L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
               ></path>
-            </svg>
+            </svg> */}
           </div>
         </div>
 

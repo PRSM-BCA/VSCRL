@@ -41,10 +41,9 @@ body {
       cursor: pointer;
     }
 
-   #vscrlLogo {
-    
-     width: 250px;
-   }
+    #vscrlLogo {
+      width: 250px;
+    }
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
@@ -277,11 +276,10 @@ body {
         background-color: $indigo-dye;
         border: 2px solid $baby-powder;
         margin: 0 0 1em 0;
-        flex: 1
+        flex: 1;
       }
 
       form {
-
         flex: 4;
         width: 100%;
 
@@ -303,7 +301,7 @@ body {
           border-radius: 6px;
           border: 2px solid $baby-powder;
           cursor: pointer;
-          transition: .3s ease-in
+          transition: 0.3s ease-in;
         }
 
         input[type="submit"]:hover {
@@ -311,7 +309,7 @@ body {
           color: $baby-powder;
           border: 2px solid $baby-powder;
         }
-       }
+      }
     }
   }
 
@@ -320,7 +318,7 @@ body {
   .how-it-works-section {
     height: 170vh;
     background-color: white;
-    font-family: 'Merriweather', serif;
+    font-family: "Merriweather", serif;
 
     /* Mobile responsiveness */
     @media (max-width: 675px) {
@@ -412,7 +410,7 @@ body {
   .stories-section {
     height: 100vh;
     background-color: $marigold;
-    font-family: 'Merriweather', serif;
+    font-family: "Merriweather", serif;
 
     .curved {
       display: flex;
@@ -443,7 +441,7 @@ body {
           align-self: center;
           margin-left: 10vw;
           margin-right: 10vw;
-          padding-top: 8vh;
+          padding-bottom: 5vh;
           gap: 5em;
           position: relative;
 
@@ -453,8 +451,8 @@ body {
 
           .story-image {
             object-fit: cover;
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
           }
 
@@ -491,7 +489,7 @@ body {
       text-align: center;
       font-size: 2em;
       padding-top: 17vh;
-      font-family: 'Merriweather', serif;
+      font-family: "Merriweather", serif;
     }
     .brandsFlexContainer {
       display: flex;
@@ -531,14 +529,13 @@ body {
           max-width: 200px;
           align-items: center;
           font-size: 20px;
-          font-family: 'Merriweather', serif;
-         
+          font-family: "Merriweather", serif;
         }
 
         .brandName {
           margin-top: -1vh;
           align-items: left;
-          font-family: 'Merriweather', serif;
+          font-family: "Merriweather", serif;
         }
       }
     }
