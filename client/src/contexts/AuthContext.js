@@ -90,10 +90,12 @@ export function AuthProvider({children}) {
         let brandRef = await getDoc(doc(db, "brands", brandName))
         brandRef = brandRef.data()
         let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, surveyName), brandRef)
+        console.log(surveyRef)
         await updateDoc(doc(db, "users", authUid), {surveyList: arrayUnion({
             surveyId: surveyId,
             inProgress: true
         })}, {capital: true}, {merge: true})
+        console.log("Here")
         return surveyRef
     }
 

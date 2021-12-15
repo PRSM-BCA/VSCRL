@@ -39,8 +39,9 @@ body {
 
 .UserInfo {
   text-align: center;
-  height: 50%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  background-color: $burnt-orange;
 
   h1 {
     @include headerStyle(1em, center, $baby-powder);

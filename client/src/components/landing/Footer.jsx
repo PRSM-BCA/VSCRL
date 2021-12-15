@@ -1,5 +1,8 @@
 import React from "react";
 import icon from "./media/icon.png";
+import phone_icon from "./media/phone_icon.png";
+import email_icon from "./media/email_icon.png";
+import map_icon from "./media/map_icon.png";
 
 function Footer() {
   return (
@@ -21,14 +24,17 @@ function Footer() {
           <img id="icon-footer" src={icon} />
           <div className="footerFlexContainer">
             <div className="footerMiniFlex">
+              {/* <img className="contact-icon" src={email_icon} /> */}
               <p className="footer-contact-type">hello@vscrl.com</p>
             </div>
 
             <div className="footerMiniFlex">
+              {/* <img className="contact-icon" src={phone_icon} /> */}
               <p className="footer-contact-type"> 802-232-1193 </p>
             </div>
 
             <div className="footerMiniFlex">
+              {/* <img className="contact-icon" src={map_icon} /> */}
               <p className="footer-contact-type">
                 50 Lakeside Ave. Burlington, VT
               </p>

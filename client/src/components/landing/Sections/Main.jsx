@@ -1,9 +1,10 @@
 import React from "react";
 import SignupModal from "./SignupModal";
 import VideoBackground from "../media/pexels-tima-miroshnichenko-5916543.mp4";
-import adventure from "../media/adventure.png";
-import brainstorm from "../media/brainstorm.png";
-import discount from "../media/discount.png";
+import discount_icon from "../media/discount_icon.png"
+import keyInsights_icon from "../media/keyInsights_icon.png"
+import passions_icon from "../media/passions_icon.png"
+
 import "../../modal/ModalStyles.scss";
 
 function Login() {
@@ -41,7 +42,7 @@ function Login() {
         </div>
         <div className="aboutFlexContainer">
           <div className="aboutMiniFlex">
-            <img className="aboutImage" src={adventure} />
+            <img className="aboutImage" src={passions_icon} />
             <p className="description">
               <i id="miniHeader">Live Your Passion</i>
               &nbsp;
@@ -52,7 +53,7 @@ function Login() {
             </p>
           </div>
           <div className="aboutMiniFlex">
-            <img className="aboutImage" src={brainstorm} />
+            <img className="aboutImage" src={keyInsights_icon} />
             {/* <p className="text">Empathic insights</p> */}
             <p className="description">
               <i id="miniHeader">Empathic Insights</i>
@@ -63,7 +64,7 @@ function Login() {
             </p>
           </div>
           <div className="aboutMiniFlex">
-            <img className="aboutImage" src={discount} />
+            <img className="aboutImage" src={discount_icon} />
             {/* <p className="text">Brand rewards</p> */}
             <p className="description">
               <i id="miniHeader">Brand Rewards</i>

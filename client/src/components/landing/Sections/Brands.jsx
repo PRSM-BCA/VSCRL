@@ -12,23 +12,25 @@ function Brands() {
           <div className="brandsMiniFlex">
             <img className="brandsImage" src={hiker} />
             <p className="brandsText">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore.
+              VSCRL allows us to create products from a more-informed position.
             </p>
+            <p className="brandName"> - Mountain Gear East</p>
           </div>
           <div className="brandsMiniFlex">
             <img className="brandsImage" src={sneakers} />
             <p className="brandsText">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore.
+              Before VSCRL, we didn't have time to conduct meaningful
+              consumer-led surveys.
             </p>
+            <p className="brandName"> - The Brand</p>
           </div>
           <div className="brandsMiniFlex">
             <img className="brandsImage" src={tent} />
             <p className="brandsText">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore.
+              VSCRL makes product research easy and fun! Highly recommend you join!
             </p>
+            <p className="brandName"> - Tents R Us</p>
+      
           </div>
         </div>
       </div>

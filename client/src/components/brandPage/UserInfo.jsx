@@ -70,7 +70,7 @@ export default function UserInfo(props) {
                 </textarea>
             </div>
           </div>
-          {/* <Link
+          <Link
             disabled={props.experience && props.specialty ? "true" : "false"}
             to="ShortAnswer"
             spy={true}
@@ -82,7 +82,7 @@ export default function UserInfo(props) {
             }}
           >
             Enter User Info
-          </Link> */}
+          </Link>
         </div>
       </AuthProvider>
     );
@@ -157,18 +157,19 @@ export default function UserInfo(props) {
               </select>
             </div>
           </div>
-          {/* <Link
+          <Link
             to="ShortAnswer"
             spy={true}
             smooth={true}
             offset={0}
             duration={500}
             onClick={() => {
+              console.log(currentUser.uid)
               addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "UserCategories", {genderAnswer: gender, experienceAnswer: experience, specialtyAnswer: specialty})
             }}
           >
             Enter User Info
-          </Link> */}
+          </Link> 
         </div>
       </AuthProvider>
     );
