@@ -67,8 +67,12 @@
   padding: 0;
   margin: 0;
 
-  h1{
-    @include headerStyle($fontSize: 24px, $alignment: center, $textColor: $dark-jungle-green)
+  h1 {
+    @include headerStyle(
+      $fontSize: 24px,
+      $alignment: center,
+      $textColor: $dark-jungle-green
+    );
   }
   h3{
     height: fit-content;
@@ -80,17 +84,17 @@
   }
 }
 
-.topSvg{
+.topSvg {
   position: absolute;
-  top:0%;
+  top: 0%;
 }
 
-.changePDiv{
-border-radius: 30px;
+.changePDiv {
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid #F1A61E 10px;
+  border: solid #f1a61e 10px;
   height: 20vh;
   width: 50vw;
   align-content: space-between;
@@ -117,11 +121,11 @@ border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid #1B75BC 10px;
+  border: solid #1b75bc 10px;
   height: 20vh;
   width: 50vw;
-  background-color: #F1A61E;
-  input{
+  background-color: #f1a61e;
+  input {
     margin: 10px;
    }
    @media (max-width:675px) {
@@ -129,14 +133,13 @@ border-radius: 30px;
   }
 }
 
-
-.textBoxx{
-  margin:0;
+.textBoxx {
+  margin: 0;
   @include headerStyle($fontSize: 24px, $textColor: $dark-jungle-green);
   height: 2rem;
 }
 
-.Header{
+.Header {
   display: flex;
   align-self: flex-start;
 }
@@ -153,10 +156,14 @@ border-radius: 30px;
     width: 80vw;
   }
 
+  h2{
+    color: $indigo-dye;
+  }
 
-  img{
-      height: 30vh;
-border-radius: 50%;
+  img {
+    height: 20vh;
+    border-radius: 50%;
+    background-color: $burnt-orange;
   }
 }
 

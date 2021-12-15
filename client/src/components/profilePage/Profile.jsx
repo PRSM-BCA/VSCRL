@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Home from "./home.jpg";
 import Header from "../header/Header";
 import BarChartDisplay from "../chart/BarChartDisplay";
-import profilePic from "../landing/media/PImg.jpg"
+import profileImg from "../landing/media/profileImg.png"
 
 export default function Profile(props) {
   const {
@@ -24,6 +24,12 @@ export default function Profile(props) {
   const [newEmail, setNewEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  //To print criteria to page so can click and see it populated in the chart(?)
+  useEffect(() => {
+    if (userInfo.userType === "admin") {
+      
+    }
+  });
 
   useEffect(() => {
     if (currentUser && !userInfo && !brand) {
@@ -49,6 +55,7 @@ export default function Profile(props) {
   if (userInfo.usertype === "admin") {
     return (
       <AuthProvider>
+        {console.log(brand)}
         <div className="AdminProfile">
           <div className="adminPanel">
             <div className="genderTab">
@@ -63,20 +70,47 @@ export default function Profile(props) {
           </div>
           <div className="displayDiv">
             <h1>Surgeon Shoe Survey</h1>
-              <BarChartDisplay></BarChartDisplay>
+            <BarChartDisplay></BarChartDisplay>
             <div className="infoDiv">
-                <div className="needsDiv">
-                  <h3>Top 5 Overall Needs</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div className="featuresDiv">
-                  <h3>Top 5 Overall Features</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div className="buzzwordsDiv">
-                  <h3>Top 5 Overall Buzz Words</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
+              <div className="needsDiv">
+                <h3>Top 5 Overall Needs</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+              <div className="featuresDiv">
+                <h3>Top 5 Overall Features</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
+              <div className="buzzwordsDiv">
+                <h3>Top 5 Overall Buzz Words</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -102,7 +136,7 @@ export default function Profile(props) {
           </div>
 
           <div className="profileBox">
-            <img src={profilePic} alt="profilePic" />
+            <img src={profileImg} alt="profilePic" />
             <h3 className="textBox">
               Welcome, {userInfo.firstname + " " + userInfo.lastname}{" "}
             </h3>
