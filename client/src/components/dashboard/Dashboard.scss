@@ -20,27 +20,22 @@
 
 // brand love styling --------------------------------
 
-
 .featuredBrandsWrapper {
   background-color: white;
 
   @media (max-width: 1100px) {
     height: auto;
   }
-
-  
 }
 
-.sectionTitle{
-  
-    @include headerStyle(
-      $fontSize: 50px,
-      $alignment: left,
-      $textColor: $dark-jungle-green
-    );
-    padding: 0;
-    margin-left: 2.5rem;
-  
+.sectionTitle {
+  @include headerStyle(
+    $fontSize: 50px,
+    $alignment: left,
+    $textColor: $dark-jungle-green
+  );
+  padding: 0;
+  margin-left: 2.5rem;
 }
 
 .headerVideo {
@@ -105,11 +100,10 @@
     z-index: 2;
     background: transparentize($color: black, $amount: 0.7);
     border-radius: 30px;
-    @media (max-width:675px) {
+    @media (max-width: 675px) {
       width: 60vw;
     }
   }
-
 
   p {
     @include body1Style(
@@ -129,12 +123,11 @@
     bottom: 0;
     z-index: 2;
     background: transparentize($color: black, $amount: 0.7);
-
   }
-  .couponDiv:hover{
-    background-color: $marigold ;
+  .couponDiv:hover {
+    background-color: $marigold;
   }
-  a{
+  a {
     text-decoration: none;
   }
 }
@@ -187,8 +180,6 @@
   height: 15vh;
 }
 
-
-
 // real people stories styling ---------------------------
 
 .featureSection {
@@ -219,56 +210,56 @@
   }
 }
 
-.real1 {
-  @include headerStyle(
-    $fontSize: 50px,
-    $alignment: left,
-    $textColor: $baby-powder
-  );
-  margin-bottom: 0;
-  margin-left: 0;
-  padding-left: 2.5rem;
-  padding-bottom: 0;
-  z-index: 2;
-  position: relative;
+.realDiv {
 
-  @media (max-width: 1000px) {
+padding-bottom: 18vh;
+
+
+  .real1 {
     @include headerStyle(
       $fontSize: 50px,
       $alignment: left,
       $textColor: $dark-jungle-green
     );
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 2.5rem;
     padding-bottom: 0;
-    
+    z-index: 2;
+    // position: relative;
+
+    @media (max-width: 1000px) {
+      @include headerStyle(
+        $fontSize: 50px,
+        $alignment: left,
+        $textColor: $dark-jungle-green
+      );
+      padding-bottom: 0;
+    }
   }
-  
-}
-.real2 {
-  @include headerStyle(
-      $fontSize: 50px,
-      $alignment: left,
-      $textColor: $baby-powder
-    );
-  margin-top: 0;
-  margin-left: 0rem;
-  padding-left: 2.5rem;
-  margin-bottom: .5rem;
-  padding-top: 0;
-  z-index: 2;
-  position: relative;
-  
-    
-   
-  @media (max-width: 1000px) {
+  .real2 {
     @include headerStyle(
       $fontSize: 50px,
       $alignment: left,
       $textColor: $dark-jungle-green
     );
+    margin-top: 0;
+    margin-left: 0rem;
+    padding-left: 2.5rem;
+    margin-bottom: 0.5rem;
     padding-top: 0;
-    
+    z-index: 2;
+    // position: relative;
+
+    @media (max-width: 1000px) {
+      @include headerStyle(
+        $fontSize: 50px,
+        $alignment: left,
+        $textColor: $dark-jungle-green
+      );
+      padding-top: 0;
+    }
   }
-  
 }
 
 .VLogo {
@@ -280,17 +271,18 @@
 }
 
 .blueSVG {
-  width: 160vw;
+  width: 190vw;
   z-index: 0;
-  transform: translate(0, -200%);
-  position: relative;
+  transform: translate(0, -50%);
+  position: absolute;
   @media (max-width: 800px) {
     display: none;
   }
 }
 
 .FDiv {
-  height: 70vh;
+  height: auto;
+  width: 100vw;
   @media (max-width: 1100px) {
     height: 200vh;
   }
@@ -320,7 +312,7 @@
 .featureBox4 {
   display: flex;
   flex-direction: column;
-
+  z-index: 1;
   justify-content: flex-start;
   align-items: center;
   width: 18.76rem;
@@ -359,8 +351,8 @@
   }
 }
 
-
 .featureBox1 {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -379,13 +371,13 @@
       height: 50vh;
     }
   }
-  p{
+  p {
     @include body1Style($fontSize: 18px, $alignment: center, $textColor: black);
     padding-top: 0;
-   
   }
 }
 .featureBox2 {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -403,12 +395,13 @@
       height: 50vh;
     }
   }
-  p{
-    @include body1Style($fontSize: 18px, $alignment: center, $textColor: black); ;
+  p {
+    @include body1Style($fontSize: 18px, $alignment: center, $textColor: black);
     padding-top: 0;
   }
 }
 .featureBox3 {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -427,26 +420,21 @@
       height: 50vh;
     }
   }
-  p{
-    @include body1Style($fontSize: 18px, $alignment: center, $textColor: black); ;
+  p {
+    @include body1Style($fontSize: 18px, $alignment: center, $textColor: black);
     padding-top: 0;
   }
-
 }
-.featureBox1:hover{
- 
+.featureBox1:hover {
   height: 59vh;
 }
-.featureBox2:hover{
-  
+.featureBox2:hover {
   height: 59vh;
 }
-.featureBox3:hover{
-  
+.featureBox3:hover {
   height: 59vh;
 }
-.featureBox4:hover{
-  
+.featureBox4:hover {
   height: 59vh;
 }
 
@@ -455,17 +443,14 @@
   h1 {
     padding-top: 15vh;
     margin-left: 5vw;
-    
   }
 }
-
 
 .footerWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-
 
   .icon-flex {
     display: flex;
@@ -475,9 +460,9 @@
     #icon-footer {
       width: 150px;
       margin: auto;
-      margin-bottom: 18vh
+      margin-bottom: 18vh;
     }
-    
+
     .footerFlexContainer {
       display: flex;
       flex-direction: row;
@@ -485,13 +470,17 @@
       position: absolute;
       width: 100%;
       bottom: 0;
-  
+
       .footerMiniFlex {
         display: flex;
         flex-direction: row;
-  
+
         .footer-contact-type {
-          @include body1Style($fontSize: 20px, $alignment: center, $textColor: $baby-powder);
+          @include body1Style(
+            $fontSize: 20px,
+            $alignment: center,
+            $textColor: $baby-powder
+          );
           margin-bottom: 2vh;
           @media (max-width: 675px) {
             font-size: 50%;
@@ -500,7 +489,7 @@
         }
       }
     }
-  
+
     svg {
       display: block;
       position: absolute;
@@ -508,8 +497,5 @@
       width: 100vw;
       z-index: -1;
     }
-  
   }
-
-  
 }

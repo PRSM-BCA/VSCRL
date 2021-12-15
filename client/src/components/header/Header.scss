@@ -51,8 +51,8 @@
   position: fixed;
   top:0;
 
-  @media (max-width: 675px) {
-    width: 280px;
+  @media (max-width: 1600px) {
+    width: 300px;
   }
   p{
     @include body1Style($fontSize: 14px, $alignment: left, $textColor: $baby-powder);
