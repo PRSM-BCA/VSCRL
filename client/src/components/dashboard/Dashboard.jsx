@@ -6,12 +6,12 @@ import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../landing/Footer";
 import backgroundVideo from "../landing/media/video.mp4";
-import medPhoto from "../landing/media/medical.jpg";
-import surfPhoto from "../landing/media/surfing.jpg";
-import treePhoto from "../landing/media/trees.jpg";
-import skiPhoto from "../landing/media/ski.jpg";
-import sailPhoto from "../landing/media/sailing.jpg";
-import hikePhoto from "../landing/media/hike.jpg";
+import medPhoto from "../landing/media/med.png";
+import surfPhoto from "../landing/media/surf.jpg";
+import treePhoto from "../landing/media/tree.jpg";
+import skiPhoto from "../landing/media/ski.png";
+import sailPhoto from "../landing/media/sailing1.jpg";
+import hikePhoto from "../landing/media/hiking.jpg";
 import logo from "../landing/media/icon.png";
 
 export default function Dashboard(props) {

@@ -49,7 +49,7 @@ export default function Header() {
 
         <div class="dropdown-content">
           {/* links to each component  */}
-          <Link to="/Profile">My profile</Link>
+          <Link to="/Profile"><p>My profile</p></Link>
           <Link
             to="/"
             onClick={() => {
@@ -57,10 +57,10 @@ export default function Header() {
               setUserInfo("");
               navigate("/")
             }}
-          >
-            Logout
+          ><p>
+            Logout</p>
           </Link>
-          <Link to="/Dashboard">Home</Link>
+          <Link to="/Dashboard"><p>Home</p></Link>
         </div>
         
       </div>

@@ -39,7 +39,7 @@
           flex-direction: row;
     
           .footer-contact-type {
-            color: white;
+            @include body1Style($fontSize: 20px, $alignment: center, $textColor: $baby-powder);
             margin-bottom: 2vh;
             @media (max-width: 675px) {
               font-size: 20%;

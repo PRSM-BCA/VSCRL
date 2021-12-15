@@ -15,8 +15,9 @@
 
   h1{
    
-   @include headerStyle($fontSize: 1.5rem, $alignment: center, $textColor: $baby-powder)
+   @include headerStyle($fontSize: 3rem, $alignment: center, $textColor: $baby-powder)
   }
+  
 
   #signInContainer {
     display: flex;
@@ -52,6 +53,11 @@
 
   @media (max-width: 675px) {
     width: 280px;
+  }
+  p{
+    @include body1Style($fontSize: 14px, $alignment: left, $textColor: $baby-powder);
+    margin: 0;
+    padding: 0;
   }
   
 }
