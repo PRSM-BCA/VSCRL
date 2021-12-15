@@ -70,7 +70,7 @@ export default function UserInfo(props) {
                 </textarea>
             </div>
           </div>
-          {/* <Link
+          <Link
             disabled={props.experience && props.specialty ? "true" : "false"}
             to="ShortAnswer"
             spy={true}
@@ -78,11 +78,11 @@ export default function UserInfo(props) {
             offset={0}
             duration={500}
             onClick={() => {
-              addQuestionToAdminSurvey("UserCategories", {gender: props.gender, experience: props.experience, specialty: props.pecialty})
+              addQuestionToAdminSurvey("UserCategories", {gender: props.gender, experience: props.experience, specialty: props.specialty})
             }}
           >
             Enter User Info
-          </Link> */}
+          </Link>
         </div>
       </AuthProvider>
     );
@@ -90,6 +90,7 @@ export default function UserInfo(props) {
     return (
       <AuthProvider>
         <div className="UserInfo">
+          <h1>UserInfo</h1>
           <div id="selectContainer">
             <div>
               <h2>Gender</h2>
@@ -157,18 +158,19 @@ export default function UserInfo(props) {
               </select>
             </div>
           </div>
-          {/* <Link
+          <Link
             to="ShortAnswer"
             spy={true}
             smooth={true}
             offset={0}
             duration={500}
             onClick={() => {
+              console.log(currentUser.uid)
               addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "UserCategories", {genderAnswer: gender, experienceAnswer: experience, specialtyAnswer: specialty})
             }}
           >
             Enter User Info
-          </Link> */}
+          </Link> 
         </div>
       </AuthProvider>
     );
