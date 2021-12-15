@@ -63,7 +63,7 @@ function MultipleChoice(props) {
   if (userInfo.usertype === "admin") {
     return (
       <AuthProvider>
-        {console.log(adminEnter)}
+        {/* {console.log(adminEnter)} */}
         <div className="MultipleChoice">
           <h1>Multiple Choice (Admin)</h1>
           <div className="mainContent">
@@ -74,7 +74,7 @@ function MultipleChoice(props) {
                   placeholder="Enter question text here..."
                   onChange={(evt) => {
                     setQuestion1Text(evt.target.value);
-                    console.log(question1Text);
+                    // console.log(question1Text);
                   }}
                 />
               </div>
@@ -108,7 +108,7 @@ function MultipleChoice(props) {
                   placeholder="Enter question text here..."
                   onChange={(evt) => {
                     setQuestion2Text(evt.target.value);
-                    console.log(question2Text);
+                    // console.log(question2Text);
                   }}
                 />
               </div>
@@ -142,7 +142,7 @@ function MultipleChoice(props) {
                   placeholder="Enter question text here..."
                   onChange={(evt) => {
                     setQuestion3Text(evt.target.value);
-                    console.log(question3Text);
+                    // console.log(question3Text);
                   }}
                 />
               </div>
@@ -170,7 +170,7 @@ function MultipleChoice(props) {
               </div>
             </div>
             <div id="submitContent">
-              {console.log(adminEnter)}
+              {/* {console.log(adminEnter)} */}
               {adminEnter ? (
                 <Link
                   className="active"

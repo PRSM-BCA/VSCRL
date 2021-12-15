@@ -30,7 +30,7 @@ function LongAnswer(props) {
               type="text"
               placeholder="Enter your Prompt"
               onChange={(evt) => {
-                console.log(promptEntry);
+                // console.log(promptEntry);
                 setPromptEntry(evt.target.value);
               }}
             />
@@ -49,11 +49,11 @@ function LongAnswer(props) {
               placeholder="Word Count"
               onChange={(evt) => {
                 setWordCount(evt.target.value);
-                console.log(wordCount);
+                // console.log(wordCount);
               }}
             />
-            {console.log(wordCount)}
-            {console.log(promptEntry)}
+            {/* {console.log(wordCount)} */}
+            {/* {console.log(promptEntry)} */}
             {wordCount <= 0 && !promptEntry ? (
               <Link
               disabled="true"
