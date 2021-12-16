@@ -4,8 +4,8 @@
 * {
   margin-right: 0;
   padding: 0;
-  transition: .3s;
-  font-family: 'Merriweather', serif;
+  transition: 0.3s;
+  font-family: "Merriweather", serif;
 }
 
 body {
@@ -340,18 +340,35 @@ body {
       display: grid;
       grid-template-columns: repeat(2, 0.5fr);
       grid-template-rows: repeat(4, 0.1fr);
-      width: 80vw;
-      height: 60vh;
-      margin-left: 13vw;
-      padding-top: 7vh;
+      width: auto;
+      height: 55vh;
+      margin-left: 10vw;
+      margin-right: 10vw;
+      padding-top: 3vh;
 
       .step {
+        display: flex;
+        flex-direction: row;
         justify-self: start;
-        border-left: solid $marigold;
 
         p {
           font-size: 2em;
           color: #1c211c;
+        }
+
+        #profile-icon {
+          width: 130px;
+          align-self: center;
+          background-color: white;
+        }
+        p {
+          font-size: 30px;
+          border-left: solid $marigold;
+          padding-left: 0.5em;
+
+          @media (max-width: 675px) {
+            border-left: none;
+          }
         }
       }
 
@@ -379,6 +396,13 @@ body {
           grid-row: 2 / 2;
           border-bottom: solid $marigold;
         }
+
+        #network-icon {
+          width: auto;
+          height: 100px;
+          align-self: center;
+          padding-right: 1.5em;
+        }
       }
       .stepThree {
         grid-column: 1/2;
@@ -390,6 +414,13 @@ body {
           grid-column: 1/ 2;
           grid-row: 3/ 3;
           border-bottom: solid $marigold;
+        }
+
+        #keyInsights-icon {
+          width: auto;
+          height: 100px;
+          align-self: center;
+          padding-right: 1.5em;
         }
       }
 
@@ -403,6 +434,12 @@ body {
           grid-column: 1/ 2;
           grid-row: 4 / 4;
           border-bottom: solid $marigold;
+        }
+        #discount-icon {
+          width: auto;
+          height: 100px;
+          align-self: center;
+          padding-right: 1.5em;
         }
       }
     }
@@ -519,27 +556,23 @@ body {
         z-index: 0;
         // justify-content: flex-start;
         align-items: center;
-        width: 18.76rem;
-        height: 70vh;
-        background-color: black;
-        opacity: 80%;
+        width: 19rem;
+        height: 68vh;
+        background-color: rgb(59, 58, 58);
 
-
-
+        z-index: 0;
 
         @media (max-width: 675px) {
           flex-direction: row;
         }
 
         .brandsImage {
-          width: 17rem;
-        
+          width: 14rem;
           height: auto;
           text-align: center;
           padding-right: 5vw;
           padding-left: 5vw;
-
-        
+          z-index: 1;
         }
         .brandsImage:hover {
           width: 19vw;
@@ -548,10 +581,11 @@ body {
         .brandsText {
           // color: black;
           color: white;
-          max-width: 200px;
+          max-width: 275px;
           align-items: center;
           font-size: 20px;
           font-family: "Merriweather", serif;
+          z-index: 1;
         }
 
         .brandName {
@@ -559,6 +593,7 @@ body {
           margin-top: -1vh;
           align-items: left;
           font-family: "Merriweather", serif;
+          z-index: 1;
         }
       }
     }

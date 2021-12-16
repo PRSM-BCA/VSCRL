@@ -12,7 +12,7 @@ function Brands() {
           <div className="brandsMiniFlex">
             <img className="brandsImage" src={hiker} />
             <p className="brandsText">
-              VSCRL allows us to create products from a more-informed position.
+              VSCRL allows us to create products from a more informed position.
             </p>
             <p className="brandName"> - Mountain Gear East</p>
           </div>
@@ -20,7 +20,7 @@ function Brands() {
             <img className="brandsImage" src={sneakers} />
             <p className="brandsText">
               Before VSCRL, we didn't have time to conduct meaningful
-              consumer-led surveys.
+              consumer surveys.
             </p>
             <p className="brandName"> - The Brand</p>
           </div>
