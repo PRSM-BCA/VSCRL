@@ -546,20 +546,14 @@ body {
       }
 
       .brandsMiniFlex {
-        // display: flex;
-        // flex-direction: column;
-        justify-content: space-around;
-        // align-items: center;
-
+        justify-content: center;
         display: flex;
         flex-direction: column;
         z-index: 0;
-        // justify-content: flex-start;
         align-items: center;
         width: 19rem;
         height: 68vh;
         background-color: rgb(59, 58, 58);
-
         z-index: 0;
 
         @media (max-width: 675px) {
@@ -575,11 +569,11 @@ body {
           z-index: 1;
         }
         .brandsImage:hover {
-          width: 19vw;
+          width: 15rem;
         }
 
         .brandsText {
-          // color: black;
+          align-self: flex-end;
           color: white;
           max-width: 275px;
           align-items: center;
@@ -590,6 +584,8 @@ body {
 
         .brandName {
           color: white;
+          align-self: flex-end;
+          padding-right: 3vw;
           margin-top: -1vh;
           align-items: left;
           font-family: "Merriweather", serif;
