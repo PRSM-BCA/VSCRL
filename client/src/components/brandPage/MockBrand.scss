@@ -10,6 +10,15 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: $indigo-dye;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #brandWrapper {
+
+    height: 50vh;
+    width: 70vw;
+    flex: 1;
 
   h1 {
     margin: 0;
@@ -36,15 +45,26 @@ body {
     }
   }
 }
+}
 
 .UserInfo {
   text-align: center;
   height: 100vh;
   width: 100vw;
   background-color: $burnt-orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  #userInfoWrapper {
+
+    height: 50vh;
+    width: 70vw;
+    flex: 1;
 
   h1 {
-    @include headerStyle(1em, center, $baby-powder);
+    @include headerStyle(3em, center, $baby-powder);
     margin: 0;
     padding: 1em 0 0 0;
   }
@@ -55,7 +75,7 @@ body {
 
     div {
       flex: 1;
-      margin: 0 1em;
+      margin: 1em;
 
       h2 {
         @include body1Style(1em, center, $baby-powder);
@@ -76,24 +96,25 @@ body {
       }
     }
 
-    a {
-      @include bulletsStyle(1em, center);
-      display: block;
-      padding: 0.5em;
-      margin: auto;
-      width: 30%;
-      transition: 0.3s ease-in;
-      border: 4px solid $baby-powder;
-      color: $baby-powder;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $baby-powder;
-        color: $indigo-dye;
-      }
-    }
     @media (max-width: 800px) {
       flex-direction: column;
     }
   }
+  a {
+    @include bulletsStyle(1em, center);
+    display: block;
+    padding: 0.5em;
+    margin: auto;
+    width: 30%;
+    transition: 0.3s ease-in;
+    border: 4px solid $baby-powder;
+    color: $baby-powder;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $baby-powder;
+      color: $indigo-dye;
+    }
+  }
+}
 }

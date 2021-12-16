@@ -5,8 +5,10 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 
-  button {
+  a {
     @include headerStyle(1em, center, $dark-jungle-green);
     flex: 1;
     width: 30%;
@@ -17,6 +19,7 @@
     border-radius: 6px;
     border: 1px solid $dark-jungle-green;
     transition: 0.3s ease-in;
+    line-height: 5em;
 
     @media (max-width: 675px) {
       margin-top: 15vh;
@@ -39,6 +42,7 @@
     padding-top: 5vh;
     width: 100%;
     height: 80%;
+    flex: 9;
 
     @media (max-width: 675px) {
       display: flex;
@@ -103,6 +107,7 @@
     }
 
     .pain {
+      @include bulletsStyle;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -249,10 +254,13 @@
   text-align: center;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   .KeyWordMainWrapper {
     width: 100%;
     height: 100%;
+    flex: 9;
   }
 
   h1 {
@@ -262,7 +270,7 @@
     text-align: center;
   }
 
-  button {
+  a {
     @include headerStyle(1em, center, $dark-jungle-green);
     flex: 1;
     width: 30%;

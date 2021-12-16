@@ -13,9 +13,6 @@ function ShortAnswer(props) {
     addQuestionToAdminSurvey,
   } = useAuth();
   const [userInfo, setUserInfo] = useState("");
-  const [question1, setQuestion1] = useState("");
-  const [question2, setQuestion2] = useState("");
-  const [question3, setQuestion3] = useState("");
   const [questionPrompt, setQuestionPrompt] = useState("");
 
   useEffect(() => {
@@ -30,7 +27,7 @@ function ShortAnswer(props) {
         <div className="ShortAnswer">
           <div className="mainContainer">
             <h1>
-              Short Answer <i>(Admin)</i>
+              Short Answer
             </h1>
             <div className="questionWrapper">
               <input
@@ -126,7 +123,7 @@ function ShortAnswer(props) {
         <div className="ShortAnswer">
           <div className="mainContainer">
             <h1>
-              Short Answer <i>(Key User)</i>
+              Short Answer
             </h1>
             <div className="questionWrapper">
               <h2 id="questionPrompt">{props.shortAnswer.prompt}</h2>
@@ -140,7 +137,7 @@ function ShortAnswer(props) {
                   name="question answer 1"
                   placeholder="Type answer here..."
                   onChange={(evt) => {
-                    setQuestion1(evt.target.value);
+                    props.setQuestion1(evt.target.value);
                   }}
                 />
               </section>
@@ -155,7 +152,7 @@ function ShortAnswer(props) {
                   name="question answer 2"
                   placeholder="Type answer here..."
                   onChange={(evt) => {
-                    setQuestion2(evt.target.value);
+                    props.setQuestion2(evt.target.value);
                   }}
                 />
               </section>
@@ -170,13 +167,13 @@ function ShortAnswer(props) {
                   name="question answer 3"
                   placeholder="Type answer here..."
                   onChange={(evt) => {
-                    setQuestion3(evt.target.value);
+                    props.setQuestion3(evt.target.value);
                   }}
                 />
               </section>
             </div>
           </div>
-          {question1 && question2 && question3 ? (
+          {props.question1 && props.question2 && props.question3 ? (
             <div className="linkDiv">
               <Link
                 to="LongAnswer"
@@ -187,9 +184,9 @@ function ShortAnswer(props) {
                 duration={500}
                 onClick={() => {
                   addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "ShortAnswer", {
-                    question1: question1,
-                    question2: question2,
-                    question3: question3
+                    question1: props.question1,
+                    question2: props.question2,
+                    question3: props.question3
                   });
                 }}
               >

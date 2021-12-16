@@ -32,26 +32,15 @@ export default function UserInfo(props) {
         {console.log(props.experience)}
         {console.log(props.specialty)}
         <div className="UserInfo">
+          <div id="userInfoWrapper">
+          <h1 id="userInfoTitle">User Information</h1>
           <div id="selectContainer">
             <div>
               <h2>Gender</h2>
-              <select
-                disabled="true"
-                onChange={(evt) => {
-                  console.log(props.gender);
-                  props.setGender(evt.target.value);
-                }}
-              >
-                <option selected disabled>
-                  Gender
-                </option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Non-Binary">Non-Binary</option>
-                <option value="Choose not to disclose">
-                  Choose not to disclose
-                </option>
-              </select>
+              <textarea className="practice" placeholder="Enter genders for the survey seperated by a ','" onChange={ (evt) => {
+                    props.setGender(evt.target.value.replace(" ", "").split(","))
+                }}>
+              </textarea>
             </div>
             <div>
               <h2>Experience</h2>
@@ -83,6 +72,7 @@ export default function UserInfo(props) {
           >
             Enter User Info
           </Link>
+          </div>
         </div>
       </AuthProvider>
     );

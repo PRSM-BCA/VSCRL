@@ -65,7 +65,7 @@ function MultipleChoice(props) {
       <AuthProvider>
         {/* {console.log(adminEnter)} */}
         <div className="MultipleChoice">
-          <h1>Multiple Choice (Admin)</h1>
+          <h1>Multiple Choice</h1>
           <div className="mainContent">
             <div className="q q1">
               <div className="prompt">
@@ -174,7 +174,7 @@ function MultipleChoice(props) {
               {adminEnter ? (
                 <Link
                   className="active"
-                  to="KeyWordAnswer"
+                  to="KeyWordAnswer-admin"
                   spy={true}
                   smooth={true}
                   offset={0}
@@ -191,7 +191,7 @@ function MultipleChoice(props) {
                 </Link>
               ) : (
                 <Link
-                  to="KeyWordAnswer"
+                  disabled="true"
                   spy={true}
                   smooth={true}
                   offset={0}
@@ -209,7 +209,7 @@ function MultipleChoice(props) {
     return (
       <AuthProvider>
         <div className="MultipleChoice">
-          <h1>Multiple Choice (Key User)</h1>
+          <h1>Multiple Choice</h1>
           <div className="mainContent">
             <div className="q q1">
               <div className="prompt">
@@ -388,7 +388,7 @@ function MultipleChoice(props) {
             <div id="submitContent">
               <Link
                 className={enter ? "active" : ""}
-                to="KeyWordAnswer"
+                to="KeyWordAnswer-keyUser"
                 spy={true}
                 smooth={true}
                 offset={0}

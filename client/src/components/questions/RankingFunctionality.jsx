@@ -120,7 +120,7 @@ function RankingExp(props) {
               <h1>
                 Question Type:
                 <br />
-                Ranking Answer <i>(Admin)</i>
+                Ranking Answer
               </h1>
               <p>
                 <u>User Engagement</u>: In "Ranking Answer", Users are asked to
@@ -172,7 +172,7 @@ function RankingExp(props) {
                 offset={0}
                 duration={500}
               >
-                Enter Question Info
+                Submit Survey
               </Link>
             ) : (
               <Link
@@ -189,7 +189,7 @@ function RankingExp(props) {
                   navigate("/Dashboard", { replace: true });
                 }}
               >
-                Enter Question Info
+                Submit Survey
               </Link>
             )}
           </div>
@@ -226,7 +226,7 @@ function RankingExp(props) {
                   navigate("/Dashboard", { replace: true })
                 }}
               >
-                Enter Question Info
+                Submit Survey
               </Link>
           </div>
         </div>

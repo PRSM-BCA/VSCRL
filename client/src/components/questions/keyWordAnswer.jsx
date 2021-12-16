@@ -80,7 +80,7 @@ function KeyWordAnswer(props) {
               <h1>
                 Question Type:
                 <br />
-                KeyWord Answer <i>(Admin)</i>
+                KeyWord Answer
               </h1>
               <p>
                 <u>User Engagement</u>: Users will select 5 keywords from the
@@ -241,7 +241,7 @@ function KeyWordAnswer(props) {
         {/* {console.log("keyWordBank", keyWordBank)} */}
         <div className="keyWordAnswer-keyUser">
           {/* {console.log(count)} */}
-          <h1>Click 5 frustrations about your footwear (Key User)</h1>
+          <h1>Click 5 frustrations about your footwear</h1>
 
           <div className="gridWrapper">
             <div

@@ -20,7 +20,7 @@ export default function Mockbrand(props) {
     addSurvey,
     addUserSurvey,
     addQuestionToAdminSurvey,
-    addQuestionToUserSurvey
+    addQuestionToUserSurvey,
   } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [currentBrand, setCurrentBrand] = useState("");
@@ -32,6 +32,9 @@ export default function Mockbrand(props) {
   const [keyWordAnswer, setKeyWordAnswer] = useState("");
   const [scaleAnswer, setScaleAnswer] = useState("");
   const [surveyStart, setSurveyStart] = useState(false);
+  const [question1, setQuestion1] = useState("");
+  const [question2, setQuestion2] = useState("");
+  const [question3, setQuestion3] = useState("");
 
   const [gender, setGender] = useState([
     "Male",
@@ -64,12 +67,12 @@ export default function Mockbrand(props) {
     if (!currentSurvey) {
       getSurvey("GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey").then((data) => {
         console.log("inside currentSurvey", data);
-        setCurrentSurvey(data)
+        setCurrentSurvey(data);
         populateFields(data);
         addQuestionToAdminSurvey("UserCategories", {
           gender: gender,
           experience: experience,
-          specialty: specialty
+          specialty: specialty,
         });
       });
     }
@@ -96,41 +99,44 @@ export default function Mockbrand(props) {
     }
   }
 
-    console.log("currentSurvey", currentSurvey);
-    console.log("surveyStart", surveyStart);
-    console.log("ShortAnswer", shortAnswer);
-    console.log("LongAnswer", longAnswer);
-    console.log("MultipleChoice", multipleChoice);
-    console.log("RankingAnswer", rankingAnswer);
-    console.log("KeyWordAnswer", keyWordAnswer);
-    console.log("ScaleAnswer", scaleAnswer);
+  console.log("currentSurvey", currentSurvey);
+  console.log("surveyStart", surveyStart);
+  console.log("ShortAnswer", shortAnswer);
+  console.log("LongAnswer", longAnswer);
+  console.log("MultipleChoice", multipleChoice);
+  console.log("RankingAnswer", rankingAnswer);
+  console.log("KeyWordAnswer", keyWordAnswer);
+  console.log("ScaleAnswer", scaleAnswer);
 
   return (
     <AuthProvider>
       <div className="Brand">
         {console.log(currentSurvey)}
+        <div id="brandWrapper">
         <h1>{currentBrand.brandName}</h1>
         <h2>
           <i>"{currentBrand.missionStatement}"</i>
         </h2>
         {userInfo.usertype === "admin" ? (
           <Link
-          to="UserInfo"
-          spy={true}
-          smooth={true}
-          offset={0}
-          duration={500}
-          onClick={() => {
-            addSurvey(
-              currentUser.uid,
-              "GX7nZYcm4q5qq3drETLm",
-              "SurgeonShoes",
-              "SurgeonShoeSurvey"
-            ).then(() => {setSurveyStart(true)})
-          }}
-        >
-          Start Survey
-        </Link>
+            to="UserInfo"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            onClick={() => {
+              addSurvey(
+                currentUser.uid,
+                "GX7nZYcm4q5qq3drETLm",
+                "SurgeonShoes",
+                "SurgeonShoeSurvey"
+              ).then(() => {
+                setSurveyStart(true);
+              });
+            }}
+          >
+            Create Survey
+          </Link>
         ) : (
           <Link
             disabled={gender && experience && specialty ? false : true}
@@ -145,13 +151,33 @@ export default function Mockbrand(props) {
                 "GX7nZYcm4q5qq3drETLm",
                 "SurgeonShoes",
                 "SurgeonShoeSurvey"
-              ).then(() => {setSurveyStart(true)})
+              ).then(() => {
+                setSurveyStart(true);
+              });
             }}
-          >Start Survey</Link>
+          >
+            Start Survey
+          </Link>
         )}
+        </div>
       </div>
-      <UserInfo gender={gender} setGender={setGender} experience={experience} setExperience={setExperience} specialty={specialty} setSpecialty={setSpecialty}></UserInfo>
-      <ShortAnswer shortAnswer={shortAnswer}></ShortAnswer>
+      <UserInfo
+        gender={gender}
+        setGender={setGender}
+        experience={experience}
+        setExperience={setExperience}
+        specialty={specialty}
+        setSpecialty={setSpecialty}
+      ></UserInfo>
+      <ShortAnswer
+        shortAnswer={shortAnswer}
+        question1={question1}
+        question2={question2}
+        question3={question3}
+        setQuestion1={setQuestion1}
+        setQuestion2={setQuestion2}
+        setQuestion3={setQuestion3}
+      ></ShortAnswer>
       <LongAnswer longAnswer={longAnswer}></LongAnswer>
       <MultipleChoice multipleChoice={multipleChoice}></MultipleChoice>
       <KeyWordAnswer keyWordAnswer={keyWordAnswer}></KeyWordAnswer>
@@ -159,6 +185,9 @@ export default function Mockbrand(props) {
         rankingAnswer={rankingAnswer}
         surveySubmitted={props.surveySubmitted}
         setSurveySubmitted={props.setSurveySubmitted}
+        question1={question1}
+        question2={question2}
+        question3={question3}
       ></RankingAnswer>
     </AuthProvider>
   );
