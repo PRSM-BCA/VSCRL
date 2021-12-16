@@ -163,8 +163,6 @@ function RankingExp(props) {
                 setRankPrompt(evt.target.value);
               }}
             />
-            <section></section>
-
             {!rankPrompt ? (
               <Link
                 spy={true}
@@ -215,7 +213,8 @@ function RankingExp(props) {
                 </Droppable>
               </DragDropContext>
             </div>
-              <Link
+          </div>
+          <Link
                 className="active"
                 spy={true}
                 smooth={true}
@@ -228,7 +227,6 @@ function RankingExp(props) {
               >
                 Submit Survey
               </Link>
-          </div>
         </div>
       </AuthProvider>
     );
