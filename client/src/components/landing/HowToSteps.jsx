@@ -1,4 +1,10 @@
 import React from "react";
+import profile from "./media/profile.png";
+import discount_icon from "./media/discount_icon.png";
+import keyInsights_icon from "./media/keyInsights_icon.png"
+import network_icon from "./media/network_icon.png"
+import prof_2 from "./media/prof_2.png"
+
 
 function HowToSteps() {
   return (
@@ -17,21 +23,34 @@ function HowToSteps() {
       <p id="howTitle">How it works...</p>
       <div className="howToSteps">
         <div className="stepOne step">
-          <h1>Step 1.</h1>
-          <p>Create a profile.</p>
+          <img id="profile-icon" src={prof_2} />
+          <p>
+            <b>Step 1.</b>
+            <br />
+            Create a profile.
+          </p>
         </div>
         <div className="stepTwo step">
-          <h1>Step 2.</h1>
-          <p>Connect to the brands you're passionate about.</p>
+          <img id="network-icon" src={network_icon} />
+          <p>
+            <b>Step 2.</b>
+            <br />
+            Connect to the brands you're passionate about.
+          </p>
         </div>
         <div className="stepThree step">
-          <h1>Step 3.</h1>
-          <p>Share your insights and
-            <br />join customer discovery.</p>
+          <img id="keyInsights-icon" src={keyInsights_icon} />
+          <p>
+            <b>Step 3.</b>
+            <br />
+            Share your insights and join customer discovery.
+          </p>
         </div>
         <div className="stepFour step">
-          <h1>Step 4.</h1>
+          <img id="discount-icon" src={discount_icon} />
           <p>
+            <b>Step 4.</b>
+            <br />
             Complete discovery process and earn rewards with the brands you
             love.
           </p>
