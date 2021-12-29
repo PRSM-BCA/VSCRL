@@ -6,6 +6,7 @@ import { collection, doc, setDoc, updateDoc, push, getDoc, getDocs, arrayUnion }
 const AuthContext = React.createContext();
 
 export function useAuth() {
+  console.log(useContext(AuthContext));  
   return useContext(AuthContext);
 }
 

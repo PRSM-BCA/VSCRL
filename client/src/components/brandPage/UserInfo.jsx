@@ -116,6 +116,7 @@ export default function UserInfo(props) {
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Non-Binary">Non-Binary</option>
+                  <option value="Other">Other</option>
                   <option value="Choose not to disclose">
                     Choose not to disclose
                   </option>

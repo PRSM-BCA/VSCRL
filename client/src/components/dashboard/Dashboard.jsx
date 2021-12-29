@@ -39,9 +39,9 @@ export default function Dashboard(props) {
           props.surveySubmitted ? (
             <div id="alertBanner">
               <p>
-                Survey Added!
-                <br />
-                Users will now have access to the survey and coupons
+                Survey Submitted!
+              <br />
+                Coupon Code: VSCRLSHOES
               </p>
             </div>
           ) : null
@@ -50,7 +50,7 @@ export default function Dashboard(props) {
             <p>
               Survey Submitted!
               <br />
-              Here is your coupon code: VSCRLSHOES
+              Coupon Code: VSCRLSHOES
             </p>
           </div>
         ) : null}

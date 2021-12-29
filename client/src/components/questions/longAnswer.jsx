@@ -3,6 +3,7 @@ import tools1 from "./images/tools1.jpeg";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
+import Icon from "../landing/media/icon_white.png";
 
 
 function LongAnswer(props) {
@@ -23,7 +24,6 @@ function LongAnswer(props) {
       <AuthProvider>
         <div className="LongAnswer">
           <h1>Long-form Answer</h1>
-          <img className="medicalTools" src={tools1} alt="Medical tools" />
           <div className="inputWrapper">
             <input
               id="promptInput"
@@ -41,6 +41,7 @@ function LongAnswer(props) {
               draggable="false"
               type="text"
               name="question answer 2"
+              rows="10"
               placeholder="User answers the question here..."
             ></textarea>
             <input
@@ -89,12 +90,11 @@ function LongAnswer(props) {
     return (
       <AuthProvider>
         <div className="LongAnswer">
-          <h1>Long-form Answer</h1>
-          <img className="medicalTools" src={tools1} alt="Medical tools" />
+          <img src={Icon} alt="VSCRL Logo" width="175px" height="175px" />
           <div className="inputWrapper">
             {/* {console.log(promptEntry)} */}
             <h2>
-              {props.longAnswer.prompt}
+              {props.longAnswer.prompt}...
             </h2>
             <textarea
               type="text"

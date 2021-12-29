@@ -53,7 +53,7 @@ export default function SignUp() {
           setSubmit(true);
         }}
       >
-        {currentUser ? <h2>{currentUser.email}</h2> : <h2>Create an account with us</h2>}
+        <h2>Create an account with us</h2>
         {errorMessage && <h2>{errorMessage}</h2>}
         {!additionalPage ? (
           <Primary newEmail={newEmail} setNewEmail={setNewEmail} setNewPassword={setNewPassword} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} newUserName={newUserName} setNewUserName={setNewUserName} submit={submit} setSubmit={setSubmit} additionalPage={additionalPage} setAdditionalPage={setAdditionalPage} newFirstName={newFirstName} setNewFirstName={setNewFirstName} newLastName={newLastName} setNewLastName={setNewLastName} dob={dob} setDob={setDob}></Primary>

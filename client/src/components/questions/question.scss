@@ -97,7 +97,7 @@
     .transformStyle {
       justify-content: center;
       align-items: center;
-      background-color: red;
+      background-color: $marigold;
       color: white;
       border-radius: 50%;
       border: solid $spanish-blue;
@@ -254,8 +254,43 @@
   text-align: center;
   width: 100vw;
   height: 100vh;
+  padding-top: 2em;
+  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
+  background-color: $burnt-orange;
+
+  #flexContent {
+    display: flex;
+    flex-direction: row;
+    flex: 7;
+
+    #imgWrapper {
+      flex: 2;
+    }
+
+    #gridContent {
+      flex: 5;
+    }
+
+    #imgWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 2px solid $dark-jungle-green;
+
+      img {
+
+        display: block;
+      }
+    }
+
+    #gridContent {
+      padding: auto 3em;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
   .KeyWordMainWrapper {
     width: 100%;
@@ -268,28 +303,25 @@
     padding-top: 1em;
     margin: auto;
     text-align: center;
+    color: $baby-powder;
   }
 
   a {
     @include headerStyle(1em, center, $dark-jungle-green);
-    flex: 1;
-    width: 30%;
-    height: 15%;
-    margin: 2em auto;
+    cursor: pointer;
     background-color: white;
-    padding: 1em;
+    width: 25%;
     border-radius: 6px;
+    margin: 0 auto;
     border: 1px solid $dark-jungle-green;
     transition: 0.3s ease-in;
     line-height: 5em;
   }
 
   .active:hover {
-    @include headerStyle(1em, center, white);
-    border: 1px solid white;
-    padding: 0.8em;
     background-color: $marigold;
-    cursor: pointer;
+    color: $baby-powder;
+    border: 2px solid white;
   }
 
   .gridWrapper {
@@ -312,10 +344,10 @@
     .transformStyle {
       justify-content: center;
       align-items: center;
-      background-color: red;
-      color: white;
+      background-color: $indigo-dye;
+      color: $baby-powder;
       border-radius: 50%;
-      border: solid $spanish-blue;
+      border: solid $baby-powder;
       width: 50px;
       height: 50px;
       padding: 3em;
@@ -325,13 +357,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: solid $spanish-blue;
+      border: solid $baby-powder;
       border-radius: 50%;
+      color: $baby-powder;
       width: 50px;
       height: 50px;
       padding: 3em;
 
       p {
+        font-family: 'Merriweather', serif;
         font-size: 16px;
         justify-content: center;
         align-items: center;
@@ -339,6 +373,7 @@
         width: 50px;
         height: 50px;
       }
+
     }
     .painOne {
       p {
@@ -455,18 +490,28 @@
 .MultipleChoice {
   height: 100vh;
   width: 100vw;
+  padding-top: 3em;
+
+  img {
+    margin: auto;
+    display: block;
+  }
 
   h1 {
     @include headerStyle(2em);
-    padding-top: 1em;
     flex: 1;
     margin: auto;
+    padding: .5em;
+    border-left: 2px solid $marigold;
+    border-right: 2px solid $marigold;
+    width: 30%;
   }
 
   .mainContent {
     height: 70vh;
     display: flex;
     flex-direction: column;
+    padding-top: 4em;
 
     .q {
       flex: 1;
@@ -665,12 +710,22 @@
     }
 
     #submitContent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
       text-align: center;
+      padding-top: 3em;
+      margin: auto;
+      width: 25%;
+    
 
       a {
         @include headerStyle(1em, center, $dark-jungle-green);
+        flex: 1;
         cursor: pointer;
         background-color: white;
+        width: 25%;
         padding: 2em;
         border-radius: 6px;
         border: 1px solid $dark-jungle-green;
@@ -678,7 +733,7 @@
       }
 
       .active:hover {
-        background-color: $spanish-blue;
+        background-color: $marigold;
         color: $baby-powder;
         border: 2px solid white;
       }
@@ -692,11 +747,17 @@
   height: 100vh;
   width: 100vw;
 
+  img {
+    margin: auto;
+    padding-right: 2em;
+  }
+
   .mainContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
+    width: 75%;
     flex: 8;
 
     h1 {
@@ -832,21 +893,19 @@
   flex-direction: row;
   gap: 5vw;
   height: 100vh;
-  width: 60vw;
+  width: 100vw;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $indigo-dye;
 
-  * {
-    color: $dark-jungle-green;
-  }
+
 
   .medicalTools {
     margin: 0 auto;
     max-width: 300px;
-  }
-
-  h1,
-  h2 {
-    @include headerStyle();
   }
 
   // child of LongAnswer
@@ -858,33 +917,41 @@
   }
 
   h1 {
-    @include headerStyle(2em, center);
+    @include headerStyle(2em, center, $baby-powder);
+    border-top: 2px solid $marigold;
+    border-bottom: 2px solid $marigold;
     margin: 0;
+    color: $baby-powder
   }
 
   // child of LongAnswer
   .inputWrapper {
     display: flex;
     flex-direction: column;
+    width: 70%;
 
     // child of inputWrapper
     h2 {
-      text-align: left;
-      @include headerStyle(left);
+      border-top: 2px solid $marigold;
+      border-bottom: 2px solid $marigold;
+      width: 70%;
+      margin: auto;
+      @include headerStyle(2em, center, $baby-powder);
     }
 
     // child of inputWrapper
     #wordLimit {
-      @include bulletsStyle(0.75em, center, gray);
+      @include bulletsStyle(1em, center, gray);
+      color: $marigold;
     }
 
     // child of inputWrapper
     textarea {
-      max-width: 100%;
-      min-width: 100%;
-      height: 20%;
+      max-width: 60%;
+      min-width: 60%;
+      height: 10em;
       align-items: center;
-      justify-content: start;
+      margin: 3em auto 0 auto;
     }
 
     textarea.disabled {
@@ -910,7 +977,7 @@
     a {
       @include headerStyle(1em, center, $dark-jungle-green);
       padding: 2em;
-      width: 50%;
+      width: 25%;
       margin: auto;
       border-radius: 6px;
       border: 1px solid $dark-jungle-green;
@@ -922,7 +989,7 @@
       @include headerStyle(1em, center, white);
       border: 1px solid white;
       padding: 1.8em;
-      background-color: $burnt-orange;
+      background-color: $marigold;
       cursor: pointer;
     }
   }

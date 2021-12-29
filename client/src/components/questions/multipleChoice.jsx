@@ -2,6 +2,7 @@ import "./Question.scss";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
+import Icon from "../landing/media/icon.png";
 
 function MultipleChoice(props) {
   const {
@@ -187,7 +188,7 @@ function MultipleChoice(props) {
                     });
                   }}
                 >
-                  Enter Multiple Choice Questions
+                  Enter Multiple Choice 
                 </Link>
               ) : (
                 <Link
@@ -197,7 +198,7 @@ function MultipleChoice(props) {
                   offset={0}
                   duration={500}
                 >
-                  Enter Multiple Choice Questions
+                  Enter Multiple Choice 
                 </Link>
               )}
             </div>
@@ -209,7 +210,7 @@ function MultipleChoice(props) {
     return (
       <AuthProvider>
         <div className="MultipleChoice">
-          <h1>Multiple Choice</h1>
+          <img src={Icon} alt="VSCRL Logo" width="125px" height="auto" />
           <div className="mainContent">
             <div className="q q1">
               <div className="prompt">
@@ -388,7 +389,7 @@ function MultipleChoice(props) {
             <div id="submitContent">
               <Link
                 className={enter ? "active" : ""}
-                to="KeyWordAnswer-keyUser"
+                to="keyWordAnswer-keyUser"
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -408,7 +409,7 @@ function MultipleChoice(props) {
                   );
                 }}
               >
-                Enter Responses
+                Enter Multiple Choice
               </Link>
             </div>
           </div>

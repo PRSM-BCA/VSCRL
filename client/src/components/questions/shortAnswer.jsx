@@ -2,6 +2,7 @@ import "./Question.scss";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
+import Icon from "../landing/media/icon.png";
 
 function ShortAnswer(props) {
   const {
@@ -26,9 +27,7 @@ function ShortAnswer(props) {
       <AuthProvider>
         <div className="ShortAnswer">
           <div className="mainContainer">
-            <h1>
-              Short Answer
-            </h1>
+            <h1>Short Answer</h1>
             <div className="questionWrapper">
               <input
                 id="questionPrompt"
@@ -122,9 +121,7 @@ function ShortAnswer(props) {
       <AuthProvider>
         <div className="ShortAnswer">
           <div className="mainContainer">
-            <h1>
-              Short Answer
-            </h1>
+            <img src={Icon} alt="VSCRL Logo" width="175px" height="auto" />
             <div className="questionWrapper">
               <h2 id="questionPrompt">{props.shortAnswer.prompt}</h2>
               <section>
@@ -183,11 +180,17 @@ function ShortAnswer(props) {
                 offset={0}
                 duration={500}
                 onClick={() => {
-                  addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "ShortAnswer", {
-                    question1: props.question1,
-                    question2: props.question2,
-                    question3: props.question3
-                  });
+                  addQuestionToUserSurvey(
+                    currentUser.uid,
+                    "GX7nZYcm4q5qq3drETLm",
+                    "SurgeonShoeSurvey",
+                    "ShortAnswer",
+                    {
+                      question1: props.question1,
+                      question2: props.question2,
+                      question3: props.question3,
+                    }
+                  );
                 }}
               >
                 Enter Short Answer

@@ -2,9 +2,15 @@ import "./Question.scss";
 import { useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
+import Icon from "../landing/media/icon_white.png";
 
 function KeyWordAnswer(props) {
-  const { currentUser, getUser, addQuestionToAdminSurvey, addQuestionToUserSurvey } = useAuth();
+  const {
+    currentUser,
+    getUser,
+    addQuestionToAdminSurvey,
+    addQuestionToUserSurvey,
+  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
 
   //  set state variable for each pain (painBackground1 etc. setting initial state to color)
@@ -18,7 +24,6 @@ function KeyWordAnswer(props) {
   const [selectPEight, setSelectPEight] = useState("painEight");
   const [selectPNine, setSelectPNine] = useState("painNine");
   const [count, setCount] = useState(0);
-  
 
   //Admin states: create a set of nine state variables (one for each frustration input). Set onChange
   const [input1, setInput1] = useState(null);
@@ -31,10 +36,9 @@ function KeyWordAnswer(props) {
   const [input8, setInput8] = useState(null);
   const [input9, setInput9] = useState(null);
 
-  const [keyWordBank, setKeyWordBank] = useState([])
+  const [keyWordBank, setKeyWordBank] = useState([]);
 
   // Admin function: change color onChange for ADMIN
-
 
   // keyUser function: Change style  and keep track of count
   function changeStyle(
@@ -56,10 +60,9 @@ function KeyWordAnswer(props) {
 
   function keyWordArrayHandle(word) {
     if (keyWordBank.includes(word)) {
-      keyWordBank.shift(keyWordBank.indexOf(word))
-    }
-    else {
-    setKeyWordBank(keyWordBank => [...keyWordBank, word])
+      keyWordBank.shift(keyWordBank.indexOf(word));
+    } else {
+      setKeyWordBank((keyWordBank) => [...keyWordBank, word]);
     }
   }
 
@@ -102,7 +105,6 @@ function KeyWordAnswer(props) {
                 placeholder="Enter..."
                 onChange={(evt) => {
                   setInput1(evt.target.value);
-                  
                 }}
               ></input>
               <input
@@ -197,23 +199,23 @@ function KeyWordAnswer(props) {
           input9 ? (
             <Link
               className="active"
-              to="MultipleChoice"
+              to="RankingAnswer"
               spy={true}
               smooth={true}
               offset={0}
               duration={500}
               onClick={() => {
                 addQuestionToAdminSurvey("KeyWordQuestions", [
-                  { word: input1, value: 3},
-                  { word: input2, value: 1},
-                  { word: input3, value: 7},
-                  { word: input4, value: 4},
-                  { word: input5, value: 5},
-                  { word: input6, value: 9},
-                  { word: input7, value: 2},
-                  { word: input8, value: 8},
-                  { word: input9, value: 6},
-              ]);
+                  { word: input1, value: 3 },
+                  { word: input2, value: 1 },
+                  { word: input3, value: 7 },
+                  { word: input4, value: 4 },
+                  { word: input5, value: 5 },
+                  { word: input6, value: 9 },
+                  { word: input7, value: 2 },
+                  { word: input8, value: 8 },
+                  { word: input9, value: 6 },
+                ]);
               }}
             >
               Enter Key Word Prompts
@@ -241,192 +243,229 @@ function KeyWordAnswer(props) {
         {/* {console.log("keyWordBank", keyWordBank)} */}
         <div className="keyWordAnswer-keyUser">
           {/* {console.log(count)} */}
-          <h1>Click 5 frustrations about your footwear</h1>
+          <div id="flexContent">
+            <div id="imgWrapper">
+              <img src={Icon} alt="VSCRL Logo" width="200px" height="auto" />
+            </div>
 
-          <div className="gridWrapper">
-            <div
-              className={`pain painOne ${selectPOne}`}
+            <div id="gridContent">
+              <h1>Click 5 frustrations about your footwear</h1>
+
+              <div className="gridWrapper">
+                <div
+                  className={`pain painOne ${selectPOne}`}
+                  onClick={() => {
+                    changeStyle(
+                      "painOne",
+                      selectPOne,
+                      setSelectPOne,
+                      count,
+                      setCount
+                    );
+                    console.log("this is count", count);
+                    keyWordArrayHandle(props.keyWordAnswer[0].word);
+                  }}
+                >
+                  <p>
+                    {props.keyWordAnswer ? props.keyWordAnswer[0].word : null}
+                  </p>
+                </div>
+                <div className="pain painTwo">
+                  <div
+                    className={`pain painTwo ${selectPTwo}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painTwo",
+                        selectPTwo,
+                        setSelectPTwo,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[1].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[1].word : null}
+                    </p>
+                  </div>
+                </div>
+                <div className="pain painThree">
+                  <div
+                    className={`pain painThree ${selectPThree}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painThree",
+                        selectPThree,
+                        setSelectPThree,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[2].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[2].word : null}
+                    </p>
+                  </div>
+                </div>
+                <div className="pain painFour">
+                  <div
+                    className={`pain painFour ${selectPFour}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painFour",
+                        selectPFour,
+                        setSelectPFour,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[3].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[3].word : null}
+                    </p>
+                  </div>
+                </div>
+                <div className=" pain painFive">
+                  <div
+                    className={`pain painFive ${selectPFive}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painFive",
+                        selectPFive,
+                        setSelectPFive,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[4].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[4].word : null}
+                    </p>
+                  </div>
+                </div>
+                <div className="pain painSix">
+                  <div
+                    className={`pain painSix ${selectPSix}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painSix",
+                        selectPSix,
+                        setSelectPSix,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[5].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[5].word : null}
+                    </p>
+                  </div>
+                </div>
+                <div className="pain painSeven">
+                  <div
+                    className={`pain painSeven ${selectPSeven}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painSeven",
+                        selectPSeven,
+                        setSelectPSeven,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[6].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[6].word : null}
+                    </p>
+                  </div>
+                </div>
+                <div className="pain painEight">
+                  <div
+                    className={`pain painEight ${selectPEight}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painEight",
+                        selectPEight,
+                        setSelectPEight,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[7].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[7].word : null}
+                    </p>
+                  </div>
+                </div>
+                <div className="pain painNine">
+                  <div
+                    className={`pain painNine ${selectPNine}`}
+                    onClick={() => {
+                      changeStyle(
+                        "painNine",
+                        selectPNine,
+                        setSelectPNine,
+                        count,
+                        setCount
+                      );
+                      console.log("this is count", count);
+                      keyWordArrayHandle(props.keyWordAnswer[8].word);
+                    }}
+                  >
+                    <p>
+                      {props.keyWordAnswer ? props.keyWordAnswer[8].word : null}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {count === 5 ? (
+            <Link
+              className="active"
+              to="RankingAnswer"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
               onClick={() => {
-                changeStyle(
-                  "painOne",
-                  selectPOne,
-                  setSelectPOne,
-                  count,
-                  setCount
+                addQuestionToUserSurvey(
+                  currentUser.uid,
+                  "GX7nZYcm4q5qq3drETLm",
+                  "SurgeonShoeSurvey",
+                  "KeyWordBank",
+                  { keyWords: keyWordBank },
+                  { merge: true }
                 );
-                console.log("this is count", count);
-                keyWordArrayHandle(props.keyWordAnswer[0].word)
               }}
             >
-              <p>{props.keyWordAnswer ? props.keyWordAnswer[0].word : null}</p>
-            </div>
-            <div className="pain painTwo">
-              <div
-                className={`pain painTwo ${selectPTwo}`}
-                onClick={() => {
-                  changeStyle(
-                    "painTwo",
-                    selectPTwo,
-                    setSelectPTwo,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[1].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[1].word : null}</p>
-              </div>
-            </div>
-            <div className="pain painThree">
-              <div
-                className={`pain painThree ${selectPThree}`}
-                onClick={() => {
-                  changeStyle(
-                    "painThree",
-                    selectPThree,
-                    setSelectPThree,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[2].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[2].word : null}</p>
-              </div>
-            </div>
-            <div className="pain painFour">
-              <div
-                className={`pain painFour ${selectPFour}`}
-                onClick={() => {
-                  changeStyle(
-                    "painFour",
-                    selectPFour,
-                    setSelectPFour,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[3].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[3].word : null}</p>
-              </div>
-            </div>
-            <div className=" pain painFive">
-              <div
-                className={`pain painFive ${selectPFive}`}
-                onClick={() => {
-                  changeStyle(
-                    "painFive",
-                    selectPFive,
-                    setSelectPFive,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[4].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[4].word : null}</p>
-              </div>
-            </div>
-            <div className="pain painSix">
-              <div
-                className={`pain painSix ${selectPSix}`}
-                onClick={() => {
-                  changeStyle(
-                    "painSix",
-                    selectPSix,
-                    setSelectPSix,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[5].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[5].word : null}</p>
-              </div>
-            </div>
-            <div className="pain painSeven">
-              <div
-                className={`pain painSeven ${selectPSeven}`}
-                onClick={() => {
-                  changeStyle(
-                    "painSeven",
-                    selectPSeven,
-                    setSelectPSeven,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[6].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[6].word : null}</p>
-              </div>
-            </div>
-            <div className="pain painEight">
-              <div
-                className={`pain painEight ${selectPEight}`}
-                onClick={() => {
-                  changeStyle(
-                    "painEight",
-                    selectPEight,
-                    setSelectPEight,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[7].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[7].word : null}</p>
-              </div>
-            </div>
-            <div className="pain painNine">
-              <div
-                className={`pain painNine ${selectPNine}`}
-                onClick={() => {
-                  changeStyle(
-                    "painNine",
-                    selectPNine,
-                    setSelectPNine,
-                    count,
-                    setCount
-                  );
-                  console.log("this is count", count);
-                  keyWordArrayHandle(props.keyWordAnswer[8].word)
-                }}
-              >
-                <p>{props.keyWordAnswer ? props.keyWordAnswer[8].word : null}</p>
-              </div>
-            </div>
-          </div>
-          {count === 5 ? (
-            <Link
-            className="active"
-            to="RankingAnswer"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-            onClick={() => {
-              addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "KeyWordBank", {keyWords: keyWordBank}, {merge: true})
-            }}
-          >Enter Question Info</Link>
+              Enter Question Info
+            </Link>
           ) : (
             <Link
-            disabled="true"
-            to="RankingAnswer"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >Enter Question Info</Link>
+              disabled="true"
+              to="RankingAnswer"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              Enter Question Info
+            </Link>
           )}
+            </div>
+          </div>
         </div>
       </AuthProvider>
     );

@@ -13,13 +13,12 @@ import ShortAnswer from './components/questions/ShortAnswer';
 import Profile from './components/profilePage/Profile';
 import Mockbrand from './components/brandPage/Mockbrand';
 import BarChartDisplay from './components/chart/BarChartDisplay';
+
 export default function App() {
 
     const [surveySubmitted, setSurveySubmitted] = useState(false)
 
     return (
-        
-    
         <Router>
             <AuthProvider>
                 <Routes>

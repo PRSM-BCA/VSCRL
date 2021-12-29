@@ -1,3 +1,4 @@
+import Footer from "../landing/Footer";
 import "./Question.scss";
 import RankingFunctionality from "./RankingFunctionality.jsx";
 
@@ -12,6 +13,7 @@ function RankingAnswer(props) {
         question2={props.question2}
         question3={props.question3}
       />
+      <Footer></Footer>
     </div>
   );
 }

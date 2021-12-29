@@ -10,6 +10,7 @@ import LongAnswer from "../questions/LongAnswer";
 import MultipleChoice from "../questions/MultipleChoice";
 import RankingAnswer from "../questions/RankingAnswer";
 import KeyWordAnswer from "../questions/KeyWordAnswer";
+import Footer from "../landing/Footer";
 
 export default function Mockbrand(props) {
   const {
