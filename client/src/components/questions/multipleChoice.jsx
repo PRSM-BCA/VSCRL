@@ -63,358 +63,353 @@ function MultipleChoice(props) {
 
   if (userInfo.usertype === "admin") {
     return (
-      <AuthProvider>
-        {/* {console.log(adminEnter)} */}
-        <div className="MultipleChoice">
-          <h1>Multiple Choice</h1>
-          <div className="mainContent">
-            <div className="q q1">
-              <div className="prompt">
-                <input
-                  type="text"
-                  placeholder="Enter question text here..."
-                  onChange={(evt) => {
-                    setQuestion1Text(evt.target.value);
-                    // console.log(question1Text);
-                  }}
-                />
-              </div>
-              <div class="questionDiv disabledChoice">
-                <div className="choice">
-                  <div className={"choiceLine"}>
-                    <div className="outer-circle admin-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>Yes</p>
-                  </div>
-                </div>
-                <div className="choice">
-                  <div className={"choiceLine"}>
-                    <div className="outer-circle admin-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>No</p>
-                  </div>
-                </div>
-              </div>
+      <div className="MultipleChoice">
+        <h1>Multiple Choice</h1>
+        <div className="mainContent">
+          <div className="q q1">
+            <div className="prompt">
+              <input
+                type="text"
+                placeholder="Enter question text here..."
+                onChange={(evt) => {
+                  setQuestion1Text(evt.target.value);
+                  // console.log(question1Text);
+                }}
+              />
             </div>
-            <div className="q q2">
-              <div className="prompt">
-                <input
-                  type="text"
-                  placeholder="Enter question text here..."
-                  onChange={(evt) => {
-                    setQuestion2Text(evt.target.value);
-                    // console.log(question2Text);
-                  }}
-                />
-              </div>
-              <div className="questionDiv disabledChoice">
-                <div className="choice">
-                  <div className={"choiceLine"}>
-                    <div className="outer-circle admin-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
+            <div class="questionDiv disabledChoice">
+              <div className="choice">
+                <div className={"choiceLine"}>
+                  <div className="outer-circle admin-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
                     </div>
-                    <p>Yes</p>
                   </div>
-                </div>
-                <div className="choice">
-                  <div className={"choiceLine"}>
-                    <div className="outer-circle admin-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>No</p>
-                  </div>
+                  <p>Yes</p>
                 </div>
               </div>
-            </div>
-            <div className="q q3">
-              <div className="prompt">
-                <input
-                  type="text"
-                  placeholder="Enter question text here..."
-                  onChange={(evt) => {
-                    setQuestion3Text(evt.target.value);
-                    // console.log(question3Text);
-                  }}
-                />
-              </div>
-              <div className="questionDiv disabledChoice">
-                <div className="choice">
-                  <div className={"choiceLine"}>
-                    <div className="outer-circle admin-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
+              <div className="choice">
+                <div className={"choiceLine"}>
+                  <div className="outer-circle admin-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
                     </div>
-                    <p>Yes</p>
                   </div>
-                </div>
-                <div className="choice">
-                  <div className={"choiceLine"}>
-                    <div className="outer-circle admin-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>No</p>
-                  </div>
+                  <p>No</p>
                 </div>
               </div>
-            </div>
-            <div id="submitContent">
-              {/* {console.log(adminEnter)} */}
-              {adminEnter ? (
-                <Link
-                  className="active"
-                  to="KeyWordAnswer-admin"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    addQuestionToAdminSurvey("MultipleChoice", {
-                      prompt1: question1Text,
-                      prompt2: question2Text,
-                      prompt3: question3Text,
-                    });
-                  }}
-                >
-                  Enter Multiple Choice 
-                </Link>
-              ) : (
-                <Link
-                  disabled="true"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                >
-                  Enter Multiple Choice 
-                </Link>
-              )}
             </div>
           </div>
-        </div>
-      </AuthProvider>
-    );
-  } else {
-    return (
-      <AuthProvider>
-        <div className="MultipleChoice">
-          <img src={Icon} alt="VSCRL Logo" width="125px" height="auto" />
-          <div className="mainContent">
-            <div className="q q1">
-              <div className="prompt">
-                <h2>{props.multipleChoice.prompt1}</h2>
-              </div>
-              <div className="questionDiv">
-                <div className="choice">
-                  <div
-                    className={`choiceLine choice1 ${
-                      selectedYes1 ? "activeLine1" : ""
-                    }`}
-                    onClick={() => {
-                      if (selectedYes1) {
-                        setSelectedNo1(false);
-                        setSelectedYes1(false);
-                        setQuestion1Answer(false);
-                      } else {
-                        setSelectedNo1(false);
-                        setSelectedYes1(true);
-                        setQuestion1Answer(true);
-                      }
-                    }}
-                  >
-                    <input type="radio" checked={selectedYes1} />
-                    <div className="outer-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
+          <div className="q q2">
+            <div className="prompt">
+              <input
+                type="text"
+                placeholder="Enter question text here..."
+                onChange={(evt) => {
+                  setQuestion2Text(evt.target.value);
+                  // console.log(question2Text);
+                }}
+              />
+            </div>
+            <div className="questionDiv disabledChoice">
+              <div className="choice">
+                <div className={"choiceLine"}>
+                  <div className="outer-circle admin-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
                     </div>
-                    <p>Yes</p>
                   </div>
+                  <p>Yes</p>
                 </div>
-                <div className="choice">
-                  <div
-                    className={`choiceLine choice1 ${
-                      selectedNo1 ? "activeLine1" : ""
-                    }`}
-                    onClick={() => {
-                      if (selectedNo1) {
-                        setSelectedNo1(false);
-                        setSelectedYes1(false);
-                      } else {
-                        setSelectedNo1(true);
-                        setSelectedYes1(false);
-                      }
-                      setQuestion1Answer(false);
-                    }}
-                  >
-                    <input type="radio" checked={selectedNo1} />
-                    <div className="outer-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
+              </div>
+              <div className="choice">
+                <div className={"choiceLine"}>
+                  <div className="outer-circle admin-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
                     </div>
-                    <p>No</p>
                   </div>
+                  <p>No</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="q q3">
+            <div className="prompt">
+              <input
+                type="text"
+                placeholder="Enter question text here..."
+                onChange={(evt) => {
+                  setQuestion3Text(evt.target.value);
+                  // console.log(question3Text);
+                }}
+              />
+            </div>
+            <div className="questionDiv disabledChoice">
+              <div className="choice">
+                <div className={"choiceLine"}>
+                  <div className="outer-circle admin-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>Yes</p>
+                </div>
+              </div>
+              <div className="choice">
+                <div className={"choiceLine"}>
+                  <div className="outer-circle admin-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>No</p>
                 </div>
               </div>
             </div>
-            <div className="q q2">
-              <div className="prompt">
-                <h2>{props.multipleChoice.prompt2}</h2>
-              </div>
-              <div className="questionDiv">
-                <div className="choice">
-                  <div
-                    className={`choiceLine choice2 ${
-                      selectedYes2 ? "activeLine2" : ""
-                    }`}
-                    onClick={() => {
-                      if (selectedYes2) {
-                        setSelectedNo2(false);
-                        setSelectedYes2(false);
-                        setQuestion2Answer(false);
-                      } else {
-                        setSelectedNo2(false);
-                        setSelectedYes2(true);
-                        setQuestion2Answer(true);
-                      }
-                    }}
-                  >
-                    <input type="radio" checked={selectedYes2} />
-                    <div className="outer-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>Yes</p>
-                  </div>
-                </div>
-                <div className="choice">
-                  <div
-                    className={`choiceLine choice2 ${
-                      selectedNo2 ? "activeLine2" : ""
-                    }`}
-                    onClick={() => {
-                      if (selectedNo2) {
-                        setSelectedNo2(false);
-                        setSelectedYes2(false);
-                      } else {
-                        setSelectedNo2(true);
-                        setSelectedYes2(false);
-                      }
-                      setQuestion2Answer(false);
-                    }}
-                  >
-                    <input type="radio" checked={selectedNo2} />
-                    <div className="outer-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>No</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="q q3">
-              <div className="prompt">
-                <h2>{props.multipleChoice.prompt3}</h2>
-              </div>
-              <div className="questionDiv">
-                <div className="choice">
-                  <div
-                    className={`choiceLine choice3 ${
-                      selectedYes3 ? "activeLine3" : ""
-                    }`}
-                    onClick={() => {
-                      if (selectedYes3) {
-                        setSelectedNo3(false);
-                        setSelectedYes3(false);
-                        setQuestion3Answer(false);
-                      } else {
-                        setSelectedNo3(false);
-                        setSelectedYes3(true);
-                        setQuestion3Answer(true);
-                      }
-                    }}
-                  >
-                    <input type="radio" checked={selectedYes3} />
-                    <div className="outer-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>Yes</p>
-                  </div>
-                </div>
-                <div className="choice">
-                  <div
-                    className={`choiceLine choice3 ${
-                      selectedNo3 ? "activeLine3" : ""
-                    }`}
-                    onClick={() => {
-                      if (selectedNo3) {
-                        setSelectedNo3(false);
-                        setSelectedYes3(false);
-                      } else {
-                        setSelectedNo3(true);
-                        setSelectedYes3(false);
-                      }
-                      setQuestion3Answer(false);
-                    }}
-                  >
-                    <input type="radio" checked={selectedNo3} />
-                    <div className="outer-circle">
-                      <div id="mid-circle">
-                        <div id="inner-circle"></div>
-                      </div>
-                    </div>
-                    <p>No</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="submitContent">
+          </div>
+          <div id="submitContent">
+            {/* {console.log(adminEnter)} */}
+            {adminEnter ? (
               <Link
-                className={enter ? "active" : ""}
-                to="keyWordAnswer-keyUser"
+                className="active"
+                to="KeyWordAnswer-admin"
                 spy={true}
                 smooth={true}
                 offset={0}
                 duration={500}
-                disabled={!enter}
                 onClick={() => {
-                  addQuestionToUserSurvey(
-                    currentUser.uid,
-                    "GX7nZYcm4q5qq3drETLm",
-                    "SurgeonShoeSurvey",
-                    "ShortAnswer",
-                    {
-                      question1Answer: question1Answer,
-                      question2Answer: question2Answer,
-                      question3Answer: question3Answer,
-                    }
-                  );
+                  addQuestionToAdminSurvey("MultipleChoice", {
+                    prompt1: question1Text,
+                    prompt2: question2Text,
+                    prompt3: question3Text,
+                  });
                 }}
               >
                 Enter Multiple Choice
               </Link>
-            </div>
+            ) : (
+              <Link
+                disabled="true"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                Enter Multiple Choice
+              </Link>
+            )}
           </div>
         </div>
-      </AuthProvider>
+      </div>
+    );
+  } else {
+    return (
+      <div className="MultipleChoice">
+        <img src={Icon} alt="VSCRL Logo" width="125px" height="auto" />
+        <div className="mainContent">
+          <div className="q q1">
+            <div className="prompt">
+              <h2>{props.multipleChoice.prompt1}</h2>
+            </div>
+            <div className="questionDiv">
+              <div className="choice">
+                <div
+                  className={`choiceLine choice1 ${
+                    selectedYes1 ? "activeLine1" : ""
+                  }`}
+                  onClick={() => {
+                    if (selectedYes1) {
+                      setSelectedNo1(false);
+                      setSelectedYes1(false);
+                      setQuestion1Answer(false);
+                    } else {
+                      setSelectedNo1(false);
+                      setSelectedYes1(true);
+                      setQuestion1Answer(true);
+                    }
+                  }}
+                >
+                  <input type="radio" checked={selectedYes1} />
+                  <div className="outer-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>Yes</p>
+                </div>
+              </div>
+              <div className="choice">
+                <div
+                  className={`choiceLine choice1 ${
+                    selectedNo1 ? "activeLine1" : ""
+                  }`}
+                  onClick={() => {
+                    if (selectedNo1) {
+                      setSelectedNo1(false);
+                      setSelectedYes1(false);
+                    } else {
+                      setSelectedNo1(true);
+                      setSelectedYes1(false);
+                    }
+                    setQuestion1Answer(false);
+                  }}
+                >
+                  <input type="radio" checked={selectedNo1} />
+                  <div className="outer-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>No</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="q q2">
+            <div className="prompt">
+              <h2>{props.multipleChoice.prompt2}</h2>
+            </div>
+            <div className="questionDiv">
+              <div className="choice">
+                <div
+                  className={`choiceLine choice2 ${
+                    selectedYes2 ? "activeLine2" : ""
+                  }`}
+                  onClick={() => {
+                    if (selectedYes2) {
+                      setSelectedNo2(false);
+                      setSelectedYes2(false);
+                      setQuestion2Answer(false);
+                    } else {
+                      setSelectedNo2(false);
+                      setSelectedYes2(true);
+                      setQuestion2Answer(true);
+                    }
+                  }}
+                >
+                  <input type="radio" checked={selectedYes2} />
+                  <div className="outer-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>Yes</p>
+                </div>
+              </div>
+              <div className="choice">
+                <div
+                  className={`choiceLine choice2 ${
+                    selectedNo2 ? "activeLine2" : ""
+                  }`}
+                  onClick={() => {
+                    if (selectedNo2) {
+                      setSelectedNo2(false);
+                      setSelectedYes2(false);
+                    } else {
+                      setSelectedNo2(true);
+                      setSelectedYes2(false);
+                    }
+                    setQuestion2Answer(false);
+                  }}
+                >
+                  <input type="radio" checked={selectedNo2} />
+                  <div className="outer-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>No</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="q q3">
+            <div className="prompt">
+              <h2>{props.multipleChoice.prompt3}</h2>
+            </div>
+            <div className="questionDiv">
+              <div className="choice">
+                <div
+                  className={`choiceLine choice3 ${
+                    selectedYes3 ? "activeLine3" : ""
+                  }`}
+                  onClick={() => {
+                    if (selectedYes3) {
+                      setSelectedNo3(false);
+                      setSelectedYes3(false);
+                      setQuestion3Answer(false);
+                    } else {
+                      setSelectedNo3(false);
+                      setSelectedYes3(true);
+                      setQuestion3Answer(true);
+                    }
+                  }}
+                >
+                  <input type="radio" checked={selectedYes3} />
+                  <div className="outer-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>Yes</p>
+                </div>
+              </div>
+              <div className="choice">
+                <div
+                  className={`choiceLine choice3 ${
+                    selectedNo3 ? "activeLine3" : ""
+                  }`}
+                  onClick={() => {
+                    if (selectedNo3) {
+                      setSelectedNo3(false);
+                      setSelectedYes3(false);
+                    } else {
+                      setSelectedNo3(true);
+                      setSelectedYes3(false);
+                    }
+                    setQuestion3Answer(false);
+                  }}
+                >
+                  <input type="radio" checked={selectedNo3} />
+                  <div className="outer-circle">
+                    <div id="mid-circle">
+                      <div id="inner-circle"></div>
+                    </div>
+                  </div>
+                  <p>No</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="submitContent">
+            <Link
+              className={enter ? "active" : ""}
+              to="keyWordAnswer-keyUser"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              disabled={!enter}
+              onClick={() => {
+                addQuestionToUserSurvey(
+                  currentUser.uid,
+                  "GX7nZYcm4q5qq3drETLm",
+                  "SurgeonShoeSurvey",
+                  "ShortAnswer",
+                  {
+                    question1Answer: question1Answer,
+                    question2Answer: question2Answer,
+                    question3Answer: question3Answer,
+                  }
+                );
+              }}
+            >
+              Enter Multiple Choice
+            </Link>
+          </div>
+        </div>
+      </div>
     );
   }
 }

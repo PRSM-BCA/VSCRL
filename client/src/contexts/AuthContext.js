@@ -6,7 +6,6 @@ import { collection, doc, setDoc, updateDoc, push, getDoc, getDocs, arrayUnion }
 const AuthContext = React.createContext();
 
 export function useAuth() {
-  console.log(useContext(AuthContext));  
   return useContext(AuthContext);
 }
 
@@ -56,47 +55,16 @@ export function AuthProvider({children}) {
         return userSnap.data()
     }
 
-    // Grabs all users from Users Collection and logs them
-    async function getAllUsers() {
-        const querySnapshot = await getDocs(collection(db, "users"))
-        querySnapshot.forEach((doc) => {
-            console.log(doc.uid, " => ", doc.data())
-        })
-    }
-
-    // Grabs all users from Users Collection and logs them
-    async function getAllSurveys() {
-        const surveyRef = await getDocs(collection(db, "surveys"))
-        let surveyQuestions = []
-        surveyRef.forEach((doc) => {
-            surveyQuestions.push(doc.data())
-        })
-        return surveyQuestions
-    }
-
-    // Grabs survey questions of specific user's survey
-    async function getSurveyQuestions(authUid, surveyId) {
-        let surveyRef = await getDoc(doc(db, "surveys/" + surveyId + "/" + authUid + "/Questions"))
-        return surveyRef.data()
-    }
-
-    // Gets user information from specific survey
-    async function getUserFromSurvey(authUid, surveyId) {
-        let surveyRef = await getDoc(doc(db, "surveys/" + surveyId + "/" + authUid + "/UserInfo"))
-        return surveyRef.data()
-    }
-
     // Add user record to Survey
     async function addSurvey(authUid, surveyId, brandName, surveyName) {
         let brandRef = await getDoc(doc(db, "brands", brandName))
         brandRef = brandRef.data()
         let surveyRef = await setDoc(doc(db, "surveys", surveyId, authUid, surveyName), brandRef)
-        console.log(surveyRef)
+        //console.log(surveyRef)
         await updateDoc(doc(db, "users", authUid), {surveyList: arrayUnion({
             surveyId: surveyId,
             inProgress: true
         })}, {capital: true}, {merge: true})
-        console.log("Here")
         return surveyRef
     }
 
@@ -147,11 +115,7 @@ export function AuthProvider({children}) {
         logout,
         updateAuthPassword,
         getUser,
-        getAllUsers,
         getSurvey,
-        getAllSurveys,
-        getSurveyQuestions,
-        getUserFromSurvey,
         addSurvey,
         addAdminSurvey,
         addQuestionToUserSurvey,

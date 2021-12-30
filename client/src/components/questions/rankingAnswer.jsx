@@ -7,11 +7,18 @@ function RankingAnswer(props) {
     <div className="RankingAnswer">
       <RankingFunctionality
         rankingAnswer={props.rankingAnswer}
+        rankAnswerObject={props.rankAnswerObject}
+        setRankAnswerObject={props.setRankAnswerObject}
         surveySubmitted={props.surveySubmitted}
         setSurveySubmitted={props.setSurveySubmitted}
-        question1={props.question1}
-        question2={props.question2}
-        question3={props.question3}
+        keyWord1={props.keyWord1}
+        keyWord2={props.keyWord2}
+        keyWord3={props.keyWord3}
+        keyWord4={props.keyWord4}
+        keyWord5={props.keyWord5}
+        keyWord6={props.keyWord6}
+        keyWord7={props.keyWord7}
+        keyWord8={props.keyWord8}
       />
       <Footer></Footer>
     </div>

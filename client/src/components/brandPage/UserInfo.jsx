@@ -177,7 +177,7 @@ export default function UserInfo(props) {
               offset={0}
               duration={500}
               onClick={() => {
-                console.log(currentUser.uid);
+                //console.log(currentUser.uid);
                 addQuestionToUserSurvey(
                   currentUser.uid,
                   "GX7nZYcm4q5qq3drETLm",

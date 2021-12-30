@@ -5,9 +5,15 @@ import { AuthProvider, useAuth } from "../../contexts/AuthContext";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Icon from "../landing/media/icon_white.png";
 
-
 function LongAnswer(props) {
-  const { currentUser, getUser, addSurvey, addAdminSurvey, addQuestionToUserSurvey, addQuestionToAdminSurvey  } = useAuth();
+  const {
+    currentUser,
+    getUser,
+    addSurvey,
+    addAdminSurvey,
+    addQuestionToUserSurvey,
+    addQuestionToAdminSurvey,
+  } = useAuth();
   const [userInfo, setUserInfo] = useState("");
   const [promptEntry, setPromptEntry] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -21,122 +27,124 @@ function LongAnswer(props) {
 
   if (userInfo.usertype === "admin") {
     return (
-      <AuthProvider>
-        <div className="LongAnswer">
-          <h1>Long-form Answer</h1>
-          <div className="inputWrapper">
-            <input
-              id="promptInput"
-              type="text"
-              placeholder="Enter your Prompt"
-              onChange={(evt) => {
-                // console.log(promptEntry);
-                setPromptEntry(evt.target.value);
-              }}
-            />
+      <div className="LongAnswer">
+        <h1>Long-form Answer</h1>
+        <div className="inputWrapper">
+          <input
+            id="promptInput"
+            type="text"
+            placeholder="Enter your Prompt"
+            onChange={(evt) => {
+              // console.log(promptEntry);
+              setPromptEntry(evt.target.value);
+            }}
+          />
 
-            <textarea
-              class="disabled"
-              disabled
-              draggable="false"
-              type="text"
-              name="question answer 2"
-              rows="10"
-              placeholder="User answers the question here..."
-            ></textarea>
-            <input
-              id="maxWordInput"
-              type="number"
-              placeholder="Word Count"
-              onChange={(evt) => {
-                setWordCount(evt.target.value);
-                // console.log(wordCount);
-              }}
-            />
-            {/* {console.log(wordCount)} */}
-            {/* {console.log(promptEntry)} */}
-            {wordCount <= 0 && !promptEntry ? (
-              <Link
+          <textarea
+            class="disabled"
+            disabled
+            draggable="false"
+            type="text"
+            name="question answer 2"
+            rows="10"
+            placeholder="User answers the question here..."
+          ></textarea>
+          <input
+            id="maxWordInput"
+            type="number"
+            placeholder="Word Count"
+            onChange={(evt) => {
+              setWordCount(evt.target.value);
+              // console.log(wordCount);
+            }}
+          />
+          {/* {console.log(wordCount)} */}
+          {/* {console.log(promptEntry)} */}
+          {wordCount <= 0 && !promptEntry ? (
+            <Link
               disabled="true"
               to="MultipleChoice"
               spy={true}
               smooth={true}
               offset={0}
               duration={500}
-              >
-                Enter Long-form Answer
-              </Link>
-            ) : (
-              <Link
-                    className="active"
-                    to="MultipleChoice"
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                    onClick={() => {
-                      addQuestionToAdminSurvey("LongAnswer", {prompt: promptEntry, wordCount: wordCount})
-                    }}
-                    >
-                      Enter Long-form Answer
-                </Link>
-
-            )}
-          </div>
+            >
+              Enter Long-form Answer
+            </Link>
+          ) : (
+            <Link
+              className="active"
+              to="MultipleChoice"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              onClick={() => {
+                addQuestionToAdminSurvey("LongAnswer", {
+                  prompt: promptEntry,
+                  wordCount: wordCount,
+                });
+              }}
+            >
+              Enter Long-form Answer
+            </Link>
+          )}
         </div>
-      </AuthProvider>
-    )
+      </div>
+    );
   } else {
     return (
-      <AuthProvider>
-        <div className="LongAnswer">
-          <img src={Icon} alt="VSCRL Logo" width="175px" height="175px" />
-          <div className="inputWrapper">
-            {/* {console.log(promptEntry)} */}
-            <h2>
-              {props.longAnswer.prompt}...
-            </h2>
-            <textarea
-              type="text"
-              name="question answer 2"
-              onChange={(evt) => {
-                setPromptEntry(evt.target.value)
-                setWordArray(evt.target.value.split(" ").length);
-              }}
-            ></textarea>
-            <p className="disabled" id="wordLimit">
-              {wordArray}/{props.longAnswer.wordCount} max words
-            </p>
-            {wordArray > props.longAnswer.wordCount || wordArray <= 1 ? (
-              <Link
+      <div className="LongAnswer">
+        <img src={Icon} alt="VSCRL Logo" width="175px" height="175px" />
+        <div className="inputWrapper">
+          {/* {console.log(promptEntry)} */}
+          <h2>{props.longAnswer.prompt}...</h2>
+          <textarea
+            type="text"
+            name="question answer 2"
+            onChange={(evt) => {
+              setPromptEntry(evt.target.value);
+              setWordArray(evt.target.value.split(" ").length);
+            }}
+          ></textarea>
+          <p className="disabled" id="wordLimit">
+            {wordArray}/{props.longAnswer.wordCount} max words
+          </p>
+          {wordArray > props.longAnswer.wordCount || wordArray <= 1 ? (
+            <Link
               disabled="true"
               to="MultipleChoice"
               spy={true}
               smooth={true}
               offset={0}
               duration={500}
-              >
-                Enter Long-form Answer
-              </Link>
-            ) : (
-              <Link
-                    className="active"
-                    to="MultipleChoice"
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                    onClick={() => {
-                      addQuestionToUserSurvey(currentUser.uid, "GX7nZYcm4q5qq3drETLm", "SurgeonShoeSurvey", "LongAnswer", {prompt: promptEntry});
-                    }}
-                    >
-                      Enter Long-form Answer
-                </Link>
-            )}
-          </div>
+            >
+              Enter Long-form Answer
+            </Link>
+          ) : (
+            <Link
+              className="active"
+              to="MultipleChoice"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              onClick={() => {
+                addQuestionToUserSurvey(
+                  currentUser.uid,
+                  "GX7nZYcm4q5qq3drETLm",
+                  "SurgeonShoeSurvey",
+                  "LongAnswer",
+                  { prompt: promptEntry }
+                );
+              }}
+            >
+              Enter Long-form Answer
+            </Link>
+          )}
         </div>
-      </AuthProvider>
-    )
+      </div>
+    );
   }
 }
 

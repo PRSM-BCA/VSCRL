@@ -69,9 +69,9 @@ function ScaleAnswer(props) {
 
   if (userInfo.usertype === "admin") {
     return (
-      <AuthProvider>
-        {console.log(adminEnter)}
+
         <div className="scaleAnswer">
+          {console.log(adminEnter)}
           <h1>Admin</h1>
           <div className="admin-question">
             <label className="question-Edit">
@@ -421,11 +421,9 @@ function ScaleAnswer(props) {
             <button className="submit">Submit</button>
           </div>
         </div>
-      </AuthProvider>
-    );
+    )
   } else {
     return (
-      <AuthProvider>
         <div className="scaleAnswer">
           <h1>Key User</h1>
           <form action="" method="GET">
@@ -542,8 +540,7 @@ function ScaleAnswer(props) {
             </div>
           </form>
         </div>
-      </AuthProvider>
-    );
+    )
   }
 }
 

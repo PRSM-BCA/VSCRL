@@ -30,7 +30,6 @@ function Landing(props) {
 
 
   return (
-    
       <div className="Landing">
         <Navbar />
         <Main />
@@ -40,8 +39,6 @@ function Landing(props) {
         <Brands />
         <Footer />
       </div>
-      
-    
   );
 }
 
